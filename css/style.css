@@ -75,7 +75,13 @@
     display:flex;flex-direction:column;align-items:center;justify-content:center;
     text-align:center;position:relative;overflow:hidden;
   }
-  #heroStatsWrap{position:relative;overflow:hidden;}
+  /* #hero inherits an opaque background from .theme-dark, which was painting
+     over the starfield canvas behind it (canvas is a sibling, positioned
+     earlier in the DOM inside #heroStatsWrap). This id+class override wins
+     the cascade and makes #hero transparent so the canvas shows through the
+     whole section, not just the strip below it. */
+  #hero.theme-dark{background:transparent;}
+  #heroStatsWrap{position:relative;overflow:hidden;background:var(--ink);}
   #starCanvas{
     position:absolute;inset:0;pointer-events:none;
   }
