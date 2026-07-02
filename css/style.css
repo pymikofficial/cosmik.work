@@ -77,9 +77,7 @@
   }
   #heroStatsWrap{position:relative;overflow:hidden;}
   #starCanvas{
-    position:absolute;inset:0;pointer-events:none;opacity:.55;
-    -webkit-mask-image:linear-gradient(to bottom, black 0%, black 78%, transparent 100%);
-    mask-image:linear-gradient(to bottom, black 0%, black 78%, transparent 100%);
+    position:absolute;inset:0;pointer-events:none;
   }
   .glow-orb{position:absolute;border-radius:50%;filter:blur(120px);pointer-events:none;}
   .glow-1{width:600px;height:600px;background:var(--glow);top:-200px;right:-150px;opacity:.35;}
