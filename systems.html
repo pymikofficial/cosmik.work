@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Systems, Not Services · cosmik.work</title>
+<meta name="description" content="Recruitment OS, Revenue OS, Customer Success OS, Founder OS. Four operating systems Soumik Chatterjee installs, runs, and hands over documented.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav id="nav" aria-label="Primary">
+  <a href="index.html" class="logo" data-testid="nav-logo" aria-label="cosmik.work home">cosmik<span>.work</span></a>
+  <div class="nav-links">
+    <a href="framework.html" data-testid="nav-framework">Framework</a>
+    <a href="systems.html" class="active" data-testid="nav-systems">Systems</a>
+    <a href="shipped.html" data-testid="nav-shipped">Shipped</a>
+    <a href="why.html" data-testid="nav-why">Why cosmik</a>
+  </div>
+  <a href="contact.html" class="nav-cta" data-testid="nav-cta"><span class="dot" aria-hidden="true"></span>Let's talk</a>
+</nav>
+
+<main>
+
+  <div class="page-header theme-dark" style="background:var(--ink);">
+    <p class="breadcrumb"><a href="index.html">cosmik.work</a> / Systems</p>
+  </div>
+
+  <!-- SYSTEMS ~ dark -->
+  <section id="systems" class="theme-dark" style="padding-top:20px;" aria-labelledby="systems-title">
+    <div class="container">
+      <p class="section-eyebrow">What I run</p>
+      <h2 class="section-title reveal" id="systems-title">Systems.<br>Not <em>services.</em></h2>
+      <p class="section-sub reveal">Each one is an operating system I install, run, and hand over documented ~ so it keeps working when I'm not in the room.</p>
+
+      <div class="systems-grid" role="list">
+        <article class="sys-panel reveal" role="listitem">
+          <div class="sys-header"><span class="sys-index">01 ~ Recruitment OS</span></div>
+          <div>
+            <h3 class="sys-title">Source. Screen.<br>Schedule. Hire.</h3>
+            <p class="sys-sub">Recruiting run as a repeatable pipeline. Roles close on rhythm, not heroics.</p>
+            <p class="sys-proof">Proof · 260% of placement target</p>
+          </div>
+        </article>
+        <article class="sys-panel reveal" role="listitem">
+          <div class="sys-header"><span class="sys-index">02 ~ Revenue OS</span></div>
+          <div>
+            <h3 class="sys-title">Discover. Outreach.<br>Convert. Repeat.</h3>
+            <p class="sys-sub">A pipeline that fills itself, cleanly categorised, ready for the founder to close.</p>
+            <p class="sys-proof">Proof · $1.47M CAD pipeline managed</p>
+          </div>
+        </article>
+        <article class="sys-panel reveal" role="listitem">
+          <div class="sys-header"><span class="sys-index">03 ~ Customer Success OS</span></div>
+          <div>
+            <h3 class="sys-title">Onboard.<br>Retain. Expand.</h3>
+            <p class="sys-sub">SOPs that survive the author. Customers don't slip; expansion becomes routine.</p>
+            <p class="sys-proof">Built on 9 documented SOPs</p>
+          </div>
+        </article>
+        <article class="sys-panel reveal" role="listitem">
+          <div class="sys-header"><span class="sys-index">04 ~ Founder OS</span></div>
+          <div>
+            <h3 class="sys-title">Your calendar,<br>run as a system.</h3>
+            <p class="sys-sub">Priorities, decisions, and follow-through ~ orchestrated so you operate at altitude.</p>
+            <p class="sys-proof">Operate at altitude</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <div class="page-next theme-dark">
+    <a href="index.html" class="pn-back">← Home</a>
+    <a href="shipped.html">
+      <p class="pn-label">Next</p>
+      <span class="pn-title">Built, not claimed <span aria-hidden="true">→</span></span>
+    </a>
+  </div>
+
+</main>
+
+<footer>
+  <div><span class="fl">© 2026 cosmik.work</span> · Soumik Chatterjee</div>
+  <div>Kolkata, India · Remote worldwide</div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+  if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.utils.toArray('.reveal').forEach((el)=>{
+      gsap.fromTo(el, {opacity:0, y:24}, {
+        opacity:1, y:0, duration:1, ease:'expo.out',
+        scrollTrigger:{ trigger: el, start:'top 88%' }
+      });
+    });
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Let's Talk · Contact Soumik Chatterjee | cosmik.work</title>
+<meta name="description" content="Tell Soumik Chatterjee what's breaking ~ hiring, revenue ops, or founder bandwidth. Email soumik@cosmik.work or send a note directly.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav id="nav" aria-label="Primary">
+  <a href="index.html" class="logo" data-testid="nav-logo" aria-label="cosmik.work home">cosmik<span>.work</span></a>
+  <div class="nav-links">
+    <a href="framework.html" data-testid="nav-framework">Framework</a>
+    <a href="systems.html" data-testid="nav-systems">Systems</a>
+    <a href="shipped.html" data-testid="nav-shipped">Shipped</a>
+    <a href="why.html" data-testid="nav-why">Why cosmik</a>
+  </div>
+  <a href="contact.html" class="nav-cta" data-testid="nav-cta"><span class="dot" aria-hidden="true"></span>Let's talk</a>
+</nav>
+
+<main>
+
+  <div class="page-header theme-dark" style="background:var(--ink);">
+    <p class="breadcrumb"><a href="index.html">cosmik.work</a> / Let's talk</p>
+  </div>
+
+  <!-- CONTACT ~ dark -->
+  <section id="contact" class="theme-dark" style="padding-top:20px;min-height:auto;" aria-labelledby="contact-title">
+    <div class="container">
+      <p class="section-eyebrow">Let's talk</p>
+      <div class="contact-grid">
+        <div class="contact-left">
+          <h2 class="cta-title" id="contact-title">Ready to hand off the <em>machinery?</em></h2>
+          <p>Tell me what's breaking ~ hiring, revenue ops, founder bandwidth, all three. You'll get a straight answer on whether I'm the right person to fix it.</p>
+          <a href="mailto:soumik@cosmik.work" class="btn btn-primary" data-testid="contact-email-cta">soumik@cosmik.work →</a>
+          <div class="cta-links">
+            <a href="https://www.linkedin.com/in/showmikthebuilder/" target="_blank" rel="noopener" data-testid="cta-linkedin">LinkedIn</a>
+            <a href="https://github.com/pymikofficial" target="_blank" rel="noopener" data-testid="cta-github">GitHub</a>
+          </div>
+          <p class="reply-note">Replies within 24 hours · IST or yours</p>
+        </div>
+
+        <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" aria-label="Contact form">
+          <input type="hidden" name="form-name" value="contact">
+          <p class="visually-hidden" aria-hidden="true">
+            <label>Don't fill this out if you're human: <input name="bot-field"></label>
+          </p>
+          <div class="field">
+            <label for="cf-name">Your name</label>
+            <input id="cf-name" type="text" name="name" autocomplete="name" required data-testid="form-name">
+          </div>
+          <div class="field">
+            <label for="cf-email">Work email</label>
+            <input id="cf-email" type="email" name="email" autocomplete="email" required data-testid="form-email">
+          </div>
+          <div class="field">
+            <label for="cf-msg">What's breaking right now?</label>
+            <textarea id="cf-msg" name="message" required data-testid="form-message"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" data-testid="form-submit">Send it →</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <div class="page-next theme-dark">
+    <a href="index.html" class="pn-back">← Home</a>
+    <a href="framework.html">
+      <p class="pn-label">Explore</p>
+      <span class="pn-title">The BAS Framework <span aria-hidden="true">→</span></span>
+    </a>
+  </div>
+
+</main>
+
+<footer>
+  <div><span class="fl">© 2026 cosmik.work</span> · Soumik Chatterjee</div>
+  <div>Kolkata, India · Remote worldwide</div>
+</footer>
+
+</body>
+</html>

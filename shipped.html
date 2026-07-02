@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Built, Not Claimed · Shipped Work | cosmik.work</title>
+<meta name="description" content="9 B2B pipelines, $1.47M CAD managed, 2,314 CRM contacts, 260% of placement target. Timeverse, ContractForge, and 9 documented SOPs shipped by Soumik Chatterjee.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav id="nav" aria-label="Primary">
+  <a href="index.html" class="logo" data-testid="nav-logo" aria-label="cosmik.work home">cosmik<span>.work</span></a>
+  <div class="nav-links">
+    <a href="framework.html" data-testid="nav-framework">Framework</a>
+    <a href="systems.html" data-testid="nav-systems">Systems</a>
+    <a href="shipped.html" class="active" data-testid="nav-shipped">Shipped</a>
+    <a href="why.html" data-testid="nav-why">Why cosmik</a>
+  </div>
+  <a href="contact.html" class="nav-cta" data-testid="nav-cta"><span class="dot" aria-hidden="true"></span>Let's talk</a>
+</nav>
+
+<main>
+
+  <div class="page-header theme-dark" style="background:var(--ink);">
+    <p class="breadcrumb"><a href="index.html">cosmik.work</a> / Shipped</p>
+  </div>
+
+  <!-- STATS -->
+  <section id="stats" class="theme-dark" aria-label="Proof in numbers" style="padding-top:20px;">
+    <div class="container">
+      <h2 class="stats-title reveal">Numbers over <em>narrative.</em><br>Proof, in production.</h2>
+      <div class="stat-grid">
+        <div class="stat reveal">
+          <div class="num">9</div>
+          <p class="lbl">B2B pipelines built from scratch in under 90 days, as first Chief of Staff hire</p>
+        </div>
+        <div class="stat reveal">
+          <div class="num"><em>$1.47M</em></div>
+          <p class="lbl">CAD prospect pipeline under active management</p>
+        </div>
+        <div class="stat reveal">
+          <div class="num">2,314</div>
+          <p class="lbl">CRM contacts organised across 9 categorised pipelines</p>
+        </div>
+        <div class="stat reveal">
+          <div class="num"><em>260%</em></div>
+          <p class="lbl">Of placement target delivered ~ 31 roles closed against a target of 25</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SHIPPED ~ light -->
+  <section id="shipped" class="theme-light" aria-labelledby="shipped-title">
+    <div class="container">
+      <p class="section-eyebrow">Shipped</p>
+      <h2 class="section-title reveal" id="shipped-title">Built, not <em>claimed.</em></h2>
+      <p class="section-sub reveal">Live tools and documented systems. The code is public where it can be.</p>
+
+      <div id="shipped-grid">
+        <article class="ship-card reveal">
+          <p class="ship-tag">AI Tool · In production</p>
+          <h3 class="ship-name">Timeverse</h3>
+          <p class="ship-desc">An AI triage pipeline built on Google Sheets and the Claude API ~ incoming work classified and routed automatically, no human sorting.</p>
+        </article>
+        <article class="ship-card reveal">
+          <p class="ship-tag">AI Tool · Open source</p>
+          <h3 class="ship-name">ContractForge</h3>
+          <p class="ship-desc">An open-source AI contract generator ~ draft-ready agreements in minutes instead of days of back-and-forth.</p>
+        </article>
+        <article class="ship-card reveal">
+          <p class="ship-tag">Operating docs</p>
+          <h3 class="ship-name">9 SOPs</h3>
+          <p class="ship-desc">Playbooks authored as first Chief of Staff hire: onboarding, security, content, and LinkedIn outreach ~ the systems survive the author.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATEMENT (pinned) -->
+  <section id="statement" aria-label="A statement on systems">
+    <div class="statement-pin">
+      <div class="statement-layer" id="statementA">
+        <p class="statement-text">Every growing company eventually becomes <em>a systems problem.</em></p>
+      </div>
+      <div class="statement-layer" id="statementB" style="opacity:0;">
+        <p class="statement-text"><em>Systems</em> create leverage.<br><em>Leverage</em> creates scale.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="page-next theme-dark">
+    <a href="index.html" class="pn-back">← Home</a>
+    <a href="why.html">
+      <p class="pn-label">Next</p>
+      <span class="pn-title">Why cosmik <span aria-hidden="true">→</span></span>
+    </a>
+  </div>
+
+</main>
+
+<footer>
+  <div><span class="fl">© 2026 cosmik.work</span> · Soumik Chatterjee</div>
+  <div>Kolkata, India · Remote worldwide</div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+  if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+    gsap.registerPlugin(ScrollTrigger);
+
+    gsap.utils.toArray('.reveal').forEach((el)=>{
+      gsap.fromTo(el, {opacity:0, y:24}, {
+        opacity:1, y:0, duration:1, ease:'expo.out',
+        scrollTrigger:{ trigger: el, start:'top 88%' }
+      });
+    });
+
+    ScrollTrigger.create({
+      trigger: '#statement',
+      start:'top top',
+      end:'bottom bottom',
+      pin: '.statement-pin',
+      scrub: true,
+      onUpdate: (self)=>{
+        const p = self.progress;
+        gsap.to('#statementA', {opacity: 1 - Math.min(p*2.2,1), duration:0.1});
+        gsap.to('#statementB', {opacity: Math.max((p-0.45)*2,0), duration:0.1});
+      }
+    });
+  } else {
+    const b = document.getElementById('statementB');
+    if(b) b.style.opacity = '0';
+  }
+</script>
+
+</body>
+</html>
