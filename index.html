@@ -7,258 +7,288 @@
 <meta name="description" content="Soumik Chatterjee is a Chief of Staff and AI Systems Architect. He runs internal systems, people pipelines, and AI workflows for early-stage to Series B founders. 9 pipelines in 90 days. $1.47M CAD under management.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500;1,9..144,600&family=Space+Grotesk:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <style>
   :root{
-    --bg-1:#050507;
-    --bg-2:#08080d;
-    --text-1:#f5f5f7;
-    --text-2:#9d9daa;
-    --accent:#a78bfa;
-    --accent-bright:#c9b6ff;
-    --glow:rgba(167,139,250,.6);
-    --line:rgba(255,255,255,.1);
-    --ease-expo:cubic-bezier(.16,1,.3,1);
+    --ink:#0a0a0f;
+    --ink-2:#1a1a22;
+    --paper:#f5f5f7;
+    --paper-2:#fbfbfd;
+    --text-on-dark:#f5f5f7;
+    --text-on-dark-2:#a1a1aa;
+    --text-on-light:#0a0a0f;
+    --text-on-light-2:#6e6e73;
+    --accent:#7c5cff;
+    --accent-bright:#a78bfa;
+    --glow:rgba(124,92,255,.5);
+    --line-dark:rgba(255,255,255,.08);
+    --line-light:rgba(0,0,0,.08);
+    --ease:cubic-bezier(.16,1,.3,1);
+    --nav-h:52px;
   }
   *{margin:0;padding:0;box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
+  html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}
   body{
-    background:var(--bg-1);
-    color:var(--text-1);
-    font-family:'Space Grotesk',-apple-system,sans-serif;
-    font-weight:300;
+    background:var(--ink);
+    color:var(--text-on-dark);
+    font-family:'Inter Tight','SF Pro Display',-apple-system,BlinkMacSystemFont,sans-serif;
+    font-weight:400;
+    letter-spacing:-.005em;
     overflow-x:hidden;
-    position:relative;
   }
   .mono{font-family:'JetBrains Mono',monospace;}
   .serif{font-family:'Fraunces',serif;}
   a{color:inherit;text-decoration:none;}
-  a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{outline:1.5px solid var(--accent);outline-offset:4px;}
+  a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
+    outline:2px solid var(--accent);outline-offset:3px;border-radius:4px;
+  }
   .visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;}
 
-  /* ===== FIXED BACKGROUND ===== */
-  #bgLayer{
-    position:fixed;inset:0;z-index:-3;
-    background:radial-gradient(ellipse 80% 60% at 70% 10%, #0d0a1a 0%, transparent 55%), var(--bg-2);
-  }
-  #starCanvas{position:fixed;inset:0;z-index:-2;pointer-events:none;}
-  .glow-orb{
-    position:fixed;border-radius:50%;
-    filter:blur(90px);pointer-events:none;z-index:-1;
-    opacity:.35;
-  }
-  .glow-1{width:520px;height:520px;background:var(--glow);top:-140px;right:-120px;}
-  .glow-2{width:420px;height:420px;background:rgba(120,100,220,.5);bottom:-160px;left:-140px;opacity:.25;}
+  /* ===== Section themes ===== */
+  .theme-dark{background:var(--ink);color:var(--text-on-dark);}
+  .theme-dark .muted{color:var(--text-on-dark-2);}
+  .theme-light{background:var(--paper);color:var(--text-on-light);}
+  .theme-light .muted{color:var(--text-on-light-2);}
 
-  /* ===== NAV ===== */
-  nav{
-    position:sticky;top:0;z-index:50;
+  /* ===== NAV ~ Apple-style translucent ===== */
+  nav#nav{
+    position:sticky;top:0;z-index:100;
+    height:var(--nav-h);
     display:flex;align-items:center;justify-content:space-between;
-    padding:24px clamp(24px,5vw,64px);
-    transition:background .4s var(--ease-expo), backdrop-filter .4s var(--ease-expo), border-color .4s var(--ease-expo);
-    border-bottom:1px solid transparent;
+    padding:0 clamp(20px,5vw,44px);
+    background:rgba(10,10,15,.72);
+    backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px);
+    border-bottom:1px solid var(--line-dark);
+    font-size:12.5px;
+    transition:background .3s ease;
   }
-  nav.scrolled{
-    background:rgba(5,5,7,.72);
-    backdrop-filter:blur(16px);
-    -webkit-backdrop-filter:blur(16px);
-    border-bottom-color:rgba(255,255,255,.06);
-  }
-  .logo{font-family:'JetBrains Mono',monospace;font-size:14px;letter-spacing:.02em;font-weight:500;}
-  .logo span{color:var(--accent);}
-  .nav-links{display:flex;align-items:center;gap:clamp(18px,3vw,34px);font-size:13.5px;color:var(--text-2);}
-  .nav-links a{transition:color .25s ease;}
-  .nav-links a:hover{color:var(--text-1);}
+  .logo{font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:-.01em;font-weight:600;color:#f5f5f7;}
+  .logo span{color:var(--accent-bright);}
+  .nav-links{display:flex;align-items:center;gap:clamp(20px,3vw,32px);color:#a1a1aa;}
+  .nav-links a{transition:color .2s ease;font-weight:400;}
+  .nav-links a:hover{color:#f5f5f7;}
   .nav-cta{
-    font-family:'JetBrains Mono',monospace;font-size:12.5px;
-    border:1px solid rgba(167,139,250,.35);
-    padding:10px 18px;border-radius:100px;
-    display:flex;align-items:center;gap:8px;
-    transition:all .3s var(--ease-expo);
+    color:#f5f5f7;background:var(--accent);
+    padding:7px 16px;border-radius:980px;font-weight:500;
+    display:inline-flex;align-items:center;gap:7px;
+    transition:background .25s ease, transform .25s ease;
+    font-size:12px;
   }
-  .nav-cta:hover{background:rgba(167,139,250,.1);border-color:var(--accent);}
-  .nav-cta .dot{width:5px;height:5px;border-radius:50%;background:var(--accent);box-shadow:0 0 8px 2px var(--glow);}
-  @media(max-width:880px){.nav-links{display:none;}}
+  .nav-cta:hover{background:#8f70ff;transform:translateY(-1px);}
+  .nav-cta .dot{width:5px;height:5px;border-radius:50%;background:#fff;box-shadow:0 0 0 3px rgba(255,255,255,.2);}
+  @media(max-width:820px){.nav-links{display:none;}}
 
-  /* ===== HERO ===== */
+  /* ===== HERO ~ Apple product-page treatment ===== */
   #hero{
-    min-height:calc(100vh - 80px);
-    display:flex;flex-direction:column;justify-content:center;
-    padding:40px clamp(24px,6vw,64px) 0;
-    position:relative;
+    min-height:100vh;
+    padding:80px clamp(20px,5vw,44px) 40px;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    text-align:center;position:relative;overflow:hidden;
   }
-  .hero-grid{display:flex;align-items:center;justify-content:space-between;gap:40px;}
-  .hero-copy{max-width:700px;position:relative;z-index:2;}
+  #heroStatsWrap{position:relative;overflow:hidden;}
+  #starCanvas{
+    position:absolute;inset:0;pointer-events:none;opacity:.55;
+    -webkit-mask-image:linear-gradient(to bottom, black 0%, black 78%, transparent 100%);
+    mask-image:linear-gradient(to bottom, black 0%, black 78%, transparent 100%);
+  }
+  .glow-orb{position:absolute;border-radius:50%;filter:blur(120px);pointer-events:none;}
+  .glow-1{width:600px;height:600px;background:var(--glow);top:-200px;right:-150px;opacity:.35;}
+  .glow-2{width:500px;height:500px;background:rgba(90,60,200,.5);bottom:0;left:-180px;opacity:.22;}
+  .hero-inner{position:relative;z-index:2;max-width:1100px;margin:0 auto;}
   .eyebrow{
-    font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.16em;
-    color:var(--accent);text-transform:uppercase;margin-bottom:26px;
-    display:flex;align-items:center;gap:8px;
+    font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:.14em;
+    color:var(--accent-bright);text-transform:uppercase;margin-bottom:28px;
+    display:inline-flex;align-items:center;gap:8px;
+    padding:8px 14px;border:1px solid rgba(167,139,250,.28);border-radius:100px;
+    background:rgba(167,139,250,.06);
   }
-  .eyebrow::before{content:"◆";font-size:9px;}
+  .eyebrow::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--accent-bright);box-shadow:0 0 10px 2px var(--glow);}
   h1.hero-title{
     font-family:'Fraunces',serif;
-    font-size:clamp(3rem,8vw,6rem);
-    line-height:1.02;font-weight:500;letter-spacing:-.01em;
-    margin-bottom:30px;
+    font-size:clamp(3.6rem,10vw,9rem);
+    line-height:.98;
+    font-weight:500;
+    letter-spacing:-.035em;
+    margin-bottom:28px;
   }
-  h1.hero-title em{font-style:italic;font-weight:600;color:var(--accent-bright);}
+  h1.hero-title em{font-style:italic;font-weight:600;background:linear-gradient(180deg,#c9b6ff 0%,#7c5cff 100%);-webkit-background-clip:text;background-clip:text;color:transparent;}
+  .hero-belief{
+    font-size:clamp(.85rem,1.3vw,1rem);
+    letter-spacing:.06em;text-transform:uppercase;
+    color:var(--accent-bright);line-height:1.6;
+    max-width:46ch;margin:0 auto 26px;font-weight:500;
+  }
   .hero-sub{
-    font-size:clamp(1.02rem,1.7vw,1.22rem);
-    color:var(--text-2);line-height:1.75;max-width:56ch;margin-bottom:38px;font-weight:300;
+    font-size:clamp(1.1rem,1.8vw,1.4rem);
+    color:var(--text-on-dark-2);line-height:1.55;
+    max-width:64ch;margin:0 auto 44px;
+    font-weight:400;letter-spacing:-.01em;
   }
-  .hero-sub strong{color:var(--text-1);font-weight:500;}
-  .btn-row{display:flex;gap:16px;flex-wrap:wrap;align-items:center;}
+  .hero-sub strong{color:#f5f5f7;font-weight:600;}
+  .btn-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;align-items:center;}
   .btn{
-    font-family:'JetBrains Mono',monospace;font-size:13px;
-    padding:16px 26px;border-radius:8px;
-    display:inline-flex;align-items:center;gap:10px;
-    transition:all .35s var(--ease-expo);
+    font-size:14px;font-weight:500;
+    padding:13px 24px;border-radius:980px;
+    display:inline-flex;align-items:center;gap:8px;
+    transition:all .3s var(--ease);
+    letter-spacing:-.005em;
   }
-  .btn-primary{background:var(--accent);color:#0a0a0f;font-weight:500;}
-  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 30px -8px var(--glow);}
-  .btn-ghost{border:1px solid rgba(255,255,255,.14);color:var(--text-2);}
-  .btn-ghost:hover{border-color:rgba(167,139,250,.5);color:var(--text-1);}
+  .btn-primary{background:var(--accent);color:#fff;}
+  .btn-primary:hover{background:#8f70ff;transform:translateY(-2px);box-shadow:0 14px 34px -10px var(--glow);}
+  .btn-ghost{border:1px solid rgba(255,255,255,.22);color:#f5f5f7;background:rgba(255,255,255,.03);}
+  .btn-ghost:hover{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.35);}
+  .btn-ghost-light{border:1px solid rgba(0,0,0,.18);color:var(--ink);background:transparent;}
+  .btn-ghost-light:hover{background:rgba(0,0,0,.05);border-color:rgba(0,0,0,.32);}
   .hero-meta{
-    margin-top:30px;font-family:'JetBrains Mono',monospace;font-size:11.5px;
-    letter-spacing:.06em;color:var(--text-2);
+    margin-top:38px;font-family:'JetBrains Mono',monospace;font-size:11px;
+    letter-spacing:.12em;color:var(--text-on-dark-2);text-transform:uppercase;
   }
+  /* subtle planet accent below hero */
+  .hero-planet{
+    position:relative;width:min(560px,80vw);height:200px;margin:60px auto 0;
+    display:flex;align-items:center;justify-content:center;pointer-events:none;
+  }
+  .hp-orb{
+    width:340px;height:340px;border-radius:50%;
+    background:radial-gradient(circle at 32% 28%, #3a2f5c 0%, #0f0b1e 55%, #05030c 100%);
+    box-shadow:0 40px 120px -20px rgba(124,92,255,.6), inset -40px -30px 80px rgba(0,0,0,.65), inset 20px 20px 40px rgba(167,139,250,.18);
+    position:absolute;top:20%;
+  }
+  .hp-ring{position:absolute;border-radius:50%;border:1px solid rgba(167,139,250,.28);}
+  .hp-ring-1{width:460px;height:460px;top:-5%;transform:rotateX(74deg) rotate(-10deg);}
+  .hp-ring-2{width:560px;height:560px;top:-32%;transform:rotateX(74deg) rotate(-10deg);border-color:rgba(167,139,250,.12);}
+  @keyframes orbit{from{transform:rotate(0);}to{transform:rotate(360deg);}}
+  .hp-orbit{position:absolute;width:460px;height:460px;top:-5%;animation:orbit 30s linear infinite;border-radius:50%;}
+  .hp-dot{
+    position:absolute;top:-4px;left:50%;width:9px;height:9px;margin-left:-4px;border-radius:50%;
+    background:#e8ddff;box-shadow:0 0 10px 3px #c9b6ff,0 0 28px 8px rgba(167,139,250,.55);
+  }
+  @media(max-width:640px){.hero-planet{height:130px;margin-top:36px;}.hp-orb{width:220px;height:220px;}.hp-ring-1{width:300px;height:300px;}.hp-ring-2{width:360px;height:360px;}.hp-orbit{width:300px;height:300px;}}
 
-  /* planet */
-  .planet-wrap{
-    position:relative;width:420px;height:420px;flex-shrink:0;
-    display:flex;align-items:center;justify-content:center;
-    transition:transform .3s ease-out;
+  /* ===== STATS ~ Apple giant number band ===== */
+  #stats{padding:120px clamp(20px,5vw,44px);}
+  .stats-title{
+    font-family:'Fraunces',serif;font-size:clamp(1.9rem,3.5vw,2.6rem);font-weight:500;
+    letter-spacing:-.02em;margin-bottom:56px;max-width:22ch;line-height:1.15;
   }
-  .planet{
-    width:230px;height:230px;border-radius:50%;
-    background:radial-gradient(circle at 35% 30%, #2a2440, #0c0a16 70%);
-    box-shadow:0 0 90px 10px rgba(167,139,250,.25), inset -30px -20px 60px rgba(0,0,0,.6), inset 10px 10px 30px rgba(167,139,250,.15);
-    position:relative;z-index:2;
-  }
-  .ring{
-    position:absolute;border:1px solid rgba(167,139,250,.22);
-    border-radius:50%;top:50%;left:50%;
-  }
-  .ring-a{width:340px;height:340px;transform:translate(-50%,-50%) rotateX(72deg) rotate(-8deg);}
-  .ring-b{width:400px;height:400px;transform:translate(-50%,-50%) rotateX(72deg) rotate(-8deg);border-color:rgba(167,139,250,.12);}
-  .ring-c{width:230px;height:230px;transform:translate(-50%,-50%) rotate(20deg);border-color:rgba(255,255,255,.08);}
-  .orbit-path{position:absolute;width:340px;height:340px;border-radius:50%;animation:orbit-spin 26s linear infinite;}
-  .orbit-dot{
-    position:absolute;top:-4px;left:50%;width:8px;height:8px;margin-left:-4px;border-radius:50%;
-    background:var(--accent-bright);
-    box-shadow:0 0 8px 2px rgba(201,182,255,.9),0 0 22px 6px rgba(167,139,250,.5);
-  }
-  @keyframes orbit-spin{from{transform:rotate(0deg);}to{transform:rotate(360deg);}}
-  .planet-wrap .spark{position:absolute;width:5px;height:5px;border-radius:50%;background:#fff;box-shadow:0 0 10px 3px rgba(255,255,255,.6);}
-  @media(max-width:960px){.planet-wrap{display:none;}}
-
-  /* ===== STAT STRIP ===== */
-  #stats{
-    padding:64px clamp(24px,6vw,64px) 80px;
-  }
+  .stats-title em{font-style:italic;color:var(--accent-bright);font-weight:600;}
   .stat-grid{
-    display:grid;grid-template-columns:repeat(4,1fr);gap:20px;
-    border-top:1px solid var(--line);
-    padding-top:44px;
+    display:grid;grid-template-columns:repeat(4,1fr);gap:12px;
+    border-top:1px solid var(--line-dark);padding-top:44px;
   }
+  .stat{padding:12px 20px 12px 0;border-right:1px solid var(--line-dark);}
+  .stat:last-child{border-right:none;}
   .stat .num{
-    font-family:'JetBrains Mono',monospace;
-    font-size:clamp(1.7rem,3.4vw,2.6rem);font-weight:500;
-    color:var(--accent-bright);letter-spacing:-.02em;
+    font-family:'Fraunces',serif;
+    font-size:clamp(2.6rem,5vw,4.4rem);font-weight:500;letter-spacing:-.03em;
+    color:#f5f5f7;line-height:1;
   }
+  .stat .num em{font-style:italic;color:var(--accent-bright);}
   .stat .lbl{
-    margin-top:10px;font-size:.86rem;color:var(--text-2);line-height:1.55;max-width:22ch;
+    margin-top:16px;font-size:.92rem;color:var(--text-on-dark-2);
+    line-height:1.5;max-width:24ch;font-weight:400;
   }
-  @media(max-width:880px){.stat-grid{grid-template-columns:repeat(2,1fr);gap:34px 20px;}}
+  @media(max-width:880px){.stat-grid{grid-template-columns:repeat(2,1fr);gap:36px 12px;}.stat:nth-child(2){border-right:none;}}
 
   /* ===== SECTION SHARED ===== */
-  section{position:relative;padding:130px clamp(24px,6vw,64px);}
+  section{position:relative;padding:140px clamp(20px,5vw,44px);}
+  .container{max-width:1240px;margin:0 auto;}
+  .section-eyebrow{
+    font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--accent);margin-bottom:22px;font-weight:500;
+  }
+  .theme-dark .section-eyebrow{color:var(--accent-bright);}
   h2.section-title{
     font-family:'Fraunces',serif;
-    font-size:clamp(2.2rem,5.5vw,4rem);font-weight:500;letter-spacing:-.01em;line-height:1.08;margin-bottom:22px;
+    font-size:clamp(2.6rem,6.5vw,5.4rem);font-weight:500;letter-spacing:-.025em;line-height:1;
+    margin-bottom:24px;
   }
-  h2.section-title em{font-style:italic;font-weight:600;color:var(--accent-bright);}
-  .section-sub{color:var(--text-2);font-size:clamp(.95rem,1.4vw,1.1rem);max-width:62ch;line-height:1.75;font-weight:300;}
-  .section-sub strong{color:var(--text-1);font-weight:500;}
+  h2.section-title em{font-style:italic;font-weight:600;}
+  .theme-dark h2.section-title em{color:var(--accent-bright);}
+  .theme-light h2.section-title em{color:var(--accent);}
+  .section-sub{
+    font-size:clamp(1.02rem,1.55vw,1.22rem);
+    line-height:1.55;max-width:60ch;font-weight:400;letter-spacing:-.005em;
+  }
+  .theme-dark .section-sub{color:var(--text-on-dark-2);}
+  .theme-light .section-sub{color:var(--text-on-light-2);}
+  .section-sub strong{font-weight:600;}
+  .theme-dark .section-sub strong{color:#f5f5f7;}
+  .theme-light .section-sub strong{color:var(--ink);}
 
-  /* ===== BAS ===== */
-  #bas-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:64px;}
+  /* ===== BAS FRAMEWORK ~ Apple product cards ===== */
+  #bas-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:72px;}
   .bas-card{
-    position:relative;border:1px solid var(--line);
-    border-radius:18px;padding:40px 32px;min-height:400px;
-    background:linear-gradient(180deg, rgba(167,139,250,.04), rgba(255,255,255,.015));
-    backdrop-filter:blur(6px);
-    display:flex;flex-direction:column;justify-content:flex-end;
-    overflow:hidden;cursor:default;
-    transition:border-color .5s var(--ease-expo), box-shadow .5s var(--ease-expo), transform .5s var(--ease-expo);
-  }
-  .bas-card:hover{border-color:rgba(167,139,250,.5);box-shadow:0 20px 60px -20px rgba(167,139,250,.35);transform:translateY(-6px);}
-  .bas-letter{
-    position:absolute;top:32px;left:32px;font-size:6.5rem;font-weight:600;color:rgba(167,139,250,.9);
-    line-height:1;transition:transform .5s var(--ease-expo), opacity .5s var(--ease-expo);
-    font-family:'Fraunces',serif;font-style:italic;
-  }
-  .bas-card:hover .bas-letter{transform:translate(-6px,-10px) scale(.62);opacity:.5;}
-  .bas-body{
-    opacity:0;transform:translateY(14px);
-    transition:opacity .45s var(--ease-expo) .05s, transform .45s var(--ease-expo) .05s;
-  }
-  .bas-card:hover .bas-body{opacity:1;transform:translateY(0);}
-  .bas-title{font-size:1.7rem;font-weight:500;margin-bottom:16px;font-family:'Fraunces',serif;}
-  .bas-desc{color:var(--text-2);font-size:.95rem;line-height:1.85;margin-bottom:18px;}
-  .bas-foot{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--accent);letter-spacing:.05em;text-transform:uppercase;}
-  @media(hover:none){
-    .bas-letter{transform:translate(-6px,-10px) scale(.62);opacity:.5;}
-    .bas-body{opacity:1;transform:translateY(0);}
-  }
-  @media(max-width:880px){#bas-cards{grid-template-columns:1fr;}.bas-card{min-height:320px;}}
-
-  /* ===== SYSTEMS ===== */
-  .systems-scroller{
-    display:flex;gap:20px;overflow-x:auto;padding:56px 0 24px;margin:0 -12px;
-    scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;
-  }
-  .systems-scroller::-webkit-scrollbar{height:4px;}
-  .systems-scroller::-webkit-scrollbar-thumb{background:rgba(167,139,250,.3);border-radius:4px;}
-  .sys-panel{
-    scroll-snap-align:start;flex:0 0 clamp(280px,32vw,380px);
-    border:1px solid var(--line);border-radius:18px;
-    padding:36px 30px;min-height:300px;margin:0 12px;
+    position:relative;border-radius:24px;padding:44px 36px;min-height:440px;
+    background:#fff;border:1px solid var(--line-light);
     display:flex;flex-direction:column;justify-content:space-between;
-    background:rgba(255,255,255,.015);
-    transition:border-color .4s ease, transform .4s var(--ease-expo);
+    overflow:hidden;cursor:default;
+    transition:box-shadow .5s var(--ease), transform .5s var(--ease);
   }
-  .sys-panel:hover{border-color:rgba(167,139,250,.4);transform:translateY(-4px);}
-  .sys-index{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--text-2);margin-bottom:26px;}
-  .sys-title{font-size:1.5rem;font-weight:500;margin-bottom:16px;font-family:'Fraunces',serif;}
-  .sys-sub{color:var(--text-2);font-size:.92rem;line-height:2;}
-  .sys-proof{
-    margin-top:18px;font-family:'JetBrains Mono',monospace;font-size:11px;
-    color:var(--accent);letter-spacing:.05em;
+  .bas-card:hover{box-shadow:0 30px 70px -20px rgba(124,92,255,.25);transform:translateY(-6px);}
+  .bas-letter{
+    font-family:'Fraunces',serif;font-style:italic;
+    font-size:9rem;font-weight:600;color:var(--accent);
+    line-height:.85;letter-spacing:-.05em;
+    background:linear-gradient(180deg,#a78bfa 0%,#7c5cff 100%);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
   }
-  .swipe-hint{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--text-2);margin-top:8px;}
+  .bas-body{}
+  .bas-title{font-family:'Fraunces',serif;font-size:2rem;font-weight:500;margin-bottom:14px;letter-spacing:-.02em;color:var(--ink);}
+  .bas-desc{color:var(--text-on-light-2);font-size:1rem;line-height:1.55;margin-bottom:20px;}
+  .bas-foot{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--accent);letter-spacing:.08em;text-transform:uppercase;font-weight:500;}
+  @media(max-width:880px){#bas-cards{grid-template-columns:1fr;}.bas-card{min-height:340px;}}
 
-  /* ===== SHIPPED ===== */
-  #shipped-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:60px;}
-  .ship-card{
-    border:1px solid var(--line);border-radius:18px;padding:34px 30px;
-    background:rgba(255,255,255,.015);
-    transition:border-color .4s ease, transform .4s var(--ease-expo);
-    display:flex;flex-direction:column;gap:14px;
+  /* ===== SYSTEMS ~ dark, big cards ===== */
+  #systems .systems-grid{
+    display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:72px;
   }
-  .ship-card:hover{border-color:rgba(167,139,250,.4);transform:translateY(-4px);}
-  .ship-tag{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);}
-  .ship-name{font-family:'Fraunces',serif;font-size:1.45rem;font-weight:500;}
-  .ship-desc{color:var(--text-2);font-size:.93rem;line-height:1.7;}
+  .sys-panel{
+    position:relative;border-radius:24px;padding:44px 40px;min-height:320px;
+    background:linear-gradient(180deg,#131320 0%,#0a0a15 100%);
+    border:1px solid var(--line-dark);
+    display:flex;flex-direction:column;justify-content:space-between;
+    overflow:hidden;
+    transition:border-color .4s ease, transform .4s var(--ease);
+  }
+  .sys-panel:hover{border-color:rgba(167,139,250,.35);transform:translateY(-4px);}
+  .sys-panel::before{
+    content:"";position:absolute;top:-100px;right:-100px;width:280px;height:280px;
+    background:radial-gradient(circle,rgba(124,92,255,.25) 0%,transparent 65%);
+    filter:blur(30px);pointer-events:none;
+  }
+  .sys-header{display:flex;justify-content:space-between;align-items:flex-start;position:relative;}
+  .sys-index{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--text-on-dark-2);letter-spacing:.06em;}
+  .sys-title{font-family:'Fraunces',serif;font-size:2.1rem;font-weight:500;margin-top:28px;letter-spacing:-.02em;position:relative;}
+  .sys-sub{color:var(--text-on-dark-2);font-size:1rem;line-height:1.9;margin-top:14px;position:relative;font-weight:400;}
+  .sys-proof{
+    margin-top:24px;font-family:'JetBrains Mono',monospace;font-size:10.5px;
+    color:var(--accent-bright);letter-spacing:.1em;text-transform:uppercase;font-weight:500;position:relative;
+  }
+  @media(max-width:880px){#systems .systems-grid{grid-template-columns:1fr;}}
+
+  /* ===== SHIPPED ~ light theme, product tiles ===== */
+  #shipped-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:72px;}
+  .ship-card{
+    border-radius:24px;padding:36px 32px;
+    background:#fff;border:1px solid var(--line-light);
+    display:flex;flex-direction:column;gap:14px;min-height:280px;
+    transition:box-shadow .4s var(--ease), transform .4s var(--ease);
+  }
+  .ship-card:hover{box-shadow:0 24px 60px -20px rgba(0,0,0,.15);transform:translateY(-4px);}
+  .ship-tag{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:500;}
+  .ship-name{font-family:'Fraunces',serif;font-size:1.8rem;font-weight:500;letter-spacing:-.02em;color:var(--ink);}
+  .ship-desc{color:var(--text-on-light-2);font-size:.98rem;line-height:1.6;}
   @media(max-width:880px){#shipped-grid{grid-template-columns:1fr;}}
 
-  /* ===== STATEMENT (pinned) ===== */
-  #statement{height:180vh;padding:0;}
+  /* ===== STATEMENT (pinned, big Apple-style typography) ===== */
+  #statement{padding:0;height:200vh;}
   .statement-pin{
     height:100vh;display:flex;align-items:center;justify-content:center;
-    text-align:center;padding:0 24px;position:relative;
+    text-align:center;padding:0 24px;position:relative;background:var(--ink);
   }
   .statement-layer{
     position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
@@ -266,275 +296,286 @@
   }
   .statement-text{
     font-family:'Fraunces',serif;
-    font-size:clamp(1.9rem,5.2vw,3.7rem);font-weight:500;line-height:1.22;letter-spacing:-.01em;
-    max-width:21ch;
+    font-size:clamp(2.4rem,7vw,5.5rem);font-weight:500;line-height:1.05;letter-spacing:-.025em;
+    max-width:20ch;
   }
-  .statement-text em{font-style:italic;font-weight:600;color:var(--accent-bright);}
+  .statement-text em{font-style:italic;font-weight:600;background:linear-gradient(180deg,#c9b6ff,#7c5cff);-webkit-background-clip:text;background-clip:text;color:transparent;}
 
-  /* ===== WHY ===== */
-  .why-wrap{display:grid;grid-template-columns:1fr 1fr;gap:60px;margin-top:56px;align-items:start;}
+  /* ===== WHY ~ light theme ===== */
+  .why-wrap{display:grid;grid-template-columns:1fr 1.15fr;gap:70px;margin-top:70px;align-items:start;}
   .name-block{
-    border:1px solid rgba(167,139,250,.25);border-radius:18px;
-    padding:38px 34px;background:linear-gradient(180deg, rgba(167,139,250,.06), rgba(255,255,255,.01));
+    border-radius:24px;padding:44px 38px;
+    background:linear-gradient(180deg,#fff 0%,#f0edff 100%);
+    border:1px solid rgba(124,92,255,.18);
   }
-  .name-line{font-family:'JetBrains Mono',monospace;font-size:clamp(.92rem,1.4vw,1.05rem);line-height:2.3;color:var(--text-2);}
-  .name-line .k{color:var(--text-1);font-weight:500;}
-  .name-line .hi{color:var(--accent-bright);}
-  .why-outcomes{display:flex;flex-direction:column;gap:30px;}
-  .why-item .wt{font-family:'Fraunces',serif;font-size:1.35rem;font-weight:500;margin-bottom:8px;}
-  .why-item .wt em{font-style:italic;color:var(--accent-bright);}
-  .why-item p{color:var(--text-2);font-size:.95rem;line-height:1.7;}
+  .name-line{font-family:'JetBrains Mono',monospace;font-size:clamp(.95rem,1.35vw,1.05rem);line-height:2.2;color:var(--text-on-light-2);}
+  .name-line .k{color:var(--ink);font-weight:600;}
+  .name-line .hi{color:var(--accent);font-weight:600;}
+  .why-outcomes{display:flex;flex-direction:column;gap:36px;}
+  .why-item .wt{font-family:'Fraunces',serif;font-size:1.7rem;font-weight:500;margin-bottom:10px;letter-spacing:-.015em;color:var(--ink);}
+  .why-item .wt em{font-style:italic;color:var(--accent);}
+  .why-item p{color:var(--text-on-light-2);font-size:1rem;line-height:1.6;}
   .tool-aside{
-    margin-top:70px;border-left:2px solid rgba(167,139,250,.4);
-    padding:6px 0 6px 28px;max-width:68ch;
+    margin-top:90px;border-left:3px solid var(--accent);
+    padding:10px 0 10px 30px;max-width:70ch;
   }
-  .tool-aside .ta-label{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;}
-  .tool-aside p{color:var(--text-2);font-size:clamp(.98rem,1.5vw,1.12rem);line-height:1.85;}
-  .tool-aside p strong{color:var(--text-1);font-weight:500;}
+  .tool-aside .ta-label{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;font-weight:500;}
+  .tool-aside p{color:var(--text-on-light-2);font-size:clamp(1.02rem,1.5vw,1.18rem);line-height:1.65;}
+  .tool-aside p strong{color:var(--ink);font-weight:600;}
   @media(max-width:880px){.why-wrap{grid-template-columns:1fr;gap:40px;}}
 
-  /* ===== PATH ===== */
-  #path{padding-top:0;}
+  /* ===== PATH ~ dark, tickertape ===== */
+  #path{padding:100px clamp(20px,5vw,44px);}
   .path-line{
-    border-top:1px solid var(--line);padding-top:40px;
-    font-family:'JetBrains Mono',monospace;font-size:clamp(.78rem,1.3vw,.9rem);
-    color:var(--text-2);line-height:2.2;letter-spacing:.02em;
+    border-top:1px solid var(--line-dark);padding-top:44px;
+    font-family:'JetBrains Mono',monospace;font-size:clamp(.82rem,1.25vw,.95rem);
+    color:var(--text-on-dark-2);line-height:2.4;letter-spacing:.02em;
   }
-  .path-line .k{color:var(--text-1);}
-  .path-line .arrow{color:var(--accent);}
+  .path-line .k{color:#f5f5f7;font-weight:500;}
+  .path-line .arrow{color:var(--accent-bright);margin:0 6px;}
 
-  /* ===== ICP ===== */
-  .icp-list{margin-top:56px;display:flex;flex-direction:column;}
+  /* ===== ICP ~ light ===== */
+  .icp-list{margin-top:64px;display:flex;flex-direction:column;}
   .icp-item{
-    display:flex;gap:28px;align-items:baseline;
-    padding:34px 0;border-top:1px solid var(--line);
+    display:flex;gap:32px;align-items:baseline;
+    padding:38px 0;border-top:1px solid var(--line-light);
+    transition:padding-left .4s var(--ease);
   }
-  .icp-item:last-child{border-bottom:1px solid var(--line);}
-  .icp-num{font-family:'JetBrains Mono',monospace;font-size:.85rem;color:var(--accent);flex-shrink:0;}
-  .icp-text{font-family:'Fraunces',serif;font-size:clamp(1.25rem,2.6vw,1.8rem);font-weight:500;line-height:1.4;}
-  .icp-text em{font-style:italic;color:var(--accent-bright);}
-  .icp-fine{margin-top:36px;color:var(--text-2);font-size:.95rem;line-height:1.7;max-width:60ch;}
+  .icp-item:hover{padding-left:12px;}
+  .icp-item:last-child{border-bottom:1px solid var(--line-light);}
+  .icp-num{font-family:'JetBrains Mono',monospace;font-size:.88rem;color:var(--accent);flex-shrink:0;font-weight:500;}
+  .icp-text{font-family:'Fraunces',serif;font-size:clamp(1.5rem,3vw,2.2rem);font-weight:500;line-height:1.25;letter-spacing:-.02em;color:var(--ink);}
+  .icp-text em{font-style:italic;color:var(--accent);font-weight:600;}
+  .icp-fine{margin-top:40px;color:var(--text-on-light-2);font-size:1rem;line-height:1.6;max-width:60ch;}
 
-  /* ===== FINAL CTA ===== */
-  #contact{min-height:100vh;display:flex;flex-direction:column;justify-content:center;}
-  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:start;margin-top:20px;}
+  /* ===== FINAL CTA ~ dark, big Apple close ===== */
+  #contact{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding-top:120px;padding-bottom:80px;}
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;margin-top:40px;}
   .cta-title{
     font-family:'Fraunces',serif;
-    font-size:clamp(2.4rem,5.5vw,4.4rem);font-weight:500;line-height:1.1;letter-spacing:-.01em;margin-bottom:30px;
+    font-size:clamp(2.8rem,6.5vw,5.6rem);font-weight:500;line-height:1;letter-spacing:-.03em;margin-bottom:32px;
   }
-  .cta-title em{font-style:italic;font-weight:600;color:var(--accent-bright);}
-  .contact-left p{color:var(--text-2);font-size:1.02rem;line-height:1.8;max-width:44ch;margin-bottom:36px;}
+  .cta-title em{font-style:italic;font-weight:600;background:linear-gradient(180deg,#c9b6ff,#7c5cff);-webkit-background-clip:text;background-clip:text;color:transparent;}
+  .contact-left p{color:var(--text-on-dark-2);font-size:1.08rem;line-height:1.6;max-width:44ch;margin-bottom:38px;}
   .cta-links{
-    margin-top:40px;display:flex;gap:26px;flex-wrap:wrap;
-    font-family:'JetBrains Mono',monospace;font-size:12.5px;color:var(--text-2);
+    margin-top:44px;display:flex;gap:28px;flex-wrap:wrap;
+    font-family:'JetBrains Mono',monospace;font-size:12.5px;color:var(--text-on-dark-2);
   }
-  .cta-links a{transition:color .25s ease;border-bottom:1px solid transparent;padding-bottom:2px;}
-  .cta-links a:hover{color:var(--accent);border-color:var(--accent);}
-  .reply-note{margin-top:26px;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--text-2);letter-spacing:.04em;}
+  .cta-links a{transition:color .25s ease;padding-bottom:3px;border-bottom:1px solid rgba(255,255,255,.15);}
+  .cta-links a:hover{color:var(--accent-bright);border-color:var(--accent-bright);}
+  .reply-note{margin-top:28px;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--text-on-dark-2);letter-spacing:.08em;text-transform:uppercase;}
 
   form{
-    border:1px solid var(--line);border-radius:18px;padding:38px 34px;
-    background:rgba(255,255,255,.015);
+    border-radius:24px;padding:40px 36px;
+    background:rgba(255,255,255,.03);
+    border:1px solid var(--line-dark);
     display:flex;flex-direction:column;gap:22px;
   }
   .field label{
     display:block;font-family:'JetBrains Mono',monospace;font-size:11px;
-    letter-spacing:.12em;text-transform:uppercase;color:var(--text-2);margin-bottom:10px;
+    letter-spacing:.12em;text-transform:uppercase;color:var(--text-on-dark-2);margin-bottom:10px;font-weight:500;
   }
   .field input,.field textarea{
-    width:100%;background:rgba(255,255,255,.03);border:1px solid var(--line);
-    border-radius:8px;padding:14px 16px;color:var(--text-1);
-    font-family:'Space Grotesk',sans-serif;font-size:.98rem;font-weight:300;
-    transition:border-color .3s ease;
+    width:100%;background:rgba(255,255,255,.04);border:1px solid var(--line-dark);
+    border-radius:12px;padding:14px 16px;color:#f5f5f7;
+    font-family:'Inter Tight',sans-serif;font-size:1rem;font-weight:400;
+    transition:border-color .3s ease,background .3s ease;
   }
-  .field input:focus,.field textarea:focus{border-color:rgba(167,139,250,.55);outline:none;}
-  .field textarea{min-height:110px;resize:vertical;}
-  form .btn-primary{border:none;cursor:pointer;justify-content:center;font-size:13px;}
+  .field input:focus,.field textarea:focus{border-color:var(--accent);background:rgba(124,92,255,.06);outline:none;}
+  .field textarea{min-height:120px;resize:vertical;}
+  form .btn-primary{border:none;cursor:pointer;justify-content:center;font-size:14px;padding:14px 24px;}
   @media(max-width:880px){.contact-grid{grid-template-columns:1fr;gap:50px;}}
 
   footer{
-    padding:32px clamp(24px,6vw,64px) 46px;
+    padding:36px clamp(20px,5vw,44px) 48px;
     display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;
-    font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--text-2);
-    border-top:1px solid rgba(255,255,255,.06);
+    font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--text-on-dark-2);
+    border-top:1px solid var(--line-dark);
   }
+  footer .fl{color:#f5f5f7;font-weight:500;}
 
   @media(prefers-reduced-motion:reduce){
     html{scroll-behavior:auto;}
-    .orbit-path{animation:none;}
+    .hp-orbit{animation:none;}
   }
 </style>
 </head>
 <body>
 
-<div id="bgLayer" aria-hidden="true"></div>
-<canvas id="starCanvas" aria-hidden="true"></canvas>
-<div class="glow-orb glow-1" aria-hidden="true"></div>
-<div class="glow-orb glow-2" aria-hidden="true"></div>
-
 <nav id="nav" aria-label="Primary">
-  <a href="#hero" class="logo" aria-label="cosmik.work home">COSMIK<span>.WORK</span></a>
+  <a href="#hero" class="logo" data-testid="nav-logo" aria-label="cosmik.work home">cosmik<span>.work</span></a>
   <div class="nav-links">
-    <a href="#bas">Framework</a>
-    <a href="#systems">Systems</a>
-    <a href="#shipped">Shipped</a>
-    <a href="#why">Why cosmik</a>
+    <a href="#bas" data-testid="nav-framework">Framework</a>
+    <a href="#systems" data-testid="nav-systems">Systems</a>
+    <a href="#shipped" data-testid="nav-shipped">Shipped</a>
+    <a href="#why" data-testid="nav-why">Why cosmik</a>
   </div>
-  <a href="#contact" class="nav-cta"><span class="dot" aria-hidden="true"></span>Let's talk</a>
+  <a href="#contact" class="nav-cta" data-testid="nav-cta"><span class="dot" aria-hidden="true"></span>Let's talk</a>
 </nav>
 
 <main>
 
   <!-- HERO -->
-  <section id="hero" aria-label="Introduction">
-    <div class="hero-grid">
-      <div class="hero-copy">
-        <p class="eyebrow">Chief of Staff · AI Systems Architect</p>
-        <h1 class="hero-title">Operate from <em>orbit.</em></h1>
-        <p class="hero-sub">I'm <strong>Soumik Chatterjee</strong>. I run the internal systems, people pipelines, and AI workflows of early-stage to Series B companies ~ so founders stay focused on <strong>growth</strong>, not the machinery beneath it.</p>
-        <div class="btn-row">
-          <a href="mailto:soumik@cosmik.work" class="btn btn-primary">Let's talk → soumik@cosmik.work</a>
-          <a href="#shipped" class="btn btn-ghost">See what I've shipped</a>
-        </div>
-        <p class="hero-meta">REMOTE · BASED IN KOLKATA, INDIA · WORKING ACROSS TIME ZONES</p>
+  <div id="heroStatsWrap">
+    <canvas id="starCanvas" aria-hidden="true"></canvas>
+    <div class="glow-orb glow-1" aria-hidden="true"></div>
+    <div class="glow-orb glow-2" aria-hidden="true"></div>
+
+  <section id="hero" class="theme-dark" aria-label="Introduction">
+    <div class="hero-inner">
+      <p class="eyebrow">People-first · AI-native operator</p>
+      <h1 class="hero-title">Chief of Staff.<br><em>AI-augmented.</em></h1>
+      <p class="hero-belief mono">I believe AI is here to augment human productivity, not replace it.</p>
+      <p class="hero-sub">I'm <strong>Soumik Chatterjee</strong>. I run the internal systems, people pipelines, and AI workflows of early-stage to Series B companies ~ so founders stay focused on <strong>growth</strong>, not the machinery beneath it.</p>
+      <div class="btn-row">
+        <a href="mailto:soumik@cosmik.work" class="btn btn-primary" data-testid="hero-cta-primary">Let's talk → soumik@cosmik.work</a>
+        <a href="#shipped" class="btn btn-ghost" data-testid="hero-cta-secondary">See what I've shipped</a>
       </div>
-      <div class="planet-wrap" id="planetWrap" aria-hidden="true">
-        <div class="ring ring-b"></div>
-        <div class="ring ring-a"></div>
-        <div class="planet"></div>
-        <div class="ring ring-c"></div>
-        <div class="orbit-path"><div class="orbit-dot"></div></div>
-        <div class="spark" style="top:14%;left:78%;"></div>
-        <div class="spark" style="top:70%;left:12%;width:3px;height:3px;"></div>
+      <p class="hero-meta">Remote · Kolkata, India · Across time zones</p>
+
+      <div class="hero-planet" aria-hidden="true">
+        <div class="hp-ring hp-ring-2"></div>
+        <div class="hp-ring hp-ring-1"></div>
+        <div class="hp-orb"></div>
+        <div class="hp-orbit"><div class="hp-dot"></div></div>
       </div>
     </div>
   </section>
 
-  <!-- STAT STRIP -->
-  <section id="stats" aria-label="Proof in numbers" style="padding-top:0;">
-    <div class="stat-grid">
-      <div class="stat reveal">
-        <div class="num">9</div>
-        <p class="lbl">B2B pipelines built from scratch in under 90 days, as first Chief of Staff hire</p>
-      </div>
-      <div class="stat reveal">
-        <div class="num">$1.47M</div>
-        <p class="lbl">CAD prospect pipeline under active management</p>
-      </div>
-      <div class="stat reveal">
-        <div class="num">2,314</div>
-        <p class="lbl">CRM contacts organised across 9 categorised pipelines</p>
-      </div>
-      <div class="stat reveal">
-        <div class="num">260%</div>
-        <p class="lbl">of placement target delivered: 31 roles closed against a target of 25</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- BAS FRAMEWORK -->
-  <section id="bas" aria-labelledby="bas-title">
-    <p class="eyebrow">The BAS Framework</p>
-    <h2 class="section-title reveal" id="bas-title">One framework.<br><em>Every</em> engagement.</h2>
-    <p class="section-sub reveal">BAS is how founder chaos becomes operating leverage: map the workflows, automate the repetitive work, then scale what's proven.</p>
-
-    <div id="bas-cards">
-      <div class="bas-card reveal">
-        <div class="bas-letter" aria-hidden="true">B</div>
-        <div class="bas-body">
-          <h3 class="bas-title">Build</h3>
-          <p class="bas-desc">Map every workflow. Find the bottlenecks. Design the system your company actually needs, not the one a template suggests.</p>
-          <p class="bas-foot">Observe · Simplify · Systemize</p>
+  <!-- STATS -->
+  <section id="stats" class="theme-dark" aria-label="Proof in numbers" style="padding-top:40px;">
+    <div class="container">
+      <h2 class="stats-title reveal">Numbers over <em>narrative.</em><br>Proof, in production.</h2>
+      <div class="stat-grid">
+        <div class="stat reveal">
+          <div class="num">9</div>
+          <p class="lbl">B2B pipelines built from scratch in under 90 days, as first Chief of Staff hire</p>
         </div>
-      </div>
-      <div class="bas-card reveal">
-        <div class="bas-letter" aria-hidden="true">A</div>
-        <div class="bas-body">
-          <h3 class="bas-title">Automate</h3>
-          <p class="bas-desc">Deploy AI where it earns its keep. Connect the tools you already pay for. Eliminate the busywork stealing founder hours.</p>
-          <p class="bas-foot">Create leverage</p>
+        <div class="stat reveal">
+          <div class="num"><em>$1.47M</em></div>
+          <p class="lbl">CAD prospect pipeline under active management</p>
         </div>
-      </div>
-      <div class="bas-card reveal">
-        <div class="bas-letter" aria-hidden="true">S</div>
-        <div class="bas-body">
-          <h3 class="bas-title">Scale</h3>
-          <p class="bas-desc">Increase velocity without adding headcount. Tighten execution. Grow revenue faster than you grow complexity.</p>
-          <p class="bas-foot">Compound the gains</p>
+        <div class="stat reveal">
+          <div class="num">2,314</div>
+          <p class="lbl">CRM contacts organised across 9 categorised pipelines</p>
+        </div>
+        <div class="stat reveal">
+          <div class="num"><em>260%</em></div>
+          <p class="lbl">Of placement target delivered ~ 31 roles closed against a target of 25</p>
         </div>
       </div>
     </div>
   </section>
+  </div>
 
-  <!-- SYSTEMS -->
-  <section id="systems" aria-labelledby="systems-title">
-    <p class="eyebrow">What I run</p>
-    <h2 class="section-title reveal" id="systems-title">Systems.<br>Not <em>services.</em></h2>
-    <p class="section-sub reveal">Each one is an operating system I install, run, and hand over documented ~ so it keeps working when I'm not in the room.</p>
+  <!-- BAS FRAMEWORK ~ light -->
+  <section id="bas" class="theme-light" aria-labelledby="bas-title">
+    <div class="container">
+      <p class="section-eyebrow">The BAS Framework</p>
+      <h2 class="section-title reveal" id="bas-title">One framework.<br><em>Every</em> engagement.</h2>
+      <p class="section-sub reveal">BAS is how founder chaos becomes operating leverage: <strong>map the workflows</strong>, automate the repetitive work, then scale what's proven.</p>
 
-    <div class="systems-scroller" role="list" aria-label="Operating systems I build and run">
-      <div class="sys-panel" role="listitem">
-        <div class="sys-index">01</div>
-        <div>
-          <h3 class="sys-title">Recruitment OS</h3>
-          <p class="sys-sub">Source.<br>Screen.<br>Schedule.<br>Hire.</p>
-          <p class="sys-proof">PROOF: 260% OF PLACEMENT TARGET</p>
-        </div>
-      </div>
-      <div class="sys-panel" role="listitem">
-        <div class="sys-index">02</div>
-        <div>
-          <h3 class="sys-title">Revenue OS</h3>
-          <p class="sys-sub">Discover.<br>Outreach.<br>Convert.<br>Repeat.</p>
-          <p class="sys-proof">PROOF: $1.47M CAD PIPELINE MANAGED</p>
-        </div>
-      </div>
-      <div class="sys-panel" role="listitem">
-        <div class="sys-index">03</div>
-        <div>
-          <h3 class="sys-title">Customer Success OS</h3>
-          <p class="sys-sub">Onboard.<br>Retain.<br>Expand.</p>
-          <p class="sys-proof">BUILT ON 9 DOCUMENTED SOPs</p>
-        </div>
-      </div>
-      <div class="sys-panel" role="listitem">
-        <div class="sys-index">04</div>
-        <div>
-          <h3 class="sys-title">Founder OS</h3>
-          <p class="sys-sub">Your calendar, your priorities, your decision queue ~ run as a system.</p>
-          <p class="sys-proof">OPERATE AT ALTITUDE</p>
-        </div>
-      </div>
-    </div>
-    <p class="swipe-hint">← Swipe to explore →</p>
-  </section>
-
-  <!-- SHIPPED -->
-  <section id="shipped" aria-labelledby="shipped-title">
-    <p class="eyebrow">Shipped</p>
-    <h2 class="section-title reveal" id="shipped-title">Built, not <em>claimed.</em></h2>
-    <p class="section-sub reveal">Live tools and documented systems. The code is public where it can be.</p>
-
-    <div id="shipped-grid">
-      <div class="ship-card reveal">
-        <p class="ship-tag">AI Tool · In production</p>
-        <h3 class="ship-name">Timeverse</h3>
-        <p class="ship-desc">An AI triage pipeline built on Google Sheets and the Claude API ~ incoming work classified and routed automatically, no human sorting.</p>
-      </div>
-      <div class="ship-card reveal">
-        <p class="ship-tag">AI Tool · Open source</p>
-        <h3 class="ship-name">ContractForge</h3>
-        <p class="ship-desc">An open-source AI contract generator ~ draft-ready agreements in minutes instead of days of back-and-forth.</p>
-      </div>
-      <div class="ship-card reveal">
-        <p class="ship-tag">Operating docs</p>
-        <h3 class="ship-name">9 SOPs</h3>
-        <p class="ship-desc">Playbooks authored as first Chief of Staff hire: onboarding, security, content, and LinkedIn outreach ~ the systems survive the author.</p>
+      <div id="bas-cards">
+        <article class="bas-card reveal">
+          <div class="bas-letter" aria-hidden="true">B</div>
+          <div class="bas-body">
+            <h3 class="bas-title">Build</h3>
+            <p class="bas-desc">Map every workflow. Find the bottlenecks. Design the system your company actually needs, not the one a template suggests.</p>
+            <p class="bas-foot">Observe · Simplify · Systemize</p>
+          </div>
+        </article>
+        <article class="bas-card reveal">
+          <div class="bas-letter" aria-hidden="true">A</div>
+          <div class="bas-body">
+            <h3 class="bas-title">Automate</h3>
+            <p class="bas-desc">Deploy AI where it earns its keep. Connect the tools you already pay for. Eliminate the busywork stealing founder hours.</p>
+            <p class="bas-foot">Create leverage</p>
+          </div>
+        </article>
+        <article class="bas-card reveal">
+          <div class="bas-letter" aria-hidden="true">S</div>
+          <div class="bas-body">
+            <h3 class="bas-title">Scale</h3>
+            <p class="bas-desc">Increase velocity without adding headcount. Tighten execution. Grow revenue faster than you grow complexity.</p>
+            <p class="bas-foot">Compound the gains</p>
+          </div>
+        </article>
       </div>
     </div>
   </section>
 
-  <!-- STATEMENT (pinned crossfade) -->
+  <!-- SYSTEMS ~ dark -->
+  <section id="systems" class="theme-dark" aria-labelledby="systems-title">
+    <div class="container">
+      <p class="section-eyebrow">What I run</p>
+      <h2 class="section-title reveal" id="systems-title">Systems.<br>Not <em>services.</em></h2>
+      <p class="section-sub reveal">Each one is an operating system I install, run, and hand over documented ~ so it keeps working when I'm not in the room.</p>
+
+      <div class="systems-grid" role="list">
+        <article class="sys-panel reveal" role="listitem">
+          <div class="sys-header"><span class="sys-index">01 ~ Recruitment OS</span></div>
+          <div>
+            <h3 class="sys-title">Source. Screen.<br>Schedule. Hire.</h3>
+            <p class="sys-sub">Recruiting run as a repeatable pipeline. Roles close on rhythm, not heroics.</p>
+            <p class="sys-proof">Proof · 260% of placement target</p>
+          </div>
+        </article>
+        <article class="sys-panel reveal" role="listitem">
+          <div class="sys-header"><span class="sys-index">02 ~ Revenue OS</span></div>
+          <div>
+            <h3 class="sys-title">Discover. Outreach.<br>Convert. Repeat.</h3>
+            <p class="sys-sub">A pipeline that fills itself, cleanly categorised, ready for the founder to close.</p>
+            <p class="sys-proof">Proof · $1.47M CAD pipeline managed</p>
+          </div>
+        </article>
+        <article class="sys-panel reveal" role="listitem">
+          <div class="sys-header"><span class="sys-index">03 ~ Customer Success OS</span></div>
+          <div>
+            <h3 class="sys-title">Onboard.<br>Retain. Expand.</h3>
+            <p class="sys-sub">SOPs that survive the author. Customers don't slip; expansion becomes routine.</p>
+            <p class="sys-proof">Built on 9 documented SOPs</p>
+          </div>
+        </article>
+        <article class="sys-panel reveal" role="listitem">
+          <div class="sys-header"><span class="sys-index">04 ~ Founder OS</span></div>
+          <div>
+            <h3 class="sys-title">Your calendar,<br>run as a system.</h3>
+            <p class="sys-sub">Priorities, decisions, and follow-through ~ orchestrated so you operate at altitude.</p>
+            <p class="sys-proof">Operate at altitude</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- SHIPPED ~ light -->
+  <section id="shipped" class="theme-light" aria-labelledby="shipped-title">
+    <div class="container">
+      <p class="section-eyebrow">Shipped</p>
+      <h2 class="section-title reveal" id="shipped-title">Built, not <em>claimed.</em></h2>
+      <p class="section-sub reveal">Live tools and documented systems. The code is public where it can be.</p>
+
+      <div id="shipped-grid">
+        <article class="ship-card reveal">
+          <p class="ship-tag">AI Tool · In production</p>
+          <h3 class="ship-name">Timeverse</h3>
+          <p class="ship-desc">An AI triage pipeline built on Google Sheets and the Claude API ~ incoming work classified and routed automatically, no human sorting.</p>
+        </article>
+        <article class="ship-card reveal">
+          <p class="ship-tag">AI Tool · Open source</p>
+          <h3 class="ship-name">ContractForge</h3>
+          <p class="ship-desc">An open-source AI contract generator ~ draft-ready agreements in minutes instead of days of back-and-forth.</p>
+        </article>
+        <article class="ship-card reveal">
+          <p class="ship-tag">Operating docs</p>
+          <h3 class="ship-name">9 SOPs</h3>
+          <p class="ship-desc">Playbooks authored as first Chief of Staff hire: onboarding, security, content, and LinkedIn outreach ~ the systems survive the author.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATEMENT (pinned) -->
   <section id="statement" aria-label="A statement on systems">
     <div class="statement-pin">
       <div class="statement-layer" id="statementA">
@@ -546,185 +587,180 @@
     </div>
   </section>
 
-  <!-- WHY COSMIK -->
-  <section id="why" aria-labelledby="why-title">
-    <p class="eyebrow">Why cosmik</p>
-    <h2 class="section-title reveal" id="why-title">Why <em>COSMIK?</em></h2>
+  <!-- WHY COSMIK ~ light -->
+  <section id="why" class="theme-light" aria-labelledby="why-title">
+    <div class="container">
+      <p class="section-eyebrow">Why cosmik</p>
+      <h2 class="section-title reveal" id="why-title">Why <em>cosmik?</em></h2>
 
-    <div class="why-wrap">
-      <div class="name-block reveal" aria-label="The meaning of the name cosmik">
-        <p class="name-line"><span class="k">cos</span> = Chief of Staff</p>
-        <p class="name-line"><span class="k">mik</span> = Soumik (me)</p>
-        <p class="name-line"><span class="k">cosmik</span> = the practice</p>
-        <p class="name-line">reads as <span class="hi">cosmic</span> ~ that part is intentional.<br>A Chief of Staff's job is seeing the whole<br>system from above.</p>
+      <div class="why-wrap">
+        <div class="name-block reveal" aria-label="The meaning of the name cosmik">
+          <p class="name-line"><span class="k">cos</span> ~ Chief of Staff</p>
+          <p class="name-line"><span class="k">mik</span> ~ Soumik (me)</p>
+          <p class="name-line"><span class="k">cosmik</span> ~ the practice</p>
+          <p class="name-line" style="margin-top:16px;">Reads as <span class="hi">cosmic</span> ~ that part is intentional.<br>A Chief of Staff's job is seeing the whole system from above.</p>
+        </div>
+
+        <div class="why-outcomes">
+          <div class="why-item reveal">
+            <h3 class="wt">Pipelines that <em>fill themselves</em></h3>
+            <p>Recruiting, revenue, and retention running as systems ~ not weekly heroics that collapse when one person is sick.</p>
+          </div>
+          <div class="why-item reveal">
+            <h3 class="wt">AI that <em>actually ships</em></h3>
+            <p>Workflows in production inside 90 days, built on tools you already pay for. Not a slide deck about transformation.</p>
+          </div>
+          <div class="why-item reveal">
+            <h3 class="wt">One <em>accountable owner</em></h3>
+            <p>A single person responsible for how the company runs internally ~ so you can stop being that person yourself.</p>
+          </div>
+        </div>
       </div>
 
-      <div class="why-outcomes">
-        <div class="why-item reveal">
-          <h3 class="wt">Pipelines that <em>fill themselves</em></h3>
-          <p>Recruiting, revenue, and retention running as systems ~ not weekly heroics that collapse when one person is sick.</p>
-        </div>
-        <div class="why-item reveal">
-          <h3 class="wt">AI that <em>actually ships</em></h3>
-          <p>Workflows in production inside 90 days, built on tools you already pay for. Not a slide deck about transformation.</p>
-        </div>
-        <div class="why-item reveal">
-          <h3 class="wt">One <em>accountable owner</em></h3>
-          <p>A single person responsible for how the company runs internally ~ so you can stop being that person yourself.</p>
-        </div>
-      </div>
+      <aside class="tool-aside reveal" aria-label="How this differs from AI chief of staff tools">
+        <p class="ta-label">A note on the obvious question</p>
+        <p>There are plenty of AI chief-of-staff <strong>tools</strong> now ~ meeting bots, inbox triage, daily briefings. I build with systems like these; I'm not one of them. Tools transcribe your decisions. <strong>A Chief of Staff makes them with you, owns the follow-through, and is accountable when it matters.</strong> The AI is my leverage. The judgment is the job.</p>
+      </aside>
     </div>
-
-    <aside class="tool-aside reveal" aria-label="How this differs from AI chief of staff tools">
-      <p class="ta-label">A note on the obvious question</p>
-      <p>There are plenty of AI chief-of-staff <strong>tools</strong> now ~ meeting bots, inbox triage, daily briefings. I build with systems like these; I'm not one of them. Tools transcribe your decisions. <strong>A Chief of Staff makes them with you, owns the follow-through, and is accountable when it matters.</strong> The AI is my leverage. The judgment is the job.</p>
-    </aside>
   </section>
 
-  <!-- PATH -->
-  <section id="path" aria-label="Career background">
-    <p class="path-line reveal">
-      <span class="k">Accenture</span> · Python engineer, enterprise clients · 2015~2019
-      <span class="arrow">→</span> <span class="k">CampK12</span> · Recruitment &amp; Operations Manager · 2020~2023
-      <span class="arrow">→</span> <span class="k">Teach For India</span> · Fellow · 2024~2026
-      <span class="arrow">→</span> <span class="k">Founder's Office</span> · Chief of Staff · 2026
-      <span class="arrow">→</span> <span class="k">cosmik.work</span>
-    </p>
-  </section>
-
-  <!-- ICP -->
-  <section id="icp" aria-labelledby="icp-title">
-    <p class="eyebrow">Fit check</p>
-    <h2 class="section-title reveal" id="icp-title">I work best with<br>founders <em>who...</em></h2>
-
-    <div class="icp-list">
-      <div class="icp-item reveal">
-        <span class="icp-num">01</span>
-        <p class="icp-text">Are between first revenue and Series B, where growth is <em>outpacing</em> the systems underneath it.</p>
-      </div>
-      <div class="icp-item reveal">
-        <span class="icp-num">02</span>
-        <p class="icp-text">Want AI in production <em>this quarter</em> ~ real workflows, not a strategy document about them.</p>
-      </div>
-      <div class="icp-item reveal">
-        <span class="icp-num">03</span>
-        <p class="icp-text">Need one trusted owner for internal operations, and are <em>done</em> being that owner themselves.</p>
-      </div>
+  <!-- PATH ~ dark -->
+  <section id="path" class="theme-dark" aria-label="Career background">
+    <div class="container">
+      <p class="section-eyebrow">The Path</p>
+      <p class="path-line reveal">
+        <span class="k">Accenture</span> · Python engineer, enterprise clients · 2015-2019
+        <span class="arrow">→</span> <span class="k">CampK12</span> · Recruitment &amp; Operations Manager · 2020-2023
+        <span class="arrow">→</span> <span class="k">Teach For India</span> · Fellow · 2024-2026
+        <span class="arrow">→</span> <span class="k">Founder's Office</span> · Chief of Staff · 2026
+        <span class="arrow">→</span> <span class="k">cosmik.work</span>
+      </p>
     </div>
-    <p class="icp-fine">If that's you, the next step takes two minutes: send a note about what's breaking. I'll reply with an honest read on whether I can fix it.</p>
   </section>
 
-  <!-- FINAL CTA -->
-  <section id="contact" aria-labelledby="contact-title">
-    <div class="contact-grid">
-      <div class="contact-left">
-        <p class="eyebrow">Let's talk</p>
-        <h2 class="cta-title" id="contact-title">Ready to hand off the <em>machinery?</em></h2>
-        <p>Tell me what's breaking ~ hiring, revenue ops, founder bandwidth, all three. You'll get a straight answer on whether I'm the right person to fix it.</p>
-        <a href="mailto:soumik@cosmik.work" class="btn btn-primary">Let's talk → soumik@cosmik.work</a>
-        <div class="cta-links">
-          <a href="https://www.linkedin.com/in/showmikthebuilder/" target="_blank" rel="noopener">LinkedIn</a>
-          <a href="https://github.com/pymikofficial" target="_blank" rel="noopener">GitHub</a>
-        </div>
-        <p class="reply-note">REPLIES WITHIN 24 HOURS · IST OR YOURS</p>
-      </div>
+  <!-- ICP ~ light -->
+  <section id="icp" class="theme-light" aria-labelledby="icp-title">
+    <div class="container">
+      <p class="section-eyebrow">Fit check</p>
+      <h2 class="section-title reveal" id="icp-title">I work best with<br>founders <em>who…</em></h2>
 
-      <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" aria-label="Contact form">
-        <input type="hidden" name="form-name" value="contact">
-        <p class="visually-hidden" aria-hidden="true">
-          <label>Don't fill this out if you're human: <input name="bot-field"></label>
-        </p>
-        <div class="field">
-          <label for="cf-name">Your name</label>
-          <input id="cf-name" type="text" name="name" autocomplete="name" required>
+      <div class="icp-list">
+        <div class="icp-item reveal">
+          <span class="icp-num">01</span>
+          <p class="icp-text">Are between first revenue and Series B, where growth is <em>outpacing</em> the systems underneath it.</p>
         </div>
-        <div class="field">
-          <label for="cf-email">Work email</label>
-          <input id="cf-email" type="email" name="email" autocomplete="email" required>
+        <div class="icp-item reveal">
+          <span class="icp-num">02</span>
+          <p class="icp-text">Want AI in production <em>this quarter</em> ~ real workflows, not a strategy document about them.</p>
         </div>
-        <div class="field">
-          <label for="cf-msg">What's breaking right now?</label>
-          <textarea id="cf-msg" name="message" required></textarea>
+        <div class="icp-item reveal">
+          <span class="icp-num">03</span>
+          <p class="icp-text">Need one trusted owner for internal operations, and are <em>done</em> being that owner themselves.</p>
         </div>
-        <button type="submit" class="btn btn-primary">Send it →</button>
-      </form>
+      </div>
+      <p class="icp-fine">If that's you, the next step takes two minutes: send a note about what's breaking. I'll reply with an honest read on whether I can fix it.</p>
+    </div>
+  </section>
+
+  <!-- CONTACT ~ dark -->
+  <section id="contact" class="theme-dark" aria-labelledby="contact-title">
+    <div class="container">
+      <p class="section-eyebrow">Let's talk</p>
+      <div class="contact-grid">
+        <div class="contact-left">
+          <h2 class="cta-title" id="contact-title">Ready to hand off the <em>machinery?</em></h2>
+          <p>Tell me what's breaking ~ hiring, revenue ops, founder bandwidth, all three. You'll get a straight answer on whether I'm the right person to fix it.</p>
+          <a href="mailto:soumik@cosmik.work" class="btn btn-primary" data-testid="contact-email-cta">soumik@cosmik.work →</a>
+          <div class="cta-links">
+            <a href="https://www.linkedin.com/in/showmikthebuilder/" target="_blank" rel="noopener" data-testid="cta-linkedin">LinkedIn</a>
+            <a href="https://github.com/pymikofficial" target="_blank" rel="noopener" data-testid="cta-github">GitHub</a>
+          </div>
+          <p class="reply-note">Replies within 24 hours · IST or yours</p>
+        </div>
+
+        <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" aria-label="Contact form">
+          <input type="hidden" name="form-name" value="contact">
+          <p class="visually-hidden" aria-hidden="true">
+            <label>Don't fill this out if you're human: <input name="bot-field"></label>
+          </p>
+          <div class="field">
+            <label for="cf-name">Your name</label>
+            <input id="cf-name" type="text" name="name" autocomplete="name" required data-testid="form-name">
+          </div>
+          <div class="field">
+            <label for="cf-email">Work email</label>
+            <input id="cf-email" type="email" name="email" autocomplete="email" required data-testid="form-email">
+          </div>
+          <div class="field">
+            <label for="cf-msg">What's breaking right now?</label>
+            <textarea id="cf-msg" name="message" required data-testid="form-message"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" data-testid="form-submit">Send it →</button>
+        </form>
+      </div>
     </div>
   </section>
 
 </main>
 
 <footer>
-  <div>© 2026 cosmik.work · Soumik Chatterjee</div>
+  <div><span class="fl">© 2026 cosmik.work</span> · Soumik Chatterjee</div>
   <div>Kolkata, India · Remote worldwide</div>
 </footer>
 
 <script>
-  // ---- Starfield canvas ----
+  // ---- Starfield (spans hero + stats) ----
   const canvas = document.getElementById('starCanvas');
-  const ctx = canvas.getContext('2d');
-  let stars = [];
-  function resize(){
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-  }
-  function makeStars(){
-    const count = Math.floor((canvas.width*canvas.height)/9000);
-    stars = Array.from({length:count}, ()=>({
-      x: Math.random()*canvas.width,
-      y: Math.random()*canvas.height,
-      r: Math.random()*1.3+0.2,
-      baseAlpha: Math.random()*0.5+0.2,
-      speed: Math.random()*0.02+0.005,
-      phase: Math.random()*Math.PI*2
-    }));
-  }
-  resize(); makeStars();
-  window.addEventListener('resize', ()=>{ resize(); makeStars(); });
+  if(canvas){
+    const ctx = canvas.getContext('2d');
+    let stars = [];
+    function resize(){
+      const wrap = document.getElementById('heroStatsWrap');
+      canvas.width = wrap.offsetWidth;
+      canvas.height = wrap.offsetHeight;
+    }
+    function makeStars(){
+      const count = Math.floor((canvas.width*canvas.height)/8000);
+      stars = Array.from({length:count}, ()=>({
+        x: Math.random()*canvas.width,
+        y: Math.random()*canvas.height,
+        r: Math.random()*1.4+0.2,
+        baseAlpha: Math.random()*0.55+0.2,
+        speed: Math.random()*0.02+0.005,
+        phase: Math.random()*Math.PI*2
+      }));
+    }
+    resize(); makeStars();
+    window.addEventListener('resize', ()=>{ resize(); makeStars(); });
 
-  let t = 0;
-  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  function drawStars(){
-    ctx.clearRect(0,0,canvas.width,canvas.height);
-    stars.forEach(s=>{
-      const a = reduceMotion ? s.baseAlpha : s.baseAlpha + Math.sin(t*s.speed*10 + s.phase)*0.25;
-      ctx.beginPath();
-      ctx.fillStyle = 'rgba(245,245,247,'+Math.max(0,a)+')';
-      ctx.arc(s.x, s.y, s.r, 0, Math.PI*2);
-      ctx.fill();
-    });
-    t += 1;
-    requestAnimationFrame(drawStars);
-  }
-  drawStars();
-
-  // ---- Nav scroll state ----
-  const navEl = document.getElementById('nav');
-  window.addEventListener('scroll', ()=>{
-    navEl.classList.toggle('scrolled', window.scrollY > 40);
-  });
-
-  // ---- Mouse parallax on planet ----
-  const planetWrap = document.getElementById('planetWrap');
-  if(planetWrap && !reduceMotion){
-    document.getElementById('hero').addEventListener('mousemove', (e)=>{
-      const x = (e.clientX / window.innerWidth - 0.5) * 24;
-      const y = (e.clientY / window.innerHeight - 0.5) * 24;
-      planetWrap.style.transform = 'translate('+x+'px,'+y+'px)';
-    });
+    let t = 0;
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    function drawStars(){
+      ctx.clearRect(0,0,canvas.width,canvas.height);
+      stars.forEach(s=>{
+        const a = reduceMotion ? s.baseAlpha : s.baseAlpha + Math.sin(t*s.speed*10 + s.phase)*0.25;
+        ctx.beginPath();
+        ctx.fillStyle = 'rgba(245,245,247,'+Math.max(0,a)+')';
+        ctx.arc(s.x, s.y, s.r, 0, Math.PI*2);
+        ctx.fill();
+      });
+      t += 1;
+      requestAnimationFrame(drawStars);
+    }
+    drawStars();
   }
 
-  // ---- GSAP reveals (guarded: page stays fully usable/visible if GSAP CDN is blocked) ----
+  // ---- Reveals + pinned statement ----
   if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
     gsap.registerPlugin(ScrollTrigger);
 
     gsap.utils.toArray('.reveal').forEach((el)=>{
-      gsap.fromTo(el, {opacity:0, y:30}, {
+      gsap.fromTo(el, {opacity:0, y:24}, {
         opacity:1, y:0, duration:1, ease:'expo.out',
         scrollTrigger:{ trigger: el, start:'top 88%' }
       });
     });
 
-    // ---- Pinned statement crossfade ----
     ScrollTrigger.create({
       trigger: '#statement',
       start:'top top',
@@ -738,7 +774,8 @@
       }
     });
   } else {
-    document.getElementById('statementB').style.opacity = '0';
+    const b = document.getElementById('statementB');
+    if(b) b.style.opacity = '0';
   }
 </script>
 
