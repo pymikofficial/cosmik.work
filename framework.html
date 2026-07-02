@@ -12,6 +12,8 @@
 </head>
 <body>
 
+<canvas id="bgStars" aria-hidden="true"></canvas>
+
 <nav id="nav" aria-label="Primary">
   <a href="index.html" class="logo" data-testid="nav-logo" aria-label="cosmik.work home">cosmik<span>.work</span></a>
   <div class="nav-links">
@@ -25,7 +27,7 @@
 
 <main>
 
-  <div class="page-header theme-light" style="background:var(--paper);">
+  <div class="page-header theme-light">
     <p class="breadcrumb"><a href="index.html">cosmik.work</a> / Framework</p>
   </div>
 
@@ -80,6 +82,7 @@
   <div>Kolkata, India · Remote worldwide</div>
 </footer>
 
+<script src="js/starfield.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script>
