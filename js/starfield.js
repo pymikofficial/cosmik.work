@@ -3,11 +3,17 @@
 // content as the page scrolls. Three depth layers: distant/dim,
 // mid/twinkling, near/sparse with a soft glow ~ same treatment everywhere
 // for a uniform cosmic background across the whole site.
+//
+// Pages that should feel a notch more premium (currently: Shipped/Projects)
+// can opt into a fourth "feature star" layer by adding data-boost="true" to
+// the canvas element. It's sparse and slow on purpose ~ a handful of
+// brighter, glowier stars, not a light show.
 (function () {
   const canvas = document.getElementById('bgStars');
   if (!canvas) return;
   const ctx = canvas.getContext('2d');
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const boosted = canvas.dataset.boost === 'true';
   let layers = [];
 
   function resize() {
@@ -15,10 +21,11 @@
     canvas.height = window.innerHeight;
   }
 
-  function makeLayer(density, rRange, aRange, twinkleRange, drift, glow) {
+  function makeLayer(density, rRange, aRange, twinkleRange, drift, glow, glowStrength) {
     const count = Math.floor((canvas.width * canvas.height) / density);
     return {
       glow,
+      glowStrength: glowStrength || 4,
       stars: Array.from({ length: count }, () => ({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
@@ -38,6 +45,10 @@
       makeLayer(12000, [0.5, 1.1], [0.16, 0.40], [0.005, 0.012], 0.010, false), // mid, gentle twinkle
       makeLayer(60000, [1.0, 1.7], [0.35, 0.68], [0.008, 0.016], 0.012, true)   // near, soft glow, sparse
     ];
+    if (boosted) {
+      // Feature stars: very sparse, bigger, brighter glow ~ a handful per screen.
+      layers.push(makeLayer(180000, [1.6, 2.4], [0.6, 0.95], [0.006, 0.012], 0.008, true, 9));
+    }
   }
 
   resize();
@@ -59,7 +70,7 @@
         ctx.beginPath();
         if (layer.glow) {
           ctx.shadowColor = 'rgba(167,139,250,0.6)';
-          ctx.shadowBlur = 4;
+          ctx.shadowBlur = layer.glowStrength;
         } else {
           ctx.shadowBlur = 0;
         }
