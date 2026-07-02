@@ -20,7 +20,7 @@
     <a href="index.html" data-testid="nav-home">Home</a>
     <a href="why.html" data-testid="nav-why">Why &quot;cosmik&quot;</a>
     <a href="shipped.html" class="nav-featured active" data-testid="nav-shipped">Shipped/Projects</a>
-    <a href="systems.html" data-testid="nav-systems">Systems</a>
+    <a href="systems.html" data-testid="nav-systems">Systems &amp; Philosophy</a>
   </div>
   <a href="contact.html" class="nav-cta" data-testid="nav-cta"><span class="dot" aria-hidden="true"></span>Let's talk</a>
 </nav>
@@ -63,23 +63,11 @@
     </section>
   </div>
 
-  <!-- STATEMENT (pinned) -->
-  <section id="statement" aria-label="A statement on systems">
-    <div class="statement-pin">
-      <div class="statement-layer" id="statementA">
-        <p class="statement-text">Every growing company eventually becomes <em>a systems problem.</em></p>
-      </div>
-      <div class="statement-layer" id="statementB" style="opacity:0;">
-        <p class="statement-text"><em>Systems</em> create leverage.<br><em>Leverage</em> creates scale.</p>
-      </div>
-    </div>
-  </section>
-
   <div class="page-next theme-dark">
     <a href="index.html" class="pn-back">← Home</a>
     <a href="systems.html">
       <p class="pn-label">Next</p>
-      <span class="pn-title">Systems, not services <span aria-hidden="true">→</span></span>
+      <span class="pn-title">Systems &amp; Philosophy <span aria-hidden="true">→</span></span>
     </a>
   </div>
 
@@ -103,22 +91,6 @@
         scrollTrigger:{ trigger: el, start:'top 88%' }
       });
     });
-
-    ScrollTrigger.create({
-      trigger: '#statement',
-      start:'top top',
-      end:'bottom bottom',
-      pin: '.statement-pin',
-      scrub: true,
-      onUpdate: (self)=>{
-        const p = self.progress;
-        gsap.to('#statementA', {opacity: 1 - Math.min(p*2.2,1), duration:0.1});
-        gsap.to('#statementB', {opacity: Math.max((p-0.45)*2,0), duration:0.1});
-      }
-    });
-  } else {
-    const b = document.getElementById('statementB');
-    if(b) b.style.opacity = '0';
   }
 </script>
 
