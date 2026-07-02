@@ -19,44 +19,49 @@
   <div class="nav-links">
     <a href="index.html" data-testid="nav-home">Home</a>
     <a href="why.html" data-testid="nav-why">Why &quot;cosmik&quot;</a>
+    <a href="shipped.html" class="nav-featured active" data-testid="nav-shipped">Shipped/Projects</a>
     <a href="systems.html" data-testid="nav-systems">Systems</a>
-    <a href="shipped.html" class="active" data-testid="nav-shipped">Shipped/Projects</a>
   </div>
   <a href="contact.html" class="nav-cta" data-testid="nav-cta"><span class="dot" aria-hidden="true"></span>Let's talk</a>
 </nav>
 
 <main>
 
-  <div class="page-header theme-dark">
-    <p class="breadcrumb"><a href="index.html">cosmik.work</a> / Shipped/Projects</p>
-  </div>
+  <div class="ship-hero-wrap">
+    <div class="glow-orb glow-1" aria-hidden="true"></div>
+    <div class="glow-orb glow-2" aria-hidden="true"></div>
 
-  <!-- SHIPPED / PROJECTS ~ what's actually been built -->
-  <section id="shipped" class="theme-light" style="padding-top:20px;" aria-labelledby="shipped-title">
-    <div class="container">
-      <p class="section-eyebrow">Shipped</p>
-      <h2 class="section-title reveal" id="shipped-title">Built, not <em>claimed.</em></h2>
-      <p class="section-sub reveal">Live tools and documented systems. The code is public where it can be.</p>
-
-      <div id="shipped-grid">
-        <article class="ship-card reveal">
-          <p class="ship-tag">AI Tool · In production</p>
-          <h3 class="ship-name">Timeverse</h3>
-          <p class="ship-desc">An AI triage pipeline built on Google Sheets and the Claude API ~ incoming work classified and routed automatically, no human sorting.</p>
-        </article>
-        <article class="ship-card reveal">
-          <p class="ship-tag">AI Tool · Open source</p>
-          <h3 class="ship-name">ContractForge</h3>
-          <p class="ship-desc">An open-source AI contract generator ~ draft-ready agreements in minutes instead of days of back-and-forth.</p>
-        </article>
-        <article class="ship-card reveal">
-          <p class="ship-tag">Operating docs</p>
-          <h3 class="ship-name">9 SOPs</h3>
-          <p class="ship-desc">Playbooks authored as first Chief of Staff hire: onboarding, security, content, and LinkedIn outreach ~ the systems survive the author.</p>
-        </article>
-      </div>
+    <div class="page-header theme-dark">
+      <p class="breadcrumb"><a href="index.html">cosmik.work</a> / Shipped/Projects</p>
     </div>
-  </section>
+
+    <!-- SHIPPED / PROJECTS ~ the flagship page: proof of work -->
+    <section id="shipped" class="theme-light" style="padding-top:20px;" aria-labelledby="shipped-title">
+      <div class="container">
+        <p class="eyebrow">Proof of work</p>
+        <h2 class="section-title reveal" id="shipped-title">Built, not <em>claimed.</em></h2>
+        <p class="section-sub reveal">Live tools and documented systems. The code is public where it can be.</p>
+
+        <div id="shipped-grid">
+          <article class="ship-card reveal">
+            <p class="ship-tag">01 ~ AI Tool · In production</p>
+            <h3 class="ship-name">Timeverse</h3>
+            <p class="ship-desc">An AI triage pipeline built on Google Sheets and the Claude API ~ incoming work classified and routed automatically, no human sorting.</p>
+          </article>
+          <article class="ship-card reveal">
+            <p class="ship-tag">02 ~ AI Tool · Open source</p>
+            <h3 class="ship-name">ContractForge</h3>
+            <p class="ship-desc">An open-source AI contract generator ~ draft-ready agreements in minutes instead of days of back-and-forth.</p>
+          </article>
+          <article class="ship-card reveal">
+            <p class="ship-tag">03 ~ Operating docs</p>
+            <h3 class="ship-name">9 SOPs</h3>
+            <p class="ship-desc">Playbooks authored as first Chief of Staff hire: onboarding, security, content, and LinkedIn outreach ~ the systems survive the author.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </div>
 
   <!-- STATEMENT (pinned) -->
   <section id="statement" aria-label="A statement on systems">
@@ -72,9 +77,9 @@
 
   <div class="page-next theme-dark">
     <a href="index.html" class="pn-back">← Home</a>
-    <a href="why.html">
+    <a href="systems.html">
       <p class="pn-label">Next</p>
-      <span class="pn-title">Why cosmik <span aria-hidden="true">→</span></span>
+      <span class="pn-title">Systems, not services <span aria-hidden="true">→</span></span>
     </a>
   </div>
 
