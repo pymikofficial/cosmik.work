@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Soumik Chatterjee · Chief of Staff for founders who are scaling | cosmik.work</title>
+<meta name="description" content="Soumik Chatterjee is a Chief of Staff and AI Systems Architect. He runs internal systems, people pipelines, and AI workflows for early-stage to Series B founders. 9 pipelines in 90 days. $1.47M CAD under management.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500;1,9..144,600&family=Space+Grotesk:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<style>
+  :root{
+    --bg-1:#050507;
+    --bg-2:#08080d;
+    --text-1:#f5f5f7;
+    --text-2:#9d9daa;
+    --accent:#a78bfa;
+    --accent-bright:#c9b6ff;
+    --glow:rgba(167,139,250,.6);
+    --line:rgba(255,255,255,.1);
+    --ease-expo:cubic-bezier(.16,1,.3,1);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg-1);
+    color:var(--text-1);
+    font-family:'Space Grotesk',-apple-system,sans-serif;
+    font-weight:300;
+    overflow-x:hidden;
+    position:relative;
+  }
+  .mono{font-family:'JetBrains Mono',monospace;}
+  .serif{font-family:'Fraunces',serif;}
+  a{color:inherit;text-decoration:none;}
+  a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{outline:1.5px solid var(--accent);outline-offset:4px;}
+  .visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;}
+
+  /* ===== FIXED BACKGROUND ===== */
+  #bgLayer{
+    position:fixed;inset:0;z-index:-3;
+    background:radial-gradient(ellipse 80% 60% at 70% 10%, #0d0a1a 0%, transparent 55%), var(--bg-2);
+  }
+  #starCanvas{position:fixed;inset:0;z-index:-2;pointer-events:none;}
+  .glow-orb{
+    position:fixed;border-radius:50%;
+    filter:blur(90px);pointer-events:none;z-index:-1;
+    opacity:.35;
+  }
+  .glow-1{width:520px;height:520px;background:var(--glow);top:-140px;right:-120px;}
+  .glow-2{width:420px;height:420px;background:rgba(120,100,220,.5);bottom:-160px;left:-140px;opacity:.25;}
+
+  /* ===== NAV ===== */
+  nav{
+    position:sticky;top:0;z-index:50;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:24px clamp(24px,5vw,64px);
+    transition:background .4s var(--ease-expo), backdrop-filter .4s var(--ease-expo), border-color .4s var(--ease-expo);
+    border-bottom:1px solid transparent;
+  }
+  nav.scrolled{
+    background:rgba(5,5,7,.72);
+    backdrop-filter:blur(16px);
+    -webkit-backdrop-filter:blur(16px);
+    border-bottom-color:rgba(255,255,255,.06);
+  }
+  .logo{font-family:'JetBrains Mono',monospace;font-size:14px;letter-spacing:.02em;font-weight:500;}
+  .logo span{color:var(--accent);}
+  .nav-links{display:flex;align-items:center;gap:clamp(18px,3vw,34px);font-size:13.5px;color:var(--text-2);}
+  .nav-links a{transition:color .25s ease;}
+  .nav-links a:hover{color:var(--text-1);}
+  .nav-cta{
+    font-family:'JetBrains Mono',monospace;font-size:12.5px;
+    border:1px solid rgba(167,139,250,.35);
+    padding:10px 18px;border-radius:100px;
+    display:flex;align-items:center;gap:8px;
+    transition:all .3s var(--ease-expo);
+  }
+  .nav-cta:hover{background:rgba(167,139,250,.1);border-color:var(--accent);}
+  .nav-cta .dot{width:5px;height:5px;border-radius:50%;background:var(--accent);box-shadow:0 0 8px 2px var(--glow);}
+  @media(max-width:880px){.nav-links{display:none;}}
+
+  /* ===== HERO ===== */
+  #hero{
+    min-height:calc(100vh - 80px);
+    display:flex;flex-direction:column;justify-content:center;
+    padding:40px clamp(24px,6vw,64px) 0;
+    position:relative;
+  }
+  .hero-grid{display:flex;align-items:center;justify-content:space-between;gap:40px;}
+  .hero-copy{max-width:700px;position:relative;z-index:2;}
+  .eyebrow{
+    font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.16em;
+    color:var(--accent);text-transform:uppercase;margin-bottom:26px;
+    display:flex;align-items:center;gap:8px;
+  }
+  .eyebrow::before{content:"◆";font-size:9px;}
+  h1.hero-title{
+    font-family:'Fraunces',serif;
+    font-size:clamp(3rem,8vw,6rem);
+    line-height:1.02;font-weight:500;letter-spacing:-.01em;
+    margin-bottom:30px;
+  }
+  h1.hero-title em{font-style:italic;font-weight:600;color:var(--accent-bright);}
+  .hero-sub{
+    font-size:clamp(1.02rem,1.7vw,1.22rem);
+    color:var(--text-2);line-height:1.75;max-width:56ch;margin-bottom:38px;font-weight:300;
+  }
+  .hero-sub strong{color:var(--text-1);font-weight:500;}
+  .btn-row{display:flex;gap:16px;flex-wrap:wrap;align-items:center;}
+  .btn{
+    font-family:'JetBrains Mono',monospace;font-size:13px;
+    padding:16px 26px;border-radius:8px;
+    display:inline-flex;align-items:center;gap:10px;
+    transition:all .35s var(--ease-expo);
+  }
+  .btn-primary{background:var(--accent);color:#0a0a0f;font-weight:500;}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 30px -8px var(--glow);}
+  .btn-ghost{border:1px solid rgba(255,255,255,.14);color:var(--text-2);}
+  .btn-ghost:hover{border-color:rgba(167,139,250,.5);color:var(--text-1);}
+  .hero-meta{
+    margin-top:30px;font-family:'JetBrains Mono',monospace;font-size:11.5px;
+    letter-spacing:.06em;color:var(--text-2);
+  }
+
+  /* planet */
+  .planet-wrap{
+    position:relative;width:420px;height:420px;flex-shrink:0;
+    display:flex;align-items:center;justify-content:center;
+    transition:transform .3s ease-out;
+  }
+  .planet{
+    width:230px;height:230px;border-radius:50%;
+    background:radial-gradient(circle at 35% 30%, #2a2440, #0c0a16 70%);
+    box-shadow:0 0 90px 10px rgba(167,139,250,.25), inset -30px -20px 60px rgba(0,0,0,.6), inset 10px 10px 30px rgba(167,139,250,.15);
+    position:relative;z-index:2;
+  }
+  .ring{
+    position:absolute;border:1px solid rgba(167,139,250,.22);
+    border-radius:50%;top:50%;left:50%;
+  }
+  .ring-a{width:340px;height:340px;transform:translate(-50%,-50%) rotateX(72deg) rotate(-8deg);}
+  .ring-b{width:400px;height:400px;transform:translate(-50%,-50%) rotateX(72deg) rotate(-8deg);border-color:rgba(167,139,250,.12);}
+  .ring-c{width:230px;height:230px;transform:translate(-50%,-50%) rotate(20deg);border-color:rgba(255,255,255,.08);}
+  .orbit-path{position:absolute;width:340px;height:340px;border-radius:50%;animation:orbit-spin 26s linear infinite;}
+  .orbit-dot{
+    position:absolute;top:-4px;left:50%;width:8px;height:8px;margin-left:-4px;border-radius:50%;
+    background:var(--accent-bright);
+    box-shadow:0 0 8px 2px rgba(201,182,255,.9),0 0 22px 6px rgba(167,139,250,.5);
+  }
+  @keyframes orbit-spin{from{transform:rotate(0deg);}to{transform:rotate(360deg);}}
+  .planet-wrap .spark{position:absolute;width:5px;height:5px;border-radius:50%;background:#fff;box-shadow:0 0 10px 3px rgba(255,255,255,.6);}
+  @media(max-width:960px){.planet-wrap{display:none;}}
+
+  /* ===== STAT STRIP ===== */
+  #stats{
+    padding:64px clamp(24px,6vw,64px) 80px;
+  }
+  .stat-grid{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:20px;
+    border-top:1px solid var(--line);
+    padding-top:44px;
+  }
+  .stat .num{
+    font-family:'JetBrains Mono',monospace;
+    font-size:clamp(1.7rem,3.4vw,2.6rem);font-weight:500;
+    color:var(--accent-bright);letter-spacing:-.02em;
+  }
+  .stat .lbl{
+    margin-top:10px;font-size:.86rem;color:var(--text-2);line-height:1.55;max-width:22ch;
+  }
+  @media(max-width:880px){.stat-grid{grid-template-columns:repeat(2,1fr);gap:34px 20px;}}
+
+  /* ===== SECTION SHARED ===== */
+  section{position:relative;padding:130px clamp(24px,6vw,64px);}
+  h2.section-title{
+    font-family:'Fraunces',serif;
+    font-size:clamp(2.2rem,5.5vw,4rem);font-weight:500;letter-spacing:-.01em;line-height:1.08;margin-bottom:22px;
+  }
+  h2.section-title em{font-style:italic;font-weight:600;color:var(--accent-bright);}
+  .section-sub{color:var(--text-2);font-size:clamp(.95rem,1.4vw,1.1rem);max-width:62ch;line-height:1.75;font-weight:300;}
+  .section-sub strong{color:var(--text-1);font-weight:500;}
+
+  /* ===== BAS ===== */
+  #bas-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:64px;}
+  .bas-card{
+    position:relative;border:1px solid var(--line);
+    border-radius:18px;padding:40px 32px;min-height:400px;
+    background:linear-gradient(180deg, rgba(167,139,250,.04), rgba(255,255,255,.015));
+    backdrop-filter:blur(6px);
+    display:flex;flex-direction:column;justify-content:flex-end;
+    overflow:hidden;cursor:default;
+    transition:border-color .5s var(--ease-expo), box-shadow .5s var(--ease-expo), transform .5s var(--ease-expo);
+  }
+  .bas-card:hover{border-color:rgba(167,139,250,.5);box-shadow:0 20px 60px -20px rgba(167,139,250,.35);transform:translateY(-6px);}
+  .bas-letter{
+    position:absolute;top:32px;left:32px;font-size:6.5rem;font-weight:600;color:rgba(167,139,250,.9);
+    line-height:1;transition:transform .5s var(--ease-expo), opacity .5s var(--ease-expo);
+    font-family:'Fraunces',serif;font-style:italic;
+  }
+  .bas-card:hover .bas-letter{transform:translate(-6px,-10px) scale(.62);opacity:.5;}
+  .bas-body{
+    opacity:0;transform:translateY(14px);
+    transition:opacity .45s var(--ease-expo) .05s, transform .45s var(--ease-expo) .05s;
+  }
+  .bas-card:hover .bas-body{opacity:1;transform:translateY(0);}
+  .bas-title{font-size:1.7rem;font-weight:500;margin-bottom:16px;font-family:'Fraunces',serif;}
+  .bas-desc{color:var(--text-2);font-size:.95rem;line-height:1.85;margin-bottom:18px;}
+  .bas-foot{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--accent);letter-spacing:.05em;text-transform:uppercase;}
+  @media(hover:none){
+    .bas-letter{transform:translate(-6px,-10px) scale(.62);opacity:.5;}
+    .bas-body{opacity:1;transform:translateY(0);}
+  }
+  @media(max-width:880px){#bas-cards{grid-template-columns:1fr;}.bas-card{min-height:320px;}}
+
+  /* ===== SYSTEMS ===== */
+  .systems-scroller{
+    display:flex;gap:20px;overflow-x:auto;padding:56px 0 24px;margin:0 -12px;
+    scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;
+  }
+  .systems-scroller::-webkit-scrollbar{height:4px;}
+  .systems-scroller::-webkit-scrollbar-thumb{background:rgba(167,139,250,.3);border-radius:4px;}
+  .sys-panel{
+    scroll-snap-align:start;flex:0 0 clamp(280px,32vw,380px);
+    border:1px solid var(--line);border-radius:18px;
+    padding:36px 30px;min-height:300px;margin:0 12px;
+    display:flex;flex-direction:column;justify-content:space-between;
+    background:rgba(255,255,255,.015);
+    transition:border-color .4s ease, transform .4s var(--ease-expo);
+  }
+  .sys-panel:hover{border-color:rgba(167,139,250,.4);transform:translateY(-4px);}
+  .sys-index{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--text-2);margin-bottom:26px;}
+  .sys-title{font-size:1.5rem;font-weight:500;margin-bottom:16px;font-family:'Fraunces',serif;}
+  .sys-sub{color:var(--text-2);font-size:.92rem;line-height:2;}
+  .sys-proof{
+    margin-top:18px;font-family:'JetBrains Mono',monospace;font-size:11px;
+    color:var(--accent);letter-spacing:.05em;
+  }
+  .swipe-hint{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--text-2);margin-top:8px;}
+
+  /* ===== SHIPPED ===== */
+  #shipped-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:60px;}
+  .ship-card{
+    border:1px solid var(--line);border-radius:18px;padding:34px 30px;
+    background:rgba(255,255,255,.015);
+    transition:border-color .4s ease, transform .4s var(--ease-expo);
+    display:flex;flex-direction:column;gap:14px;
+  }
+  .ship-card:hover{border-color:rgba(167,139,250,.4);transform:translateY(-4px);}
+  .ship-tag{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);}
+  .ship-name{font-family:'Fraunces',serif;font-size:1.45rem;font-weight:500;}
+  .ship-desc{color:var(--text-2);font-size:.93rem;line-height:1.7;}
+  @media(max-width:880px){#shipped-grid{grid-template-columns:1fr;}}
+
+  /* ===== STATEMENT (pinned) ===== */
+  #statement{height:180vh;padding:0;}
+  .statement-pin{
+    height:100vh;display:flex;align-items:center;justify-content:center;
+    text-align:center;padding:0 24px;position:relative;
+  }
+  .statement-layer{
+    position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+    padding:0 24px;
+  }
+  .statement-text{
+    font-family:'Fraunces',serif;
+    font-size:clamp(1.9rem,5.2vw,3.7rem);font-weight:500;line-height:1.22;letter-spacing:-.01em;
+    max-width:21ch;
+  }
+  .statement-text em{font-style:italic;font-weight:600;color:var(--accent-bright);}
+
+  /* ===== WHY ===== */
+  .why-wrap{display:grid;grid-template-columns:1fr 1fr;gap:60px;margin-top:56px;align-items:start;}
+  .name-block{
+    border:1px solid rgba(167,139,250,.25);border-radius:18px;
+    padding:38px 34px;background:linear-gradient(180deg, rgba(167,139,250,.06), rgba(255,255,255,.01));
+  }
+  .name-line{font-family:'JetBrains Mono',monospace;font-size:clamp(.92rem,1.4vw,1.05rem);line-height:2.3;color:var(--text-2);}
+  .name-line .k{color:var(--text-1);font-weight:500;}
+  .name-line .hi{color:var(--accent-bright);}
+  .why-outcomes{display:flex;flex-direction:column;gap:30px;}
+  .why-item .wt{font-family:'Fraunces',serif;font-size:1.35rem;font-weight:500;margin-bottom:8px;}
+  .why-item .wt em{font-style:italic;color:var(--accent-bright);}
+  .why-item p{color:var(--text-2);font-size:.95rem;line-height:1.7;}
+  .tool-aside{
+    margin-top:70px;border-left:2px solid rgba(167,139,250,.4);
+    padding:6px 0 6px 28px;max-width:68ch;
+  }
+  .tool-aside .ta-label{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;}
+  .tool-aside p{color:var(--text-2);font-size:clamp(.98rem,1.5vw,1.12rem);line-height:1.85;}
+  .tool-aside p strong{color:var(--text-1);font-weight:500;}
+  @media(max-width:880px){.why-wrap{grid-template-columns:1fr;gap:40px;}}
+
+  /* ===== PATH ===== */
+  #path{padding-top:0;}
+  .path-line{
+    border-top:1px solid var(--line);padding-top:40px;
+    font-family:'JetBrains Mono',monospace;font-size:clamp(.78rem,1.3vw,.9rem);
+    color:var(--text-2);line-height:2.2;letter-spacing:.02em;
+  }
+  .path-line .k{color:var(--text-1);}
+  .path-line .arrow{color:var(--accent);}
+
+  /* ===== ICP ===== */
+  .icp-list{margin-top:56px;display:flex;flex-direction:column;}
+  .icp-item{
+    display:flex;gap:28px;align-items:baseline;
+    padding:34px 0;border-top:1px solid var(--line);
+  }
+  .icp-item:last-child{border-bottom:1px solid var(--line);}
+  .icp-num{font-family:'JetBrains Mono',monospace;font-size:.85rem;color:var(--accent);flex-shrink:0;}
+  .icp-text{font-family:'Fraunces',serif;font-size:clamp(1.25rem,2.6vw,1.8rem);font-weight:500;line-height:1.4;}
+  .icp-text em{font-style:italic;color:var(--accent-bright);}
+  .icp-fine{margin-top:36px;color:var(--text-2);font-size:.95rem;line-height:1.7;max-width:60ch;}
+
+  /* ===== FINAL CTA ===== */
+  #contact{min-height:100vh;display:flex;flex-direction:column;justify-content:center;}
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:start;margin-top:20px;}
+  .cta-title{
+    font-family:'Fraunces',serif;
+    font-size:clamp(2.4rem,5.5vw,4.4rem);font-weight:500;line-height:1.1;letter-spacing:-.01em;margin-bottom:30px;
+  }
+  .cta-title em{font-style:italic;font-weight:600;color:var(--accent-bright);}
+  .contact-left p{color:var(--text-2);font-size:1.02rem;line-height:1.8;max-width:44ch;margin-bottom:36px;}
+  .cta-links{
+    margin-top:40px;display:flex;gap:26px;flex-wrap:wrap;
+    font-family:'JetBrains Mono',monospace;font-size:12.5px;color:var(--text-2);
+  }
+  .cta-links a{transition:color .25s ease;border-bottom:1px solid transparent;padding-bottom:2px;}
+  .cta-links a:hover{color:var(--accent);border-color:var(--accent);}
+  .reply-note{margin-top:26px;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--text-2);letter-spacing:.04em;}
+
+  form{
+    border:1px solid var(--line);border-radius:18px;padding:38px 34px;
+    background:rgba(255,255,255,.015);
+    display:flex;flex-direction:column;gap:22px;
+  }
+  .field label{
+    display:block;font-family:'JetBrains Mono',monospace;font-size:11px;
+    letter-spacing:.12em;text-transform:uppercase;color:var(--text-2);margin-bottom:10px;
+  }
+  .field input,.field textarea{
+    width:100%;background:rgba(255,255,255,.03);border:1px solid var(--line);
+    border-radius:8px;padding:14px 16px;color:var(--text-1);
+    font-family:'Space Grotesk',sans-serif;font-size:.98rem;font-weight:300;
+    transition:border-color .3s ease;
+  }
+  .field input:focus,.field textarea:focus{border-color:rgba(167,139,250,.55);outline:none;}
+  .field textarea{min-height:110px;resize:vertical;}
+  form .btn-primary{border:none;cursor:pointer;justify-content:center;font-size:13px;}
+  @media(max-width:880px){.contact-grid{grid-template-columns:1fr;gap:50px;}}
+
+  footer{
+    padding:32px clamp(24px,6vw,64px) 46px;
+    display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;
+    font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--text-2);
+    border-top:1px solid rgba(255,255,255,.06);
+  }
+
+  @media(prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto;}
+    .orbit-path{animation:none;}
+  }
+</style>
+</head>
+<body>
+
+<div id="bgLayer" aria-hidden="true"></div>
+<canvas id="starCanvas" aria-hidden="true"></canvas>
+<div class="glow-orb glow-1" aria-hidden="true"></div>
+<div class="glow-orb glow-2" aria-hidden="true"></div>
+
+<nav id="nav" aria-label="Primary">
+  <a href="#hero" class="logo" aria-label="cosmik.work home">COSMIK<span>.WORK</span></a>
+  <div class="nav-links">
+    <a href="#bas">Framework</a>
+    <a href="#systems">Systems</a>
+    <a href="#shipped">Shipped</a>
+    <a href="#why">Why cosmik</a>
+  </div>
+  <a href="#contact" class="nav-cta"><span class="dot" aria-hidden="true"></span>Let's talk</a>
+</nav>
+
+<main>
+
+  <!-- HERO -->
+  <section id="hero" aria-label="Introduction">
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">Chief of Staff · AI Systems Architect</p>
+        <h1 class="hero-title">Operate from <em>orbit.</em></h1>
+        <p class="hero-sub">I'm <strong>Soumik Chatterjee</strong>. I run the internal systems, people pipelines, and AI workflows of early-stage to Series B companies ~ so founders stay focused on <strong>growth</strong>, not the machinery beneath it.</p>
+        <div class="btn-row">
+          <a href="mailto:soumik@cosmik.work" class="btn btn-primary">Let's talk → soumik@cosmik.work</a>
+          <a href="#shipped" class="btn btn-ghost">See what I've shipped</a>
+        </div>
+        <p class="hero-meta">REMOTE · BASED IN KOLKATA, INDIA · WORKING ACROSS TIME ZONES</p>
+      </div>
+      <div class="planet-wrap" id="planetWrap" aria-hidden="true">
+        <div class="ring ring-b"></div>
+        <div class="ring ring-a"></div>
+        <div class="planet"></div>
+        <div class="ring ring-c"></div>
+        <div class="orbit-path"><div class="orbit-dot"></div></div>
+        <div class="spark" style="top:14%;left:78%;"></div>
+        <div class="spark" style="top:70%;left:12%;width:3px;height:3px;"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STAT STRIP -->
+  <section id="stats" aria-label="Proof in numbers" style="padding-top:0;">
+    <div class="stat-grid">
+      <div class="stat reveal">
+        <div class="num">9</div>
+        <p class="lbl">B2B pipelines built from scratch in under 90 days, as first Chief of Staff hire</p>
+      </div>
+      <div class="stat reveal">
+        <div class="num">$1.47M</div>
+        <p class="lbl">CAD prospect pipeline under active management</p>
+      </div>
+      <div class="stat reveal">
+        <div class="num">2,314</div>
+        <p class="lbl">CRM contacts organised across 9 categorised pipelines</p>
+      </div>
+      <div class="stat reveal">
+        <div class="num">260%</div>
+        <p class="lbl">of placement target delivered: 31 roles closed against a target of 25</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BAS FRAMEWORK -->
+  <section id="bas" aria-labelledby="bas-title">
+    <p class="eyebrow">The BAS Framework</p>
+    <h2 class="section-title reveal" id="bas-title">One framework.<br><em>Every</em> engagement.</h2>
+    <p class="section-sub reveal">BAS is how founder chaos becomes operating leverage: map the workflows, automate the repetitive work, then scale what's proven.</p>
+
+    <div id="bas-cards">
+      <div class="bas-card reveal">
+        <div class="bas-letter" aria-hidden="true">B</div>
+        <div class="bas-body">
+          <h3 class="bas-title">Build</h3>
+          <p class="bas-desc">Map every workflow. Find the bottlenecks. Design the system your company actually needs, not the one a template suggests.</p>
+          <p class="bas-foot">Observe · Simplify · Systemize</p>
+        </div>
+      </div>
+      <div class="bas-card reveal">
+        <div class="bas-letter" aria-hidden="true">A</div>
+        <div class="bas-body">
+          <h3 class="bas-title">Automate</h3>
+          <p class="bas-desc">Deploy AI where it earns its keep. Connect the tools you already pay for. Eliminate the busywork stealing founder hours.</p>
+          <p class="bas-foot">Create leverage</p>
+        </div>
+      </div>
+      <div class="bas-card reveal">
+        <div class="bas-letter" aria-hidden="true">S</div>
+        <div class="bas-body">
+          <h3 class="bas-title">Scale</h3>
+          <p class="bas-desc">Increase velocity without adding headcount. Tighten execution. Grow revenue faster than you grow complexity.</p>
+          <p class="bas-foot">Compound the gains</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SYSTEMS -->
+  <section id="systems" aria-labelledby="systems-title">
+    <p class="eyebrow">What I run</p>
+    <h2 class="section-title reveal" id="systems-title">Systems.<br>Not <em>services.</em></h2>
+    <p class="section-sub reveal">Each one is an operating system I install, run, and hand over documented ~ so it keeps working when I'm not in the room.</p>
+
+    <div class="systems-scroller" role="list" aria-label="Operating systems I build and run">
+      <div class="sys-panel" role="listitem">
+        <div class="sys-index">01</div>
+        <div>
+          <h3 class="sys-title">Recruitment OS</h3>
+          <p class="sys-sub">Source.<br>Screen.<br>Schedule.<br>Hire.</p>
+          <p class="sys-proof">PROOF: 260% OF PLACEMENT TARGET</p>
+        </div>
+      </div>
+      <div class="sys-panel" role="listitem">
+        <div class="sys-index">02</div>
+        <div>
+          <h3 class="sys-title">Revenue OS</h3>
+          <p class="sys-sub">Discover.<br>Outreach.<br>Convert.<br>Repeat.</p>
+          <p class="sys-proof">PROOF: $1.47M CAD PIPELINE MANAGED</p>
+        </div>
+      </div>
+      <div class="sys-panel" role="listitem">
+        <div class="sys-index">03</div>
+        <div>
+          <h3 class="sys-title">Customer Success OS</h3>
+          <p class="sys-sub">Onboard.<br>Retain.<br>Expand.</p>
+          <p class="sys-proof">BUILT ON 9 DOCUMENTED SOPs</p>
+        </div>
+      </div>
+      <div class="sys-panel" role="listitem">
+        <div class="sys-index">04</div>
+        <div>
+          <h3 class="sys-title">Founder OS</h3>
+          <p class="sys-sub">Your calendar, your priorities, your decision queue ~ run as a system.</p>
+          <p class="sys-proof">OPERATE AT ALTITUDE</p>
+        </div>
+      </div>
+    </div>
+    <p class="swipe-hint">← Swipe to explore →</p>
+  </section>
+
+  <!-- SHIPPED -->
+  <section id="shipped" aria-labelledby="shipped-title">
+    <p class="eyebrow">Shipped</p>
+    <h2 class="section-title reveal" id="shipped-title">Built, not <em>claimed.</em></h2>
+    <p class="section-sub reveal">Live tools and documented systems. The code is public where it can be.</p>
+
+    <div id="shipped-grid">
+      <div class="ship-card reveal">
+        <p class="ship-tag">AI Tool · In production</p>
+        <h3 class="ship-name">Timeverse</h3>
+        <p class="ship-desc">An AI triage pipeline built on Google Sheets and the Claude API ~ incoming work classified and routed automatically, no human sorting.</p>
+      </div>
+      <div class="ship-card reveal">
+        <p class="ship-tag">AI Tool · Open source</p>
+        <h3 class="ship-name">ContractForge</h3>
+        <p class="ship-desc">An open-source AI contract generator ~ draft-ready agreements in minutes instead of days of back-and-forth.</p>
+      </div>
+      <div class="ship-card reveal">
+        <p class="ship-tag">Operating docs</p>
+        <h3 class="ship-name">9 SOPs</h3>
+        <p class="ship-desc">Playbooks authored as first Chief of Staff hire: onboarding, security, content, and LinkedIn outreach ~ the systems survive the author.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATEMENT (pinned crossfade) -->
+  <section id="statement" aria-label="A statement on systems">
+    <div class="statement-pin">
+      <div class="statement-layer" id="statementA">
+        <p class="statement-text">Every growing company eventually becomes <em>a systems problem.</em></p>
+      </div>
+      <div class="statement-layer" id="statementB" style="opacity:0;">
+        <p class="statement-text"><em>Systems</em> create leverage.<br><em>Leverage</em> creates scale.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY COSMIK -->
+  <section id="why" aria-labelledby="why-title">
+    <p class="eyebrow">Why cosmik</p>
+    <h2 class="section-title reveal" id="why-title">Why <em>COSMIK?</em></h2>
+
+    <div class="why-wrap">
+      <div class="name-block reveal" aria-label="The meaning of the name cosmik">
+        <p class="name-line"><span class="k">cos</span> = Chief of Staff</p>
+        <p class="name-line"><span class="k">mik</span> = Soumik (me)</p>
+        <p class="name-line"><span class="k">cosmik</span> = the practice</p>
+        <p class="name-line">reads as <span class="hi">cosmic</span> ~ that part is intentional.<br>A Chief of Staff's job is seeing the whole<br>system from above.</p>
+      </div>
+
+      <div class="why-outcomes">
+        <div class="why-item reveal">
+          <h3 class="wt">Pipelines that <em>fill themselves</em></h3>
+          <p>Recruiting, revenue, and retention running as systems ~ not weekly heroics that collapse when one person is sick.</p>
+        </div>
+        <div class="why-item reveal">
+          <h3 class="wt">AI that <em>actually ships</em></h3>
+          <p>Workflows in production inside 90 days, built on tools you already pay for. Not a slide deck about transformation.</p>
+        </div>
+        <div class="why-item reveal">
+          <h3 class="wt">One <em>accountable owner</em></h3>
+          <p>A single person responsible for how the company runs internally ~ so you can stop being that person yourself.</p>
+        </div>
+      </div>
+    </div>
+
+    <aside class="tool-aside reveal" aria-label="How this differs from AI chief of staff tools">
+      <p class="ta-label">A note on the obvious question</p>
+      <p>There are plenty of AI chief-of-staff <strong>tools</strong> now ~ meeting bots, inbox triage, daily briefings. I build with systems like these; I'm not one of them. Tools transcribe your decisions. <strong>A Chief of Staff makes them with you, owns the follow-through, and is accountable when it matters.</strong> The AI is my leverage. The judgment is the job.</p>
+    </aside>
+  </section>
+
+  <!-- PATH -->
+  <section id="path" aria-label="Career background">
+    <p class="path-line reveal">
+      <span class="k">Accenture</span> · Python engineer, enterprise clients · 2015~2019
+      <span class="arrow">→</span> <span class="k">CampK12</span> · Recruitment &amp; Operations Manager · 2020~2023
+      <span class="arrow">→</span> <span class="k">Teach For India</span> · Fellow · 2024~2026
+      <span class="arrow">→</span> <span class="k">Founder's Office</span> · Chief of Staff · 2026
+      <span class="arrow">→</span> <span class="k">cosmik.work</span>
+    </p>
+  </section>
+
+  <!-- ICP -->
+  <section id="icp" aria-labelledby="icp-title">
+    <p class="eyebrow">Fit check</p>
+    <h2 class="section-title reveal" id="icp-title">I work best with<br>founders <em>who...</em></h2>
+
+    <div class="icp-list">
+      <div class="icp-item reveal">
+        <span class="icp-num">01</span>
+        <p class="icp-text">Are between first revenue and Series B, where growth is <em>outpacing</em> the systems underneath it.</p>
+      </div>
+      <div class="icp-item reveal">
+        <span class="icp-num">02</span>
+        <p class="icp-text">Want AI in production <em>this quarter</em> ~ real workflows, not a strategy document about them.</p>
+      </div>
+      <div class="icp-item reveal">
+        <span class="icp-num">03</span>
+        <p class="icp-text">Need one trusted owner for internal operations, and are <em>done</em> being that owner themselves.</p>
+      </div>
+    </div>
+    <p class="icp-fine">If that's you, the next step takes two minutes: send a note about what's breaking. I'll reply with an honest read on whether I can fix it.</p>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section id="contact" aria-labelledby="contact-title">
+    <div class="contact-grid">
+      <div class="contact-left">
+        <p class="eyebrow">Let's talk</p>
+        <h2 class="cta-title" id="contact-title">Ready to hand off the <em>machinery?</em></h2>
+        <p>Tell me what's breaking ~ hiring, revenue ops, founder bandwidth, all three. You'll get a straight answer on whether I'm the right person to fix it.</p>
+        <a href="mailto:soumik@cosmik.work" class="btn btn-primary">Let's talk → soumik@cosmik.work</a>
+        <div class="cta-links">
+          <a href="https://www.linkedin.com/in/showmikthebuilder/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://github.com/pymikofficial" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <p class="reply-note">REPLIES WITHIN 24 HOURS · IST OR YOURS</p>
+      </div>
+
+      <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" aria-label="Contact form">
+        <input type="hidden" name="form-name" value="contact">
+        <p class="visually-hidden" aria-hidden="true">
+          <label>Don't fill this out if you're human: <input name="bot-field"></label>
+        </p>
+        <div class="field">
+          <label for="cf-name">Your name</label>
+          <input id="cf-name" type="text" name="name" autocomplete="name" required>
+        </div>
+        <div class="field">
+          <label for="cf-email">Work email</label>
+          <input id="cf-email" type="email" name="email" autocomplete="email" required>
+        </div>
+        <div class="field">
+          <label for="cf-msg">What's breaking right now?</label>
+          <textarea id="cf-msg" name="message" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Send it →</button>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div>© 2026 cosmik.work · Soumik Chatterjee</div>
+  <div>Kolkata, India · Remote worldwide</div>
+</footer>
+
+<script>
+  // ---- Starfield canvas ----
+  const canvas = document.getElementById('starCanvas');
+  const ctx = canvas.getContext('2d');
+  let stars = [];
+  function resize(){
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+  function makeStars(){
+    const count = Math.floor((canvas.width*canvas.height)/9000);
+    stars = Array.from({length:count}, ()=>({
+      x: Math.random()*canvas.width,
+      y: Math.random()*canvas.height,
+      r: Math.random()*1.3+0.2,
+      baseAlpha: Math.random()*0.5+0.2,
+      speed: Math.random()*0.02+0.005,
+      phase: Math.random()*Math.PI*2
+    }));
+  }
+  resize(); makeStars();
+  window.addEventListener('resize', ()=>{ resize(); makeStars(); });
+
+  let t = 0;
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function drawStars(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    stars.forEach(s=>{
+      const a = reduceMotion ? s.baseAlpha : s.baseAlpha + Math.sin(t*s.speed*10 + s.phase)*0.25;
+      ctx.beginPath();
+      ctx.fillStyle = 'rgba(245,245,247,'+Math.max(0,a)+')';
+      ctx.arc(s.x, s.y, s.r, 0, Math.PI*2);
+      ctx.fill();
+    });
+    t += 1;
+    requestAnimationFrame(drawStars);
+  }
+  drawStars();
+
+  // ---- Nav scroll state ----
+  const navEl = document.getElementById('nav');
+  window.addEventListener('scroll', ()=>{
+    navEl.classList.toggle('scrolled', window.scrollY > 40);
+  });
+
+  // ---- Mouse parallax on planet ----
+  const planetWrap = document.getElementById('planetWrap');
+  if(planetWrap && !reduceMotion){
+    document.getElementById('hero').addEventListener('mousemove', (e)=>{
+      const x = (e.clientX / window.innerWidth - 0.5) * 24;
+      const y = (e.clientY / window.innerHeight - 0.5) * 24;
+      planetWrap.style.transform = 'translate('+x+'px,'+y+'px)';
+    });
+  }
+
+  // ---- GSAP reveals (guarded: page stays fully usable/visible if GSAP CDN is blocked) ----
+  if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+    gsap.registerPlugin(ScrollTrigger);
+
+    gsap.utils.toArray('.reveal').forEach((el)=>{
+      gsap.fromTo(el, {opacity:0, y:30}, {
+        opacity:1, y:0, duration:1, ease:'expo.out',
+        scrollTrigger:{ trigger: el, start:'top 88%' }
+      });
+    });
+
+    // ---- Pinned statement crossfade ----
+    ScrollTrigger.create({
+      trigger: '#statement',
+      start:'top top',
+      end:'bottom bottom',
+      pin: '.statement-pin',
+      scrub: true,
+      onUpdate: (self)=>{
+        const p = self.progress;
+        gsap.to('#statementA', {opacity: 1 - Math.min(p*2.2,1), duration:0.1});
+        gsap.to('#statementB', {opacity: Math.max((p-0.45)*2,0), duration:0.1});
+      }
+    });
+  } else {
+    document.getElementById('statementB').style.opacity = '0';
+  }
+</script>
+
+</body>
+</html>
