@@ -142,11 +142,20 @@
     position:relative;width:min(560px,80vw);height:420px;margin:60px auto 0;
     display:flex;align-items:center;justify-content:center;pointer-events:none;
   }
-  .hp-orb{
+  .hp-globe{
     width:340px;height:340px;border-radius:50%;
-    background:radial-gradient(circle at 32% 28%, #3a2f5c 0%, #0f0b1e 55%, #05030c 100%);
-    box-shadow:0 40px 120px -20px rgba(124,92,255,.6), inset -40px -30px 80px rgba(0,0,0,.65), inset 20px 20px 40px rgba(167,139,250,.18);
-    position:absolute;top:40px;
+    position:absolute;top:40px;overflow:hidden;
+    background:radial-gradient(circle at 32% 28%, #241c3d 0%, #0f0b1e 55%, #05030c 100%);
+    box-shadow:0 40px 120px -20px rgba(124,92,255,.6);
+  }
+  .hp-map{position:absolute;inset:0;width:100%;height:100%;display:block;}
+  .hp-map path{fill:#4a3f7a;stroke:rgba(5,4,10,.55);stroke-width:.4;}
+  .hp-shade{
+    position:absolute;inset:0;border-radius:50%;pointer-events:none;
+    background:
+      radial-gradient(circle at 30% 26%, rgba(167,139,250,.4) 0%, rgba(124,92,255,0) 42%),
+      radial-gradient(circle at 68% 76%, rgba(0,0,0,.6) 0%, rgba(0,0,0,0) 55%);
+    box-shadow:inset -40px -30px 80px rgba(0,0,0,.65), inset 20px 20px 40px rgba(167,139,250,.15);
   }
   .hp-ring{position:absolute;border-radius:50%;border:1px solid rgba(167,139,250,.28);}
   .hp-ring-1{width:460px;height:460px;top:-10px;transform:rotateX(74deg) rotate(-10deg);}
@@ -157,13 +166,77 @@
     position:absolute;top:-4px;left:50%;width:9px;height:9px;margin-left:-4px;border-radius:50%;
     background:#e8ddff;box-shadow:0 0 10px 3px #c9b6ff,0 0 28px 8px rgba(167,139,250,.55);
   }
+  /* Kolkata marker ~ sits at the globe's centre, over the mapped location */
+  .hp-marker{
+    position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+    width:40px;height:40px;display:flex;align-items:center;justify-content:center;
+    background:transparent;border:none;padding:0;cursor:pointer;pointer-events:auto;z-index:3;
+  }
+  .hp-marker-dot{
+    width:9px;height:9px;border-radius:50%;background:#f5f5f7;position:relative;z-index:2;
+    box-shadow:0 0 0 3px rgba(245,245,247,.25), 0 0 14px 4px rgba(167,139,250,.75);
+    transition:transform .25s ease;
+  }
+  .hp-marker-pulse{
+    position:absolute;width:9px;height:9px;border-radius:50%;background:rgba(167,139,250,.55);
+    animation:hpPulse 2.4s ease-out infinite;
+  }
+  @keyframes hpPulse{0%{transform:scale(1);opacity:.7;}100%{transform:scale(3.4);opacity:0;}}
+  .hp-marker:hover .hp-marker-dot,.hp-marker:focus-visible .hp-marker-dot{transform:scale(1.25);}
+  .hp-marker-tip{
+    position:absolute;bottom:calc(100% + 10px);left:50%;transform:translateX(-50%) translateY(4px);
+    white-space:nowrap;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.06em;
+    color:#f5f5f7;background:rgba(10,10,15,.94);border:1px solid rgba(167,139,250,.3);
+    padding:6px 10px;border-radius:8px;opacity:0;pointer-events:none;
+    transition:opacity .25s ease, transform .25s ease;
+  }
+  .hp-marker:hover .hp-marker-tip,.hp-marker:focus-visible .hp-marker-tip{
+    opacity:1;transform:translateX(-50%) translateY(0);
+  }
   @media(max-width:640px){
     .hero-planet{height:280px;margin-top:36px;}
-    .hp-orb{width:220px;height:220px;top:26px;}
+    .hp-globe{width:220px;height:220px;top:26px;}
     .hp-ring-1{width:300px;height:300px;top:-6px;}
     .hp-ring-2{width:360px;height:360px;top:-42px;}
     .hp-orbit{width:300px;height:300px;top:-6px;}
   }
+
+  /* ===== VIDEO MODAL ~ opens from the Kolkata marker ===== */
+  .video-modal{position:fixed;inset:0;z-index:200;display:flex;align-items:center;justify-content:center;padding:24px;}
+  .video-modal[hidden]{display:none;}
+  .vm-backdrop{position:absolute;inset:0;background:rgba(5,4,10,.82);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);}
+  .vm-panel{
+    position:relative;z-index:1;width:min(880px,92vw);
+    background:linear-gradient(180deg,#14101f 0%,#0a0a0f 100%);
+    border:1px solid rgba(167,139,250,.22);border-radius:20px;
+    padding:44px clamp(20px,4vw,48px) clamp(28px,4vw,40px);
+    box-shadow:0 60px 140px -30px rgba(0,0,0,.7);
+  }
+  .vm-close{
+    position:absolute;top:18px;right:18px;width:36px;height:36px;border-radius:50%;
+    background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);color:#f5f5f7;
+    font-size:15px;cursor:pointer;display:flex;align-items:center;justify-content:center;
+    transition:background .2s ease;
+  }
+  .vm-close:hover{background:rgba(255,255,255,.14);}
+  .vm-eyebrow{font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-bright);margin-bottom:18px;}
+  .vm-frame{
+    position:relative;width:100%;aspect-ratio:16/9;border-radius:14px;overflow:hidden;
+    background:#050308;border:1px solid rgba(255,255,255,.08);
+  }
+  .vm-frame iframe,.vm-frame video{position:absolute;inset:0;width:100%;height:100%;border:0;}
+  .vm-placeholder{
+    position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;
+    text-align:center;gap:10px;padding:20px;color:var(--text-on-dark-2);
+  }
+  .vm-play{
+    width:56px;height:56px;border-radius:50%;border:1px solid rgba(167,139,250,.4);
+    display:flex;align-items:center;justify-content:center;color:var(--accent-bright);font-size:18px;
+    margin-bottom:6px;
+  }
+  .vm-placeholder p{margin:0;font-size:1rem;color:#f5f5f7;}
+  .vm-sub{font-size:.85rem !important;color:var(--text-on-dark-2) !important;max-width:44ch;}
+  body.vm-open{overflow:hidden;}
 
   /* ===== STATS ~ Apple giant number band ===== */
   #stats{padding:120px clamp(20px,5vw,44px);}
@@ -390,6 +463,9 @@
     border-top:1px solid var(--line-dark);
   }
   footer .fl{color:#f5f5f7;font-weight:500;}
+  footer .fl-attrib{opacity:.6;}
+  footer .fl-attrib a{color:var(--text-on-dark-2);text-decoration:underline;text-underline-offset:2px;transition:color .2s ease;}
+  footer .fl-attrib a:hover{color:var(--accent-bright);}
 
   @media(prefers-reduced-motion:reduce){
     html{scroll-behavior:auto;}
