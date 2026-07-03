@@ -1198,6 +1198,22 @@
     border-color: rgba(167, 139, 250, .4);
   }
 
+  .ship-card-link {
+    display: flex;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .ship-card-link .ship-card {
+    cursor: pointer;
+  }
+
+  .ship-card-link:hover .ship-card,
+  .ship-card-link:focus-visible .ship-card {
+    border-color: rgba(167, 139, 250, .6);
+    background: linear-gradient(180deg, #1c1a35 0%, #0a0a15 100%);
+  }
+
   .ship-tag {
     font-family: 'JetBrains Mono', monospace;
     font-size: 10.5px;
