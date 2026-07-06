@@ -60,130 +60,110 @@
         <h2 class="section-title reveal" id="shipped-title">Built, not <em>claimed.</em></h2>
         <p class="section-sub reveal">Live tools and documented systems. The code is public where it can be.</p>
 
-        <div id="os-buckets">
+        <div id="os-tabs" role="tablist" aria-label="Project categories">
+          <button class="os-tab os-tab-active" id="tab-business" role="tab" aria-selected="true" aria-controls="panel-business">
+            <span class="os-tab-name">Business OS</span>
+            <span class="os-tab-count">4 live &middot; 3 brewing</span>
+          </button>
+          <button class="os-tab" id="tab-school" role="tab" aria-selected="false" aria-controls="panel-school">
+            <span class="os-tab-name">School OS</span>
+            <span class="os-tab-count">2 live</span>
+          </button>
+          <button class="os-tab" id="tab-everyday" role="tab" aria-selected="false" aria-controls="panel-everyday">
+            <span class="os-tab-name">Everyday Tools</span>
+            <span class="os-tab-count">1 live</span>
+          </button>
+        </div>
+
+        <div id="os-panels">
 
           <!-- ============ BUSINESS OS ============ -->
-          <section class="os-bucket os-open reveal" id="os-business">
-            <button class="os-tile" aria-expanded="true" aria-controls="os-business-panel">
-              <div class="os-tile-main">
-                <p class="os-eyebrow">01 ~ Operating System</p>
-                <h3 class="os-name">Business OS</h3>
-                <p class="os-blurb">The operating layer for a founder's office: triage, contracts, briefings, meetings ~ run as systems, not heroics.</p>
-              </div>
-              <div class="os-tile-meta">
-                <span class="os-count">4 live &middot; 3 brewing</span>
-                <span class="os-chevron" aria-hidden="true">&#8595;</span>
-              </div>
-            </button>
-            <div class="os-panel" id="os-business-panel">
-              <div class="os-grid">
-                <a class="ship-card-link" href="https://automation-priority-sorter.netlify.app" target="_blank" rel="noopener" aria-label="Automation Priority Sorter (opens in a new tab)">
-                  <article class="ship-card">
-                    <p class="ship-tag">AI Systems &middot; The front door</p>
-                    <h3 class="ship-name">Automation Priority Sorter</h3>
-                    <p class="ship-desc">A live triage engine. Submit a manual pain point, Claude scores it in real time, and it joins an open backlog.</p>
-                  </article>
-                </a>
-                <a class="ship-card-link" href="https://cosmik-contract-generator.netlify.app" target="_blank" rel="noopener" aria-label="Contract Generator (opens in a new tab)">
-                  <article class="ship-card">
-                    <p class="ship-tag">Business Ops &middot; Open source</p>
-                    <h3 class="ship-name">Contract Generator</h3>
-                    <p class="ship-desc">An open-source AI contract generator ~ draft-ready agreements in minutes instead of days of back-and-forth.</p>
-                  </article>
-                </a>
-                <a class="ship-card-link" href="https://executive-briefing-generator.netlify.app" target="_blank" rel="noopener" aria-label="Executive Briefing Generator (opens in a new tab)">
-                  <article class="ship-card">
-                    <p class="ship-tag">Founder Ops &middot; AI Systems</p>
-                    <h3 class="ship-name">Executive Briefing Generator</h3>
-                    <p class="ship-desc">Paste a messy day's notes and half-formed to-dos, get back an executive brief: top priorities, decisions needed, what to delegate, what can wait.</p>
-                  </article>
-                </a>
-                <a class="ship-card-link" href="https://meeting-minutes-extractor.netlify.app" target="_blank" rel="noopener" aria-label="Meeting Minutes and Action Extractor (opens in a new tab)">
-                  <article class="ship-card">
-                    <p class="ship-tag">Meetings &middot; Voice AI</p>
-                    <h3 class="ship-name">Meeting Minutes &amp; Action Extractor</h3>
-                    <p class="ship-desc">Never lose a decision from a leadership sync ~ transcript or spoken recap in, decisions, owners, and deadlines out.</p>
-                  </article>
-                </a>
-                <article class="ship-card brewing" aria-label="SOP Generator, in progress">
-                  <span class="brew-badge"><span class="brew-boat" aria-hidden="true">&#9973;</span> Brewing</span>
-                  <h3 class="ship-name">SOP Generator</h3>
-                  <p class="ship-desc">Ramble through a process, get a numbered SOP back ~ grounded against your team's real house style.</p>
+          <div class="os-panel" id="panel-business" role="tabpanel" aria-labelledby="tab-business">
+            <p class="os-panel-blurb">The operating layer for a founder's office: triage, contracts, briefings, meetings ~ run as systems, not heroics.</p>
+            <div class="os-grid">
+              <a class="ship-card-link" href="https://automation-priority-sorter.netlify.app" target="_blank" rel="noopener" aria-label="Automation Priority Sorter (opens in a new tab)">
+                <article class="ship-card">
+                  <p class="ship-tag">AI Systems &middot; The front door</p>
+                  <h3 class="ship-name">Automation Priority Sorter</h3>
+                  <p class="ship-desc">A live triage engine. Submit a manual pain point, Claude scores it in real time, and it joins an open backlog.</p>
                 </article>
-                <article class="ship-card brewing" aria-label="Investor Update Drafter, in progress">
-                  <span class="brew-badge"><span class="brew-boat" aria-hidden="true">&#9973;</span> Brewing</span>
-                  <h3 class="ship-name">Investor Update Drafter</h3>
-                  <p class="ship-desc">Raw metrics and bullets in, a polished investor update out ~ with a numeric sanity check built in.</p>
+              </a>
+              <a class="ship-card-link" href="https://cosmik-contract-generator.netlify.app" target="_blank" rel="noopener" aria-label="Contract Generator (opens in a new tab)">
+                <article class="ship-card">
+                  <p class="ship-tag">Business Ops &middot; Open source</p>
+                  <h3 class="ship-name">Contract Generator</h3>
+                  <p class="ship-desc">An open-source AI contract generator ~ draft-ready agreements in minutes instead of days of back-and-forth.</p>
                 </article>
-                <article class="ship-card brewing" aria-label="Cold Outreach Personalizer, in progress">
-                  <span class="brew-badge"><span class="brew-boat" aria-hidden="true">&#9973;</span> Brewing</span>
-                  <h3 class="ship-name">Cold Outreach Personalizer</h3>
-                  <p class="ship-desc">A batch of prospects in, a tailored 3-touch sequence out for every one of them.</p>
+              </a>
+              <a class="ship-card-link" href="https://executive-briefing-generator.netlify.app" target="_blank" rel="noopener" aria-label="Executive Briefing Generator (opens in a new tab)">
+                <article class="ship-card">
+                  <p class="ship-tag">Founder Ops &middot; AI Systems</p>
+                  <h3 class="ship-name">Executive Briefing Generator</h3>
+                  <p class="ship-desc">Paste a messy day's notes and half-formed to-dos, get back an executive brief: top priorities, decisions needed, what to delegate, what can wait.</p>
                 </article>
-              </div>
+              </a>
+              <a class="ship-card-link" href="https://meeting-minutes-extractor.netlify.app" target="_blank" rel="noopener" aria-label="Meeting Minutes and Action Extractor (opens in a new tab)">
+                <article class="ship-card">
+                  <p class="ship-tag">Meetings &middot; Voice AI</p>
+                  <h3 class="ship-name">Meeting Minutes &amp; Action Extractor</h3>
+                  <p class="ship-desc">Never lose a decision from a leadership sync ~ transcript or spoken recap in, decisions, owners, and deadlines out.</p>
+                </article>
+              </a>
+              <article class="ship-card brewing" aria-label="SOP Generator, in progress">
+                <span class="brew-badge"><span class="brew-boat" aria-hidden="true">&#9973;</span> Brewing</span>
+                <h3 class="ship-name">SOP Generator</h3>
+                <p class="ship-desc">Ramble through a process, get a numbered SOP back ~ grounded against your team's real house style.</p>
+              </article>
+              <article class="ship-card brewing" aria-label="Investor Update Drafter, in progress">
+                <span class="brew-badge"><span class="brew-boat" aria-hidden="true">&#9973;</span> Brewing</span>
+                <h3 class="ship-name">Investor Update Drafter</h3>
+                <p class="ship-desc">Raw metrics and bullets in, a polished investor update out ~ with a numeric sanity check built in.</p>
+              </article>
+              <article class="ship-card brewing" aria-label="Cold Outreach Personalizer, in progress">
+                <span class="brew-badge"><span class="brew-boat" aria-hidden="true">&#9973;</span> Brewing</span>
+                <h3 class="ship-name">Cold Outreach Personalizer</h3>
+                <p class="ship-desc">A batch of prospects in, a tailored 3-touch sequence out for every one of them.</p>
+              </article>
             </div>
-          </section>
+          </div>
 
           <!-- ============ SCHOOL OS ============ -->
-          <section class="os-bucket reveal" id="os-school">
-            <button class="os-tile" aria-expanded="false" aria-controls="os-school-panel">
-              <div class="os-tile-main">
-                <p class="os-eyebrow">02 ~ Operating System</p>
-                <h3 class="os-name">School OS</h3>
-                <p class="os-blurb">Classroom and staffroom workflows, built from two years inside real schools.</p>
-              </div>
-              <div class="os-tile-meta">
-                <span class="os-count">2 live</span>
-                <span class="os-chevron" aria-hidden="true">&#8595;</span>
-              </div>
-            </button>
-            <div class="os-panel" id="os-school-panel" hidden>
-              <div class="os-grid">
-                <a class="ship-card-link" href="https://cosmik-fieldnote.netlify.app" target="_blank" rel="noopener" aria-label="Fieldnote (opens in a new tab)">
-                  <article class="ship-card">
-                    <p class="ship-tag">EdTech &middot; Voice AI</p>
-                    <h3 class="ship-name">Fieldnote</h3>
-                    <p class="ship-desc">Speak a messy classroom or field observation, get back a clean structured report with highlights, flags, and next steps.</p>
-                  </article>
-                </a>
-                <a class="ship-card-link" href="https://meeting-minutes-extractor.netlify.app" target="_blank" rel="noopener" aria-label="Meeting Minutes and Action Extractor (opens in a new tab)">
-                  <article class="ship-card">
-                    <p class="ship-tag">Meetings &middot; Voice AI</p>
-                    <h3 class="ship-name">Meeting Minutes &amp; Action Extractor</h3>
-                    <p class="ship-desc">Capture staff meeting actions before they evaporate ~ who owns what, by when, and the questions left open.</p>
-                  </article>
-                </a>
-              </div>
+          <div class="os-panel" id="panel-school" role="tabpanel" aria-labelledby="tab-school" hidden>
+            <p class="os-panel-blurb">Classroom and staffroom workflows, built from two years inside real schools.</p>
+            <div class="os-grid">
+              <a class="ship-card-link" href="https://cosmik-fieldnote.netlify.app" target="_blank" rel="noopener" aria-label="Fieldnote (opens in a new tab)">
+                <article class="ship-card">
+                  <p class="ship-tag">EdTech &middot; Voice AI</p>
+                  <h3 class="ship-name">Fieldnote</h3>
+                  <p class="ship-desc">Speak a messy classroom or field observation, get back a clean structured report with highlights, flags, and next steps.</p>
+                </article>
+              </a>
+              <a class="ship-card-link" href="https://meeting-minutes-extractor.netlify.app" target="_blank" rel="noopener" aria-label="Meeting Minutes and Action Extractor (opens in a new tab)">
+                <article class="ship-card">
+                  <p class="ship-tag">Meetings &middot; Voice AI</p>
+                  <h3 class="ship-name">Meeting Minutes &amp; Action Extractor</h3>
+                  <p class="ship-desc">Capture staff meeting actions before they evaporate ~ who owns what, by when, and the questions left open.</p>
+                </article>
+              </a>
             </div>
-          </section>
+          </div>
 
           <!-- ============ EVERYDAY TOOLS ============ -->
-          <section class="os-bucket reveal" id="os-everyday">
-            <button class="os-tile" aria-expanded="false" aria-controls="os-everyday-panel">
-              <div class="os-tile-main">
-                <p class="os-eyebrow">03 ~ Operating System</p>
-                <h3 class="os-name">Everyday Tools</h3>
-                <p class="os-blurb">Small, sharp utilities shipped to real marketplaces ~ built once, useful daily.</p>
-              </div>
-              <div class="os-tile-meta">
-                <span class="os-count">1 live</span>
-                <span class="os-chevron" aria-hidden="true">&#8595;</span>
-              </div>
-            </button>
-            <div class="os-panel" id="os-everyday-panel" hidden>
-              <div class="os-grid">
-                <a class="ship-card-link" href="https://chromewebstore.google.com/detail/fullshot-full-page-screen/gdejgnbdmnfpdalaaefhmbecnecdfkbf" target="_blank" rel="noopener" aria-label="Fullshot on the Chrome Web Store (opens in a new tab)">
-                  <article class="ship-card">
-                    <p class="ship-tag">Chrome Web Store &middot; Published</p>
-                    <h3 class="ship-name">Fullshot</h3>
-                    <p class="ship-desc">One-click full-page screenshots straight off the Chrome DevTools Protocol ~ no scroll-and-stitch, no missed lazy-loaded images.</p>
-                  </article>
-                </a>
-              </div>
+          <div class="os-panel" id="panel-everyday" role="tabpanel" aria-labelledby="tab-everyday" hidden>
+            <p class="os-panel-blurb">Small, sharp utilities shipped to real marketplaces ~ built once, useful daily.</p>
+            <div class="os-grid">
+              <a class="ship-card-link" href="https://chromewebstore.google.com/detail/fullshot-full-page-screen/gdejgnbdmnfpdalaaefhmbecnecdfkbf" target="_blank" rel="noopener" aria-label="Fullshot on the Chrome Web Store (opens in a new tab)">
+                <article class="ship-card">
+                  <p class="ship-tag">Chrome Web Store &middot; Published</p>
+                  <h3 class="ship-name">Fullshot</h3>
+                  <p class="ship-desc">One-click full-page screenshots straight off the Chrome DevTools Protocol ~ no scroll-and-stitch, no missed lazy-loaded images.</p>
+                </article>
+              </a>
             </div>
-          </section>
+          </div>
 
         </div>
+
 
       </div>
     </section>
@@ -221,28 +201,21 @@
     });
   }
 
-  // OS bucket accordion ~ one open at a time, keyboard accessible via native buttons.
-  document.querySelectorAll('.os-tile').forEach((tile) => {
-    tile.addEventListener('click', () => {
-      const bucket = tile.closest('.os-bucket');
-      const panel = document.getElementById(tile.getAttribute('aria-controls'));
-      const isOpen = tile.getAttribute('aria-expanded') === 'true';
+  // OS category tabs ~ pick one, only that panel shows.
+  const tabs = document.querySelectorAll('.os-tab');
+  tabs.forEach((tab) => {
+    tab.addEventListener('click', () => {
+      const targetId = tab.getAttribute('aria-controls');
 
-      // close all
-      document.querySelectorAll('.os-bucket').forEach((b) => {
-        b.classList.remove('os-open');
-        const t = b.querySelector('.os-tile');
-        const p = document.getElementById(t.getAttribute('aria-controls'));
-        t.setAttribute('aria-expanded', 'false');
-        p.hidden = true;
+      tabs.forEach((t) => {
+        t.classList.remove('os-tab-active');
+        t.setAttribute('aria-selected', 'false');
       });
+      document.querySelectorAll('.os-panel').forEach((p) => { p.hidden = true; });
 
-      // open the clicked one (unless it was already open, in which case leave all closed)
-      if (!isOpen) {
-        bucket.classList.add('os-open');
-        tile.setAttribute('aria-expanded', 'true');
-        panel.hidden = false;
-      }
+      tab.classList.add('os-tab-active');
+      tab.setAttribute('aria-selected', 'true');
+      document.getElementById(targetId).hidden = false;
     });
   });
 </script>
