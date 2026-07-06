@@ -1160,12 +1160,137 @@
     overflow: hidden;
   }
 
-  #shipped-grid {
+  /* ===== OS buckets (Shipped page) ===== */
+  #os-buckets {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 72px;
+  }
+
+  .os-bucket {
+    border: 1px solid var(--line-dark);
+    border-radius: 22px;
+    overflow: hidden;
+    background: rgba(21, 20, 38, .45);
+    transition: border-color .4s var(--ease);
+  }
+  .os-bucket.os-open {
+    border-color: rgba(167, 139, 250, .35);
+  }
+
+  .os-tile {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 28px 32px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    color: inherit;
+    font-family: inherit;
+  }
+  .os-tile:hover .os-name { color: var(--accent-bright); }
+
+  .os-eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10.5px;
+    letter-spacing: .13em;
+    text-transform: uppercase;
+    color: var(--accent-bright);
+    margin-bottom: 8px;
+  }
+  .os-name {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 500;
+    letter-spacing: -.01em;
+    color: var(--text-on-dark);
+    transition: color .3s var(--ease);
+  }
+  .os-blurb {
+    color: var(--text-on-dark-2);
+    font-size: .95rem;
+    margin-top: 8px;
+    max-width: 52ch;
+  }
+  .os-tile-meta {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-shrink: 0;
+  }
+  .os-count {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--text-on-dark-2);
+    white-space: nowrap;
+  }
+  .os-chevron {
+    color: var(--accent-bright);
+    font-size: 1.1rem;
+    transition: transform .4s var(--ease);
+  }
+  .os-open .os-chevron { transform: rotate(180deg); }
+
+  .os-panel {
+    padding: 0 32px 32px;
+  }
+  .os-grid {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 16px;
-    margin-top: 72px;
+  }
+  .os-grid .ship-card-link,
+  .os-grid > .ship-card {
+    flex: 0 1 calc((100% - 32px) / 3);
+    display: flex;
+  }
+
+  /* brewing (in-progress) cards */
+  .ship-card.brewing {
+    border-style: dashed;
+    border-color: rgba(167, 139, 250, .25);
+    opacity: .85;
+  }
+  .brew-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--accent-bright);
+    border: 1px solid rgba(167, 139, 250, .3);
+    border-radius: 999px;
+    padding: 3px 10px;
+    margin-bottom: 14px;
+    align-self: flex-start;
+  }
+  .brew-boat {
+    display: inline-block;
+    animation: brew-bob 2.6s ease-in-out infinite;
+  }
+  @keyframes brew-bob {
+    0%, 100% { transform: translateY(0) rotate(-3deg); }
+    50% { transform: translateY(-3px) rotate(3deg); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .brew-boat { animation: none; }
+  }
+
+  @media(max-width:880px) {
+    .os-tile { flex-direction: column; align-items: flex-start; gap: 14px; padding: 22px 20px; }
+    .os-panel { padding: 0 20px 24px; }
+    .os-grid .ship-card-link,
+    .os-grid > .ship-card { flex: 1 1 100%; }
   }
 
   .ship-card {
