@@ -1185,6 +1185,111 @@
     }
   }
 
+  /* ===== Path timeline (Who am I page) ===== */
+  .path-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 40px;
+  }
+
+  .path-role {
+    border: 1px solid var(--line-dark);
+    border-radius: 20px;
+    padding: 28px 32px;
+    background: rgba(21, 20, 38, .35);
+    transition: border-color .3s var(--ease);
+  }
+  .path-role.path-role-current {
+    border-color: rgba(167, 139, 250, .4);
+    background: rgba(124, 92, 255, .06);
+  }
+
+  .path-role-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .path-company {
+    font-family: 'Fraunces', serif;
+    font-size: 1.4rem;
+    font-weight: 500;
+    letter-spacing: -.01em;
+    color: var(--text-on-dark);
+  }
+  .path-role-current .path-company { color: var(--accent-bright); }
+  .path-dates {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--text-on-dark-2);
+    white-space: nowrap;
+  }
+  .path-title {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-on-dark);
+    margin-top: 6px;
+  }
+  .path-proof {
+    font-size: .92rem;
+    color: var(--text-on-dark-2);
+    margin-top: 8px;
+    max-width: 68ch;
+  }
+
+  .path-nested {
+    margin-top: 22px;
+    padding-left: 24px;
+    border-left: 2px solid rgba(167, 139, 250, .25);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .path-nested-item {
+    position: relative;
+  }
+  .path-nested-item::before {
+    content: '';
+    position: absolute;
+    left: -29px;
+    top: 8px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--accent-bright);
+  }
+  .path-nested-title {
+    font-size: .95rem;
+    font-weight: 500;
+    color: var(--text-on-dark);
+  }
+  .path-nested-dates {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    color: var(--text-on-dark-2);
+    font-weight: 400;
+  }
+  .path-nested-proof {
+    font-size: .88rem;
+    color: var(--text-on-dark-2);
+    margin-top: 4px;
+    max-width: 64ch;
+  }
+  .path-nested-now .path-nested-title { color: var(--accent-bright); }
+
+  @media(max-width:880px) {
+    .path-role { padding: 22px 20px; }
+    .path-role-head { flex-direction: column; align-items: flex-start; gap: 4px; }
+    .path-nested { padding-left: 18px; }
+    .path-nested-item::before { left: -23px; }
+  }
+
   /* ===== SHIPPED / PROJECTS ~ the flagship page, given extra visual weight ===== */
   .ship-hero-wrap {
     position: relative;
