@@ -500,6 +500,37 @@
     text-transform: uppercase;
   }
 
+  /* ===== Hero feature row ~ name-block beside the globe ===== */
+  .hero-feature-row {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    gap: 56px;
+    align-items: center;
+    margin-top: 56px;
+    text-align: left;
+  }
+
+  .hero-name-col .name-block {
+    margin: 0;
+  }
+
+  .hero-globe-col {
+    display: flex;
+    justify-content: center;
+  }
+
+  .hero-globe-col .hero-planet {
+    margin-top: 0;
+  }
+
+  @media(max-width:880px) {
+    .hero-feature-row {
+      grid-template-columns: 1fr;
+      gap: 40px;
+      margin-top: 40px;
+    }
+  }
+
   /* subtle planet accent below hero */
   .hero-planet {
     position: relative;
