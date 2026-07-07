@@ -1454,13 +1454,6 @@
     background: linear-gradient(180deg, #1c1a35 0%, #0a0a15 100%);
   }
 
-  .ship-card-head {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 8px;
-  }
-
   .ship-tag {
     font-family: 'JetBrains Mono', monospace;
     font-size: 10.5px;
@@ -1468,46 +1461,6 @@
     text-transform: uppercase;
     color: var(--accent-bright);
     font-weight: 500;
-  }
-
-  .ship-status {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 9.5px;
-    letter-spacing: .08em;
-    text-transform: uppercase;
-    font-weight: 500;
-    padding: 3px 9px;
-    border-radius: 999px;
-    border: 1px solid rgba(167, 139, 250, .35);
-    background: rgba(124, 92, 255, .1);
-    color: var(--accent-bright);
-    white-space: nowrap;
-    flex-shrink: 0;
-  }
-
-  .build-time {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 9.5px;
-    letter-spacing: .08em;
-    text-transform: uppercase;
-    font-weight: 500;
-    padding: 3px 9px;
-    border-radius: 999px;
-    border: 1px solid rgba(167, 139, 250, .35);
-    background: rgba(124, 92, 255, .1);
-    color: var(--accent-bright);
-    white-space: nowrap;
-    flex-shrink: 0;
-  }
-
-  .build-time-untracked {
-    font-style: italic;
-    font-weight: 400;
-    text-transform: none;
-    letter-spacing: .02em;
-    color: var(--text-on-dark-2);
-    border-color: rgba(167, 139, 250, .18);
-    background: rgba(124, 92, 255, .04);
   }
 
   .ship-name {
