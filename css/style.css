@@ -321,6 +321,11 @@
     text-align: center;
     position: relative;
     overflow: hidden;
+    background: radial-gradient(
+      ellipse 80% 60% at 50% 40%,
+      rgba(124, 92, 255, 0.04) 0%,
+      transparent 70%
+    ) !important;
   }
 
   /* #hero inherits an opaque background from .theme-dark, which was painting
@@ -350,7 +355,7 @@
     background: var(--glow);
     top: -200px;
     right: -150px;
-    opacity: .35;
+    opacity: .45;
   }
 
   .glow-2 {
@@ -359,7 +364,34 @@
     background: rgba(90, 60, 200, .5);
     bottom: 0;
     left: -180px;
-    opacity: .22;
+    opacity: .30;
+  }
+
+  .glow-center {
+    width: 800px;
+    height: 800px;
+    background: radial-gradient(
+      circle,
+      rgba(124, 92, 255, 0.18) 0%,
+      rgba(124, 92, 255, 0.08) 40%,
+      transparent 70%
+    );
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -60%);
+    filter: blur(80px);
+    opacity: 1;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .glow-center {
+      animation: heroGlowPulse 6s ease-in-out infinite;
+    }
+  }
+
+  @keyframes heroGlowPulse {
+    0%, 100% { opacity: 0.7; transform: translate(-50%, -60%) scale(1); }
+    50%       { opacity: 1;   transform: translate(-50%, -60%) scale(1.08); }
   }
 
   .hero-inner {
