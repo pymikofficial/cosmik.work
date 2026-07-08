@@ -16,75 +16,6 @@
 </head>
 <body>
 
-<!-- ============ ENTRY GATE ~ Page Zero ============ -->
-<div class="entry-gate" id="entryGate" role="dialog" aria-modal="true" aria-label="Site intro animation">
-  <a href="#mainContent" class="gate-skip" id="gateSkip">Skip</a>
-
-  <div class="gate-stage">
-    <div class="gate-hand gate-hand-human" aria-hidden="true">
-      <svg viewBox="0 0 200 160" xmlns="http://www.w3.org/2000/svg">
-        <path d="M18,55 Q6,90 18,122 Q40,148 72,132 Q90,116 89,82 Q88,50 66,33 Q42,16 18,55 Z" fill="var(--accent-warm)"/>
-        <rect x="33" y="118" width="52" height="26" rx="13" fill="var(--accent-warm)" transform="rotate(38 33 118)"/>
-        <rect x="72" y="52" width="104" height="19" rx="9.5" fill="var(--accent-warm)" transform="rotate(-8 72 52)"/>
-        <rect x="76" y="68" width="118" height="20" rx="10" fill="var(--accent-warm-bright)"/>
-        <rect x="74" y="90" width="106" height="19" rx="9.5" fill="var(--accent-warm)" transform="rotate(7 74 90)"/>
-        <rect x="70" y="108" width="82" height="16" rx="8" fill="var(--accent-warm)" transform="rotate(16 70 108)"/>
-      </svg>
-    </div>
-
-    <div class="gate-hand gate-hand-robot" aria-hidden="true">
-      <svg viewBox="0 0 200 160" xmlns="http://www.w3.org/2000/svg">
-        <rect x="128" y="34" width="58" height="100" rx="10" fill="var(--accent)"/>
-
-        <!-- index -->
-        <rect x="104" y="42.5" width="28" height="15" rx="7.5" fill="var(--accent)"/>
-        <circle cx="96" cy="50" r="10" fill="var(--accent)"/>
-        <rect x="42" y="44" width="50" height="12" rx="6" fill="var(--accent-bright)"/>
-
-        <!-- middle (longest, highlighted like the human hand's middle finger) -->
-        <rect x="106" y="65.5" width="26" height="17" rx="8.5" fill="var(--accent)"/>
-        <circle cx="98" cy="74" r="11" fill="var(--accent)"/>
-        <rect x="24" y="68" width="66" height="13" rx="6.5" fill="var(--accent-bright)"/>
-
-        <!-- ring -->
-        <rect x="104" y="90.5" width="28" height="15" rx="7.5" fill="var(--accent)"/>
-        <circle cx="96" cy="98" r="10" fill="var(--accent)"/>
-        <rect x="44" y="92" width="48" height="12" rx="6" fill="var(--accent-bright)"/>
-
-        <!-- pinky (shortest) -->
-        <rect x="108" y="112" width="24" height="12" rx="6" fill="var(--accent)"/>
-        <circle cx="100" cy="118" r="8" fill="var(--accent)"/>
-        <rect x="62" y="113" width="34" height="10" rx="5" fill="var(--accent-bright)"/>
-
-        <!-- thumb, angled down toward the palm's base -->
-        <g transform="rotate(30 128 128)">
-          <rect x="106" y="120.5" width="26" height="15" rx="7.5" fill="var(--accent)"/>
-          <circle cx="98" cy="128" r="9" fill="var(--accent)"/>
-          <rect x="58" y="122" width="36" height="12" rx="6" fill="var(--accent-bright)"/>
-        </g>
-      </svg>
-    </div>
-
-    <div class="gate-glow" id="gateGlow" aria-hidden="true"></div>
-    <div class="gate-sparks" aria-hidden="true"><span></span><span></span><span></span></div>
-  </div>
-
-  <p class="gate-prompt" id="gatePrompt">Touch to enter</p>
-  <div class="gate-flash" aria-hidden="true"></div>
-</div>
-<script>
-  // Runs immediately (not deferred) so a repeat visitor never sees the gate
-  // flash before this executes: no render cost when the flag is already set.
-  (function(){
-    try {
-      if (localStorage.getItem('cosmikwork_intro_seen')) {
-        var g = document.getElementById('entryGate');
-        if (g) g.remove();
-      }
-    } catch (e) {}
-  })();
-</script>
-
 <canvas id="bgStars" aria-hidden="true"></canvas>
 
 <nav id="nav" aria-label="Primary">
@@ -112,7 +43,7 @@
   </nav>
 </div>
 
-<main id="mainContent" tabindex="-1">
+<main>
 
   <!-- HERO -->
   <div id="heroStatsWrap">
@@ -406,11 +337,8 @@
   <div class="fl-attrib">World map: Al MacDonald / Fritz Lekschas, <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener">CC BY-SA 3.0</a></div>
 </footer>
 
-<button class="gate-replay" id="gateReplay" type="button" title="Replay intro">Replay intro</button>
-
 <script src="js/starfield.js"></script>
 <script src="js/nav.js"></script>
-<script src="js/entry-gate.js"></script>
 
 <script>
   // ---- Kolkata marker video modal ----
