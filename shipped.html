@@ -59,13 +59,13 @@
         <p class="section-sub reveal">Live tools and documented systems. The code is public where it can be.</p>
 
         <div id="os-tabs" role="tablist" aria-label="Project categories">
-          <button class="os-tab os-tab-active" id="tab-business" role="tab" aria-selected="true" aria-controls="panel-business">
-            <span class="os-tab-name">Business OS</span>
-            <span class="os-tab-count">9 live</span>
-          </button>
-          <button class="os-tab" id="tab-education" role="tab" aria-selected="false" aria-controls="panel-education">
+          <button class="os-tab os-tab-active" id="tab-education" role="tab" aria-selected="true" aria-controls="panel-education">
             <span class="os-tab-name">Education OS</span>
             <span class="os-tab-count">4 live</span>
+          </button>
+          <button class="os-tab" id="tab-business" role="tab" aria-selected="false" aria-controls="panel-business">
+            <span class="os-tab-name">Business OS</span>
+            <span class="os-tab-count">9 live</span>
           </button>
           <button class="os-tab" id="tab-everyday" role="tab" aria-selected="false" aria-controls="panel-everyday">
             <span class="os-tab-name">Everyday Tools</span>
@@ -75,8 +75,43 @@
 
         <div id="os-panels">
 
+          <!-- ============ EDUCATION OS ============ -->
+          <div class="os-panel" id="panel-education" role="tabpanel" aria-labelledby="tab-education">
+            <p class="os-panel-blurb">Classroom and staffroom workflows, built from two years inside real schools.</p>
+            <div class="os-grid">
+              <a class="ship-card-link" href="https://cosmik-fieldnote.netlify.app" target="_blank" rel="noopener" aria-label="Fieldnote (opens in a new tab)">
+                <article class="ship-card">
+                  <p class="ship-tag">EdTech &middot; Voice AI</p>
+                  <h3 class="ship-name">Fieldnote</h3>
+                  <p class="ship-desc">Speak a messy classroom or field observation, get back a clean structured report with highlights, flags, and next steps.</p>
+                </article>
+              </a>
+              <a class="ship-card-link" href="https://meeting-minutes-extractor.netlify.app" target="_blank" rel="noopener" aria-label="Meeting Minutes and Action Extractor (opens in a new tab)">
+                <article class="ship-card">
+                  <p class="ship-tag">Meetings &middot; Voice AI</p>
+                  <h3 class="ship-name">Meeting Minutes &amp; Action Extractor</h3>
+                  <p class="ship-desc">Capture staff meeting actions before they evaporate: who owns what, by when, and the questions left open.</p>
+                </article>
+              </a>
+              <a class="ship-card-link" href="https://hiring-screener.netlify.app" target="_blank" rel="noopener" aria-label="Hiring Screener (opens in a new tab)">
+                <article class="ship-card">
+                  <p class="ship-tag">Talent Ops &middot; Instructor Vetting</p>
+                  <h3 class="ship-name">Hiring Screener</h3>
+                  <p class="ship-desc">Paste a role brief and a candidate profile, get a real embedding-based fit score for instructor or tutor roles, plus strengths, gaps, and interview questions tailored to classroom delivery.</p>
+                </article>
+              </a>
+              <a class="ship-card-link" href="https://cosmik-sop-generator.netlify.app" target="_blank" rel="noopener" aria-label="SOP Generator (opens in a new tab)">
+                <article class="ship-card">
+                  <p class="ship-tag">School Ops &middot; Compliance</p>
+                  <h3 class="ship-name">SOP Generator</h3>
+                  <p class="ship-desc">Ramble through a school process, student intake, counsellor scheduling, or platform issue resolution, get a numbered SOP grounded in your institution's real house style.</p>
+                </article>
+              </a>
+            </div>
+          </div>
+
           <!-- ============ BUSINESS OS ============ -->
-          <div class="os-panel" id="panel-business" role="tabpanel" aria-labelledby="tab-business">
+          <div class="os-panel" id="panel-business" role="tabpanel" aria-labelledby="tab-business" hidden>
             <p class="os-panel-blurb">The operating layer for a founder's office: triage, contracts, briefings, meetings, all run as systems, not heroics.</p>
             <div class="os-grid">
               <a class="ship-card-link" href="https://automation-priority-sorter.netlify.app" target="_blank" rel="noopener" aria-label="Automation Priority Sorter (opens in a new tab)">
@@ -140,41 +175,6 @@
                   <p class="ship-tag">Hiring &middot; Portfolio Audit</p>
                   <h3 class="ship-name">GitHub Profile Summarizer</h3>
                   <p class="ship-desc">Paste a GitHub username, see what someone's actually shipped. Pairs well with Hiring Screener: check a candidate's resume-to-role fit, then verify their GitHub backs it up.</p>
-                </article>
-              </a>
-            </div>
-          </div>
-
-          <!-- ============ EDUCATION OS ============ -->
-          <div class="os-panel" id="panel-education" role="tabpanel" aria-labelledby="tab-education" hidden>
-            <p class="os-panel-blurb">Classroom and staffroom workflows, built from two years inside real schools.</p>
-            <div class="os-grid">
-              <a class="ship-card-link" href="https://cosmik-fieldnote.netlify.app" target="_blank" rel="noopener" aria-label="Fieldnote (opens in a new tab)">
-                <article class="ship-card">
-                  <p class="ship-tag">EdTech &middot; Voice AI</p>
-                  <h3 class="ship-name">Fieldnote</h3>
-                  <p class="ship-desc">Speak a messy classroom or field observation, get back a clean structured report with highlights, flags, and next steps.</p>
-                </article>
-              </a>
-              <a class="ship-card-link" href="https://meeting-minutes-extractor.netlify.app" target="_blank" rel="noopener" aria-label="Meeting Minutes and Action Extractor (opens in a new tab)">
-                <article class="ship-card">
-                  <p class="ship-tag">Meetings &middot; Voice AI</p>
-                  <h3 class="ship-name">Meeting Minutes &amp; Action Extractor</h3>
-                  <p class="ship-desc">Capture staff meeting actions before they evaporate: who owns what, by when, and the questions left open.</p>
-                </article>
-              </a>
-              <a class="ship-card-link" href="https://hiring-screener.netlify.app" target="_blank" rel="noopener" aria-label="Hiring Screener (opens in a new tab)">
-                <article class="ship-card">
-                  <p class="ship-tag">Talent Ops &middot; Instructor Vetting</p>
-                  <h3 class="ship-name">Hiring Screener</h3>
-                  <p class="ship-desc">Paste a role brief and a candidate profile, get a real embedding-based fit score for instructor or tutor roles, plus strengths, gaps, and interview questions tailored to classroom delivery.</p>
-                </article>
-              </a>
-              <a class="ship-card-link" href="https://cosmik-sop-generator.netlify.app" target="_blank" rel="noopener" aria-label="SOP Generator (opens in a new tab)">
-                <article class="ship-card">
-                  <p class="ship-tag">School Ops &middot; Compliance</p>
-                  <h3 class="ship-name">SOP Generator</h3>
-                  <p class="ship-desc">Ramble through a school process, student intake, counsellor scheduling, or platform issue resolution, get a numbered SOP grounded in your institution's real house style.</p>
                 </article>
               </a>
             </div>
