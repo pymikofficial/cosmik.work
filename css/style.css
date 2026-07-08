@@ -1290,6 +1290,68 @@
     .path-nested-item::before { left: -23px; }
   }
 
+  /* ===== ORIGIN ~ certificate archive callouts, styled after .path-role ===== */
+  .origin-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-top: 40px;
+  }
+
+  .origin-card {
+    border: 1px solid var(--line-dark);
+    border-radius: 20px;
+    padding: 24px 22px;
+    background: rgba(21, 20, 38, .35);
+    transition: border-color .3s var(--ease);
+  }
+
+  .origin-year {
+    display: block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--text-on-dark-2);
+  }
+
+  .origin-title {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-on-dark);
+    margin-top: 8px;
+  }
+
+  .origin-detail {
+    font-size: .88rem;
+    color: var(--text-on-dark-2);
+    margin-top: 6px;
+    line-height: 1.5;
+  }
+
+  .origin-archive-link {
+    margin-top: 28px;
+    font-size: .85rem;
+  }
+
+  .origin-archive-link a {
+    color: var(--text-on-dark-2);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .origin-archive-link a:hover {
+    color: var(--accent-bright);
+  }
+
+  @media(max-width:880px) {
+    .origin-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  }
+
+  @media(max-width:520px) {
+    .origin-grid { grid-template-columns: 1fr; }
+  }
+
   /* ===== SHIPPED / PROJECTS ~ the flagship page, given extra visual weight ===== */
   .ship-hero-wrap {
     position: relative;
