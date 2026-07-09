@@ -2222,48 +2222,56 @@
   .pricing-card {
     flex: 1;
     min-width: 200px;
-    border: 1px solid rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.06);
     border-radius: 12px;
     padding: 1.5rem;
-    background: rgba(255,255,255,0.03);
+    background: rgba(255,255,255,0.02);
   }
 
   .pricing-card-highlight {
-    border-color: #7c3aed;
-    background: rgba(124,58,237,0.08);
+    border-color: rgba(255,255,255,0.06);
+    background: rgba(255,255,255,0.02);
   }
 
   .pricing-card-label {
     font-size: 0.7rem;
     font-weight: 700;
     letter-spacing: 0.12em;
-    color: #7c3aed;
-    margin-bottom: 0.75rem;
+    color: rgba(255,255,255,0.35);
+    margin-bottom: 0.5rem;
   }
 
   .pricing-card-price {
-    font-size: 2rem;
-    font-weight: 700;
-    color: #fff;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: rgba(255,255,255,0.6);
     line-height: 1;
-    margin-bottom: 0.4rem;
+    margin-bottom: 0.35rem;
+  }
+
+  .pricing-section-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: rgba(255,255,255,0.3);
+    margin-bottom: 1rem;
   }
 
   .pricing-per {
-    font-size: 1rem;
+    font-size: 0.85rem;
     font-weight: 400;
-    color: rgba(255,255,255,0.5);
+    color: rgba(255,255,255,0.35);
   }
 
   .pricing-card-detail {
-    font-size: 0.78rem;
-    color: rgba(255,255,255,0.45);
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.3);
     margin-bottom: 0.75rem;
   }
 
   .pricing-card-desc {
-    font-size: 0.82rem;
-    color: rgba(255,255,255,0.6);
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.65);
     line-height: 1.6;
   }
 
