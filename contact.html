@@ -51,37 +51,113 @@
   <section id="contact" class="theme-dark" style="padding-top:20px;min-height:auto;" aria-labelledby="contact-title">
     <div class="container">
       <p class="section-eyebrow">Let's talk</p>
-      <div class="contact-grid">
-        <div class="contact-left">
-          <h2 class="cta-title" id="contact-title">Ready to hand off the <em>machinery?</em></h2>
-          <p>Tell me what's breaking: hiring, revenue ops, founder bandwidth, all three. You'll get a straight answer on whether I'm the right person to fix it.</p>
-          <a href="mailto:soumik@cosmik.work" class="btn btn-primary" data-testid="contact-email-cta">soumik@cosmik.work →</a>
-          <div class="cta-links">
-            <a href="https://www.linkedin.com/in/showmikthebuilder/" target="_blank" rel="noopener" data-testid="cta-linkedin">LinkedIn</a>
-            <a href="https://github.com/pymikofficial" target="_blank" rel="noopener" data-testid="cta-github">GitHub</a>
+      <h2 class="cta-title" id="contact-title">Ready to hand off the <em>machinery?</em></h2>
+      <p class="contact-subtext">
+        Book a free 30-minute call. We figure out what's breaking and whether I'm the right person to fix it. No pitch, no deck, just a straight conversation.
+      </p>
+
+      <!-- Engagement Funnel -->
+      <div class="hire-funnel">
+
+        <div class="funnel-steps">
+          <div class="funnel-step">
+            <div class="funnel-step-num">01</div>
+            <div class="funnel-step-body">
+              <div class="funnel-step-title">30-min discovery call</div>
+              <div class="funnel-step-desc">Free. We figure out the problem, the scope, and mutual fit. Book below.</div>
+            </div>
           </div>
-          <p class="reply-note">Replies within 24 hours · IST or yours</p>
+          <div class="funnel-arrow">→</div>
+          <div class="funnel-step">
+            <div class="funnel-step-num">02</div>
+            <div class="funnel-step-body">
+              <div class="funnel-step-title">Paid 1-week trial</div>
+              <div class="funnel-step-desc">20 hours of real work. You see exactly how I operate. I see exactly what you need. $300 flat.</div>
+            </div>
+          </div>
+          <div class="funnel-arrow">→</div>
+          <div class="funnel-step">
+            <div class="funnel-step-num">03</div>
+            <div class="funnel-step-body">
+              <div class="funnel-step-title">Ongoing engagement</div>
+              <div class="funnel-step-desc">If the trial works for both of us, we continue. Two options below.</div>
+            </div>
+          </div>
         </div>
 
-        <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" aria-label="Contact form">
-          <input type="hidden" name="form-name" value="contact">
-          <p class="visually-hidden" aria-hidden="true">
-            <label>Don't fill this out if you're human: <input name="bot-field"></label>
-          </p>
-          <div class="field">
-            <label for="cf-name">Your name</label>
-            <input id="cf-name" type="text" name="name" autocomplete="name" required data-testid="form-name">
+        <div class="pricing-cards">
+          <div class="pricing-card">
+            <div class="pricing-card-label">TRIAL</div>
+            <div class="pricing-card-price">$300</div>
+            <div class="pricing-card-detail">20 hours · 1 week · flat rate</div>
+            <div class="pricing-card-desc">Real work. No commitment beyond the week. Mutual fit check.</div>
           </div>
-          <div class="field">
-            <label for="cf-email">Work email</label>
-            <input id="cf-email" type="email" name="email" autocomplete="email" required data-testid="form-email">
+          <div class="pricing-card pricing-card-highlight">
+            <div class="pricing-card-label">PART-TIME</div>
+            <div class="pricing-card-price">$1,200<span class="pricing-per">/mo</span></div>
+            <div class="pricing-card-detail">80 hours · 20h per week · $15/hr</div>
+            <div class="pricing-card-desc">Right hand for founders who need consistent ops support without a full-time hire.</div>
           </div>
-          <div class="field">
-            <label for="cf-msg">What's breaking right now?</label>
-            <textarea id="cf-msg" name="message" required data-testid="form-message"></textarea>
+          <div class="pricing-card">
+            <div class="pricing-card-label">FULL-TIME</div>
+            <div class="pricing-card-price">$2,400<span class="pricing-per">/mo</span></div>
+            <div class="pricing-card-detail">160 hours · 40h per week · $15/hr</div>
+            <div class="pricing-card-desc">Embedded Chief of Staff. I run the operating layer so you stay focused on growth.</div>
           </div>
-          <button type="submit" class="btn btn-primary" data-testid="form-submit">Send it →</button>
-        </form>
+        </div>
+
+      </div>
+
+      <!-- Cal.com Booking Embed -->
+      <div class="cal-embed-wrapper">
+        <div class="cal-embed-label">BOOK THE 30-MIN CALL</div>
+        <div id="cal-booking-embed"></div>
+      </div>
+
+      <script type="text/javascript">
+        (function (C, A, L) {
+          let p = function (a, ar) { a.q.push(ar); };
+          let d = C.document;
+          C.Cal = C.Cal || function () {
+            let cal = C.Cal; let ar = arguments;
+            if (!cal.loaded) {
+              cal.ns = {}; cal.q = cal.q || [];
+              d.head.appendChild(d.createElement("script")).src = A;
+              cal.loaded = true;
+            }
+            if (ar[0] === L) {
+              const api = function () { p(api, arguments); };
+              const namespace = ar[1];
+              api.q = api.q || [];
+              if (typeof namespace === "string") {
+                cal.ns[namespace] = cal.ns[namespace] || api;
+                p(cal.ns[namespace], ar);
+                p(cal, [L, namespace, ar[2]]);
+              } else p(cal, ar);
+              return;
+            }
+            p(cal, ar);
+          };
+        })(window, "https://app.cal.com/embed/embed.js", "init");
+
+        Cal("init", { origin: "https://cal.com" });
+
+        Cal("inline", {
+          elementOrSelector: "#cal-booking-embed",
+          calLink: "cosmik.work/30min",
+          layout: "month_view"
+        });
+
+        Cal("ui", {
+          theme: "dark",
+          styles: { branding: { brandColor: "#7c3aed" } },
+          hideEventTypeDetails: false
+        });
+      </script>
+
+      <div class="cta-links">
+        <a href="https://www.linkedin.com/in/showmikthebuilder/" target="_blank" rel="noopener" data-testid="cta-linkedin">LinkedIn</a>
+        <a href="https://github.com/pymikofficial" target="_blank" rel="noopener" data-testid="cta-github">GitHub</a>
       </div>
     </div>
   </section>

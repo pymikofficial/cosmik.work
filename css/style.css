@@ -2147,3 +2147,134 @@
       height: 32px;
     }
   }
+
+  /* ── HIRE / CONTACT PAGE ─────────────────────────────── */
+
+  .contact-subtext {
+    max-width: 480px;
+    line-height: 1.7;
+    opacity: 0.75;
+    margin-bottom: 3rem;
+  }
+
+  .hire-funnel {
+    margin-bottom: 3.5rem;
+  }
+
+  .funnel-steps {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+    flex-wrap: wrap;
+  }
+
+  .funnel-step {
+    display: flex;
+    gap: 1rem;
+    flex: 1;
+    min-width: 200px;
+  }
+
+  .funnel-step-num {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: #7c3aed;
+    padding-top: 2px;
+    flex-shrink: 0;
+  }
+
+  .funnel-step-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 0.35rem;
+  }
+
+  .funnel-step-desc {
+    font-size: 0.82rem;
+    color: rgba(255,255,255,0.55);
+    line-height: 1.6;
+  }
+
+  .funnel-arrow {
+    color: #7c3aed;
+    font-size: 1.2rem;
+    padding-top: 2px;
+    flex-shrink: 0;
+    align-self: flex-start;
+    margin-top: 2px;
+  }
+
+  .pricing-cards {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .pricing-card {
+    flex: 1;
+    min-width: 200px;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px;
+    padding: 1.5rem;
+    background: rgba(255,255,255,0.03);
+  }
+
+  .pricing-card-highlight {
+    border-color: #7c3aed;
+    background: rgba(124,58,237,0.08);
+  }
+
+  .pricing-card-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: #7c3aed;
+    margin-bottom: 0.75rem;
+  }
+
+  .pricing-card-price {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1;
+    margin-bottom: 0.4rem;
+  }
+
+  .pricing-per {
+    font-size: 1rem;
+    font-weight: 400;
+    color: rgba(255,255,255,0.5);
+  }
+
+  .pricing-card-detail {
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.45);
+    margin-bottom: 0.75rem;
+  }
+
+  .pricing-card-desc {
+    font-size: 0.82rem;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.6;
+  }
+
+  .cal-embed-wrapper {
+    margin-top: 1rem;
+  }
+
+  .cal-embed-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: rgba(255,255,255,0.4);
+    margin-bottom: 1.25rem;
+  }
+
+  #cal-booking-embed {
+    min-height: 500px;
+    border-radius: 12px;
+    overflow: hidden;
+  }
