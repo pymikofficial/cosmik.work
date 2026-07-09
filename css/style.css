@@ -1304,6 +1304,10 @@
     transition: border-color .3s var(--ease), background .3s var(--ease);
   }
 
+  .cv-download-card {
+    margin-bottom: 2.5rem;
+  }
+
   .certificate-archive-link:hover {
     border-color: rgba(167, 139, 250, .4);
     background: rgba(124, 92, 255, .06);
