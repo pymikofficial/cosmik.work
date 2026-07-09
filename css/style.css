@@ -218,9 +218,15 @@
     .nav-toggle {
       display: flex;
     }
+  }
 
+  /* Let's talk always visible in nav: mobile adjustments */
+  @media(max-width:820px) {
     .nav-cta {
-      display: none;
+      display: inline-flex;
+      font-size: 0.78rem;
+      padding: 0.4rem 0.9rem;
+      margin-right: 0.5rem;
     }
   }
 
