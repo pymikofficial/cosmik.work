@@ -1,2 +1,8 @@
 /framework       /systems       301
 /framework.html  /systems.html  301
+
+# Explicit rewrites so canonical/OG URLs (extensionless) always resolve,
+# instead of relying on Netlify's implicit pretty-URL behavior.
+/contact  /contact.html  200
+/shipped  /shipped.html  200
+/systems  /systems.html  200
