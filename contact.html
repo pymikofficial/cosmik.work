@@ -1,201 +1,219 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
-<link rel="apple-touch-icon" sizes="180x180" href="img/favicon-180.png">
-<title>Let's Talk · Contact Soumik Chatterjee | cosmik.work</title>
-<meta name="description" content="Tell Soumik Chatterjee what's breaking: hiring, revenue ops, or founder bandwidth. Book a call, email soumik@cosmik.work, or connect on LinkedIn.">
-<link rel="canonical" href="https://cosmik.work/contact">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="cosmik.work">
-<meta property="og:title" content="Let's Talk · Contact Soumik Chatterjee">
-<meta property="og:description" content="Tell Soumik Chatterjee what's breaking: hiring, revenue ops, or founder bandwidth. Book a call, email soumik@cosmik.work, or connect on LinkedIn.">
-<meta property="og:url" content="https://cosmik.work/contact">
-<meta property="og:image" content="https://cosmik.work/img/cosmikwork_broad_logo.webp">
-<meta property="og:image:alt" content="cosmik.work logo">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Let's Talk · Contact Soumik Chatterjee">
-<meta name="twitter:description" content="Tell Soumik Chatterjee what's breaking: hiring, revenue ops, or founder bandwidth. Book a call, email soumik@cosmik.work, or connect on LinkedIn.">
-<meta name="twitter:image" content="https://cosmik.work/img/cosmikwork_broad_logo.webp">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="img/favicon-180.png">
+  <title>Let's Talk · Contact Soumik Chatterjee | cosmik.work</title>
+  <meta name="description"
+    content="Tell Soumik Chatterjee what's breaking: hiring, revenue ops, or founder bandwidth. Book a call, email soumik@cosmik.work, or connect on LinkedIn.">
+  <link rel="canonical" href="https://cosmik.work/contact">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="cosmik.work">
+  <meta property="og:title" content="Let's Talk · Contact Soumik Chatterjee">
+  <meta property="og:description"
+    content="Tell Soumik Chatterjee what's breaking: hiring, revenue ops, or founder bandwidth. Book a call, email soumik@cosmik.work, or connect on LinkedIn.">
+  <meta property="og:url" content="https://cosmik.work/contact">
+  <meta property="og:image" content="https://cosmik.work/img/cosmikwork_broad_logo.webp">
+  <meta property="og:image:alt" content="cosmik.work logo">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Let's Talk · Contact Soumik Chatterjee">
+  <meta name="twitter:description"
+    content="Tell Soumik Chatterjee what's breaking: hiring, revenue ops, or founder bandwidth. Book a call, email soumik@cosmik.work, or connect on LinkedIn.">
+  <meta name="twitter:image" content="https://cosmik.work/img/cosmikwork_broad_logo.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
-<canvas id="bgStars" aria-hidden="true"></canvas>
+  <canvas id="bgStars" aria-hidden="true"></canvas>
 
-<nav id="nav" aria-label="Primary">
-  <a href="index.html" class="logo" data-testid="nav-logo" aria-label="cosmik.work home"><img src="img/cosmikwork_circular_logo.webp" alt="" class="logo-mark" width="30" height="30">cosmik<span>.work</span></a>
-  <div class="nav-links">
-    <a href="index.html" data-testid="nav-home">Home</a>
-    <a href="shipped.html" class="nav-featured" data-testid="nav-shipped">Shipped/Projects</a>
-    <a href="systems.html" data-testid="nav-systems">Who am I?</a>
-  </div>
-  <a href="contact.html" class="nav-cta" data-testid="nav-cta"><span class="dot" aria-hidden="true"></span>Let's talk</a>
-<button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
-    <span class="nav-toggle-bar" aria-hidden="true"></span>
-    <span class="nav-toggle-bar" aria-hidden="true"></span>
-    <span class="nav-toggle-bar" aria-hidden="true"></span>
-  </button>
-</nav>
-
-<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
-  <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">&#10005;</button>
-  <nav class="mobile-menu-links" aria-label="Mobile">
-    <a href="index.html" data-testid="mnav-home">Home</a>
-    <a href="shipped.html" class="nav-featured" data-testid="mnav-shipped">Shipped/Projects</a>
-    <a href="systems.html" data-testid="mnav-systems">Who am I?</a>
-    <a href="contact.html" class="mobile-menu-cta" data-testid="mnav-cta">Let's talk &#8594;</a>
-  </nav>
-</div>
-
-<main>
-
-  <div class="page-header theme-dark">
-    <p class="breadcrumb"><a href="index.html">cosmik.work</a> / Let's talk</p>
-  </div>
-
-  <!-- CONTACT: dark -->
-  <section id="contact" class="theme-dark" style="padding-top:20px;min-height:auto;" aria-labelledby="contact-title">
-    <div class="container">
-      <h1 class="visually-hidden">Let's Talk</h1>
-      <p class="section-eyebrow">Let's talk</p>
-      <h2 class="cta-title" id="contact-title">Ready to hand off the <em>machinery?</em></h2>
-      <p class="contact-subtext">
-        Book a free 30-minute call. We figure out what's breaking and whether I'm the right person to fix it. No pitch, no deck, just a straight conversation.
-      </p>
-
-      <!-- Engagement Funnel -->
-      <div class="hire-funnel">
-
-        <div class="funnel-steps">
-          <div class="funnel-step">
-            <div class="funnel-step-num">01</div>
-            <div class="funnel-step-body">
-              <div class="funnel-step-title">30-min discovery call</div>
-              <div class="funnel-step-desc">Free. We figure out the problem, the scope, and mutual fit. Book below.</div>
-            </div>
-          </div>
-          <div class="funnel-arrow">→</div>
-          <div class="funnel-step">
-            <div class="funnel-step-num">02</div>
-            <div class="funnel-step-body">
-              <div class="funnel-step-title">Paid 1-week trial</div>
-              <div class="funnel-step-desc">20 hours of real work. You see exactly how I operate. I see exactly what you need. $300 flat.</div>
-            </div>
-          </div>
-          <div class="funnel-arrow">→</div>
-          <div class="funnel-step">
-            <div class="funnel-step-num">03</div>
-            <div class="funnel-step-body">
-              <div class="funnel-step-title">Ongoing engagement</div>
-              <div class="funnel-step-desc">If the trial works for both of us, we continue. Two options below.</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Cal.com Booking Embed -->
-        <div class="cal-embed-wrapper">
-          <div class="cal-embed-label">BOOK THE 30-MIN CALL</div>
-          <div id="cal-booking-embed"></div>
-        </div>
-
-        <script type="text/javascript">
-          (function (C, A, L) {
-            let p = function (a, ar) { a.q.push(ar); };
-            let d = C.document;
-            C.Cal = C.Cal || function () {
-              let cal = C.Cal; let ar = arguments;
-              if (!cal.loaded) {
-                cal.ns = {}; cal.q = cal.q || [];
-                d.head.appendChild(d.createElement("script")).src = A;
-                cal.loaded = true;
-              }
-              if (ar[0] === L) {
-                const api = function () { p(api, arguments); };
-                const namespace = ar[1];
-                api.q = api.q || [];
-                if (typeof namespace === "string") {
-                  cal.ns[namespace] = cal.ns[namespace] || api;
-                  p(cal.ns[namespace], ar);
-                  p(cal, [L, namespace, ar[2]]);
-                } else p(cal, ar);
-                return;
-              }
-              p(cal, ar);
-            };
-          })(window, "https://app.cal.com/embed/embed.js", "init");
-
-          Cal("init", { origin: "https://cal.com" });
-
-          Cal("inline", {
-            elementOrSelector: "#cal-booking-embed",
-            calLink: "cosmik.work/30min",
-            layout: "month_view"
-          });
-
-          Cal("ui", {
-            theme: "dark",
-            styles: { branding: { brandColor: "#7c3aed" } },
-            hideEventTypeDetails: false
-          });
-        </script>
-
-        <div class="pricing-section-label">HOW WE WORK TOGETHER</div>
-        <div class="pricing-cards">
-          <div class="pricing-card">
-            <div class="pricing-card-label">TRIAL</div>
-            <div class="pricing-card-price">$300</div>
-            <div class="pricing-card-detail">20 hours · 1 week · flat rate</div>
-            <div class="pricing-card-desc">Real work. No commitment beyond the week. Mutual fit check.</div>
-          </div>
-          <div class="pricing-card">
-            <div class="pricing-card-label">PART-TIME</div>
-            <div class="pricing-card-price">$1,200<span class="pricing-per">/mo</span></div>
-            <div class="pricing-card-detail">80 hours · 20h per week · $15/hr</div>
-            <div class="pricing-card-desc">Right hand for founders who need consistent ops support without a full-time hire.</div>
-          </div>
-          <div class="pricing-card">
-            <div class="pricing-card-label">FULL-TIME</div>
-            <div class="pricing-card-price">$2,400<span class="pricing-per">/mo</span></div>
-            <div class="pricing-card-detail">160 hours · 40h per week · $15/hr</div>
-            <div class="pricing-card-desc">Embedded Chief of Staff. I run the operating layer so you stay focused on growth.</div>
-          </div>
-        </div>
-
-      </div>
-
-      <p class="payment-signal">Payments via Wise: USD · AED · CAD · SGD · AUD accepted. No wire transfers, no delays.</p>
-
-      <div class="cta-links">
-        <a href="mailto:soumik@cosmik.work" data-testid="cta-email">Email</a>
-        <a href="https://www.linkedin.com/in/showmikthebuilder/" target="_blank" rel="noopener" data-testid="cta-linkedin">LinkedIn</a>
-      </div>
+  <nav id="nav" aria-label="Primary">
+    <a href="index.html" class="logo" data-testid="nav-logo" aria-label="cosmik.work home"><img
+        src="img/cosmikwork_circular_logo.webp" alt="" class="logo-mark" width="30"
+        height="30">cosmik<span>.work</span></a>
+    <div class="nav-links">
+      <a href="index.html" data-testid="nav-home">Home</a>
+      <a href="shipped.html" class="nav-featured" data-testid="nav-shipped">Shipped/Projects</a>
+      <a href="systems.html" data-testid="nav-systems">Who am I?</a>
     </div>
-  </section>
+    <a href="contact.html" class="nav-cta" data-testid="nav-cta"><span class="dot" aria-hidden="true"></span>Let's
+      talk</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+      <span class="nav-toggle-bar" aria-hidden="true"></span>
+      <span class="nav-toggle-bar" aria-hidden="true"></span>
+      <span class="nav-toggle-bar" aria-hidden="true"></span>
+    </button>
+  </nav>
 
-  <div class="page-next theme-dark">
-    <a href="index.html" class="pn-back">← Home</a>
-    <a href="shipped.html">
-      <p class="pn-label">Explore</p>
-      <span class="pn-title">Built, not claimed <span aria-hidden="true">→</span></span>
-    </a>
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">&#10005;</button>
+    <nav class="mobile-menu-links" aria-label="Mobile">
+      <a href="index.html" data-testid="mnav-home">Home</a>
+      <a href="shipped.html" class="nav-featured" data-testid="mnav-shipped">Shipped/Projects</a>
+      <a href="systems.html" data-testid="mnav-systems">Who am I?</a>
+      <a href="contact.html" class="mobile-menu-cta" data-testid="mnav-cta">Let's talk &#8594;</a>
+    </nav>
   </div>
 
-</main>
+  <main>
 
-<footer>
-  <img src="img/cosmikwork_broad_logo.webp" alt="cosmik.work" class="footer-brand">
-  <div><span class="fl">© 2026 cosmik.work</span> · Soumik Chatterjee</div>
-  <div>Kolkata, India · Remote worldwide</div>
-</footer>
+    <div class="page-header theme-dark">
+      <p class="breadcrumb"><a href="index.html">cosmik.work</a> / Let's talk</p>
+    </div>
 
-<script src="js/starfield.js"></script>
-<script src="js/nav.js"></script>
+    <!-- CONTACT: dark -->
+    <section id="contact" class="theme-dark" style="padding-top:20px;min-height:auto;" aria-labelledby="contact-title">
+      <div class="container">
+        <h1 class="visually-hidden">Let's Talk</h1>
+        <p class="section-eyebrow">Let's talk</p>
+        <h2 class="cta-title" id="contact-title">Ready to hand off the <em>machinery?</em></h2>
+        <p class="contact-subtext">
+          Book a free 30-minute call. We figure out what's breaking and whether I'm the right person to fix it. No
+          pitch, no deck, just a straight conversation.
+        </p>
+
+        <!-- Engagement Funnel -->
+        <div class="hire-funnel">
+
+          <div class="funnel-steps">
+            <div class="funnel-step">
+              <div class="funnel-step-num">01</div>
+              <div class="funnel-step-body">
+                <div class="funnel-step-title">30-min discovery call</div>
+                <div class="funnel-step-desc">Free. We figure out the problem, the scope, and mutual fit. Book below.
+                </div>
+              </div>
+            </div>
+            <div class="funnel-arrow">→</div>
+            <div class="funnel-step">
+              <div class="funnel-step-num">02</div>
+              <div class="funnel-step-body">
+                <div class="funnel-step-title">Paid 1-week trial</div>
+                <div class="funnel-step-desc">20 hours of real work. You see exactly how I operate. I see exactly what
+                  you need. $300 flat.</div>
+              </div>
+            </div>
+            <div class="funnel-arrow">→</div>
+            <div class="funnel-step">
+              <div class="funnel-step-num">03</div>
+              <div class="funnel-step-body">
+                <div class="funnel-step-title">Ongoing engagement</div>
+                <div class="funnel-step-desc">If the trial works for both of us, we continue. Two options below.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Cal.com Booking Embed -->
+          <div class="cal-embed-wrapper">
+            <div class="cal-embed-label">BOOK THE 30-MIN CALL</div>
+            <div id="cal-booking-embed"></div>
+          </div>
+
+          <script type="text/javascript">
+            (function (C, A, L) {
+              let p = function (a, ar) { a.q.push(ar); };
+              let d = C.document;
+              C.Cal = C.Cal || function () {
+                let cal = C.Cal; let ar = arguments;
+                if (!cal.loaded) {
+                  cal.ns = {}; cal.q = cal.q || [];
+                  d.head.appendChild(d.createElement("script")).src = A;
+                  cal.loaded = true;
+                }
+                if (ar[0] === L) {
+                  const api = function () { p(api, arguments); };
+                  const namespace = ar[1];
+                  api.q = api.q || [];
+                  if (typeof namespace === "string") {
+                    cal.ns[namespace] = cal.ns[namespace] || api;
+                    p(cal.ns[namespace], ar);
+                    p(cal, [L, namespace, ar[2]]);
+                  } else p(cal, ar);
+                  return;
+                }
+                p(cal, ar);
+              };
+            })(window, "https://app.cal.com/embed/embed.js", "init");
+
+            Cal("init", { origin: "https://cal.com" });
+
+            Cal("inline", {
+              elementOrSelector: "#cal-booking-embed",
+              calLink: "cosmik.work/30min",
+              layout: "month_view"
+            });
+
+            Cal("ui", {
+              theme: "dark",
+              styles: { branding: { brandColor: "#7c3aed" } },
+              hideEventTypeDetails: false
+            });
+          </script>
+
+          <div class="pricing-section-label">HOW WE WORK TOGETHER</div>
+          <div class="pricing-cards">
+            <div class="pricing-card">
+              <div class="pricing-card-label">TRIAL</div>
+              <div class="pricing-card-price">$200</div>
+              <div class="pricing-card-detail">20 hours · 1 week · flat rate</div>
+              <div class="pricing-card-desc">Real work. No commitment beyond the week. Mutual fit check.</div>
+            </div>
+            <div class="pricing-card">
+              <div class="pricing-card-label">PART-TIME</div>
+              <div class="pricing-card-price">$800<span class="pricing-per">/mo</span></div>
+              <div class="pricing-card-detail">80 hours · 20h per week </div>
+              <div class="pricing-card-desc">Right hand for founders who need consistent ops support without a full-time
+                hire.</div>
+            </div>
+            <div class="pricing-card">
+              <div class="pricing-card-label">FULL-TIME</div>
+              <div class="pricing-card-price">$1600<span class="pricing-per">/mo</span></div>
+              <div class="pricing-card-detail">160 hours · 40h per week </div>
+              <div class="pricing-card-desc">Embedded Chief of Staff. I run the operating layer so you stay focused on
+                growth.</div>
+            </div>
+          </div>
+
+        </div>
+
+        <p class="payment-signal">Payments via Wise: USD · AED · CAD · SGD · AUD accepted. No wire transfers, no delays.
+        </p>
+
+        <div class="cta-links">
+          <a href="mailto:soumik@cosmik.work" data-testid="cta-email">Email</a>
+          <a href="https://www.linkedin.com/in/showmikthebuilder/" target="_blank" rel="noopener"
+            data-testid="cta-linkedin">LinkedIn</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="page-next theme-dark">
+      <a href="index.html" class="pn-back">← Home</a>
+      <a href="shipped.html">
+        <p class="pn-label">Explore</p>
+        <span class="pn-title">Built, not claimed <span aria-hidden="true">→</span></span>
+      </a>
+    </div>
+
+  </main>
+
+  <footer>
+    <img src="img/cosmikwork_broad_logo.webp" alt="cosmik.work" class="footer-brand">
+    <div><span class="fl">© 2026 cosmik.work</span> · Soumik Chatterjee</div>
+    <div>Kolkata, India · Remote worldwide</div>
+  </footer>
+
+  <script src="js/starfield.js"></script>
+  <script src="js/nav.js"></script>
 
 </body>
+
 </html>
