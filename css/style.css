@@ -68,28 +68,22 @@
     white-space: nowrap;
   }
 
-  /* ===== Section themes ===== */
-  /* Site-wide dark cosmic theme: both classes now render identically so the
-     global starfield (#bgStars, fixed behind everything) shows through on
-     every section, on every page. Kept as two class names for markup/JS
-     compatibility across the existing pages, but visually unified. */
-  .theme-dark {
-    background: transparent;
-    color: var(--text-on-dark);
+  .skip-link {
+    position: absolute;
+    top: -100%;
+    left: 1rem;
+    z-index: 1000;
+    padding: .6rem 1rem;
+    background: var(--accent, #7c5cff);
+    color: #fff;
+    border-radius: 0 0 6px 6px;
+    font: 600 .9rem/1 'Inter Tight', sans-serif;
   }
 
-  .theme-dark .muted {
-    color: var(--text-on-dark-2);
+  .skip-link:focus {
+    top: 0;
   }
 
-  .theme-light {
-    background: transparent;
-    color: var(--text-on-dark);
-  }
-
-  .theme-light .muted {
-    color: var(--text-on-dark-2);
-  }
 
   /* ===== NAV ~ Apple-style translucent ===== */
   nav#nav {
@@ -329,15 +323,6 @@
     overflow: hidden;
   }
 
-  /* #hero inherits an opaque background from .theme-dark, which was painting
-     over the starfield canvas behind it (canvas is a sibling, positioned
-     earlier in the DOM inside #heroStatsWrap). This id+class override wins
-     the cascade and makes #hero transparent so the canvas shows through the
-     whole section, not just the strip below it. */
-  #hero.theme-dark {
-    background: transparent;
-  }
-
   #heroStatsWrap {
     position: relative;
     overflow: hidden;
@@ -566,12 +551,6 @@
     width: 100%;
     height: 100%;
     display: block;
-  }
-
-  .hp-map path {
-    fill: #4a3f7a;
-    stroke: rgba(5, 4, 10, .55);
-    stroke-width: .4;
   }
 
   .hp-shade {
@@ -962,17 +941,9 @@
     font-size: 11.5px;
     letter-spacing: .14em;
     text-transform: uppercase;
-    color: var(--accent);
+    color: var(--accent-bright);
     margin-bottom: 22px;
     font-weight: 500;
-  }
-
-  .theme-dark .section-eyebrow {
-    color: var(--accent-bright);
-  }
-
-  .theme-light .section-eyebrow {
-    color: var(--accent-bright);
   }
 
   h2.section-title {
@@ -987,13 +958,6 @@
   h2.section-title em {
     font-style: italic;
     font-weight: 600;
-  }
-
-  .theme-dark h2.section-title em {
-    color: var(--accent-bright);
-  }
-
-  .theme-light h2.section-title em {
     color: var(--accent-bright);
   }
 
@@ -1003,25 +967,11 @@
     max-width: 60ch;
     font-weight: 400;
     letter-spacing: -.005em;
-  }
-
-  .theme-dark .section-sub {
-    color: var(--text-on-dark-2);
-  }
-
-  .theme-light .section-sub {
     color: var(--text-on-dark-2);
   }
 
   .section-sub strong {
     font-weight: 600;
-  }
-
-  .theme-dark .section-sub strong {
-    color: #f5f5f7;
-  }
-
-  .theme-light .section-sub strong {
     color: #f5f5f7;
   }
 
@@ -1902,60 +1852,6 @@
     text-transform: uppercase;
   }
 
-  form {
-    border-radius: 24px;
-    padding: 40px 36px;
-    background: rgba(255, 255, 255, .03);
-    border: 1px solid var(--line-dark);
-    display: flex;
-    flex-direction: column;
-    gap: 22px;
-  }
-
-  .field label {
-    display: block;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
-    letter-spacing: .12em;
-    text-transform: uppercase;
-    color: var(--text-on-dark-2);
-    margin-bottom: 10px;
-    font-weight: 500;
-  }
-
-  .field input,
-  .field textarea {
-    width: 100%;
-    background: rgba(255, 255, 255, .04);
-    border: 1px solid var(--line-dark);
-    border-radius: 12px;
-    padding: 14px 16px;
-    color: #f5f5f7;
-    font-family: 'Inter Tight', sans-serif;
-    font-size: 1rem;
-    font-weight: 400;
-    transition: border-color .3s ease, background .3s ease;
-  }
-
-  .field input:focus,
-  .field textarea:focus {
-    border-color: var(--accent);
-    background: rgba(124, 92, 255, .06);
-    outline: none;
-  }
-
-  .field textarea {
-    min-height: 120px;
-    resize: vertical;
-  }
-
-  form .btn-primary {
-    border: none;
-    cursor: pointer;
-    justify-content: center;
-    font-size: 14px;
-    padding: 14px 24px;
-  }
 
   @media(max-width:880px) {
     .contact-grid {
@@ -2078,13 +1974,6 @@
     display: inline-flex;
     align-items: center;
     gap: 8px;
-  }
-
-  .theme-dark .breadcrumb {
-    color: var(--text-on-dark-2);
-  }
-
-  .theme-light .breadcrumb {
     color: var(--text-on-dark-2);
   }
 
@@ -2093,10 +1982,6 @@
   }
 
   .breadcrumb a:hover {
-    color: var(--accent-bright);
-  }
-
-  .theme-light .breadcrumb a:hover {
     color: var(--accent-bright);
   }
 
@@ -2113,10 +1998,6 @@
     margin: 0 auto;
   }
 
-  .theme-light .page-next {
-    border-top: 1px solid var(--line-dark);
-  }
-
   .page-next .pn-label {
     font-family: 'JetBrains Mono', monospace;
     font-size: 11px;
@@ -2124,10 +2005,6 @@
     text-transform: uppercase;
     color: var(--accent-bright);
     margin-bottom: 6px;
-  }
-
-  .theme-light .page-next .pn-label {
-    color: var(--accent-bright);
   }
 
   .page-next .pn-title {
@@ -2151,15 +2028,7 @@
     color: var(--text-on-dark-2);
   }
 
-  .theme-light .page-next .pn-back {
-    color: var(--text-on-dark-2);
-  }
-
   .page-next .pn-back:hover {
-    color: var(--accent-bright);
-  }
-
-  .theme-light .page-next .pn-back:hover {
     color: var(--accent-bright);
   }
 
@@ -2310,7 +2179,7 @@
     font-size: 0.7rem;
     font-weight: 700;
     letter-spacing: 0.12em;
-    color: rgba(255, 255, 255, 0.35);
+    color: var(--accent-bright);
     margin-bottom: 0.5rem;
   }
 
@@ -2327,7 +2196,7 @@
     font-size: 0.7rem;
     font-weight: 700;
     letter-spacing: 0.12em;
-    color: rgba(255, 255, 255, 0.3);
+    color: var(--accent-bright);
     margin-bottom: 1rem;
   }
 
