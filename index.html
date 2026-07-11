@@ -109,10 +109,10 @@
         <div class="hp-globe" aria-hidden="true">
           <img class="hp-map" src="img/world-map.svg" alt="" width="380" height="380" loading="eager" decoding="async">
           <div class="hp-shade"></div>
-          <button class="hp-marker" id="kolkataMarker" type="button" aria-haspopup="dialog" aria-controls="videoModal" data-testid="kolkata-marker" aria-label="Video introduction from Kolkata — coming soon">
+          <button class="hp-marker" id="kolkataMarker" type="button" aria-haspopup="dialog" aria-controls="videoModal" data-testid="kolkata-marker" aria-label="Watch video introduction from Kolkata">
             <span class="hp-marker-pulse" aria-hidden="true"></span>
             <span class="hp-marker-dot" aria-hidden="true"></span>
-            <span class="hp-marker-tip" aria-hidden="true">Kolkata · Intro coming soon</span>
+            <span class="hp-marker-tip" aria-hidden="true">Kolkata · Watch intro</span>
           </button>
         </div>
         <div class="hp-orbit" aria-hidden="true"><div class="hp-dot"></div></div>
@@ -144,17 +144,9 @@
       <button class="vm-close" type="button" data-close="true" aria-label="Close video">✕</button>
       <p class="vm-eyebrow mono" id="videoModalTitle">From Kolkata</p>
       <div class="vm-frame" id="vmFrame">
-        <!-- Placeholder until the video is ready. Replace the .vm-placeholder div below with one of:
-             1) YouTube/Vimeo:
-                <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="Soumik Chatterjee introduction" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-             2) Direct file hosted alongside the site:
-                <video controls preload="none" poster="/assets/intro-poster.jpg"><source src="/assets/intro.mp4" type="video/mp4"></video>
-        -->
-        <div class="vm-placeholder">
-          <span class="vm-play" aria-hidden="true">▶</span>
-          <p>Video coming soon</p>
-          <p class="vm-sub">Soumik's introduction: who he is, what he builds, and how to use this site.</p>
-        </div>
+        <video controls preload="none" playsinline width="100%" height="100%">
+          <source src="/assets/video/intro.mp4" type="video/mp4">
+        </video>
       </div>
     </div>
   </div>
@@ -185,6 +177,8 @@
     function closeModal(){
       modal.hidden = true;
       document.body.classList.remove('vm-open');
+      const video = modal.querySelector('video');
+      if(video) video.pause();
       marker.focus();
     }
     marker.addEventListener('click', openModal);
