@@ -82,11 +82,11 @@
         <div id="os-tabs" role="tablist" aria-label="Project categories">
           <button class="os-tab os-tab-active" id="tab-education" role="tab" aria-selected="true" aria-controls="panel-education">
             <span class="os-tab-name">Education OS</span>
-            <span class="os-tab-count">4 live</span>
+            <span class="os-tab-count">5 live</span>
           </button>
           <button class="os-tab" id="tab-business" role="tab" aria-selected="false" aria-controls="panel-business">
             <span class="os-tab-name">Business OS</span>
-            <span class="os-tab-count">9 live</span>
+            <span class="os-tab-count">10 live</span>
           </button>
           <button class="os-tab" id="tab-everyday" role="tab" aria-selected="false" aria-controls="panel-everyday">
             <span class="os-tab-name">Everyday Tools</span>
@@ -272,6 +272,17 @@
       });
     });
   }
+
+  // Tab counts are computed from the actual cards in each panel, not
+  // hand-typed, so adding or removing a shipped tool never leaves a stale
+  // number behind.
+  document.querySelectorAll('.os-tab').forEach((tab) => {
+    const panel = document.getElementById(tab.getAttribute('aria-controls'));
+    const countEl = tab.querySelector('.os-tab-count');
+    if (!panel || !countEl) return;
+    const count = panel.querySelectorAll('.ship-card').length;
+    countEl.textContent = `${count} live`;
+  });
 
   // OS category tabs: pick one, only that panel shows.
   const tabs = Array.from(document.querySelectorAll('.os-tab'));
