@@ -438,6 +438,7 @@
   }
 
   .btn {
+    font-family: inherit;
     font-size: 14px;
     font-weight: 500;
     padding: 13px 24px;
@@ -447,6 +448,7 @@
     gap: 8px;
     transition: all .3s var(--ease);
     letter-spacing: -.005em;
+    cursor: pointer;
   }
 
   .btn-primary {
@@ -507,6 +509,8 @@
 
   .hero-globe-col {
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
   }
 
@@ -695,6 +699,15 @@
   .hp-marker:focus-visible .hp-marker-tip {
     opacity: 1;
     transform: translateX(-50%) translateY(0);
+  }
+
+  .hp-caption {
+    text-align: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    letter-spacing: .04em;
+    color: rgba(245, 245, 247, .55);
+    margin: 4px 0 0;
   }
 
   @media(max-width:640px) {
