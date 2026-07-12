@@ -2298,32 +2298,6 @@
     line-height: 1.6;
   }
 
-  /* Project-based one-time build sits below the 4 retainer tiers, spanning
-     both grid columns so it reads as its own row, not a 5th tier. */
-  .pricing-card-wide {
-    grid-column: 1 / -1;
-  }
-
-  .pricing-divider {
-    grid-column: 1 / -1;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    font-size: 0.7rem;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    color: var(--text-on-dark-2);
-    margin: 0.25rem 0;
-  }
-
-  .pricing-divider::before,
-  .pricing-divider::after {
-    content: '';
-    flex: 1;
-    height: 1px;
-    background: rgba(255, 255, 255, 0.08);
-  }
-
   @media (max-width: 768px) {
     .pricing-card {
       min-height: auto;
@@ -2348,9 +2322,26 @@
     overflow: hidden;
   }
 
-  .payment-signal {
-    font-size: 0.78rem;
+  /* Closing panel below the pricing grid ~ deliberately plain (no border,
+     no price styling) so it reads as a wrap-up, not a 6th tier option. */
+  .closing-panel {
+    margin-top: 0.5rem;
+    padding-top: 1.75rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .closing-panel-title {
+    font-family: 'Fraunces', serif;
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: #f5f5f7;
+    margin-bottom: 0.6rem;
+  }
+
+  .closing-panel-body {
+    font-size: 0.9rem;
     color: var(--text-on-dark-2);
-    letter-spacing: 0.04em;
-    margin-bottom: 1rem;
+    line-height: 1.6;
+    max-width: 46ch;
+    margin-bottom: 1.25rem;
   }
