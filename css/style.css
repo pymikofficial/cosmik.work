@@ -621,14 +621,16 @@
     box-shadow: 0 0 6px 2px rgba(201, 182, 255, .4);
   }
 
-  /* Kolkata marker ~ sits at the globe's centre, over the mapped location */
+  /* Kolkata marker ~ sits at the globe's centre, over the mapped location.
+     Hit area is bigger than the visible dot (Fitts's law, and it's what
+     the cursor-badge hover effect below keys off, so it must be generous). */
   .hp-marker {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 40px;
-    height: 40px;
+    width: 72px;
+    height: 72px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -677,11 +679,13 @@
     transform: scale(1.25);
   }
 
+  /* Anchored a fixed distance above the marker's true centre (not the edge
+     of its box), so growing/shrinking the hit area above never moves it. */
   .hp-marker-tip {
     position: absolute;
-    bottom: calc(100% + 10px);
+    top: 50%;
     left: 50%;
-    transform: translateX(-50%) translateY(4px);
+    transform: translate(-50%, -46px) translateY(4px);
     white-space: nowrap;
     font-family: 'JetBrains Mono', monospace;
     font-size: 11px;
@@ -699,32 +703,7 @@
   .hp-marker:hover .hp-marker-tip,
   .hp-marker:focus-visible .hp-marker-tip {
     opacity: 1;
-    transform: translateX(-50%) translateY(0);
-  }
-
-  /* Fired by the "Click the glowing dot" hero button after it scrolls the
-     marker into view, so the eye lands on the right dot without a hover. */
-  .hp-marker-spotlight .hp-marker-tip {
-    opacity: 1;
-    transform: translateX(-50%) translateY(0);
-  }
-
-  .hp-marker-spotlight .hp-marker-dot {
-    animation: hpSpotlight 1.3s ease-in-out 2;
-  }
-
-  @keyframes hpSpotlight {
-
-    0%,
-    100% {
-      transform: scale(1);
-      box-shadow: 0 0 0 3px rgba(245, 245, 247, .25), 0 0 14px 4px rgba(167, 139, 250, .75);
-    }
-
-    50% {
-      transform: scale(1.6);
-      box-shadow: 0 0 0 6px rgba(245, 245, 247, .35), 0 0 26px 10px rgba(167, 139, 250, 1);
-    }
+    transform: translate(-50%, -46px) translateY(0);
   }
 
   /* Anchored to the marker's own centre (50%/50% of .hero-planet), not to
@@ -750,6 +729,60 @@
     display: block;
     margin-bottom: 2px;
     color: rgba(167, 139, 250, .8);
+  }
+
+  /* Mouse/trackpad devices get the interactive cursor badge below instead
+     of a static label ~ touch devices (no hover) keep the caption. */
+  @media (hover: hover) and (pointer: fine) {
+    .hp-caption {
+      display: none;
+    }
+  }
+
+  /* Big cursor badge that appears over the marker's own hover state, so it
+     can never show over a spot that doesn't actually register the click.
+     Mouse/trackpad only ~ hidden on touch via the media query below. */
+  .hp-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 56px;
+    height: 56px;
+    margin: -28px 0 0 -28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    background: rgba(10, 10, 15, .94);
+    border: 1px solid rgba(167, 139, 250, .4);
+    box-shadow: 0 8px 24px -6px rgba(124, 92, 255, .6);
+    pointer-events: none;
+    z-index: 60;
+    opacity: 0;
+    transform: scale(.6);
+    transition: opacity .2s ease, transform .25s cubic-bezier(.34, 1.56, .64, 1), left .12s ease, top .12s ease;
+  }
+
+  .hp-cursor.is-active {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  body.hp-cursor-active {
+    cursor: none;
+  }
+
+  @media (hover: none), (pointer: coarse) {
+    .hp-cursor {
+      display: none;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hp-cursor {
+      transition: opacity .2s ease;
+    }
   }
 
   @media(max-width:640px) {
@@ -1961,10 +1994,6 @@
     }
 
     .hp-orbit {
-      animation: none;
-    }
-
-    .hp-marker-spotlight .hp-marker-dot {
       animation: none;
     }
   }

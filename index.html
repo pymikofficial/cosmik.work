@@ -93,7 +93,6 @@
       <div class="btn-row">
         <a href="contact.html" class="btn btn-primary" data-testid="hero-cta-primary">Let's talk →</a>
         <a href="shipped.html" class="btn btn-ghost" data-testid="hero-cta-secondary">See what I've shipped</a>
-        <button type="button" class="btn btn-ghost" id="spotlightGlobeBtn" aria-label="Scroll to the globe and highlight the marker that plays my intro video" data-testid="hero-cta-video">● Click the glowing dot ↓</button>
       </div>
 
       <div class="hero-feature-row">
@@ -120,6 +119,7 @@
         </div>
         <div class="hp-orbit" aria-hidden="true"><div class="hp-dot"></div></div>
         <p class="hp-caption" aria-hidden="true">Kolkata · tap to watch intro</p>
+        <div class="hp-cursor" id="hpCursor" aria-hidden="true">👆</div>
       </div>
         </div>
       </div>
@@ -172,15 +172,10 @@
 
 <script>
   // ---- Kolkata marker video modal ----
-  // The marker on the globe is the one, single trigger for the intro video.
-  // The hero button doesn't open the video itself: it scrolls to the marker
-  // and spotlights it, so there's one clear place to click, not two.
   (function(){
     const modal = document.getElementById('videoModal');
     const marker = document.getElementById('kolkataMarker');
-    const spotlightBtn = document.getElementById('spotlightGlobeBtn');
-    if(!modal || (!marker && !spotlightBtn)) return;
-    let spotlightTimer;
+    if(!modal || !marker) return;
     function openModal(){
       modal.hidden = false;
       document.body.classList.add('vm-open');
@@ -191,24 +186,46 @@
       document.body.classList.remove('vm-open');
       const video = modal.querySelector('video');
       if(video) video.pause();
-      (opener || marker || spotlightBtn).focus();
+      (opener || marker).focus();
     }
-    function spotlightMarker(){
-      if(!marker) return;
-      marker.scrollIntoView({behavior:'smooth', block:'center'});
-      marker.classList.add('hp-marker-spotlight');
-      marker.focus({preventScroll:true});
-      clearTimeout(spotlightTimer);
-      spotlightTimer = setTimeout(()=> marker.classList.remove('hp-marker-spotlight'), 2600);
-    }
-    if(marker) marker.addEventListener('click', openModal);
-    if(spotlightBtn) spotlightBtn.addEventListener('click', spotlightMarker);
+    marker.addEventListener('click', openModal);
     modal.addEventListener('click', (e)=>{
       if(e.target && e.target.dataset.close) closeModal();
     });
     document.addEventListener('keydown', (e)=>{
       if(e.key === 'Escape' && !modal.hidden) closeModal();
     });
+  })();
+
+  // ---- Big cursor badge over the Kolkata marker, mouse-only devices ----
+  // Tied to the marker's own real hover/focus state (not a separate hit
+  // zone), so the badge can never show over an area that doesn't actually
+  // register the click.
+  (function(){
+    const marker = document.getElementById('kolkataMarker');
+    const cursor = document.getElementById('hpCursor');
+    if(!marker || !cursor) return;
+    if(!window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+
+    function place(){
+      const r = marker.getBoundingClientRect();
+      cursor.style.left = (r.left + r.width / 2) + 'px';
+      cursor.style.top = (r.top + r.height / 2) + 'px';
+    }
+    function show(){
+      place();
+      cursor.classList.add('is-active');
+      document.body.classList.add('hp-cursor-active');
+    }
+    function hide(){
+      cursor.classList.remove('is-active');
+      document.body.classList.remove('hp-cursor-active');
+    }
+    marker.addEventListener('mouseenter', show);
+    marker.addEventListener('mouseleave', hide);
+    window.addEventListener('scroll', () => {
+      if(cursor.classList.contains('is-active')) place();
+    }, { passive: true });
   })();
 </script>
 
