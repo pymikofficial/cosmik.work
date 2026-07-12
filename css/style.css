@@ -2280,6 +2280,21 @@
     fill: var(--text-on-dark-2);
   }
 
+  .pipeline-node-sheen {
+    fill: url(#pipeline-sheen);
+    stroke: none;
+    pointer-events: none;
+  }
+
+  .pipeline-flow-label {
+    font-family: 'Inter Tight', 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 10px;
+    font-style: italic;
+    fill: var(--text-on-dark-2);
+    opacity: 0.65;
+    letter-spacing: 0.02em;
+  }
+
   .pipeline-flow {
     fill: none;
     stroke: var(--accent);
@@ -2334,18 +2349,14 @@
     border-top: 1px solid rgba(255, 255, 255, 0.08);
   }
 
-  .closing-panel-title {
-    font-family: 'Fraunces', serif;
-    font-size: 1.3rem;
-    font-weight: 500;
-    color: #f5f5f7;
-    margin-bottom: 0.6rem;
-  }
-
   .closing-panel-body {
     font-size: 0.9rem;
     color: var(--text-on-dark-2);
     line-height: 1.6;
     max-width: 46ch;
     margin-bottom: 1.25rem;
+  }
+
+  .closing-panel-body-wide {
+    max-width: none;
   }
