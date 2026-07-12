@@ -93,7 +93,7 @@
       <div class="btn-row">
         <a href="contact.html" class="btn btn-primary" data-testid="hero-cta-primary">Let's talk →</a>
         <a href="shipped.html" class="btn btn-ghost" data-testid="hero-cta-secondary">See what I've shipped</a>
-        <button type="button" class="btn btn-ghost" id="watchIntroBtn" aria-haspopup="dialog" aria-controls="videoModal" data-testid="hero-cta-video">▶ Watch my intro</button>
+        <button type="button" class="btn btn-ghost" id="spotlightGlobeBtn" aria-label="Scroll to the globe and highlight the marker that plays my intro video" data-testid="hero-cta-video">● Click the glowing dot ↓</button>
       </div>
 
       <div class="hero-feature-row">
@@ -119,8 +119,8 @@
           </button>
         </div>
         <div class="hp-orbit" aria-hidden="true"><div class="hp-dot"></div></div>
+        <p class="hp-caption" aria-hidden="true">Kolkata · tap to watch intro</p>
       </div>
-      <p class="hp-caption" aria-hidden="true">👆 or tap the dot on the globe</p>
         </div>
       </div>
 
@@ -172,11 +172,15 @@
 
 <script>
   // ---- Kolkata marker video modal ----
+  // The marker on the globe is the one, single trigger for the intro video.
+  // The hero button doesn't open the video itself: it scrolls to the marker
+  // and spotlights it, so there's one clear place to click, not two.
   (function(){
     const modal = document.getElementById('videoModal');
     const marker = document.getElementById('kolkataMarker');
-    const watchBtn = document.getElementById('watchIntroBtn');
-    if(!modal || (!marker && !watchBtn)) return;
+    const spotlightBtn = document.getElementById('spotlightGlobeBtn');
+    if(!modal || (!marker && !spotlightBtn)) return;
+    let spotlightTimer;
     function openModal(){
       modal.hidden = false;
       document.body.classList.add('vm-open');
@@ -187,10 +191,18 @@
       document.body.classList.remove('vm-open');
       const video = modal.querySelector('video');
       if(video) video.pause();
-      (opener || marker || watchBtn).focus();
+      (opener || marker || spotlightBtn).focus();
+    }
+    function spotlightMarker(){
+      if(!marker) return;
+      marker.scrollIntoView({behavior:'smooth', block:'center'});
+      marker.classList.add('hp-marker-spotlight');
+      marker.focus({preventScroll:true});
+      clearTimeout(spotlightTimer);
+      spotlightTimer = setTimeout(()=> marker.classList.remove('hp-marker-spotlight'), 2600);
     }
     if(marker) marker.addEventListener('click', openModal);
-    if(watchBtn) watchBtn.addEventListener('click', openModal);
+    if(spotlightBtn) spotlightBtn.addEventListener('click', spotlightMarker);
     modal.addEventListener('click', (e)=>{
       if(e.target && e.target.dataset.close) closeModal();
     });

@@ -612,12 +612,13 @@
     position: absolute;
     top: -4px;
     left: 50%;
-    width: 9px;
-    height: 9px;
-    margin-left: -4px;
+    width: 5px;
+    height: 5px;
+    margin-left: -2px;
     border-radius: 50%;
     background: #e8ddff;
-    box-shadow: 0 0 10px 3px #c9b6ff, 0 0 28px 8px rgba(167, 139, 250, .55);
+    opacity: .5;
+    box-shadow: 0 0 6px 2px rgba(201, 182, 255, .4);
   }
 
   /* Kolkata marker ~ sits at the globe's centre, over the mapped location */
@@ -701,13 +702,54 @@
     transform: translateX(-50%) translateY(0);
   }
 
+  /* Fired by the "Click the glowing dot" hero button after it scrolls the
+     marker into view, so the eye lands on the right dot without a hover. */
+  .hp-marker-spotlight .hp-marker-tip {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+
+  .hp-marker-spotlight .hp-marker-dot {
+    animation: hpSpotlight 1.3s ease-in-out 2;
+  }
+
+  @keyframes hpSpotlight {
+
+    0%,
+    100% {
+      transform: scale(1);
+      box-shadow: 0 0 0 3px rgba(245, 245, 247, .25), 0 0 14px 4px rgba(167, 139, 250, .75);
+    }
+
+    50% {
+      transform: scale(1.6);
+      box-shadow: 0 0 0 6px rgba(245, 245, 247, .35), 0 0 26px 10px rgba(167, 139, 250, 1);
+    }
+  }
+
+  /* Anchored to the marker's own centre (50%/50% of .hero-planet), not to
+     sibling layout, so it can't drift away from the dot it's labelling. */
   .hp-caption {
-    text-align: center;
+    position: absolute;
+    top: calc(50% - 58px);
+    left: calc(50% + 30px);
+    width: 150px;
+    text-align: left;
     font-family: 'JetBrains Mono', monospace;
-    font-size: 12px;
+    font-size: 11px;
+    line-height: 1.5;
     letter-spacing: .04em;
-    color: rgba(245, 245, 247, .55);
-    margin: 4px 0 0;
+    color: rgba(245, 245, 247, .6);
+    margin: 0;
+    pointer-events: none;
+    z-index: 4;
+  }
+
+  .hp-caption::before {
+    content: '↙';
+    display: block;
+    margin-bottom: 2px;
+    color: rgba(167, 139, 250, .8);
   }
 
   @media(max-width:640px) {
@@ -738,6 +780,13 @@
       width: 300px;
       height: 300px;
       top: -6px;
+    }
+
+    .hp-caption {
+      top: calc(50% - 42px);
+      left: calc(50% + 18px);
+      width: 118px;
+      font-size: 10px;
     }
   }
 
@@ -1912,6 +1961,10 @@
     }
 
     .hp-orbit {
+      animation: none;
+    }
+
+    .hp-marker-spotlight .hp-marker-dot {
       animation: none;
     }
   }
