@@ -2298,11 +2298,33 @@
     line-height: 1.6;
   }
 
-  @media (max-width: 768px) {
-    .pricing-cards {
-      grid-template-columns: 1fr;
-    }
+  /* Project-based one-time build sits below the 4 retainer tiers, spanning
+     both grid columns so it reads as its own row, not a 5th tier. */
+  .pricing-card-wide {
+    grid-column: 1 / -1;
+  }
 
+  .pricing-divider {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: var(--text-on-dark-2);
+    margin: 0.25rem 0;
+  }
+
+  .pricing-divider::before,
+  .pricing-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.08);
+  }
+
+  @media (max-width: 768px) {
     .pricing-card {
       min-height: auto;
     }
