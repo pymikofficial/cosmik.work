@@ -1865,6 +1865,18 @@
     font-weight: 600;
   }
 
+  /* Paragraph-length variant of .icp-text for #reads only ~ that class is
+     sized for short one-line statements and reads too heavy at story
+     length, so this scales it down to normal body-copy proportions while
+     reusing .icp-item/.icp-num/.icp-list for spacing. */
+  #reads .reads-text {
+    font-size: clamp(.94rem, .5vw + .82rem, 1.125rem);
+    font-weight: 400;
+    line-height: 1.6;
+    letter-spacing: -.005em;
+    color: var(--text-on-dark-2);
+  }
+
   .icp-fine {
     margin-top: 40px;
     color: var(--text-on-dark-2);
