@@ -398,6 +398,9 @@
     font-style: italic;
     font-weight: 600;
     background: linear-gradient(180deg, #c9b6ff 0%, #7c5cff 100%);
+    background-size: 100% 160%;
+    background-position: center;
+    background-repeat: no-repeat;
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -1108,6 +1111,9 @@
     line-height: .85;
     letter-spacing: -.05em;
     background: linear-gradient(180deg, #a78bfa 0%, #7c5cff 100%);
+    background-size: 100% 160%;
+    background-position: center;
+    background-repeat: no-repeat;
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -1694,6 +1700,9 @@
     font-style: italic;
     font-weight: 600;
     background: linear-gradient(180deg, #c9b6ff, #7c5cff);
+    background-size: 100% 160%;
+    background-position: center;
+    background-repeat: no-repeat;
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -1916,6 +1925,9 @@
     font-style: italic;
     font-weight: 600;
     background: linear-gradient(180deg, #c9b6ff, #7c5cff);
+    background-size: 100% 160%;
+    background-position: center;
+    background-repeat: no-repeat;
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
