@@ -2286,15 +2286,6 @@
     pointer-events: none;
   }
 
-  .pipeline-flow-label {
-    font-family: 'Inter Tight', 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
-    font-size: 10px;
-    font-style: italic;
-    fill: var(--text-on-dark-2);
-    opacity: 0.65;
-    letter-spacing: 0.02em;
-  }
-
   .pipeline-flow {
     fill: none;
     stroke: var(--accent);
