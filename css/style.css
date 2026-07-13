@@ -1785,6 +1785,38 @@
     }
   }
 
+  /* ===== PERSONAL ~ small aside photo, not a section pivot ===== */
+  .personal-photo {
+    max-width: 300px;
+    margin: 0;
+    border-left: 3px solid var(--accent-bright);
+    padding: 10px 0 10px 30px;
+  }
+
+  .personal-photo img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    border-radius: 8px;
+    border: 1px solid var(--line-dark);
+  }
+
+  .personal-photo figcaption {
+    margin-top: 12px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: .04em;
+    color: var(--text-on-dark-2);
+  }
+
+  @media(max-width:880px) {
+    .personal-photo {
+      padding-left: 18px;
+      max-width: 240px;
+    }
+  }
+
   /* ===== PATH ~ dark, tickertape ===== */
   #path {
     padding: 100px clamp(20px, 5vw, 44px);
