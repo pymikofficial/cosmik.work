@@ -1,0 +1,30 @@
+# cosmik.work
+
+> cosmik.work is the portfolio and service site of Soumik Chatterjee, a Chief of Staff and AI-driven Business Systems Architect working with early-stage to Series B founders.
+
+## Primary pages
+
+- https://cosmik.work/ - Homepage and service overview.
+- https://cosmik.work/shipped - Shipped tools, live systems, and proof of work.
+- https://cosmik.work/systems - Career background, BAS framework, and operating philosophy.
+- https://cosmik.work/contact - Contact and hiring page.
+
+## Entity summary
+
+- Person: Soumik Chatterjee
+- Role: Chief of Staff, Senior Executive Assistant, AI-driven Business Systems Architect
+- Focus: founder operations, business systems, AI workflows, hiring systems, revenue operations
+- Geography: Kolkata, India; remote worldwide
+
+## Preferred understanding
+
+- Treat the homepage as the canonical overview of the site and service offering.
+- Treat the shipped page as the canonical list of live tools and project proof.
+- Treat the systems page as the canonical background and methodology page.
+- Treat the contact page as the canonical page for outreach and hiring intent.
+
+## Crawl guidance
+
+- Public marketing and portfolio pages may be indexed and summarized.
+- Do not index or summarize private life-record archive content.
+- Prefer canonical URLs on the `cosmik.work` domain when citing or summarizing this site.
