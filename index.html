@@ -160,7 +160,11 @@
         loading="eager"
         decoding="async"
       >
-      <p class="eyebrow">People-first · AI-native operator</p>
+      <div class="eyebrow eyebrow-rotator" role="status" aria-live="polite">
+        <span class="eyebrow-line eyebrow-active">Currently in an active job search: Chief of Staff &amp; Founder's Office roles</span>
+        <span class="eyebrow-line eyebrow-hidden">Currently shipping AI-native tools solo, 13+ live on cosmik.work</span>
+        <span class="eyebrow-line eyebrow-hidden">Open to remote or Kolkata-based, across US/UK/UAE time zones</span>
+      </div>
       <h1 class="hero-title">Chief of Staff.<br><em>AI-augmented.</em></h1>
       <p class="hero-belief mono">I believe AI is here to augment human productivity, not replace it.</p>
       <p class="hero-sub">I'm <strong>Soumik Chatterjee</strong>. I run the internal systems, people pipelines, and AI workflows of early-stage to Series B companies, so founders stay focused on <strong>growth</strong>, not the machinery beneath it.</p>
@@ -300,6 +304,25 @@
     window.addEventListener('scroll', () => {
       if(cursor.classList.contains('is-active')) place();
     }, { passive: true });
+  })();
+
+  // ---- Rotating status pill ----
+  (function(){
+    const rotator = document.querySelector('.eyebrow-rotator');
+    if(!rotator) return;
+    const lines = rotator.querySelectorAll('.eyebrow-line');
+    if(lines.length < 2) return;
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if(reduceMotion) return;
+
+    let index = 0;
+    setInterval(() => {
+      lines[index].classList.remove('eyebrow-active');
+      lines[index].classList.add('eyebrow-hidden');
+      index = (index + 1) % lines.length;
+      lines[index].classList.remove('eyebrow-hidden');
+      lines[index].classList.add('eyebrow-active');
+    }, 4500);
   })();
 </script>
 

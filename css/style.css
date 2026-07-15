@@ -392,6 +392,37 @@
     border-radius: 50%;
     background: var(--accent-bright);
     box-shadow: 0 0 10px 2px var(--glow);
+    flex-shrink: 0;
+  }
+
+  .eyebrow-rotator {
+    display: inline-grid;
+  }
+
+  .eyebrow-line {
+    grid-area: 1 / 1;
+    white-space: nowrap;
+    opacity: 0;
+    transform: translateY(4px);
+    transition: opacity .4s ease, transform .4s ease;
+  }
+
+  .eyebrow-line.eyebrow-active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .eyebrow-line {
+      transition: none;
+      transform: none;
+    }
+  }
+
+  @media(max-width:640px) {
+    .eyebrow-line {
+      white-space: normal;
+    }
   }
 
   h1.hero-title {
