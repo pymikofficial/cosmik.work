@@ -22,6 +22,7 @@ const PAGES = [
   { file: 'shipped.html', active: 'shipped', mapAttrib: false },
   { file: 'systems.html', active: 'systems', mapAttrib: false },
   { file: 'contact.html', active: 'contact', mapAttrib: false },
+  { file: 'privacy-virtual-background.html', active: 'privacy', mapAttrib: false },
 ];
 
 function navTokens(active) {
