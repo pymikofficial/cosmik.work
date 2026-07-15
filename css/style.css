@@ -1423,6 +1423,53 @@
     margin-bottom: 2.5rem;
   }
 
+  /* ===== SYSTEMS HERO ~ two-column layout with sticky video panel ===== */
+  .systems-hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 400px;
+    gap: 48px;
+    align-items: start;
+    margin-top: 40px;
+  }
+
+  .systems-video-panel {
+    grid-column: 2;
+    grid-row: 1;
+    position: sticky;
+    top: calc(var(--nav-h) + 24px);
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid var(--line-dark);
+    background: #000;
+    aspect-ratio: 4 / 5;
+  }
+
+  .systems-hero-left {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .systems-video-panel video {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  @media(max-width:880px) {
+    .systems-hero-grid {
+      display: block;
+    }
+
+    .systems-video-panel {
+      position: static;
+      width: 100%;
+      max-width: 100%;
+      aspect-ratio: 16 / 9;
+      margin: 0 0 32px;
+    }
+  }
+
   .certificate-archive-link:hover {
     border-color: rgba(167, 139, 250, .4);
     background: rgba(124, 92, 255, .06);

@@ -33,7 +33,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=20260713a">
+<link rel="stylesheet" href="css/style.css?v=20260715a">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -134,36 +134,43 @@
     <p class="breadcrumb"><a href="index.html">cosmik.work</a> / Who am I?</p>
   </div>
 
-  <!-- CV Download Card -->
-  <section id="cv-download" style="padding-bottom:0;" aria-label="Download CV">
+  <!-- CV Download Card + Origin: shares a sticky video panel down the right rail -->
+  <section id="cv-download" style="padding-bottom:60px;" aria-label="Download CV, origin, and proof">
     <div class="container">
       <h1 class="page-title reveal">Who am I?</h1>
-      <a href="assets/docs/soumik-chatterjee-cv.pdf"
-         target="_blank"
-         rel="noopener noreferrer"
-         class="certificate-archive-link cv-download-card"
-         download="Soumik_Chatterjee_CV_July2026.pdf">
-        <div class="cert-archive-label">RESUME</div>
-        <div class="cert-archive-title">Soumik Chatterjee: Chief of Staff &amp; AI-driven Business Systems Architect</div>
-        <div class="cert-archive-sub">Full CV · Updated July 2026 · PDF</div>
-        <div class="cert-archive-cta">Download CV →</div>
-      </a>
-      <p class="hero-meta">Also open to full-time Senior Executive Assistant / Chief of Staff roles</p>
-    </div>
-  </section>
+      <div class="systems-hero-grid">
+        <div class="systems-video-panel">
+          <video controls preload="none" playsinline poster="assets/video/intro-poster.jpg" width="100%" height="100%">
+            <source src="assets/video/intro.mp4" type="video/mp4">
+            <track kind="captions" src="assets/video/intro.vtt" srclang="en" label="English" default>
+          </video>
+        </div>
+        <div class="systems-hero-left">
+          <a href="assets/docs/soumik-chatterjee-cv.pdf"
+             target="_blank"
+             rel="noopener noreferrer"
+             class="certificate-archive-link cv-download-card"
+             download="Soumik_Chatterjee_CV_July2026.pdf">
+            <div class="cert-archive-label">RESUME</div>
+            <div class="cert-archive-title">Soumik Chatterjee: Chief of Staff &amp; AI-driven Business Systems Architect</div>
+            <div class="cert-archive-sub">Full CV · Updated July 2026 · PDF</div>
+            <div class="cert-archive-cta">Download CV →</div>
+          </a>
+          <p class="hero-meta">Also open to full-time Senior Executive Assistant / Chief of Staff roles</p>
 
-  <!-- ORIGIN: the record behind the path -->
-  <section id="origin" style="padding-bottom:60px;" aria-label="Origin and proof">
-    <div class="container">
-      <p class="section-eyebrow">The Origin</p>
-      <p class="section-sub">I have been organized since before I could frame it as a skill. The paper trail starts in 1996, when I was six years old, and it has not had a gap since. Every certificate, every mark sheet, every internal feedback screenshot from Accenture has been kept, scanned, and compiled: not out of nostalgia, but because proof has always mattered more to me than claims. What you see in the path below is built on that foundation.</p>
+          <div id="origin">
+            <p class="section-eyebrow" style="margin-top:56px;">The Origin</p>
+            <p class="section-sub">I have been organized since before I could frame it as a skill. The paper trail starts in 1996, when I was six years old, and it has not had a gap since. Every certificate, every mark sheet, every internal feedback screenshot from Accenture has been kept, scanned, and compiled: not out of nostalgia, but because proof has always mattered more to me than claims. What you see in the path below is built on that foundation.</p>
 
-      <a href="assets/docs/life-record.pdf" target="_blank" rel="noopener" class="certificate-archive-link">
-        <p class="cert-archive-label">Paper trail</p>
-        <p class="cert-archive-title">Every certificate I have earned, from age 6 to now</p>
-        <p class="cert-archive-sub">Certificates, mark sheets, and feedback records compiled in one PDF. 1996 to 2026.</p>
-        <p class="cert-archive-cta">Open archive &rarr;</p>
-      </a>
+            <a href="assets/docs/life-record.pdf" target="_blank" rel="noopener" class="certificate-archive-link">
+              <p class="cert-archive-label">Paper trail</p>
+              <p class="cert-archive-title">Every certificate I have earned, from age 6 to now</p>
+              <p class="cert-archive-sub">Certificates, mark sheets, and feedback records compiled in one PDF. 1996 to 2026.</p>
+              <p class="cert-archive-cta">Open archive &rarr;</p>
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
