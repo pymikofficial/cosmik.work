@@ -1492,6 +1492,12 @@
     margin-top: 40px;
   }
 
+  .tab-panel-collapsed {
+    max-height: 0;
+    overflow: hidden;
+    visibility: visible;
+  }
+
   .os-panel-blurb {
     color: var(--text-on-dark-2);
     font-size: .98rem;
