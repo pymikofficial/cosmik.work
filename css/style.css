@@ -1737,6 +1737,87 @@
     line-height: 1.6;
   }
 
+  .ship-github-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--accent-bright);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: .82rem;
+    text-decoration: none;
+    margin-top: auto;
+    padding-top: 4px;
+  }
+
+  .ship-github-link:hover,
+  .ship-github-link:focus-visible {
+    text-decoration: underline;
+  }
+
+  /* ===== TOOL DEMO VIDEO CARDS: click-to-play, poster-first =====
+     Reusable pattern for any tool card with a demo video. Markup:
+       <div class="tool-video-frame" data-video-src="assets/videos/x.mp4">
+         <img class="tool-video-poster" src="assets/videos/x-poster.jpg" alt="...">
+         <button class="tool-video-play" type="button" aria-label="Play ... demo video">
+           <span class="tool-video-play-icon"><svg>...</svg></span>
+         </button>
+       </div>
+     JS (see shipped.html's inline script, initToolVideoCards()) finds every
+     .tool-video-frame on the page and wires the play button. The <video>
+     element with its <source> only gets created and inserted into the DOM
+     on click, so the browser never fetches the video file on page load,
+     only the (much smaller) poster image does. Drop this same block into
+     any future tool card and it works with zero extra JS. */
+  .tool-video-frame {
+    position: relative;
+    border-radius: 14px;
+    overflow: hidden;
+    aspect-ratio: 1280 / 1032;
+    background: #000;
+    margin-bottom: 4px;
+  }
+
+  .tool-video-frame img,
+  .tool-video-frame video {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .tool-video-play {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(10, 10, 21, .28);
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition: background .3s var(--ease);
+  }
+
+  .tool-video-play:hover,
+  .tool-video-play:focus-visible {
+    background: rgba(10, 10, 21, .48);
+  }
+
+  .tool-video-play-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: rgba(124, 92, 255, .92);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 12px 30px -10px rgba(124, 92, 255, .7);
+  }
+
+  .tool-video-play-icon svg {
+    margin-left: 3px;
+  }
+
   @media(max-width:880px) {
     .ship-card-link {
       flex: 1 1 100%;
