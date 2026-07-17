@@ -366,24 +366,25 @@
                 <h3 class="ship-name">Build Timer</h3>
                 <p class="ship-desc">Timestamps a build from spec to ship, with pause and resume for real breaks, so every "shipped in Xm" claim on this page is measured, not guessed. Where it's been used so far, builds have averaged about 33 minutes.</p>
               </article>
-              <article class="ship-card">
-                <!-- TOOL DEMO VIDEO, click-to-play pattern: see the
-                     .tool-video-frame comment in css/style.css for the
-                     reusable markup + JS contract. Copy this block for any
-                     future tool card that has a demo video. -->
-                <div class="tool-video-frame" data-video-src="assets/videos/virtual-background-demo.mp4">
-                  <img class="tool-video-poster" src="assets/videos/virtual-background-demo-poster.jpg" alt="Virtual Background Chrome extension blurring a real Google Meet call background" loading="lazy">
-                  <button class="tool-video-play" type="button" aria-label="Play Virtual Background demo video">
-                    <span class="tool-video-play-icon">
-                      <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M8 5v14l11-7z" fill="#0a0a15"/></svg>
-                    </span>
-                  </button>
-                </div>
-                <p class="ship-tag">Chrome Web Store &middot; Submitted, pending review</p>
-                <h3 class="ship-name">Virtual Background</h3>
-                <p class="ship-desc">A messy background caught on camera during a video interview, with no way to fix it live. One-click background blur for any video call site, no sign-in, no watermark, runs entirely on-device.</p>
-                <a class="ship-github-link" href="https://github.com/pymikofficial/virtual-background-extension" target="_blank" rel="noopener">View on GitHub &rarr;</a>
-              </article>
+              <a class="ship-card-link" href="https://chromewebstore.google.com/detail/blur-background-—-free-vi/jdlienijidakhdofpcinjdomgpbecgle" target="_blank" rel="noopener" aria-label="Blur Background: Free Virtual Camera on the Chrome Web Store (opens in a new tab)">
+                <article class="ship-card">
+                  <!-- TOOL DEMO VIDEO, click-to-play pattern: see the
+                       .tool-video-frame comment in css/style.css for the
+                       reusable markup + JS contract. Copy this block for any
+                       future tool card that has a demo video. -->
+                  <div class="tool-video-frame" data-video-src="assets/videos/virtual-background-demo.mp4">
+                    <img class="tool-video-poster" src="assets/videos/virtual-background-demo-poster.jpg" alt="Blur Background Chrome extension blurring a real Google Meet call background" loading="lazy">
+                    <button class="tool-video-play" type="button" aria-label="Play Blur Background demo video">
+                      <span class="tool-video-play-icon">
+                        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M8 5v14l11-7z" fill="#0a0a15"/></svg>
+                      </span>
+                    </button>
+                  </div>
+                  <p class="ship-tag">Live on Chrome Web Store</p>
+                  <h3 class="ship-name">Blur Background: Free Virtual Camera</h3>
+                  <p class="ship-desc">Free background blur for video calls, no sign-in, no watermark, runs entirely in the browser.</p>
+                </article>
+              </a>
             </div>
           </div>
 
@@ -443,7 +444,9 @@
       const src = frame.dataset.videoSrc;
       if (!playBtn || !src) return;
 
-      playBtn.addEventListener('click', () => {
+      playBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
         const video = document.createElement('video');
         video.controls = true;
         video.autoplay = true;
@@ -456,6 +459,7 @@
         source.type = 'video/mp4';
         video.appendChild(source);
 
+        video.addEventListener('click', (ev) => ev.stopPropagation());
         frame.innerHTML = '';
         frame.appendChild(video);
         video.play().catch(() => {});
