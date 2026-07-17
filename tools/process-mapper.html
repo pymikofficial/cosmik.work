@@ -5,15 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32.png">
 <link rel="apple-touch-icon" sizes="180x180" href="../img/favicon-180.png">
-<title>Signal · Discovery Call to Process Map | cosmik.work</title>
-<meta name="description" content="Paste a messy discovery call transcript. Signal extracts the process, stakeholders, gaps, and follow-up questions, then generates a workflow diagram.">
+<title>Process Mapper · Discovery Call to Process Map | cosmik.work</title>
+<meta name="description" content="Paste a messy discovery call transcript. Process Mapper extracts the process, stakeholders, gaps, and follow-up questions, then generates a workflow diagram.">
 <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
-<link rel="canonical" href="https://cosmik.work/tools/signal.html">
+<link rel="canonical" href="https://cosmik.work/tools/process-mapper.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="cosmik.work">
-<meta property="og:title" content="Signal · Discovery Call to Process Map">
-<meta property="og:description" content="Paste a messy discovery call transcript. Signal extracts the process, stakeholders, gaps, and follow-up questions, then generates a workflow diagram.">
-<meta property="og:url" content="https://cosmik.work/tools/signal.html">
+<meta property="og:title" content="Process Mapper · Discovery Call to Process Map">
+<meta property="og:description" content="Paste a messy discovery call transcript. Process Mapper extracts the process, stakeholders, gaps, and follow-up questions, then generates a workflow diagram.">
+<meta property="og:url" content="https://cosmik.work/tools/process-mapper.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.6.1/mermaid.min.js"></script>
@@ -22,55 +22,55 @@
   @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
 
   :root{
-    --signal-ink:#12141a;
-    --signal-paper:#f6f4ef;
-    --signal-line:#d8d4c8;
-    --signal-accent:#3a6b5c;
-    --signal-dim:#e4ede9;
-    --signal-muted:#6b6a63;
-    --signal-danger:#9c4a3c;
+    --pm-ink:#12141a;
+    --pm-paper:#f6f4ef;
+    --pm-line:#d8d4c8;
+    --pm-accent:#3a6b5c;
+    --pm-dim:#e4ede9;
+    --pm-muted:#6b6a63;
+    --pm-danger:#9c4a3c;
   }
-  .signal-page{max-width:1180px;margin:0 auto;padding:48px 28px 96px;font-family:'IBM Plex Mono',monospace;color:var(--signal-paper);}
+  .pm-page{max-width:1180px;margin:0 auto;padding:48px 28px 96px;font-family:'IBM Plex Mono',monospace;color:var(--pm-paper);}
 
-  .signal-header{display:flex;justify-content:space-between;align-items:flex-end;border-bottom:1px solid #2a2d36;padding-bottom:24px;margin-bottom:40px;}
-  .signal-brand{font-family:'Newsreader',serif;font-size:34px;font-weight:600;letter-spacing:-0.01em;}
-  .signal-brand em{font-style:italic;color:var(--signal-accent);}
-  .signal-tag{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#8a8d99;margin-top:6px;}
-  .signal-badge{font-size:11px;letter-spacing:.1em;text-transform:uppercase;border:1px solid #3a3d47;padding:6px 12px;border-radius:2px;color:#9a9dab;}
+  .pm-header{display:flex;justify-content:space-between;align-items:flex-end;border-bottom:1px solid #2a2d36;padding-bottom:24px;margin-bottom:40px;}
+  .pm-brand{font-family:'Newsreader',serif;font-size:34px;font-weight:600;letter-spacing:-0.01em;}
+  .pm-brand em{font-style:italic;color:var(--pm-accent);}
+  .pm-tag{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#8a8d99;margin-top:6px;}
+  .pm-badge{font-size:11px;letter-spacing:.1em;text-transform:uppercase;border:1px solid #3a3d47;padding:6px 12px;border-radius:2px;color:#9a9dab;}
 
-  .signal-intro{font-family:'Newsreader',serif;font-size:19px;line-height:1.55;color:#c9cad2;max-width:720px;margin-bottom:36px;}
-  .signal-intro strong{color:var(--signal-paper);font-weight:600;}
+  .pm-intro{font-family:'Newsreader',serif;font-size:19px;line-height:1.55;color:#c9cad2;max-width:720px;margin-bottom:36px;}
+  .pm-intro strong{color:var(--pm-paper);font-weight:600;}
 
-  .signal-panel{background:var(--signal-paper);color:var(--signal-ink);border-radius:3px;}
-  .signal-split{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#2a2d36;border:1px solid #2a2d36;margin-bottom:28px;}
-  @media(max-width:900px){.signal-split{grid-template-columns:1fr;}}
+  .pm-panel{background:var(--pm-paper);color:var(--pm-ink);border-radius:3px;}
+  .pm-split{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#2a2d36;border:1px solid #2a2d36;margin-bottom:28px;}
+  @media(max-width:900px){.pm-split{grid-template-columns:1fr;}}
 
-  .signal-col{background:var(--signal-paper);padding:28px;}
-  .signal-col h2{font-family:'Newsreader',serif;font-size:15px;text-transform:uppercase;letter-spacing:.1em;margin:0 0 14px;color:var(--signal-muted);}
+  .pm-col{background:var(--pm-paper);padding:28px;}
+  .pm-col h2{font-family:'Newsreader',serif;font-size:15px;text-transform:uppercase;letter-spacing:.1em;margin:0 0 14px;color:var(--pm-muted);}
 
-  .signal-col textarea{width:100%;min-height:340px;resize:vertical;border:1px solid var(--signal-line);background:#fff;font-family:'IBM Plex Mono',monospace;font-size:13px;line-height:1.6;color:var(--signal-ink);padding:14px;border-radius:2px;}
-  .signal-col textarea:focus{outline:2px solid var(--signal-accent);outline-offset:1px;}
+  .pm-col textarea{width:100%;min-height:340px;resize:vertical;border:1px solid var(--pm-line);background:#fff;font-family:'IBM Plex Mono',monospace;font-size:13px;line-height:1.6;color:var(--pm-ink);padding:14px;border-radius:2px;}
+  .pm-col textarea:focus{outline:2px solid var(--pm-accent);outline-offset:1px;}
 
-  .signal-runbar{display:flex;align-items:center;gap:16px;margin-top:16px;}
-  button.signal-run{background:var(--signal-accent);color:#fff;border:none;padding:12px 22px;font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.04em;text-transform:uppercase;cursor:pointer;border-radius:2px;transition:background .15s;}
-  button.signal-run:hover{background:#2d5548;}
-  button.signal-run:disabled{background:#a9b3af;cursor:not-allowed;}
-  .signal-status{font-size:12px;color:var(--signal-muted);}
-  .signal-status.err{color:var(--signal-danger);}
+  .pm-runbar{display:flex;align-items:center;gap:16px;margin-top:16px;}
+  button.pm-run{background:var(--pm-accent);color:#fff;border:none;padding:12px 22px;font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.04em;text-transform:uppercase;cursor:pointer;border-radius:2px;transition:background .15s;}
+  button.pm-run:hover{background:#2d5548;}
+  button.pm-run:disabled{background:#a9b3af;cursor:not-allowed;}
+  .pm-status{font-size:12px;color:var(--pm-muted);}
+  .pm-status.err{color:var(--pm-danger);}
 
-  .signal-out h2{font-family:'Newsreader',serif;font-size:15px;text-transform:uppercase;letter-spacing:.1em;color:var(--signal-muted);margin:0 0 10px;border-top:1px solid var(--signal-line);padding-top:22px;}
-  .signal-out h2:first-child{border-top:none;padding-top:0;}
-  .signal-out ul{margin:0 0 4px;padding-left:20px;font-size:14px;line-height:1.65;}
-  .signal-out li{margin-bottom:4px;}
-  .signal-out .signal-field-label{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--signal-accent);margin-top:14px;margin-bottom:4px;font-weight:600;}
-  .signal-out .signal-field-label:first-child{margin-top:0;}
+  .pm-out h2{font-family:'Newsreader',serif;font-size:15px;text-transform:uppercase;letter-spacing:.1em;color:var(--pm-muted);margin:0 0 10px;border-top:1px solid var(--pm-line);padding-top:22px;}
+  .pm-out h2:first-child{border-top:none;padding-top:0;}
+  .pm-out ul{margin:0 0 4px;padding-left:20px;font-size:14px;line-height:1.65;}
+  .pm-out li{margin-bottom:4px;}
+  .pm-out .pm-field-label{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--pm-accent);margin-top:14px;margin-bottom:4px;font-weight:600;}
+  .pm-out .pm-field-label:first-child{margin-top:0;}
 
-  .signal-diagram-wrap{background:var(--signal-paper);padding:28px;border-top:1px solid var(--signal-line);}
-  .signal-diagram-wrap .mermaid{background:#fff;}
+  .pm-diagram-wrap{background:var(--pm-paper);padding:28px;border-top:1px solid var(--pm-line);}
+  .pm-diagram-wrap .mermaid{background:#fff;}
 
-  .signal-empty{color:var(--signal-muted);font-size:13px;font-style:italic;padding:20px 0;}
-  .signal-steps{font-size:11px;color:#8a8d99;letter-spacing:.04em;margin-top:10px;line-height:1.7;}
-  .signal-steps .on{color:var(--signal-accent);}
+  .pm-empty{color:var(--pm-muted);font-size:13px;font-style:italic;padding:20px 0;}
+  .pm-steps{font-size:11px;color:#8a8d99;letter-spacing:.04em;margin-top:10px;line-height:1.7;}
+  .pm-steps .on{color:var(--pm-accent);}
 </style>
 </head>
 <body>
@@ -107,38 +107,38 @@
 <!-- NAV:END -->
 
 <main id="main-content">
-<div class="signal-page">
+<div class="pm-page">
 
-  <header class="signal-header">
+  <header class="pm-header">
     <div>
-      <div class="signal-brand">Signal<em>.</em></div>
-      <div class="signal-tag">Discovery transcript &rarr; structured process map</div>
+      <div class="pm-brand">Process Mapper<em>.</em></div>
+      <div class="pm-tag">Discovery transcript &rarr; structured process map</div>
     </div>
-    <div class="signal-badge">cosmik.work</div>
+    <div class="pm-badge">cosmik.work</div>
   </header>
 
-  <p class="signal-intro">Paste a messy discovery call. <strong>Signal</strong> pulls out the actual process, the stakeholders,
+  <p class="pm-intro">Paste a messy discovery call. <strong>Process Mapper</strong> pulls out the actual process, the stakeholders,
   the gaps nobody named out loud, and the questions worth asking next, then drafts a visual workflow from it.
   Built on the belief that clarity is a deliverable, not an afterthought.</p>
 
-  <div class="signal-split">
-    <div class="signal-col">
+  <div class="pm-split">
+    <div class="pm-col">
       <h2>01 &middot; Raw transcript</h2>
       <textarea id="transcript" placeholder="Paste your discovery call transcript here..."></textarea>
-      <div class="signal-runbar">
-        <button class="signal-run" id="runBtn" onclick="analyze()">Find the signal</button>
-        <span class="signal-status" id="status"></span>
+      <div class="pm-runbar">
+        <button class="pm-run" id="runBtn" onclick="analyze()">Map the process</button>
+        <span class="pm-status" id="status"></span>
       </div>
-      <div class="signal-steps" id="steps"></div>
+      <div class="pm-steps" id="steps"></div>
     </div>
-    <div class="signal-col signal-out" id="output">
+    <div class="pm-col pm-out" id="output">
       <h2>02 &middot; Process map</h2>
-      <div class="signal-empty">Run an analysis to see the structured breakdown here.</div>
+      <div class="pm-empty">Run an analysis to see the structured breakdown here.</div>
     </div>
   </div>
 
-  <div class="signal-panel signal-diagram-wrap" id="diagramWrap" style="display:none;">
-    <h2 style="font-family:'Newsreader',serif;font-size:15px;text-transform:uppercase;letter-spacing:.1em;color:var(--signal-muted);margin:0 0 16px;">03 &middot; Workflow diagram</h2>
+  <div class="pm-panel pm-diagram-wrap" id="diagramWrap" style="display:none;">
+    <h2 style="font-family:'Newsreader',serif;font-size:15px;text-transform:uppercase;letter-spacing:.1em;color:var(--pm-muted);margin:0 0 16px;">03 &middot; Workflow diagram</h2>
     <div class="mermaid" id="mermaidTarget"></div>
   </div>
 
@@ -184,19 +184,19 @@
 
     if(!transcript){
       status.textContent = 'Paste a transcript first.';
-      status.className = 'signal-status err';
+      status.className = 'pm-status err';
       return;
     }
 
     btn.disabled = true;
-    status.className = 'signal-status';
+    status.className = 'pm-status';
     status.textContent = 'Analyzing...';
     renderSteps(0);
     diagramWrap.style.display = 'none';
 
     try{
       renderSteps(1);
-      const response = await fetch('/.netlify/functions/signal-analyze', {
+      const response = await fetch('/.netlify/functions/process-mapper-analyze', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ transcript })
@@ -212,7 +212,7 @@
       status.textContent = 'Done.';
     } catch(err){
       console.error(err);
-      status.className = 'signal-status err';
+      status.className = 'pm-status err';
       status.textContent = 'Something went wrong: ' + err.message;
     } finally {
       btn.disabled = false;
@@ -222,12 +222,12 @@
   function renderOutput(p){
     const output = document.getElementById('output');
     const section = (label, items) => `
-      <div class="signal-field-label">${label}</div>
+      <div class="pm-field-label">${label}</div>
       <ul>${(items||[]).map(i=>`<li>${escapeHtml(i)}</li>`).join('')}</ul>`;
 
     output.innerHTML = `
       <h2>02 &middot; Process map</h2>
-      <div class="signal-field-label">Purpose</div>
+      <div class="pm-field-label">Purpose</div>
       <p style="font-size:14px;line-height:1.6;margin:0 0 4px;">${escapeHtml(p.purpose||'')}</p>
       ${section('Stakeholders', p.stakeholders)}
       ${section('Tools and systems', p.tools)}

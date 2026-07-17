@@ -23,7 +23,7 @@ const PAGES = [
   { file: 'systems.html', active: 'systems', mapAttrib: false },
   { file: 'contact.html', active: 'contact', mapAttrib: false },
   { file: 'privacy-virtual-background.html', active: 'privacy', mapAttrib: false },
-  { file: 'tools/signal.html', active: 'shipped', mapAttrib: false, prefix: '../' },
+  { file: 'tools/process-mapper.html', active: 'shipped', mapAttrib: false, prefix: '../' },
 ];
 
 function navTokens(active) {
@@ -41,7 +41,7 @@ function fill(template, tokens) {
   });
 }
 
-// Nested pages (e.g. tools/signal.html) need nav/footer hrefs and asset paths
+// Nested pages (e.g. tools/process-mapper.html) need nav/footer hrefs and asset paths
 // rewritten with a relative prefix, since the partials are written root-relative.
 function applyPrefix(html, prefix) {
   return html.replace(/(href|src)="(?!https?:|\/|#|mailto:)([^"]+)"/g, (_, attr, path) => `${attr}="${prefix}${path}"`);
