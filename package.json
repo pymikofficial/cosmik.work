@@ -1,0 +1,7 @@
+{
+  "name": "cosmik-work",
+  "private": true,
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.112.1"
+  }
+}

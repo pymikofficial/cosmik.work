@@ -23,6 +23,7 @@ const PAGES = [
   { file: 'systems.html', active: 'systems', mapAttrib: false },
   { file: 'contact.html', active: 'contact', mapAttrib: false },
   { file: 'privacy-virtual-background.html', active: 'privacy', mapAttrib: false },
+  { file: 'tools/signal.html', active: 'shipped', mapAttrib: false, prefix: '../' },
 ];
 
 function navTokens(active) {
@@ -38,6 +39,12 @@ function fill(template, tokens) {
     if (!(key in tokens)) throw new Error(`Missing token ${key} in partial`);
     return tokens[key];
   });
+}
+
+// Nested pages (e.g. tools/signal.html) need nav/footer hrefs and asset paths
+// rewritten with a relative prefix, since the partials are written root-relative.
+function applyPrefix(html, prefix) {
+  return html.replace(/(href|src)="(?!https?:|\/|#|mailto:)([^"]+)"/g, (_, attr, path) => `${attr}="${prefix}${path}"`);
 }
 
 function replaceBetween(source, startMarker, endMarker, replacement) {
@@ -56,8 +63,13 @@ for (const page of PAGES) {
   const filePath = path.join(ROOT, page.file);
   const before = fs.readFileSync(filePath, 'utf8');
 
-  const nav = fill(NAV_PARTIAL, navTokens(page.active)).trim();
-  const footer = fill(FOOTER_PARTIAL, { MAP_ATTRIB: page.mapAttrib ? MAP_ATTRIB : '' }).trim();
+  let nav = fill(NAV_PARTIAL, navTokens(page.active)).trim();
+  let footer = fill(FOOTER_PARTIAL, { MAP_ATTRIB: page.mapAttrib ? MAP_ATTRIB : '' }).trim();
+
+  if (page.prefix) {
+    nav = applyPrefix(nav, page.prefix);
+    footer = applyPrefix(footer, page.prefix);
+  }
 
   let html = replaceBetween(before, '<!-- NAV:START -->', '<!-- NAV:END -->', nav);
   html = replaceBetween(html, '<!-- FOOTER:START -->', '<!-- FOOTER:END -->', footer);
