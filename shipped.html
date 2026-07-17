@@ -459,7 +459,7 @@
         source.type = 'video/mp4';
         video.appendChild(source);
 
-        video.addEventListener('click', (ev) => ev.stopPropagation());
+        video.addEventListener('click', (ev) => { ev.preventDefault(); ev.stopPropagation(); });
         frame.innerHTML = '';
         frame.appendChild(video);
         video.play().catch(() => {});
