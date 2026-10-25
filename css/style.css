@@ -888,18 +888,6 @@
     }
   }
 
-  .hero-map {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    width: min(900px, 120vw);
-    height: auto;
-    transform: translate(-50%, -50%);
-    opacity: .07;
-    pointer-events: none;
-    z-index: 1;
-  }
-
   /* ---------- Home: proof blocks ---------- */
   .proof-grid {
     display: grid;

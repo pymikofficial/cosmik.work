@@ -28,7 +28,7 @@ const LIBRARY = JSON.parse(read('data/library.json'));
 const MAP_ATTRIB = '\n  <div class="fl-attrib">World map: Al MacDonald / Fritz Lekschas, <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener">CC BY-SA 3.0</a></div>';
 
 const PAGES = [
-  { file: 'index.html', active: 'home', mapAttrib: true },
+  { file: 'index.html', active: 'home' },
   { file: 'about.html', active: 'about' },
   { file: 'shipped.html', active: 'shipped' },
   { file: 'workflow-log.html', active: 'log' },
