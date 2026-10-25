@@ -1,23 +1,23 @@
 # Soumik Chatterjee
 
-> Growth / GTM Engineer for early-stage startups. I diagnose your growth stage, then obsess over the numbers that move it.
+> AI Workflow Specialist. I turn repetitive work into AI workflows that keep running. I map the work, build and test the workflow, and hand over a system your team can run without me.
 
-Soumik Chatterjee is open to a full-time growth or GTM role at an early-stage startup, and to scoped contract work. Based in Kolkata, India, open to remote.
+Soumik Chatterjee is open to a full-time AI workflow role, remote or on-site with relocation, and to scoped contract work. Based in Kolkata, India. Available to start immediately.
 
 ## Results
 
-- $1.47M CAD prospect pipeline and 2,314 contacts, 9 B2B pipelines in 90 days (Toronto founder)
-- 400+ person supply network across US/UAE/India, 90%+ client retention (CampK12)
-- 31 closed vs target 25 = 124% of quota via B2B employer outreach (Navgurukul)
+- 9 automated B2B pipelines, 2,314 contacts and $1.47M CAD of prospect pipeline in 90 days, with an estimated 20-30 founder hours saved each month (Toronto founder)
+- 30% less manual outreach across a 400+ person workforce in the US, UAE and India, with 90%+ client retention (CampK12)
+- Python test automation frameworks for banking and healthcare clients, with post-deployment defects down 15% (Accenture)
 
 ## Pages
 
-- [Home](https://cosmik.work/): headline, proof, and the three levers that feed growth
-- [Shipped](https://cosmik.work/shipped): tools built for specific growth problems, with date and build time
-- [Growth Log](https://cosmik.work/growth-log): metrics playbook (pipeline coverage, retention, quota attainment) and build log
+- [Home](https://cosmik.work/): results, how I work, and what I add inside any role
+- [Shipped](https://cosmik.work/shipped): free AI workflow tools, from process mapping to SOP writing
+- [Workflow Log](https://cosmik.work/workflow-log): the five measures I use to judge a workflow, and a build log
 - [Contact](https://cosmik.work/contact): hire full-time, or ask about contract work
 
 ## Contact
 
-- Email: soumikgrows@gmail.com
+- Email: soumik2808@gmail.com
 - LinkedIn: https://www.linkedin.com/in/soumikgrows/

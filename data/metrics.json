@@ -1,26 +1,37 @@
 [
   {
-    "name": "Pipeline coverage",
-    "what": "Total value of qualified open pipeline divided by the revenue target for the same period. It tells you whether there is enough in the funnel to hit the number before the quarter starts.",
-    "stage": "Pre-seed to Series A, once there is a repeatable outbound motion and a revenue target to measure against.",
-    "lever": "More qualified contacts at the top of the funnel, spread across parallel pipelines instead of one channel.",
-    "whereUsed": "For a Toronto founder: a $1.47M CAD prospect pipeline built from 2,314 contacts across 9 B2B pipelines in 90 days.",
-    "review": true
+    "name": "Human effort per task",
+    "what": "The hours of people time a task needs from preparation through review, correction and rework. A workflow is only a win if this number falls and stays down.",
+    "stage": "Any task repeated weekly or more often, where the manual baseline can be measured before the build starts.",
+    "lever": "Map the task, time the manual baseline, remove steps first, and only then add automation to what is left.",
+    "whereUsed": "A 30% cut in manual outreach at CampK12 across a 400+ person workforce, and an estimated 20-30 founder hours back every month from nine pipelines for a Toronto founder."
   },
   {
-    "name": "Retention",
-    "what": "The share of clients still active at the end of a period compared with the start. Growth that leaks out the bottom has to be won twice.",
-    "stage": "After first product-market fit, when growth depends on compounding the existing base rather than replacing it.",
-    "lever": "A reliable supply side. When the partner network delivers consistently, clients stay.",
-    "whereUsed": "At CampK12: a 400+ person supply network across the US, UAE and India, with 90%+ client retention.",
-    "review": true
+    "name": "Output accuracy",
+    "what": "The share of outputs that are correct and usable on real inputs without a person fixing them. Speed means nothing if quality slips.",
+    "stage": "Before a workflow touches customers, money or data that people rely on.",
+    "lever": "Test with real inputs and edge cases, add validation checks, and keep human review before any consequential action.",
+    "whereUsed": "Python automation frameworks at Accenture for banking and healthcare clients cut post-deployment defects by 15%."
   },
   {
-    "name": "Quota attainment",
-    "what": "Deals closed divided by the target for the period. It is the simplest honest read on whether the sales motion works.",
-    "stage": "Any stage with a sales target, most useful once a team is committing to a number every month or quarter.",
-    "lever": "Targeted B2B outreach to the buyers who already have the need, with hiring used as the lever that fills the funnel.",
-    "whereUsed": "At Navgurukul: 31 closed against a target of 25, which is 124% of quota, through B2B employer outreach.",
-    "review": true
+    "name": "Turnaround time",
+    "what": "The elapsed time from request to finished output, measured separately from effort. A fast workflow with a long queue is still slow.",
+    "stage": "When people wait on the result, such as outreach, reporting, screening or onboarding.",
+    "lever": "Run steps in parallel and remove handoffs that only pass work along.",
+    "whereUsed": "Nine parallel B2B pipelines produced 2,314 contacts and $1.47M CAD of prospect pipeline in 90 days."
+  },
+  {
+    "name": "Adoption without help",
+    "what": "The share of the intended users who run the workflow on their own without asking its builder for help. A workflow that depends on its creator is a liability.",
+    "stage": "At handoff, and again after the first month of real use.",
+    "lever": "Write a one page operating guide, train the team on their own tasks, and make the next step obvious at every point.",
+    "whereUsed": "Every workflow I ship follows this. The SOP Generator on the Shipped page exists to produce those guides quickly."
+  },
+  {
+    "name": "Cost per run",
+    "what": "Model and tool spend per completed task, compared with the human effort it replaces.",
+    "stage": "When volume grows and small per run costs start to add up.",
+    "lever": "Use the smallest model that holds quality, cache repeated steps, and trim the input before it is sent.",
+    "whereUsed": "The tools on the Shipped page cap input size and strip contact details before any text reaches a model."
   }
 ]

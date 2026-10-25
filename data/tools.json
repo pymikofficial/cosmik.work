@@ -1,29 +1,44 @@
 [
   {
+    "name": "Process Mapper",
+    "problem": "Every workflow starts with understanding the work, and discovery calls are messy. A pasted call transcript goes in, a structured process map comes out with the steps, stakeholders, unstated gaps, follow-up questions and a draft diagram.",
+    "link": "https://process-mapper-839.netlify.app",
+    "flagship": true
+  },
+  {
+    "name": "SOP Generator",
+    "problem": "Workflows fail when nobody knows how they run. A messy description of a process, typed or spoken, goes in and a numbered standard operating procedure comes out with the purpose, ordered steps, tools and exceptions. Contact details are stripped before the text reaches the model.",
+    "link": "https://cosmik-sop-generator.netlify.app"
+  },
+  {
+    "name": "Meeting Minutes Extractor",
+    "problem": "Decisions and owners get lost after a call. A transcript or a spoken recap goes in, structured minutes come out with decisions made, action items with owners and deadlines, and open questions. Nothing is stored beyond the generated minutes.",
+    "link": "https://meeting-minutes-extractor.netlify.app"
+  },
+  {
+    "name": "Executive Briefing Generator",
+    "problem": "Founders drown in scattered notes, emails and to-dos. Raw fragments go in and a one page brief comes out with the top three priorities, the decisions only the founder can make, tasks to delegate and items that can wait.",
+    "link": "https://executive-briefing-generator.netlify.app"
+  },
+  {
     "name": "Cold Outreach Personalizer",
     "date": "2026-07-07",
     "problem": "Outbound stalls when every prospect gets the same email. A batch of prospects goes in, a tailored 3-touch sequence comes out for each one, so reply rates are not capped by how long personalization takes.",
     "link": "https://cold-outreach-personalizer.netlify.app",
-    "buildTime": "1h 40m",
-    "flagship": true,
-    "review": true
+    "buildTime": "1h 40m"
   },
   {
     "name": "Investor Update Drafter",
     "date": "2026-07-07",
     "problem": "Founders skip investor updates when the numbers are messy, and investors lose the thread. Raw metrics and bullets go in, a clean update comes out with a numeric sanity check built in.",
     "link": "https://investor-update-drafter.netlify.app",
-    "buildTime": "14m",
-    "flagship": false,
-    "review": true
+    "buildTime": "14m"
   },
   {
     "name": "Automation Priority Sorter",
     "date": "2026-07-03",
-    "problem": "Early teams automate whatever is loudest, not whatever frees the most time for growth work. Submit a manual pain point, it gets scored in real time and ranked in a shared backlog.",
+    "problem": "Teams automate whatever is loudest, not whatever frees the most time. Submit a manual pain point, it gets scored in real time and ranked in a shared backlog.",
     "link": "https://automation-priority-sorter.netlify.app",
-    "buildTime": "about 1h",
-    "flagship": false,
-    "review": true
+    "buildTime": "about 1h"
   }
 ]

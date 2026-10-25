@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="/img/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/img/favicon-180.png">
+<meta name="theme-color" content="#0B0F0E">
+<title>Workflow Log · How I judge a workflow | Soumik Chatterjee</title>
+<meta name="description" content="The five measures Soumik Chatterjee checks before and after every AI workflow build, when each one matters, how to move it, and a log of the tools shipped.">
+<meta name="author" content="Soumik Chatterjee">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<link rel="canonical" href="https://cosmik.work/workflow-log">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Soumik Chatterjee">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="Workflow Log · Soumik Chatterjee">
+<meta property="og:description" content="The five measures I use to judge a workflow, plus a running build log.">
+<meta property="og:url" content="https://cosmik.work/workflow-log">
+<meta property="og:image" content="https://cosmik.work/img/og-image.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Soumik Chatterjee, AI Workflow Specialist">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Workflow Log · Soumik Chatterjee">
+<meta name="twitter:description" content="The five measures I use to judge a workflow, plus a running build log.">
+<meta name="twitter:image" content="https://cosmik.work/img/og-image.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500;1,9..144,600&family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css?v=20261025a">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://cosmik.work/workflow-log#webpage",
+  "url": "https://cosmik.work/workflow-log",
+  "name": "Workflow Log",
+  "description": "The five measures used to judge an AI workflow, plus a running build log.",
+  "isPartOf": { "@id": "https://cosmik.work/#website" },
+  "author": { "@id": "https://cosmik.work/#person" }
+}
+</script>
+</head>
+<body>
+
+<a href="#main-content" class="skip-link">Skip to content</a>
+
+<canvas id="bgStars" aria-hidden="true"></canvas>
+
+<!-- NAV:START -->
+<nav id="nav" aria-label="Primary">
+  <a href="/" class="logo" data-testid="nav-logo" aria-label="Soumik Chatterjee home">soumik<span>chatterjee</span></a>
+  <div class="nav-links">
+    <a href="/" class="" data-testid="nav-home">Home</a>
+    <a href="/shipped" class="nav-featured" data-testid="nav-shipped">Shipped</a>
+    <a href="/workflow-log" class="active" data-testid="nav-workflow-log">Workflow Log</a>
+  </div>
+  <a href="/contact" class="nav-cta" data-testid="nav-cta"><span class="dot" aria-hidden="true"></span>Hire me</a>
+  <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+    <span class="nav-toggle-bar" aria-hidden="true"></span>
+    <span class="nav-toggle-bar" aria-hidden="true"></span>
+    <span class="nav-toggle-bar" aria-hidden="true"></span>
+  </button>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">&#10005;</button>
+  <nav class="mobile-menu-links" aria-label="Mobile">
+    <a href="/" class="" data-testid="mnav-home">Home</a>
+    <a href="/shipped" class="nav-featured" data-testid="mnav-shipped">Shipped</a>
+    <a href="/workflow-log" class="active" data-testid="mnav-workflow-log">Workflow Log</a>
+    <a href="/contact" class="mobile-menu-cta" data-testid="mnav-cta">Hire me &#8594;</a>
+  </nav>
+</div>
+<!-- NAV:END -->
+
+<main id="main-content">
+
+  <div class="page-header">
+    <p class="breadcrumb"><a href="/">Home</a> / Workflow Log</p>
+  </div>
+
+  <section class="section-tight page-top" aria-labelledby="log-title">
+    <div class="container">
+      <p class="section-eyebrow">Workflow Log</p>
+            <h1 class="section-title" id="log-title">How I judge a <em>workflow.</em></h1>
+            <p class="section-sub">The five measures I check before and after every build, and a log of the tools I have shipped.</p>
+      <nav class="log-jump mono" aria-label="On this page">
+        <a href="#playbook">Measures</a>
+        <a href="#build-log">Build log</a>
+      </nav>
+    </div>
+  </section>
+
+  <section id="playbook" class="section-tight" aria-labelledby="playbook-title">
+    <div class="container">
+      <p class="section-eyebrow">(a) Measures</p>
+      <h2 class="sub-title" id="playbook-title">What it is, when it matters, how I move it.</h2>
+      <!-- Rendered from data/metrics.json by scripts/build.js. Edit the JSON, not this block. -->
+      <div class="metric-grid">
+<!-- METRICS:START -->
+        <article class="metric-card">
+          <h3 class="metric-name">Human effort per task</h3>
+          <dl class="metric-dl">
+            <div><dt>What it is</dt><dd>The hours of people time a task needs from preparation through review, correction and rework. A workflow is only a win if this number falls and stays down.</dd></div>
+            <div><dt>When it matters</dt><dd>Any task repeated weekly or more often, where the manual baseline can be measured before the build starts.</dd></div>
+            <div><dt>How I move it</dt><dd>Map the task, time the manual baseline, remove steps first, and only then add automation to what is left.</dd></div>
+            <div class="metric-used"><dt>In my work</dt><dd>A 30% cut in manual outreach at CampK12 across a 400+ person workforce, and an estimated 20-30 founder hours back every month from nine pipelines for a Toronto founder.</dd></div>
+          </dl>
+        </article>
+        <article class="metric-card">
+          <h3 class="metric-name">Output accuracy</h3>
+          <dl class="metric-dl">
+            <div><dt>What it is</dt><dd>The share of outputs that are correct and usable on real inputs without a person fixing them. Speed means nothing if quality slips.</dd></div>
+            <div><dt>When it matters</dt><dd>Before a workflow touches customers, money or data that people rely on.</dd></div>
+            <div><dt>How I move it</dt><dd>Test with real inputs and edge cases, add validation checks, and keep human review before any consequential action.</dd></div>
+            <div class="metric-used"><dt>In my work</dt><dd>Python automation frameworks at Accenture for banking and healthcare clients cut post-deployment defects by 15%.</dd></div>
+          </dl>
+        </article>
+        <article class="metric-card">
+          <h3 class="metric-name">Turnaround time</h3>
+          <dl class="metric-dl">
+            <div><dt>What it is</dt><dd>The elapsed time from request to finished output, measured separately from effort. A fast workflow with a long queue is still slow.</dd></div>
+            <div><dt>When it matters</dt><dd>When people wait on the result, such as outreach, reporting, screening or onboarding.</dd></div>
+            <div><dt>How I move it</dt><dd>Run steps in parallel and remove handoffs that only pass work along.</dd></div>
+            <div class="metric-used"><dt>In my work</dt><dd>Nine parallel B2B pipelines produced 2,314 contacts and $1.47M CAD of prospect pipeline in 90 days.</dd></div>
+          </dl>
+        </article>
+        <article class="metric-card">
+          <h3 class="metric-name">Adoption without help</h3>
+          <dl class="metric-dl">
+            <div><dt>What it is</dt><dd>The share of the intended users who run the workflow on their own without asking its builder for help. A workflow that depends on its creator is a liability.</dd></div>
+            <div><dt>When it matters</dt><dd>At handoff, and again after the first month of real use.</dd></div>
+            <div><dt>How I move it</dt><dd>Write a one page operating guide, train the team on their own tasks, and make the next step obvious at every point.</dd></div>
+            <div class="metric-used"><dt>In my work</dt><dd>Every workflow I ship follows this. The SOP Generator on the Shipped page exists to produce those guides quickly.</dd></div>
+          </dl>
+        </article>
+        <article class="metric-card">
+          <h3 class="metric-name">Cost per run</h3>
+          <dl class="metric-dl">
+            <div><dt>What it is</dt><dd>Model and tool spend per completed task, compared with the human effort it replaces.</dd></div>
+            <div><dt>When it matters</dt><dd>When volume grows and small per run costs start to add up.</dd></div>
+            <div><dt>How I move it</dt><dd>Use the smallest model that holds quality, cache repeated steps, and trim the input before it is sent.</dd></div>
+            <div class="metric-used"><dt>In my work</dt><dd>The tools on the Shipped page cap input size and strip contact details before any text reaches a model.</dd></div>
+          </dl>
+        </article>
+<!-- METRICS:END -->
+      </div>
+    </div>
+  </section>
+
+  <section id="build-log" class="section-tight" aria-labelledby="buildlog-title">
+    <div class="container">
+      <p class="section-eyebrow">(b) Build log</p>
+      <h2 class="sub-title" id="buildlog-title">Newest first.</h2>
+      <!-- Rendered from data/tools.json by scripts/build.js, sorted newest first. -->
+      <ol class="log-list">
+<!-- BUILDLOG:START -->
+        <li class="log-item">
+          <time class="log-date mono" datetime="2026-07-07">7 Jul 2026</time>
+          <div class="log-body">
+            <h3 class="log-name"><a href="https://cold-outreach-personalizer.netlify.app" target="_blank" rel="noopener">Cold Outreach Personalizer <span aria-hidden="true">&#8599;</span></a></h3>
+            <p class="log-problem">Outbound stalls when every prospect gets the same email. A batch of prospects goes in, a tailored 3-touch sequence comes out for each one, so reply rates are not capped by how long personalization takes.</p>
+            <p class="log-meta mono">Built in 1h 40m</p>
+          </div>
+        </li>
+        <li class="log-item">
+          <time class="log-date mono" datetime="2026-07-07">7 Jul 2026</time>
+          <div class="log-body">
+            <h3 class="log-name"><a href="https://investor-update-drafter.netlify.app" target="_blank" rel="noopener">Investor Update Drafter <span aria-hidden="true">&#8599;</span></a></h3>
+            <p class="log-problem">Founders skip investor updates when the numbers are messy, and investors lose the thread. Raw metrics and bullets go in, a clean update comes out with a numeric sanity check built in.</p>
+            <p class="log-meta mono">Built in 14m</p>
+          </div>
+        </li>
+        <li class="log-item">
+          <time class="log-date mono" datetime="2026-07-03">3 Jul 2026</time>
+          <div class="log-body">
+            <h3 class="log-name"><a href="https://automation-priority-sorter.netlify.app" target="_blank" rel="noopener">Automation Priority Sorter <span aria-hidden="true">&#8599;</span></a></h3>
+            <p class="log-problem">Teams automate whatever is loudest, not whatever frees the most time. Submit a manual pain point, it gets scored in real time and ranked in a shared backlog.</p>
+            <p class="log-meta mono">Built in about 1h</p>
+          </div>
+        </li>
+        <li class="log-item">
+          <span class="log-date mono">Live</span>
+          <div class="log-body">
+            <h3 class="log-name"><a href="https://process-mapper-839.netlify.app" target="_blank" rel="noopener">Process Mapper <span aria-hidden="true">&#8599;</span></a></h3>
+            <p class="log-problem">Every workflow starts with understanding the work, and discovery calls are messy. A pasted call transcript goes in, a structured process map comes out with the steps, stakeholders, unstated gaps, follow-up questions and a draft diagram.</p>
+            <p class="log-meta mono">Free to try</p>
+          </div>
+        </li>
+        <li class="log-item">
+          <span class="log-date mono">Live</span>
+          <div class="log-body">
+            <h3 class="log-name"><a href="https://cosmik-sop-generator.netlify.app" target="_blank" rel="noopener">SOP Generator <span aria-hidden="true">&#8599;</span></a></h3>
+            <p class="log-problem">Workflows fail when nobody knows how they run. A messy description of a process, typed or spoken, goes in and a numbered standard operating procedure comes out with the purpose, ordered steps, tools and exceptions. Contact details are stripped before the text reaches the model.</p>
+            <p class="log-meta mono">Free to try</p>
+          </div>
+        </li>
+        <li class="log-item">
+          <span class="log-date mono">Live</span>
+          <div class="log-body">
+            <h3 class="log-name"><a href="https://meeting-minutes-extractor.netlify.app" target="_blank" rel="noopener">Meeting Minutes Extractor <span aria-hidden="true">&#8599;</span></a></h3>
+            <p class="log-problem">Decisions and owners get lost after a call. A transcript or a spoken recap goes in, structured minutes come out with decisions made, action items with owners and deadlines, and open questions. Nothing is stored beyond the generated minutes.</p>
+            <p class="log-meta mono">Free to try</p>
+          </div>
+        </li>
+        <li class="log-item">
+          <span class="log-date mono">Live</span>
+          <div class="log-body">
+            <h3 class="log-name"><a href="https://executive-briefing-generator.netlify.app" target="_blank" rel="noopener">Executive Briefing Generator <span aria-hidden="true">&#8599;</span></a></h3>
+            <p class="log-problem">Founders drown in scattered notes, emails and to-dos. Raw fragments go in and a one page brief comes out with the top three priorities, the decisions only the founder can make, tasks to delegate and items that can wait.</p>
+            <p class="log-meta mono">Free to try</p>
+          </div>
+        </li>
+<!-- BUILDLOG:END -->
+      </ol>
+    </div>
+  </section>
+
+  <div class="page-next">
+    <a href="/shipped" class="pn-back">&#8592; Shipped</a>
+    <a href="/contact">
+      <p class="pn-label">Next</p>
+      <span class="pn-title">Hire me <span aria-hidden="true">&#8594;</span></span>
+    </a>
+  </div>
+
+</main>
+
+<!-- FOOTER:START -->
+<footer>
+  <div><span class="fl">© 2026 Soumik Chatterjee</span> · AI Workflow Specialist</div>
+  <div><a href="mailto:soumik2808@gmail.com">soumik2808@gmail.com</a> · <a href="https://www.linkedin.com/in/soumikgrows/" target="_blank" rel="noopener">LinkedIn</a></div>
+</footer>
+<!-- FOOTER:END -->
+
+<script src="/js/starfield.js?v=20261025a"></script>
+<script src="/js/nav.js?v=20261025a"></script>
+
+</body>
+</html>

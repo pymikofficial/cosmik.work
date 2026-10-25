@@ -13,7 +13,7 @@ const path = require('path');
 
 const ROOT = path.join(__dirname, '..');
 const FILES = [
-  'index.html', 'shipped.html', 'growth-log.html', 'contact.html',
+  'index.html', 'shipped.html', 'workflow-log.html', 'contact.html',
   'privacy-virtual-background.html', 'partials/nav.html', 'partials/footer.html',
   'data/tools.json', 'data/metrics.json', 'llms.txt', 'robots.txt', 'sitemap.xml',
 ];
