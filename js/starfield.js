@@ -43,7 +43,7 @@
     layers = [
       makeLayer(26000, [0.3, 0.7], [0.08, 0.22], [0.002, 0.006], 0.006, false), // distant, near-static
       makeLayer(12000, [0.5, 1.1], [0.16, 0.40], [0.005, 0.012], 0.010, false), // mid, gentle twinkle
-      makeLayer(60000, [1.0, 1.7], [0.35, 0.68], [0.008, 0.016], 0.012, true)   // near, soft glow, sparse
+      makeLayer(38000, [1.0, 1.8], [0.35, 0.68], [0.008, 0.016], 0.012, true)   // near, soft glow, sparse
     ];
     if (boosted) {
       // Feature stars: very sparse, bigger, brighter glow ~ a handful per screen.
@@ -69,7 +69,7 @@
         }
         ctx.beginPath();
         if (layer.glow) {
-          ctx.shadowColor = 'rgba(61,220,132,0.55)';
+          ctx.shadowColor = 'rgba(90, 169, 255,0.55)';
           ctx.shadowBlur = layer.glowStrength;
         } else {
           ctx.shadowBlur = 0;
