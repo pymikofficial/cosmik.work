@@ -14,6 +14,7 @@ Soumik Chatterjee is open to a full-time AI workflow role, remote or on-site wit
 ## Pages
 
 - [Home](https://cosmik.work/): results, how I work, and what I add inside any role
+- [About](https://cosmik.work/about): why the site is called cosmik.work, the career path behind it, and how Soumik thinks about AI workflows with guardrails
 - [Shipped](https://cosmik.work/shipped): free AI workflow tools, from process mapping to SOP writing
 - [Workflow Log](https://cosmik.work/workflow-log): the five measures I use to judge a workflow, and a build log
 - [Contact](https://cosmik.work/contact): hire full-time, or ask about contract work
