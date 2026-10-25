@@ -1603,3 +1603,6 @@
     .about-face { width: 112px; height: 112px; }
     .story-grid, .about-beyond { grid-template-columns: 1fr; }
   }
+
+  .hero-banner { display: block; width: 100%; max-width: 720px; height: auto; margin: 0 auto 28px; border-radius: 14px; border: 1px solid rgba(90, 169, 255, .25); box-shadow: 0 0 60px rgba(90, 169, 255, .18); }
+  @media (max-width: 640px) { .hero-banner { margin-bottom: 20px; border-radius: 10px; } }
