@@ -9,5 +9,6 @@
 # Explicit rewrites so canonical/OG URLs (extensionless) always resolve,
 # instead of relying on Netlify's implicit pretty-URL behavior.
 /shipped      /shipped.html      200
-/growth-log   /growth-log.html   200
+/workflow-log /workflow-log.html 200
+/growth-log   /workflow-log   301
 /contact      /contact.html      200

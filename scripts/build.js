@@ -29,13 +29,13 @@ const MAP_ATTRIB = '\n  <div class="fl-attrib">World map: Al MacDonald / Fritz L
 const PAGES = [
   { file: 'index.html', active: 'home', mapAttrib: true },
   { file: 'shipped.html', active: 'shipped' },
-  { file: 'growth-log.html', active: 'log' },
+  { file: 'workflow-log.html', active: 'log' },
   { file: 'contact.html', active: 'contact' },
   { file: 'privacy-virtual-background.html', active: 'privacy' },
 ];
 
 // ---- validation: fail the build on a malformed data entry ----
-const TOOL_FIELDS = ['name', 'date', 'problem', 'link', 'buildTime'];
+const TOOL_FIELDS = ['name', 'problem', 'link'];
 const METRIC_FIELDS = ['name', 'what', 'stage', 'lever', 'whereUsed'];
 function validate(list, fields, file) {
   list.forEach((entry, i) => {
@@ -49,7 +49,7 @@ function validate(list, fields, file) {
 validate(TOOLS, TOOL_FIELDS, 'data/tools.json');
 validate(METRICS, METRIC_FIELDS, 'data/metrics.json');
 TOOLS.forEach((t) => {
-  if (!/^\d{4}-\d{2}-\d{2}$/.test(t.date)) throw new Error(`data/tools.json: "${t.name}" date must be YYYY-MM-DD`);
+  if (t.date !== undefined && !/^\d{4}-\d{2}-\d{2}$/.test(t.date)) throw new Error(`data/tools.json: "${t.name}" date must be YYYY-MM-DD when present`);
 });
 
 // ---- helpers ----
@@ -67,7 +67,7 @@ const review = (entry, indent) => (entry.review ? `${indent}<!-- REVIEW -->\n` :
 
 // Newest first; ties keep their order in the JSON file.
 const toolsByDate = TOOLS.map((t, i) => ({ t, i }))
-  .sort((a, b) => b.t.date.localeCompare(a.t.date) || a.i - b.i)
+  .sort((a, b) => (b.t.date || '').localeCompare(a.t.date || '') || a.i - b.i)
   .map((x) => x.t);
 
 // Flagship tools lead the Shipped grid, the rest follow newest first.
@@ -79,11 +79,11 @@ function renderToolCards() {
     const i = '        ';
     return `${review(t, i)}${i}<a class="tool-card-link${t.flagship ? ' is-flagship' : ''}" href="${esc(t.link)}" target="_blank" rel="noopener" aria-label="${esc(t.name)} (opens in a new tab)">
 ${i}  <article class="ship-card tool-card">
-${i}    <p class="ship-tag">${t.flagship ? 'Flagship · ' : ''}Shipped ${esc(fmtDate(t.date))}</p>
+${i}    <p class="ship-tag">${t.flagship ? 'Flagship' : 'Live tool'}${t.date ? ' · Shipped ' + esc(fmtDate(t.date)) : ''}</p>
 ${i}    <h2 class="ship-name">${esc(t.name)}</h2>
-${i}    <p class="tool-label mono">Growth problem it solves</p>
+${i}    <p class="tool-label mono">Work problem it solves</p>
 ${i}    <p class="ship-desc">${esc(t.problem)}</p>
-${i}    <p class="tool-meta mono"><span>Build time: ${esc(t.buildTime)}</span><span class="tool-open">Open tool <span aria-hidden="true">&#8599;</span></span></p>
+${i}    <p class="tool-meta mono"><span>${t.buildTime ? 'Built in ' + esc(t.buildTime) : 'Free to try'}</span><span class="tool-open">Open tool <span aria-hidden="true">&#8599;</span></span></p>
 ${i}  </article>
 ${i}</a>`;
   }).join('\n');
@@ -96,9 +96,9 @@ function renderMetricCards() {
 ${i}  <h3 class="metric-name">${esc(m.name)}</h3>
 ${i}  <dl class="metric-dl">
 ${i}    <div><dt>What it is</dt><dd>${esc(m.what)}</dd></div>
-${i}    <div><dt>Stage it matters at</dt><dd>${esc(m.stage)}</dd></div>
-${i}    <div><dt>Lever that moves it</dt><dd>${esc(m.lever)}</dd></div>
-${i}    <div class="metric-used"><dt>Where I used it</dt><dd>${esc(m.whereUsed)}</dd></div>
+${i}    <div><dt>When it matters</dt><dd>${esc(m.stage)}</dd></div>
+${i}    <div><dt>How I move it</dt><dd>${esc(m.lever)}</dd></div>
+${i}    <div class="metric-used"><dt>In my work</dt><dd>${esc(m.whereUsed)}</dd></div>
 ${i}  </dl>
 ${i}</article>`;
   }).join('\n');
@@ -108,11 +108,11 @@ function renderBuildLog() {
   return toolsByDate.map((t) => {
     const i = '        ';
     return `${review(t, i)}${i}<li class="log-item">
-${i}  <time class="log-date mono" datetime="${esc(t.date)}">${esc(fmtDate(t.date))}</time>
+${i}  ${t.date ? `<time class="log-date mono" datetime="${esc(t.date)}">${esc(fmtDate(t.date))}</time>` : '<span class="log-date mono">Live</span>'}
 ${i}  <div class="log-body">
 ${i}    <h3 class="log-name"><a href="${esc(t.link)}" target="_blank" rel="noopener">${esc(t.name)} <span aria-hidden="true">&#8599;</span></a></h3>
 ${i}    <p class="log-problem">${esc(t.problem)}</p>
-${i}    <p class="log-meta mono">Build time: ${esc(t.buildTime)}</p>
+${i}    <p class="log-meta mono">${t.buildTime ? 'Built in ' + esc(t.buildTime) : 'Free to try'}</p>
 ${i}  </div>
 ${i}</li>`;
   }).join('\n');
@@ -123,7 +123,7 @@ function renderToolsLd() {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
     '@id': `${SITE}/shipped#tools`,
-    name: 'Tools shipped by Soumik Chatterjee',
+    name: 'Workflow tools built by Soumik Chatterjee',
     itemListElement: toolsForGrid.map((t, idx) => ({
       '@type': 'ListItem',
       position: idx + 1,
@@ -133,7 +133,7 @@ function renderToolsLd() {
         url: t.link,
         applicationCategory: 'BusinessApplication',
         operatingSystem: 'Web',
-        datePublished: t.date,
+        ...(t.date ? { datePublished: t.date } : {}),
         description: t.problem,
         creator: { '@id': `${SITE}/#person` },
       },
