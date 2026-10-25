@@ -1594,3 +1594,17 @@
 
   .hero-banner { display: block; width: 100%; max-width: 720px; height: auto; margin: 0 auto 28px; border-radius: 14px; border: 1px solid rgba(90, 169, 255, .25); box-shadow: 0 0 60px rgba(90, 169, 255, .18); }
   @media (max-width: 640px) { .hero-banner { margin-bottom: 20px; border-radius: 10px; } }
+
+  /* ---------- Touch: bigger hit areas, readable labels ---------- */
+  @media (pointer: coarse) {
+    .breadcrumb a, footer a, .pn-back, .log-jump a, .text-link, .channel-list a, .log-meta a, .hero-why {
+      padding-top: 6px;
+      padding-bottom: 6px;
+    }
+    .logo { display: inline-block; padding: 8px 0; margin: -8px 0; }
+    .log-jump a { display: inline-block; }
+  }
+  @media (max-width: 640px) {
+    .metric-dl dt, .ship-tag, .tool-label, .hire-tag, .channel-list dt { font-size: 11px; }
+    .hero-proof-label { font-size: 10.5px; }
+  }
