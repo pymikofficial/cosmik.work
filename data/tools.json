@@ -3,22 +3,26 @@
     "name": "Process Mapper",
     "problem": "Every workflow starts with understanding the work, and discovery calls are messy. A pasted call transcript goes in, a structured process map comes out with the steps, stakeholders, unstated gaps, follow-up questions and a draft diagram.",
     "link": "https://process-mapper-839.netlify.app",
-    "flagship": true
+    "flagship": true,
+    "date": "2026-07-17"
   },
   {
     "name": "SOP Generator",
     "problem": "Workflows fail when nobody knows how they run. A messy description of a process, typed or spoken, goes in and a numbered standard operating procedure comes out with the purpose, ordered steps, tools and exceptions. Contact details are stripped before the text reaches the model.",
-    "link": "https://cosmik-sop-generator.netlify.app"
+    "link": "https://cosmik-sop-generator.netlify.app",
+    "date": "2026-07-07"
   },
   {
     "name": "Meeting Minutes Extractor",
     "problem": "Decisions and owners get lost after a call. A transcript or a spoken recap goes in, structured minutes come out with decisions made, action items with owners and deadlines, and open questions. Nothing is stored beyond the generated minutes.",
-    "link": "https://meeting-minutes-extractor.netlify.app"
+    "link": "https://meeting-minutes-extractor.netlify.app",
+    "date": "2026-07-05"
   },
   {
     "name": "Executive Briefing Generator",
     "problem": "Founders drown in scattered notes, emails and to-dos. Raw fragments go in and a one page brief comes out with the top three priorities, the decisions only the founder can make, tasks to delegate and items that can wait.",
-    "link": "https://executive-briefing-generator.netlify.app"
+    "link": "https://executive-briefing-generator.netlify.app",
+    "date": "2026-07-05"
   },
   {
     "name": "Cold Outreach Personalizer",

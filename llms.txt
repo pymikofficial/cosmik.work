@@ -9,6 +9,7 @@ Soumik Chatterjee is open to a full-time AI workflow role, remote or on-site wit
 - 9 automated B2B pipelines, 2,314 contacts and $1.47M CAD of prospect pipeline in 90 days, with an estimated 20-30 founder hours saved each month (Toronto founder)
 - 30% less manual outreach across a 400+ person workforce in the US, UAE and India, with 90%+ client retention (CampK12)
 - Python test automation frameworks for banking and healthcare clients, with post-deployment defects down 15% (Accenture)
+- 14 live AI tools shipped solo, including two Chrome Web Store extensions with 300+ users between them
 
 ## Pages
 
@@ -16,6 +17,7 @@ Soumik Chatterjee is open to a full-time AI workflow role, remote or on-site wit
 - [Shipped](https://cosmik.work/shipped): free AI workflow tools, from process mapping to SOP writing
 - [Workflow Log](https://cosmik.work/workflow-log): the five measures I use to judge a workflow, and a build log
 - [Contact](https://cosmik.work/contact): hire full-time, or ask about contract work
+- [CV](https://cosmik.work/assets/docs/soumik-chatterjee-cv.pdf): one page PDF
 
 ## Contact
 

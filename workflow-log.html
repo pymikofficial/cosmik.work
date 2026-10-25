@@ -27,10 +27,11 @@
 <meta name="twitter:title" content="Workflow Log · Soumik Chatterjee">
 <meta name="twitter:description" content="The five measures I use to judge a workflow, plus a running build log.">
 <meta name="twitter:image" content="https://cosmik.work/img/og-image.png">
+<meta name="twitter:image:alt" content="Soumik Chatterjee, AI Workflow Specialist">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500;1,9..144,600&family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/css/style.css?v=20261025c">
+<link rel="stylesheet" href="/css/style.css?v=20261025d">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -55,7 +56,7 @@
   <a href="/" class="logo" data-testid="nav-logo" aria-label="Soumik Chatterjee home">soumik<span>chatterjee</span></a>
   <div class="nav-links">
     <a href="/" class="" data-testid="nav-home">Home</a>
-    <a href="/shipped" class="nav-featured" data-testid="nav-shipped">Shipped</a>
+    <a href="/shipped" class="" data-testid="nav-shipped">Shipped</a>
     <a href="/workflow-log" class="active" data-testid="nav-workflow-log">Workflow Log</a>
   </div>
   <a href="/contact" class="nav-cta" data-testid="nav-cta"><span class="dot" aria-hidden="true"></span>Hire me</a>
@@ -66,11 +67,11 @@
   </button>
 </nav>
 
-<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true" inert>
   <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">&#10005;</button>
   <nav class="mobile-menu-links" aria-label="Mobile">
     <a href="/" class="" data-testid="mnav-home">Home</a>
-    <a href="/shipped" class="nav-featured" data-testid="mnav-shipped">Shipped</a>
+    <a href="/shipped" class="" data-testid="mnav-shipped">Shipped</a>
     <a href="/workflow-log" class="active" data-testid="mnav-workflow-log">Workflow Log</a>
     <a href="/contact" class="mobile-menu-cta" data-testid="mnav-cta">Hire me &#8594;</a>
   </nav>
@@ -97,7 +98,7 @@
 
   <section id="playbook" class="section-tight" aria-labelledby="playbook-title">
     <div class="container">
-      <p class="section-eyebrow">(a) Measures</p>
+      <p class="section-eyebrow">Measures</p>
       <h2 class="sub-title" id="playbook-title">What it is, when it matters, how I move it.</h2>
       <!-- Rendered from data/metrics.json by scripts/build.js. Edit the JSON, not this block. -->
       <div class="metric-grid">
@@ -154,15 +155,63 @@
 
   <section id="build-log" class="section-tight" aria-labelledby="buildlog-title">
     <div class="container">
-      <p class="section-eyebrow">(b) Build log</p>
-      <h2 class="sub-title" id="buildlog-title">Newest first.</h2>
-      <!-- Rendered from data/tools.json by scripts/build.js, sorted newest first. -->
+      <p class="section-eyebrow">Build log</p>
+      <h2 class="sub-title" id="buildlog-title">Fourteen tools, newest first.</h2>
+      <!-- Rendered from data/tools.json and data/library.json by scripts/build.js, sorted newest first. -->
       <ol class="log-list">
 <!-- BUILDLOG:START -->
         <li class="log-item">
+          <time class="log-date mono" datetime="2026-07-17">17 Jul 2026</time>
+          <div class="log-body">
+            <h3 class="log-name"><a href="https://process-mapper-839.netlify.app" target="_blank" rel="noopener">Process Mapper <span aria-hidden="true">&#8599;</span><span class="visually-hidden"> (opens in a new tab)</span></a></h3>
+            <p class="log-problem">Every workflow starts with understanding the work, and discovery calls are messy. A pasted call transcript goes in, a structured process map comes out with the steps, stakeholders, unstated gaps, follow-up questions and a draft diagram.</p>
+            <p class="log-meta mono">Free to try</p>
+          </div>
+        </li>
+        <li class="log-item">
+          <time class="log-date mono" datetime="2026-07-17">17 Jul 2026</time>
+          <div class="log-body">
+            <h3 class="log-name"><a href="https://chromewebstore.google.com/detail/jdlienijidakhdofpcinjdomgpbecgle" target="_blank" rel="noopener">Blur Background <span aria-hidden="true">&#8599;</span><span class="visually-hidden"> (opens in a new tab)</span></a></h3>
+            <p class="log-problem">Free background blur for video calls. No sign in, no watermark, and it runs fully in the browser.</p>
+            <p class="log-meta mono">Chrome extension · 270+ users</p>
+          </div>
+        </li>
+        <li class="log-item">
+          <time class="log-date mono" datetime="2026-07-11">11 Jul 2026</time>
+          <div class="log-body">
+            <h3 class="log-name"><a href="https://teacher-fundraising-tool.netlify.app" target="_blank" rel="noopener">Teacher Fundraising Message Generator <span aria-hidden="true">&#8599;</span><span class="visually-hidden"> (opens in a new tab)</span></a></h3>
+            <p class="log-problem">Describe what a classroom needs and get a polished donor ask, ready to send.</p>
+            <p class="log-meta mono">Education</p>
+          </div>
+        </li>
+        <li class="log-item">
+          <time class="log-date mono" datetime="2026-07-11">11 Jul 2026</time>
+          <div class="log-body">
+            <h3 class="log-name"><a href="https://leave-broadcast-tool.netlify.app" target="_blank" rel="noopener">Leave Broadcast Message Generator <span aria-hidden="true">&#8599;</span><span class="visually-hidden"> (opens in a new tab)</span></a></h3>
+            <p class="log-problem">Who is out, when, and what needs handing off, as one clean message.</p>
+            <p class="log-meta mono">Everyday</p>
+          </div>
+        </li>
+        <li class="log-item">
+          <time class="log-date mono" datetime="2026-07-08">8 Jul 2026</time>
+          <div class="log-body">
+            <h3 class="log-name"><a href="https://github-profile-summarizer.netlify.app" target="_blank" rel="noopener">GitHub Profile Summarizer <span aria-hidden="true">&#8599;</span><span class="visually-hidden"> (opens in a new tab)</span></a></h3>
+            <p class="log-problem">Paste a username and see what someone has actually shipped.</p>
+            <p class="log-meta mono">Business</p>
+          </div>
+        </li>
+        <li class="log-item">
           <time class="log-date mono" datetime="2026-07-07">7 Jul 2026</time>
           <div class="log-body">
-            <h3 class="log-name"><a href="https://cold-outreach-personalizer.netlify.app" target="_blank" rel="noopener">Cold Outreach Personalizer <span aria-hidden="true">&#8599;</span></a></h3>
+            <h3 class="log-name"><a href="https://cosmik-sop-generator.netlify.app" target="_blank" rel="noopener">SOP Generator <span aria-hidden="true">&#8599;</span><span class="visually-hidden"> (opens in a new tab)</span></a></h3>
+            <p class="log-problem">Workflows fail when nobody knows how they run. A messy description of a process, typed or spoken, goes in and a numbered standard operating procedure comes out with the purpose, ordered steps, tools and exceptions. Contact details are stripped before the text reaches the model.</p>
+            <p class="log-meta mono">Free to try</p>
+          </div>
+        </li>
+        <li class="log-item">
+          <time class="log-date mono" datetime="2026-07-07">7 Jul 2026</time>
+          <div class="log-body">
+            <h3 class="log-name"><a href="https://cold-outreach-personalizer.netlify.app" target="_blank" rel="noopener">Cold Outreach Personalizer <span aria-hidden="true">&#8599;</span><span class="visually-hidden"> (opens in a new tab)</span></a></h3>
             <p class="log-problem">Outbound stalls when every prospect gets the same email. A batch of prospects goes in, a tailored 3-touch sequence comes out for each one, so reply rates are not capped by how long personalization takes.</p>
             <p class="log-meta mono">Built in 1h 40m</p>
           </div>
@@ -170,49 +219,57 @@
         <li class="log-item">
           <time class="log-date mono" datetime="2026-07-07">7 Jul 2026</time>
           <div class="log-body">
-            <h3 class="log-name"><a href="https://investor-update-drafter.netlify.app" target="_blank" rel="noopener">Investor Update Drafter <span aria-hidden="true">&#8599;</span></a></h3>
+            <h3 class="log-name"><a href="https://investor-update-drafter.netlify.app" target="_blank" rel="noopener">Investor Update Drafter <span aria-hidden="true">&#8599;</span><span class="visually-hidden"> (opens in a new tab)</span></a></h3>
             <p class="log-problem">Founders skip investor updates when the numbers are messy, and investors lose the thread. Raw metrics and bullets go in, a clean update comes out with a numeric sanity check built in.</p>
             <p class="log-meta mono">Built in 14m</p>
           </div>
         </li>
         <li class="log-item">
-          <time class="log-date mono" datetime="2026-07-03">3 Jul 2026</time>
+          <time class="log-date mono" datetime="2026-07-06">6 Jul 2026</time>
           <div class="log-body">
-            <h3 class="log-name"><a href="https://automation-priority-sorter.netlify.app" target="_blank" rel="noopener">Automation Priority Sorter <span aria-hidden="true">&#8599;</span></a></h3>
-            <p class="log-problem">Teams automate whatever is loudest, not whatever frees the most time. Submit a manual pain point, it gets scored in real time and ranked in a shared backlog.</p>
-            <p class="log-meta mono">Built in about 1h</p>
+            <h3 class="log-name"><a href="https://chromewebstore.google.com/detail/fullshot-full-page-screen/gdejgnbdmnfpdalaaefhmbecnecdfkbf" target="_blank" rel="noopener">Full Webpage Screenshot <span aria-hidden="true">&#8599;</span><span class="visually-hidden"> (opens in a new tab)</span></a></h3>
+            <p class="log-problem">Captures a whole page beyond the fold with no network calls.</p>
+            <p class="log-meta mono">Chrome extension · 40+ users</p>
           </div>
         </li>
         <li class="log-item">
-          <span class="log-date mono">Live</span>
+          <time class="log-date mono" datetime="2026-07-05">5 Jul 2026</time>
           <div class="log-body">
-            <h3 class="log-name"><a href="https://process-mapper-839.netlify.app" target="_blank" rel="noopener">Process Mapper <span aria-hidden="true">&#8599;</span></a></h3>
-            <p class="log-problem">Every workflow starts with understanding the work, and discovery calls are messy. A pasted call transcript goes in, a structured process map comes out with the steps, stakeholders, unstated gaps, follow-up questions and a draft diagram.</p>
-            <p class="log-meta mono">Free to try</p>
-          </div>
-        </li>
-        <li class="log-item">
-          <span class="log-date mono">Live</span>
-          <div class="log-body">
-            <h3 class="log-name"><a href="https://cosmik-sop-generator.netlify.app" target="_blank" rel="noopener">SOP Generator <span aria-hidden="true">&#8599;</span></a></h3>
-            <p class="log-problem">Workflows fail when nobody knows how they run. A messy description of a process, typed or spoken, goes in and a numbered standard operating procedure comes out with the purpose, ordered steps, tools and exceptions. Contact details are stripped before the text reaches the model.</p>
-            <p class="log-meta mono">Free to try</p>
-          </div>
-        </li>
-        <li class="log-item">
-          <span class="log-date mono">Live</span>
-          <div class="log-body">
-            <h3 class="log-name"><a href="https://meeting-minutes-extractor.netlify.app" target="_blank" rel="noopener">Meeting Minutes Extractor <span aria-hidden="true">&#8599;</span></a></h3>
+            <h3 class="log-name"><a href="https://meeting-minutes-extractor.netlify.app" target="_blank" rel="noopener">Meeting Minutes Extractor <span aria-hidden="true">&#8599;</span><span class="visually-hidden"> (opens in a new tab)</span></a></h3>
             <p class="log-problem">Decisions and owners get lost after a call. A transcript or a spoken recap goes in, structured minutes come out with decisions made, action items with owners and deadlines, and open questions. Nothing is stored beyond the generated minutes.</p>
             <p class="log-meta mono">Free to try</p>
           </div>
         </li>
         <li class="log-item">
-          <span class="log-date mono">Live</span>
+          <time class="log-date mono" datetime="2026-07-05">5 Jul 2026</time>
           <div class="log-body">
-            <h3 class="log-name"><a href="https://executive-briefing-generator.netlify.app" target="_blank" rel="noopener">Executive Briefing Generator <span aria-hidden="true">&#8599;</span></a></h3>
+            <h3 class="log-name"><a href="https://executive-briefing-generator.netlify.app" target="_blank" rel="noopener">Executive Briefing Generator <span aria-hidden="true">&#8599;</span><span class="visually-hidden"> (opens in a new tab)</span></a></h3>
             <p class="log-problem">Founders drown in scattered notes, emails and to-dos. Raw fragments go in and a one page brief comes out with the top three priorities, the decisions only the founder can make, tasks to delegate and items that can wait.</p>
             <p class="log-meta mono">Free to try</p>
+          </div>
+        </li>
+        <li class="log-item">
+          <time class="log-date mono" datetime="2026-07-05">5 Jul 2026</time>
+          <div class="log-body">
+            <h3 class="log-name"><a href="https://cosmik-fieldnote.netlify.app" target="_blank" rel="noopener">Fieldnote <span aria-hidden="true">&#8599;</span><span class="visually-hidden"> (opens in a new tab)</span></a></h3>
+            <p class="log-problem">A spoken classroom observation becomes a clean structured report with highlights and flags.</p>
+            <p class="log-meta mono">Education</p>
+          </div>
+        </li>
+        <li class="log-item">
+          <time class="log-date mono" datetime="2026-07-04">4 Jul 2026</time>
+          <div class="log-body">
+            <h3 class="log-name"><a href="https://cosmik-contract-generator.netlify.app" target="_blank" rel="noopener">Contract Generator <span aria-hidden="true">&#8599;</span><span class="visually-hidden"> (opens in a new tab)</span></a></h3>
+            <p class="log-problem">Draft ready agreements in minutes instead of days of back and forth.</p>
+            <p class="log-meta mono">Business</p>
+          </div>
+        </li>
+        <li class="log-item">
+          <time class="log-date mono" datetime="2026-07-03">3 Jul 2026</time>
+          <div class="log-body">
+            <h3 class="log-name"><a href="https://automation-priority-sorter.netlify.app" target="_blank" rel="noopener">Automation Priority Sorter <span aria-hidden="true">&#8599;</span><span class="visually-hidden"> (opens in a new tab)</span></a></h3>
+            <p class="log-problem">Teams automate whatever is loudest, not whatever frees the most time. Submit a manual pain point, it gets scored in real time and ranked in a shared backlog.</p>
+            <p class="log-meta mono">Built in about 1h</p>
           </div>
         </li>
 <!-- BUILDLOG:END -->
@@ -237,8 +294,8 @@
 </footer>
 <!-- FOOTER:END -->
 
-<script src="/js/starfield.js?v=20261025c"></script>
-<script src="/js/nav.js?v=20261025c"></script>
+<script src="/js/starfield.js?v=20261025d"></script>
+<script src="/js/nav.js?v=20261025d"></script>
 
 </body>
 </html>

@@ -1,4 +1,4 @@
-// Mobile nav ~ hamburger toggle for the full-screen overlay menu.
+// Mobile nav, hamburger toggle for the full-screen overlay menu.
 // Shared across every page via <script src="js/nav.js">.
 (function () {
   const toggle = document.getElementById('navToggle');
@@ -18,6 +18,7 @@
     lastFocusedElement = document.activeElement;
     menu.classList.add('open');
     menu.setAttribute('aria-hidden', 'false');
+    menu.inert = false;
     toggle.setAttribute('aria-expanded', 'true');
     document.body.classList.add('menu-open');
 
@@ -27,6 +28,7 @@
   function closeMenu() {
     menu.classList.remove('open');
     menu.setAttribute('aria-hidden', 'true');
+    menu.inert = true;
     toggle.setAttribute('aria-expanded', 'false');
     document.body.classList.remove('menu-open');
 

@@ -31,7 +31,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500;1,9..144,600&family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/css/style.css?v=20261025c">
+<link rel="stylesheet" href="/css/style.css?v=20261025d">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -93,7 +93,7 @@
   <a href="/" class="logo" data-testid="nav-logo" aria-label="Soumik Chatterjee home">soumik<span>chatterjee</span></a>
   <div class="nav-links">
     <a href="/" class="active" data-testid="nav-home">Home</a>
-    <a href="/shipped" class="nav-featured" data-testid="nav-shipped">Shipped</a>
+    <a href="/shipped" class="" data-testid="nav-shipped">Shipped</a>
     <a href="/workflow-log" class="" data-testid="nav-workflow-log">Workflow Log</a>
   </div>
   <a href="/contact" class="nav-cta" data-testid="nav-cta"><span class="dot" aria-hidden="true"></span>Hire me</a>
@@ -104,11 +104,11 @@
   </button>
 </nav>
 
-<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true" inert>
   <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">&#10005;</button>
   <nav class="mobile-menu-links" aria-label="Mobile">
     <a href="/" class="active" data-testid="mnav-home">Home</a>
-    <a href="/shipped" class="nav-featured" data-testid="mnav-shipped">Shipped</a>
+    <a href="/shipped" class="" data-testid="mnav-shipped">Shipped</a>
     <a href="/workflow-log" class="" data-testid="mnav-workflow-log">Workflow Log</a>
     <a href="/contact" class="mobile-menu-cta" data-testid="mnav-cta">Hire me &#8594;</a>
   </nav>
@@ -122,18 +122,18 @@
     <div class="glow-orb glow-1" aria-hidden="true"></div>
     <img class="hero-map" src="/img/world-map.svg" alt="" aria-hidden="true" width="380" height="380">
     <div class="hero-inner">
-      <img class="hero-face" src="/img/soumik-headshot.png" alt="Soumik Chatterjee" width="88" height="88">
+      <img class="hero-face" src="/img/soumik-headshot.jpg" alt="Soumik Chatterjee" width="88" height="88">
       <p class="eyebrow">AI Workflow Specialist</p>
       <h1 class="hero-title" id="hero-title">I turn repetitive work into AI workflows that <em>keep running.</em></h1>
       <p class="hero-sub">I am <strong>Soumik Chatterjee</strong>. I map the work, build and test the workflow, and hand over a system your team can run without me.</p>
-      <div class="hero-proof-strip" aria-hidden="true">
+      <div class="hero-proof-strip">
         <div class="hero-proof-item">
           <span class="hero-proof-num">$1.47M CAD</span>
           <span class="hero-proof-label">Pipeline built</span>
         </div>
         <div class="hero-proof-item">
           <span class="hero-proof-num">20-30</span>
-          <span class="hero-proof-label">Hrs saved a month</span>
+          <span class="hero-proof-label">Hours saved a month</span>
         </div>
         <div class="hero-proof-item">
           <span class="hero-proof-num">30%</span>
@@ -274,9 +274,11 @@
   <section id="close" class="section-tight" aria-labelledby="close-title">
     <div class="container close-inner">
       <h2 class="cta-title" id="close-title">Have work that <em>repeats?</em></h2>
+      <p class="section-sub close-sub">I have shipped 14 live AI tools, including two Chrome extensions with 300+ users. Your repeated task could be next.</p>
       <div class="btn-row">
         <a href="/contact" class="btn btn-primary">Hire me <span aria-hidden="true">&#8594;</span></a>
         <a href="/shipped" class="btn btn-ghost">See what I built</a>
+        <a href="/assets/docs/soumik-chatterjee-cv.pdf" class="btn btn-ghost" target="_blank" rel="noopener">Download CV <span aria-hidden="true">&#8595;</span></a>
       </div>
     </div>
   </section>
@@ -291,8 +293,8 @@
 </footer>
 <!-- FOOTER:END -->
 
-<script src="/js/starfield.js?v=20261025c"></script>
-<script src="/js/nav.js?v=20261025c"></script>
+<script src="/js/starfield.js?v=20261025d"></script>
+<script src="/js/nav.js?v=20261025d"></script>
 
 </body>
 </html>
