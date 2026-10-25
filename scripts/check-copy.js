@@ -14,8 +14,8 @@ const path = require('path');
 const ROOT = path.join(__dirname, '..');
 const FILES = [
   'index.html', 'shipped.html', 'workflow-log.html', 'contact.html',
-  'privacy-virtual-background.html', 'partials/nav.html', 'partials/footer.html',
-  'data/tools.json', 'data/metrics.json', 'llms.txt', 'robots.txt', 'sitemap.xml',
+  'privacy-virtual-background.html', '404.html', 'partials/nav.html', 'partials/footer.html',
+  'data/tools.json', 'data/metrics.json', 'data/library.json', 'llms.txt', 'robots.txt', 'sitemap.xml',
 ];
 const STYLE_EXEMPT = new Set(['privacy-virtual-background.html']);
 

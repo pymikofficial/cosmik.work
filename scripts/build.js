@@ -23,6 +23,7 @@ const NAV_PARTIAL = read('partials/nav.html');
 const FOOTER_PARTIAL = read('partials/footer.html');
 const TOOLS = JSON.parse(read('data/tools.json'));
 const METRICS = JSON.parse(read('data/metrics.json'));
+const LIBRARY = JSON.parse(read('data/library.json'));
 
 const MAP_ATTRIB = '\n  <div class="fl-attrib">World map: Al MacDonald / Fritz Lekschas, <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener">CC BY-SA 3.0</a></div>';
 
@@ -32,6 +33,7 @@ const PAGES = [
   { file: 'workflow-log.html', active: 'log' },
   { file: 'contact.html', active: 'contact' },
   { file: 'privacy-virtual-background.html', active: 'privacy' },
+  { file: '404.html', active: 'none' },
 ];
 
 // ---- validation: fail the build on a malformed data entry ----
@@ -48,7 +50,8 @@ function validate(list, fields, file) {
 }
 validate(TOOLS, TOOL_FIELDS, 'data/tools.json');
 validate(METRICS, METRIC_FIELDS, 'data/metrics.json');
-TOOLS.forEach((t) => {
+validate(LIBRARY, ['name', 'tag', 'desc', 'link', 'date'], 'data/library.json');
+[...TOOLS, ...LIBRARY].forEach((t) => {
   if (t.date !== undefined && !/^\d{4}-\d{2}-\d{2}$/.test(t.date)) throw new Error(`data/tools.json: "${t.name}" date must be YYYY-MM-DD when present`);
 });
 
@@ -83,7 +86,7 @@ ${i}    <p class="ship-tag">${t.flagship ? 'Flagship' : 'Live tool'}${t.date ? '
 ${i}    <h2 class="ship-name">${esc(t.name)}</h2>
 ${i}    <p class="tool-label mono">Work problem it solves</p>
 ${i}    <p class="ship-desc">${esc(t.problem)}</p>
-${i}    <p class="tool-meta mono"><span>${t.buildTime ? 'Built in ' + esc(t.buildTime) : 'Free to try'}</span><span class="tool-open">Open tool <span aria-hidden="true">&#8599;</span></span></p>
+${i}    <p class="tool-meta mono"><span>Free to try</span><span class="tool-open">Open tool <span aria-hidden="true">&#8599;</span></span></p>
 ${i}  </article>
 ${i}</a>`;
   }).join('\n');
@@ -105,16 +108,27 @@ ${i}</article>`;
 }
 
 function renderBuildLog() {
-  return toolsByDate.map((t) => {
+  const entries = [
+    ...TOOLS.map((t) => ({ name: t.name, link: t.link, date: t.date, text: t.problem, meta: t.buildTime ? 'Built in ' + t.buildTime : 'Free to try' })),
+    ...LIBRARY.map((l) => ({ name: l.name, link: l.link, date: l.date, text: l.desc, meta: l.users ? l.tag + ' · ' + l.users : l.tag })),
+  ].sort((a, b) => (b.date || '').localeCompare(a.date || ''));
+  return entries.map((t) => {
     const i = '        ';
-    return `${review(t, i)}${i}<li class="log-item">
+    return `${i}<li class="log-item">
 ${i}  ${t.date ? `<time class="log-date mono" datetime="${esc(t.date)}">${esc(fmtDate(t.date))}</time>` : '<span class="log-date mono">Live</span>'}
 ${i}  <div class="log-body">
-${i}    <h3 class="log-name"><a href="${esc(t.link)}" target="_blank" rel="noopener">${esc(t.name)} <span aria-hidden="true">&#8599;</span></a></h3>
-${i}    <p class="log-problem">${esc(t.problem)}</p>
-${i}    <p class="log-meta mono">${t.buildTime ? 'Built in ' + esc(t.buildTime) : 'Free to try'}</p>
+${i}    <h3 class="log-name"><a href="${esc(t.link)}" target="_blank" rel="noopener">${esc(t.name)} <span aria-hidden="true">&#8599;</span><span class="visually-hidden"> (opens in a new tab)</span></a></h3>
+${i}    <p class="log-problem">${esc(t.text)}</p>
+${i}    <p class="log-meta mono">${esc(t.meta)}</p>
 ${i}  </div>
 ${i}</li>`;
+  }).join('\n');
+}
+
+function renderLibrary() {
+  return [...LIBRARY].sort((a, b) => Number(!!b.users) - Number(!!a.users)).map((l) => {
+    const i = '        ';
+    return `${i}<li><a href="${esc(l.link)}" target="_blank" rel="noopener"><span class="lib-name">${esc(l.name)}</span><span class="lib-tag mono">${esc(l.tag)}${l.users ? ' · ' + esc(l.users) : ''}</span><span class="lib-desc">${esc(l.desc)}</span><span class="visually-hidden"> (opens in a new tab)</span></a></li>`;
   }).join('\n');
 }
 
@@ -147,13 +161,14 @@ const SECTIONS = {
   METRICS: renderMetricCards,
   BUILDLOG: renderBuildLog,
   TOOLSLD: renderToolsLd,
+  LIBRARY: renderLibrary,
 };
 
 // ---- stamping ----
 function navTokens(active) {
   return {
     HOME_CLASS: active === 'home' ? 'active' : '',
-    SHIPPED_CLASS: active === 'shipped' ? 'nav-featured active' : 'nav-featured',
+    SHIPPED_CLASS: active === 'shipped' ? 'active' : '',
     LOG_CLASS: active === 'log' ? 'active' : '',
   };
 }

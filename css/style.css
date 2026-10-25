@@ -1571,3 +1571,13 @@
   .lib-tag { display: block; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--accent-bright); margin: 4px 0 8px; }
   .lib-desc { display: block; font-size: 14.5px; line-height: 1.5; color: var(--text-on-dark-2); }
   @media (max-width: 720px) { .library { grid-template-columns: 1fr; } }
+
+  /* ===== Audit fixes ===== */
+  .section-sub + .metric-grid,
+  .section-sub + .proof-grid,
+  .section-sub + .tool-grid,
+  .section-sub + .library { margin-top: 36px; }
+  .close-sub { margin: 14px auto 28px; text-align: center; }
+  .nf-main { min-height: calc(100vh - 220px); display: flex; align-items: center; }
+  .hero-proof-label { font-size: 11.5px; }
+  @media (max-width: 640px) { .hero-proof-label { font-size: 9.5px; } }

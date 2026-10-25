@@ -1,0 +1,53 @@
+[
+  {
+    "name": "Blur Background",
+    "tag": "Chrome extension",
+    "users": "270+ users",
+    "date": "2026-07-17",
+    "link": "https://chromewebstore.google.com/detail/jdlienijidakhdofpcinjdomgpbecgle",
+    "desc": "Free background blur for video calls. No sign in, no watermark, and it runs fully in the browser."
+  },
+  {
+    "name": "Full Webpage Screenshot",
+    "tag": "Chrome extension",
+    "users": "40+ users",
+    "date": "2026-07-06",
+    "link": "https://chromewebstore.google.com/detail/fullshot-full-page-screen/gdejgnbdmnfpdalaaefhmbecnecdfkbf",
+    "desc": "Captures a whole page beyond the fold with no network calls."
+  },
+  {
+    "name": "Teacher Fundraising Message Generator",
+    "tag": "Education",
+    "date": "2026-07-11",
+    "link": "https://teacher-fundraising-tool.netlify.app",
+    "desc": "Describe what a classroom needs and get a polished donor ask, ready to send."
+  },
+  {
+    "name": "Leave Broadcast Message Generator",
+    "tag": "Everyday",
+    "date": "2026-07-11",
+    "link": "https://leave-broadcast-tool.netlify.app",
+    "desc": "Who is out, when, and what needs handing off, as one clean message."
+  },
+  {
+    "name": "GitHub Profile Summarizer",
+    "tag": "Business",
+    "date": "2026-07-08",
+    "link": "https://github-profile-summarizer.netlify.app",
+    "desc": "Paste a username and see what someone has actually shipped."
+  },
+  {
+    "name": "Fieldnote",
+    "tag": "Education",
+    "date": "2026-07-05",
+    "link": "https://cosmik-fieldnote.netlify.app",
+    "desc": "A spoken classroom observation becomes a clean structured report with highlights and flags."
+  },
+  {
+    "name": "Contract Generator",
+    "tag": "Business",
+    "date": "2026-07-04",
+    "link": "https://cosmik-contract-generator.netlify.app",
+    "desc": "Draft ready agreements in minutes instead of days of back and forth."
+  }
+]
