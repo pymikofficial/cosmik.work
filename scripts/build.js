@@ -2,35 +2,159 @@
 'use strict';
 
 // Stamps partials/nav.html and partials/footer.html into each page between
-// the <!-- NAV:START/END --> and <!-- FOOTER:START/END --> markers, so the
-// shared markup lives in one place instead of being copy-pasted per page.
-// Run after editing a partial or adding a page: node scripts/build.js
-// Output is plain static HTML committed to git — Netlify's deploy is
-// unchanged, it still just serves the files as-is.
+// the <!-- NAV:START/END --> and <!-- FOOTER:START/END --> markers, and
+// renders the data-driven sections from data/*.json between their own
+// markers, so shared markup and content live in one place.
+// Run after editing a partial, a page, or a data file: node scripts/build.js
+// Output is plain static HTML committed to git: Netlify just serves the
+// files as-is, and crawlers see every card without running any JS.
+//
+// Adding a tool = adding one entry to data/tools.json, then running this.
+// Adding a metric card = adding one entry to data/metrics.json.
+// An entry with "review": true is emitted with a <!-- REVIEW --> marker.
 
 const fs = require('fs');
 const path = require('path');
 
 const ROOT = path.join(__dirname, '..');
-const NAV_PARTIAL = fs.readFileSync(path.join(ROOT, 'partials', 'nav.html'), 'utf8');
-const FOOTER_PARTIAL = fs.readFileSync(path.join(ROOT, 'partials', 'footer.html'), 'utf8');
+const SITE = 'https://cosmik.work';
+const read = (p) => fs.readFileSync(path.join(ROOT, p), 'utf8');
+const NAV_PARTIAL = read('partials/nav.html');
+const FOOTER_PARTIAL = read('partials/footer.html');
+const TOOLS = JSON.parse(read('data/tools.json'));
+const METRICS = JSON.parse(read('data/metrics.json'));
 
 const MAP_ATTRIB = '\n  <div class="fl-attrib">World map: Al MacDonald / Fritz Lekschas, <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener">CC BY-SA 3.0</a></div>';
 
 const PAGES = [
   { file: 'index.html', active: 'home', mapAttrib: true },
-  { file: 'shipped.html', active: 'shipped', mapAttrib: false },
-  { file: 'systems.html', active: 'systems', mapAttrib: false },
-  { file: 'contact.html', active: 'contact', mapAttrib: false },
-  { file: 'privacy-virtual-background.html', active: 'privacy', mapAttrib: false },
-  { file: 'tools/process-mapper.html', active: 'shipped', mapAttrib: false, prefix: '../' },
+  { file: 'shipped.html', active: 'shipped' },
+  { file: 'growth-log.html', active: 'log' },
+  { file: 'contact.html', active: 'contact' },
+  { file: 'privacy-virtual-background.html', active: 'privacy' },
 ];
 
+// ---- validation: fail the build on a malformed data entry ----
+const TOOL_FIELDS = ['name', 'date', 'problem', 'link', 'buildTime'];
+const METRIC_FIELDS = ['name', 'what', 'stage', 'lever', 'whereUsed'];
+function validate(list, fields, file) {
+  list.forEach((entry, i) => {
+    for (const f of fields) {
+      if (typeof entry[f] !== 'string' || !entry[f].trim()) {
+        throw new Error(`${file} entry ${i} (${entry.name || '?'}) is missing "${f}"`);
+      }
+    }
+  });
+}
+validate(TOOLS, TOOL_FIELDS, 'data/tools.json');
+validate(METRICS, METRIC_FIELDS, 'data/metrics.json');
+TOOLS.forEach((t) => {
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(t.date)) throw new Error(`data/tools.json: "${t.name}" date must be YYYY-MM-DD`);
+});
+
+// ---- helpers ----
+function esc(s) {
+  return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+}
+
+const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+function fmtDate(iso) {
+  const [y, m, d] = iso.split('-').map(Number);
+  return `${d} ${MONTHS[m - 1]} ${y}`;
+}
+
+const review = (entry, indent) => (entry.review ? `${indent}<!-- REVIEW -->\n` : '');
+
+// Newest first; ties keep their order in the JSON file.
+const toolsByDate = TOOLS.map((t, i) => ({ t, i }))
+  .sort((a, b) => b.t.date.localeCompare(a.t.date) || a.i - b.i)
+  .map((x) => x.t);
+
+// Flagship tools lead the Shipped grid, the rest follow newest first.
+const toolsForGrid = [...toolsByDate].sort((a, b) => Number(!!b.flagship) - Number(!!a.flagship));
+
+// ---- renderers ----
+function renderToolCards() {
+  return toolsForGrid.map((t) => {
+    const i = '        ';
+    return `${review(t, i)}${i}<a class="tool-card-link${t.flagship ? ' is-flagship' : ''}" href="${esc(t.link)}" target="_blank" rel="noopener" aria-label="${esc(t.name)} (opens in a new tab)">
+${i}  <article class="ship-card tool-card">
+${i}    <p class="ship-tag">${t.flagship ? 'Flagship · ' : ''}Shipped ${esc(fmtDate(t.date))}</p>
+${i}    <h2 class="ship-name">${esc(t.name)}</h2>
+${i}    <p class="tool-label mono">Growth problem it solves</p>
+${i}    <p class="ship-desc">${esc(t.problem)}</p>
+${i}    <p class="tool-meta mono"><span>Build time: ${esc(t.buildTime)}</span><span class="tool-open">Open tool <span aria-hidden="true">&#8599;</span></span></p>
+${i}  </article>
+${i}</a>`;
+  }).join('\n');
+}
+
+function renderMetricCards() {
+  return METRICS.map((m) => {
+    const i = '        ';
+    return `${review(m, i)}${i}<article class="metric-card">
+${i}  <h3 class="metric-name">${esc(m.name)}</h3>
+${i}  <dl class="metric-dl">
+${i}    <div><dt>What it is</dt><dd>${esc(m.what)}</dd></div>
+${i}    <div><dt>Stage it matters at</dt><dd>${esc(m.stage)}</dd></div>
+${i}    <div><dt>Lever that moves it</dt><dd>${esc(m.lever)}</dd></div>
+${i}    <div class="metric-used"><dt>Where I used it</dt><dd>${esc(m.whereUsed)}</dd></div>
+${i}  </dl>
+${i}</article>`;
+  }).join('\n');
+}
+
+function renderBuildLog() {
+  return toolsByDate.map((t) => {
+    const i = '        ';
+    return `${review(t, i)}${i}<li class="log-item">
+${i}  <time class="log-date mono" datetime="${esc(t.date)}">${esc(fmtDate(t.date))}</time>
+${i}  <div class="log-body">
+${i}    <h3 class="log-name"><a href="${esc(t.link)}" target="_blank" rel="noopener">${esc(t.name)} <span aria-hidden="true">&#8599;</span></a></h3>
+${i}    <p class="log-problem">${esc(t.problem)}</p>
+${i}    <p class="log-meta mono">Build time: ${esc(t.buildTime)}</p>
+${i}  </div>
+${i}</li>`;
+  }).join('\n');
+}
+
+function renderToolsLd() {
+  const ld = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    '@id': `${SITE}/shipped#tools`,
+    name: 'Tools shipped by Soumik Chatterjee',
+    itemListElement: toolsForGrid.map((t, idx) => ({
+      '@type': 'ListItem',
+      position: idx + 1,
+      item: {
+        '@type': 'SoftwareApplication',
+        name: t.name,
+        url: t.link,
+        applicationCategory: 'BusinessApplication',
+        operatingSystem: 'Web',
+        datePublished: t.date,
+        description: t.problem,
+        creator: { '@id': `${SITE}/#person` },
+      },
+    })),
+  };
+  return `<script type="application/ld+json">\n${JSON.stringify(ld, null, 2)}\n</script>`;
+}
+
+const SECTIONS = {
+  TOOLS: renderToolCards,
+  METRICS: renderMetricCards,
+  BUILDLOG: renderBuildLog,
+  TOOLSLD: renderToolsLd,
+};
+
+// ---- stamping ----
 function navTokens(active) {
   return {
     HOME_CLASS: active === 'home' ? 'active' : '',
     SHIPPED_CLASS: active === 'shipped' ? 'nav-featured active' : 'nav-featured',
-    SYSTEMS_CLASS: active === 'systems' ? 'active' : '',
+    LOG_CLASS: active === 'log' ? 'active' : '',
   };
 }
 
@@ -39,12 +163,6 @@ function fill(template, tokens) {
     if (!(key in tokens)) throw new Error(`Missing token ${key} in partial`);
     return tokens[key];
   });
-}
-
-// Nested pages (e.g. tools/process-mapper.html) need nav/footer hrefs and asset paths
-// rewritten with a relative prefix, since the partials are written root-relative.
-function applyPrefix(html, prefix) {
-  return html.replace(/(href|src)="(?!https?:|\/|#|mailto:)([^"]+)"/g, (_, attr, path) => `${attr}="${prefix}${path}"`);
 }
 
 function replaceBetween(source, startMarker, endMarker, replacement) {
@@ -63,16 +181,18 @@ for (const page of PAGES) {
   const filePath = path.join(ROOT, page.file);
   const before = fs.readFileSync(filePath, 'utf8');
 
-  let nav = fill(NAV_PARTIAL, navTokens(page.active)).trim();
-  let footer = fill(FOOTER_PARTIAL, { MAP_ATTRIB: page.mapAttrib ? MAP_ATTRIB : '' }).trim();
-
-  if (page.prefix) {
-    nav = applyPrefix(nav, page.prefix);
-    footer = applyPrefix(footer, page.prefix);
-  }
+  const nav = fill(NAV_PARTIAL, navTokens(page.active)).trim();
+  const footer = fill(FOOTER_PARTIAL, { MAP_ATTRIB: page.mapAttrib ? MAP_ATTRIB : '' }).trim();
 
   let html = replaceBetween(before, '<!-- NAV:START -->', '<!-- NAV:END -->', nav);
   html = replaceBetween(html, '<!-- FOOTER:START -->', '<!-- FOOTER:END -->', footer);
+
+  // Data sections are optional per page: render only the markers present.
+  for (const [name, render] of Object.entries(SECTIONS)) {
+    if (html.includes(`<!-- ${name}:START -->`)) {
+      html = replaceBetween(html, `<!-- ${name}:START -->`, `<!-- ${name}:END -->`, render());
+    }
+  }
 
   if (html !== before) {
     fs.writeFileSync(filePath, html);
@@ -83,4 +203,4 @@ for (const page of PAGES) {
   }
 }
 
-console.log(`\n${changed} file(s) written from partials/`);
+console.log(`\n${changed} file(s) written from partials/ and data/`);

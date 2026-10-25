@@ -1,7 +1,9 @@
 {
   "name": "cosmik-work",
   "private": true,
-  "dependencies": {
-    "@anthropic-ai/sdk": "^0.112.1"
+  "scripts": {
+    "build": "node scripts/build.js",
+    "check": "node scripts/check-copy.js",
+    "serve": "node scripts/serve.js"
   }
 }

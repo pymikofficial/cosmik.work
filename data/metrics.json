@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Pipeline coverage",
+    "what": "Total value of qualified open pipeline divided by the revenue target for the same period. It tells you whether there is enough in the funnel to hit the number before the quarter starts.",
+    "stage": "Pre-seed to Series A, once there is a repeatable outbound motion and a revenue target to measure against.",
+    "lever": "More qualified contacts at the top of the funnel, spread across parallel pipelines instead of one channel.",
+    "whereUsed": "For a Toronto founder: a $1.47M CAD prospect pipeline built from 2,314 contacts across 9 B2B pipelines in 90 days.",
+    "review": true
+  },
+  {
+    "name": "Retention",
+    "what": "The share of clients still active at the end of a period compared with the start. Growth that leaks out the bottom has to be won twice.",
+    "stage": "After first product-market fit, when growth depends on compounding the existing base rather than replacing it.",
+    "lever": "A reliable supply side. When the partner network delivers consistently, clients stay.",
+    "whereUsed": "At CampK12: a 400+ person supply network across the US, UAE and India, with 90%+ client retention.",
+    "review": true
+  },
+  {
+    "name": "Quota attainment",
+    "what": "Deals closed divided by the target for the period. It is the simplest honest read on whether the sales motion works.",
+    "stage": "Any stage with a sales target, most useful once a team is committing to a number every month or quarter.",
+    "lever": "Targeted B2B outreach to the buyers who already have the need, with hiring used as the lever that fills the funnel.",
+    "whereUsed": "At Navgurukul: 31 closed against a target of 25, which is 124% of quota, through B2B employer outreach.",
+    "review": true
+  }
+]

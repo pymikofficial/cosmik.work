@@ -4,7 +4,7 @@
 // mid/twinkling, near/sparse with a soft glow ~ same treatment everywhere
 // for a uniform cosmic background across the whole site.
 //
-// Pages that should feel a notch more premium (currently: Shipped/Projects)
+// Pages that should feel a notch more premium (currently: Shipped)
 // can opt into a fourth "feature star" layer by adding data-boost="true" to
 // the canvas element. It's sparse and slow on purpose ~ a handful of
 // brighter, glowier stars, not a light show.
@@ -69,12 +69,12 @@
         }
         ctx.beginPath();
         if (layer.glow) {
-          ctx.shadowColor = 'rgba(167,139,250,0.6)';
+          ctx.shadowColor = 'rgba(61,220,132,0.55)';
           ctx.shadowBlur = layer.glowStrength;
         } else {
           ctx.shadowBlur = 0;
         }
-        ctx.fillStyle = 'rgba(245,245,247,' + Math.max(0, Math.min(1, a)) + ')';
+        ctx.fillStyle = 'rgba(242,242,238,' + Math.max(0, Math.min(1, a)) + ')';
         ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
         ctx.fill();
       });

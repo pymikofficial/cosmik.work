@@ -1,0 +1,29 @@
+[
+  {
+    "name": "Cold Outreach Personalizer",
+    "date": "2026-07-07",
+    "problem": "Outbound stalls when every prospect gets the same email. A batch of prospects goes in, a tailored 3-touch sequence comes out for each one, so reply rates are not capped by how long personalization takes.",
+    "link": "https://cold-outreach-personalizer.netlify.app",
+    "buildTime": "1h 40m",
+    "flagship": true,
+    "review": true
+  },
+  {
+    "name": "Investor Update Drafter",
+    "date": "2026-07-07",
+    "problem": "Founders skip investor updates when the numbers are messy, and investors lose the thread. Raw metrics and bullets go in, a clean update comes out with a numeric sanity check built in.",
+    "link": "https://investor-update-drafter.netlify.app",
+    "buildTime": "14m",
+    "flagship": false,
+    "review": true
+  },
+  {
+    "name": "Automation Priority Sorter",
+    "date": "2026-07-03",
+    "problem": "Early teams automate whatever is loudest, not whatever frees the most time for growth work. Submit a manual pain point, it gets scored in real time and ranked in a shared backlog.",
+    "link": "https://automation-priority-sorter.netlify.app",
+    "buildTime": "about 1h",
+    "flagship": false,
+    "review": true
+  }
+]

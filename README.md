@@ -1,14 +1,13 @@
 # cosmik.work
-Personal brand site for Soumik Chatterjee (Chief of Staff &amp; AI-driven Business Systems Architect) (Universal social media handle and website: cosmikwork)
 
-## Shared nav/footer
+Static portfolio site. Netlify runs `npm run build` on every deploy and serves the repo root, and it auto-deploys every push to `main`. You do not need to build before committing: edit a page, a partial, or a data file, then push.
 
-The nav and footer live once in `partials/nav.html` and `partials/footer.html`. Each page (`index.html`, `shipped.html`, `systems.html`, `contact.html`) has `<!-- NAV:START/END -->` and `<!-- FOOTER:START/END -->` markers where that content is stamped in.
+## Commands
 
-After editing a partial, or adding a new page, run:
+- `npm run build`: stamps `partials/` into every page and renders `data/*.json` into Shipped and Growth Log. Netlify runs this on deploy. Run it locally only to preview changes.
+- `npm run check`: copy linter (no em dashes, no contractions, no retired terms, no public-code claims)
+- `npm run serve`: local preview at http://localhost:8080 with extensionless URLs and `_redirects` rules. Run `npm run build` first so the preview matches what Netlify will publish.
 
-```
-node scripts/build.js
-```
+## Adding a tool
 
-and commit the regenerated HTML files. This is a local step only: Netlify's deploy is unchanged, it still just serves the static HTML as-is.
+Add one entry to `data/tools.json` (`name`, `date` as YYYY-MM-DD, `problem`, `link`, `buildTime`, optional `flagship`), run `npm run check`, and push. Netlify renders it on the next deploy.

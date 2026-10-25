@@ -1,5 +1,7 @@
 User-agent: *
 Allow: /
-Disallow: /assets/docs/life-record.pdf
+Disallow: /partials/
+Disallow: /scripts/
+Disallow: /data/
 
 Sitemap: https://cosmik.work/sitemap.xml
