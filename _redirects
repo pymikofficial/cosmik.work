@@ -1,1 +1,13 @@
-/*  https://soumikchatterjee.com/:splat  301!
+# Retired cosmik.work paths
+/systems                     /         301
+/systems.html                /         301
+/framework                   /         301
+/framework.html              /         301
+/tools/process-mapper.html   /shipped  301
+/tools/process-mapper        /shipped  301
+
+# Explicit rewrites so canonical/OG URLs (extensionless) always resolve,
+# instead of relying on Netlify's implicit pretty-URL behavior.
+/shipped      /shipped.html      200
+/growth-log   /growth-log.html   200
+/contact      /contact.html      200
