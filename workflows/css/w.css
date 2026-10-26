@@ -138,6 +138,7 @@ footer a:hover { color: var(--text); }
   .btn { width: 100%; justify-content: center; }
   .top .btn { width: auto; padding: 7px 14px; font-size: .8rem; min-height: 36px; }
   .brand { font-size: .82rem; }
+  footer a { display: inline-block; padding: 8px 0; }
   .close { padding: 60px 0 64px; }
 }
 @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } html { scroll-behavior: auto; } }
@@ -179,3 +180,9 @@ footer a:hover { color: var(--text); }
 .pay-upi { margin-top: 8px; font-size: .82rem; color: var(--text); user-select: all; }
 .pay-mobile { display: none; }
 @media (pointer: coarse) { .pay-mobile { display: inline-flex; } }
+
+@media (max-width: 360px) {
+  .brand { font-size: .72rem; letter-spacing: -.01em; }
+  .top .btn { padding: 7px 11px; font-size: .76rem; }
+  .top-links { gap: 12px; }
+}
