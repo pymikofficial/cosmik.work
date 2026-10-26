@@ -175,3 +175,4 @@ footer a:hover { color: var(--text); }
 .pay-after p { color: var(--text-2); font-size: .92rem; line-height: 1.6; margin-bottom: 14px; }
 .pay-after b { color: var(--text); }
 .pay-after .btn { width: 100%; justify-content: center; }
+.pay-link { margin-top: 14px; width: 100%; justify-content: center; }
