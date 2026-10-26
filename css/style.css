@@ -1398,11 +1398,13 @@
   }
 
   .contact-headshot {
-    width: 96px;
-    height: 96px;
-    border-radius: 50%;
+    width: 104px;
+    height: auto;
+    aspect-ratio: 1283 / 1226;
+    border-radius: 12px;
     object-fit: cover;
     border: 2px solid rgba(90, 169, 255, .5);
+    box-shadow: 0 0 24px rgba(90, 169, 255, .2);
   }
 
   .channel-list {
