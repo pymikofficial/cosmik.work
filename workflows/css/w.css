@@ -155,3 +155,27 @@ footer a:hover { color: var(--text); }
 .contact-list dt { font-size: .76rem; letter-spacing: .1em; text-transform: uppercase; color: var(--text-2); padding-top: 3px; }
 .foot-links a { white-space: nowrap; }
 @media (max-width: 640px) { .contact-list div { grid-template-columns: 1fr; gap: 4px; } }
+
+/* payment dialog */
+.pay { margin: auto; width: min(440px, calc(100% - 32px)); max-height: calc(100% - 32px); overflow: auto; border: 1px solid rgba(90, 169, 255, .4); border-radius: 22px; padding: 30px 28px 26px; background: linear-gradient(180deg, #0D1430 0%, #070B1A 100%); color: var(--text); box-shadow: 0 30px 80px -30px var(--glow); }
+.pay::backdrop { background: rgba(3, 6, 15, .72); backdrop-filter: blur(4px); }
+.pay .tag { font-family: 'JetBrains Mono', monospace; font-size: .74rem; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); }
+.pay h3 { font-family: 'Fraunces', Georgia, serif; font-weight: 500; font-size: 1.6rem; letter-spacing: -.015em; margin: 6px 0 20px; }
+.pay-close-form { position: absolute; top: 14px; right: 14px; }
+.pay-close { width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--line); background: transparent; color: var(--text-2); font-size: 1rem; cursor: pointer; }
+.pay-close:hover { color: var(--text); border-color: rgba(90, 169, 255, .5); }
+.pay-label { display: block; font-size: .9rem; color: var(--text-2); margin-bottom: 8px; }
+.pay-select { width: 100%; min-height: 46px; padding: 0 14px; border-radius: 12px; border: 1px solid rgba(90, 169, 255, .4); background: #0B1124; color: var(--text); font: inherit; font-size: 1rem; }
+.pay-panel { margin-top: 22px; text-align: center; }
+.pay-amount { font-family: 'Fraunces', Georgia, serif; font-size: 2rem; margin-bottom: 14px; }
+.pay-amount small { display: block; font-family: 'Inter Tight', sans-serif; font-size: .82rem; color: var(--text-2); margin-top: 2px; }
+.pay-panel img { width: 240px; height: 240px; object-fit: contain; background: #fff; border-radius: 14px; padding: 10px; }
+.pay-note { margin-top: 12px; font-size: .88rem; color: var(--text-2); line-height: 1.55; }
+.pay-after { margin-top: 20px; padding-top: 18px; border-top: 1px solid var(--line); }
+.pay-after p { color: var(--text-2); font-size: .92rem; line-height: 1.6; margin-bottom: 14px; }
+.pay-after b { color: var(--text); }
+.pay-after .btn { width: 100%; justify-content: center; }
+.pay-link { margin-top: 14px; width: 100%; justify-content: center; }
+.pay-upi { margin-top: 8px; font-size: .82rem; color: var(--text); user-select: all; }
+.pay-mobile { display: none; }
+@media (pointer: coarse) { .pay-mobile { display: inline-flex; } }

@@ -27,7 +27,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,500&family=Inter+Tight:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/css/w.css?v=6">
+<link rel="stylesheet" href="/css/w.css?v=8">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -162,7 +162,7 @@
             <li>Built and tested in your own tools</li>
             <li>A short guide so your team can run it</li>
           </ul>
-          <a class="btn btn-ghost" href="mailto:soumik2808@gmail.com?subject=One%20workflow">Start with one</a>
+          <a class="btn btn-ghost" href="mailto:soumik2808@gmail.com?subject=One%20workflow" data-pay data-plan="Single workflow" data-inr="8,000" data-amt="8000" data-usd="95">Pay and start with one</a>
         </article>
         <article class="plan feat">
           <p class="tag">Founder&rsquo;s plate</p>
@@ -173,7 +173,7 @@
             <li>Add more later at Rs 5,000 each</li>
             <li>Tested on your real work before handover</li>
           </ul>
-          <a class="btn btn-primary" href="mailto:soumik2808@gmail.com?subject=Founder%27s%20plate">Get the Founder&rsquo;s plate</a>
+          <a class="btn btn-primary" href="mailto:soumik2808@gmail.com?subject=Founder%27s%20plate" data-pay data-plan="Founder&rsquo;s plate" data-inr="15,000" data-amt="15000" data-usd="180">Pay for the Founder&rsquo;s plate</a>
         </article>
         <article class="plan">
           <p class="tag">Full plate</p>
@@ -184,7 +184,7 @@
             <li>One month of fixes included</li>
             <li>One short call to plan them together</li>
           </ul>
-          <a class="btn btn-ghost" href="mailto:soumik2808@gmail.com?subject=Full%20plate">Get the full plate</a>
+          <a class="btn btn-ghost" href="mailto:soumik2808@gmail.com?subject=Full%20plate" data-pay data-plan="Full plate" data-inr="30,000" data-amt="30000" data-usd="360">Pay for the full plate</a>
         </article>
       </div>
       <article class="custom">
@@ -195,6 +195,7 @@
         </div>
         <a class="btn btn-ghost" href="mailto:soumik2808@gmail.com?subject=Custom%20workflow%20request&amp;body=What%20happens%20today%3A%0A%0AWhat%20should%20happen%20instead%3A%0A%0ATools%20you%20use%3A%0A">Describe your workflow</a>
       </article>
+      <p class="fine">Questions before paying? <a href="mailto:soumik2808@gmail.com?subject=Question%20before%20paying">Email me</a> and I reply within a day.</p>
       <p class="fine">Prices are in Indian rupees. International clients can pay in dollars through Wise. The tools and the AI model bill you directly for what they use, and I give you the likely monthly cost before we start. Optional monthly upkeep keeps your workflows watched and fixed when a tool changes.</p>
     </div>
   </section>
@@ -245,6 +246,37 @@
   </div>
 </footer>
 
+
+<dialog id="payDialog" class="pay" aria-labelledby="payTitle">
+  <form method="dialog" class="pay-close-form"><button class="pay-close" aria-label="Close">&#10005;</button></form>
+  <p class="tag">Pay</p>
+  <h3 id="payTitle">Pay for <span data-slot="plan"></span></h3>
+  <label class="pay-label" for="payFrom">Where are you paying from?</label>
+  <select id="payFrom" class="pay-select">
+    <option value="">Choose one</option>
+    <option value="india">India, pay by UPI</option>
+    <option value="intl">Outside India, pay through Wise</option>
+  </select>
+  <div class="pay-panel" data-panel="india" hidden>
+    <p class="pay-amount">Rs <span data-slot="inr"></span></p>
+    <img data-slot-src="upi" src="" alt="UPI QR code for paying CosmikWork, amount filled in" width="240" height="240">
+    <p class="pay-note">Scan with any UPI app, such as GPay, PhonePe or Paytm. The amount is filled in for you.</p>
+    <p class="pay-upi mono">UPI ID soumik2808@okhdfcbank</p>
+    <a class="btn btn-ghost pay-link pay-mobile" data-slot-href="upi" href="#">Pay with a UPI app on this phone</a>
+  </div>
+  <div class="pay-panel" data-panel="intl" hidden>
+    <p class="pay-amount">USD <span data-slot="usd"></span> <small>or the same in your currency</small></p>
+    <img src="/img/qr-intl.png" alt="Wise QR code for paying CosmikWork" width="240" height="240" loading="lazy">
+    <p class="pay-note">Scan to pay through Wise, by card or bank transfer in your own currency. No Wise account needed.</p>
+    <a class="btn btn-ghost pay-link" href="https://wise.com/pay/business/soumikchatterjee" target="_blank" rel="noopener">Or open the Wise payment page <span aria-hidden="true">&#8599;</span></a>
+  </div>
+  <div class="pay-after" hidden>
+    <p><b>After paying,</b> email me the payment screenshot, the workflows you picked and the tools you use. Work starts within 2 working days.</p>
+    <a class="btn btn-primary" data-slot="mail" href="mailto:soumik2808@gmail.com">Email payment details <span aria-hidden="true">&#8594;</span></a>
+  </div>
+</dialog>
+
 <script src="/js/starfield.js"></script>
+<script src="/js/pay.js?v=2"></script>
 </body>
 </html>
