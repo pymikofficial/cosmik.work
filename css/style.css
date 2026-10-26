@@ -1306,12 +1306,10 @@
   /* ---------- Contact ---------- */
   .hire-grid {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
     gap: 20px;
     margin-top: 12px;
   }
-
-  .hire-grid .hire-primary { grid-column: 1 / -1; }
 
   .hire-card {
     border-radius: 20px;
