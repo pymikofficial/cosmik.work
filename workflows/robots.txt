@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://workflows.cosmik.work/sitemap.xml

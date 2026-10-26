@@ -1,3 +1,8 @@
+# workflows.cosmik.work is served from the /workflows folder of this site
+https://workflows.cosmik.work/*   /workflows/:splat   200!
+https://cosmik.work/workflows/*   https://workflows.cosmik.work/:splat   301!
+https://cosmik.work/workflows     https://workflows.cosmik.work/   301!
+
 # Retired cosmik.work paths
 /systems                     /         301
 /systems.html                /         301
