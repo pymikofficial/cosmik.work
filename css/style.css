@@ -1615,3 +1615,10 @@
 .origin-archive-link { margin-top: 22px; font-size: .92rem; }
 .origin-archive-link a { color: var(--accent-bright); text-decoration: none; border-bottom: 1px solid rgba(90, 169, 255, .4); padding-bottom: 2px; }
 .origin-archive-link a:hover { border-bottom-color: var(--accent-bright); }
+
+/* Collapsible definitions on the Workflow Log */
+.defs-sum { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 8px 16px; cursor: pointer; list-style: none; padding: 14px 0; border-bottom: 1px solid var(--line, rgba(255,255,255,.12)); font-family: 'Fraunces', serif; font-size: clamp(1.25rem, 3.5vw, 1.7rem); }
+.defs-sum::-webkit-details-marker { display: none; }
+.defs-sum .mono { font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; color: var(--accent-bright, #5AA9FF); }
+.defs[open] .defs-sum .mono { visibility: hidden; }
+.defs .metric-grid { margin-top: 24px; }
