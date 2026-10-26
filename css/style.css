@@ -1612,3 +1612,27 @@
 .origin-archive-link { margin-top: 22px; font-size: .92rem; }
 .origin-archive-link a { color: var(--accent-bright); text-decoration: none; border-bottom: 1px solid rgba(90, 169, 255, .4); padding-bottom: 2px; }
 .origin-archive-link a:hover { border-bottom-color: var(--accent-bright); }
+
+/* ---------- Workflow menu page ---------- */
+.menu-lede { max-width: 62ch; line-height: 1.7; color: var(--text-on-dark-2); margin: 14px 0 34px; font-size: 1.05rem; }
+.menu-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+.menu-dish { position: relative; border: 1px solid var(--line-dark); border-radius: 18px; padding: 26px 24px; background: rgba(255, 255, 255, .02); display: flex; flex-direction: column; gap: 10px; }
+.menu-num { font-size: .78rem; color: var(--accent-bright); }
+.menu-pick { position: absolute; top: 22px; right: 20px; font-size: 10.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--accent-bright); border: 1px solid rgba(90, 169, 255, .5); border-radius: 999px; padding: 3px 10px; }
+.menu-dish-title { font-family: 'Fraunces', serif; font-size: 1.35rem; font-weight: 500; letter-spacing: -.015em; }
+.menu-dish-desc { line-height: 1.6; color: var(--text-on-dark-2); font-size: .97rem; }
+.menu-saves { font-size: .8rem; color: var(--text-on-dark-2); margin-top: auto; padding-top: 6px; }
+.menu-h2 { font-family: 'Fraunces', serif; font-size: clamp(1.5rem, 2.6vw, 2rem); font-weight: 500; letter-spacing: -.02em; margin: 56px 0 20px; }
+.menu-plans { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+.menu-plan { border: 1px solid var(--line-dark); border-radius: 20px; padding: 30px 28px; background: rgba(255, 255, 255, .02); display: flex; flex-direction: column; gap: 10px; align-items: flex-start; }
+.menu-plan-feat { border-color: rgba(90, 169, 255, .4); background: linear-gradient(180deg, #0D1430 0%, var(--ink) 100%); box-shadow: 0 20px 50px -30px var(--glow); }
+.menu-price { font-family: 'Fraunces', serif; font-size: 2.2rem; font-weight: 500; letter-spacing: -.02em; }
+.menu-usd { font-size: .82rem; color: var(--text-on-dark-2); }
+.menu-plan .btn { margin-top: 8px; }
+.menu-steps { list-style: none; counter-reset: step; display: grid; gap: 14px; max-width: 70ch; margin-bottom: 40px; }
+.menu-steps li { counter-increment: step; position: relative; padding-left: 44px; line-height: 1.65; color: var(--text-on-dark-2); }
+.menu-steps li::before { content: counter(step); position: absolute; left: 0; top: 0; width: 28px; height: 28px; border-radius: 50%; border: 1px solid rgba(90, 169, 255, .5); color: var(--accent-bright); font-size: .8rem; display: flex; align-items: center; justify-content: center; font-family: 'JetBrains Mono', monospace; }
+.menu-steps strong { color: var(--text-on-dark, #fff); font-weight: 600; }
+@media (max-width: 900px) { .menu-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 640px) { .menu-grid, .menu-plans { grid-template-columns: 1fr; } .menu-pick { position: static; align-self: flex-start; } .menu-dish { padding: 22px 20px; } }
+.hero-menu-link { margin-top: 22px; text-align: center; }
