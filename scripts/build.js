@@ -29,7 +29,6 @@ const MAP_ATTRIB = '\n  <div class="fl-attrib">World map: Al MacDonald / Fritz L
 
 const PAGES = [
   { file: 'index.html', active: 'home' },
-  { file: 'menu.html', active: 'menu' },
   { file: 'about.html', active: 'about' },
   { file: 'shipped.html', active: 'shipped' },
   { file: 'workflow-log.html', active: 'log' },
@@ -170,7 +169,6 @@ const SECTIONS = {
 function navTokens(active) {
   return {
     HOME_CLASS: active === 'home' ? 'active' : '',
-    MENU_CLASS: active === 'menu' ? 'active' : '',
     ABOUT_CLASS: active === 'about' ? 'active' : '',
     SHIPPED_CLASS: active === 'shipped' ? 'active' : '',
     LOG_CLASS: active === 'log' ? 'active' : '',
