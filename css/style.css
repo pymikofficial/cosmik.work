@@ -1574,7 +1574,7 @@
   .hero-why { color: var(--accent-bright); text-decoration: underline; text-decoration-color: rgba(90, 169, 255, .45); text-underline-offset: 3px; }
   .hero-why:hover { text-decoration-color: var(--accent-bright); }
   .about-intro { display: flex; gap: 32px; align-items: flex-start; margin-top: 28px; max-width: 900px; }
-  .about-face { width: 140px; height: 140px; border-radius: 50%; object-fit: cover; object-position: 50% 30%; border: 2px solid rgba(90, 169, 255, .55); box-shadow: 0 0 32px rgba(90, 169, 255, .25); flex-shrink: 0; }
+  .about-face { width: 150px; height: auto; aspect-ratio: 1283 / 1226; border-radius: 14px; object-fit: cover; border: 2px solid rgba(90, 169, 255, .55); box-shadow: 0 0 32px rgba(90, 169, 255, .25); flex-shrink: 0; }
   .about-intro-text p { line-height: 1.7; color: var(--text-on-dark-2); margin-bottom: 14px; max-width: 68ch; }
   .about-intro-text .about-lede { font-family: 'Fraunces', serif; font-size: clamp(1.2rem, 2.2vw, 1.5rem); line-height: 1.45; color: var(--text-on-dark, #fff); }
   .about-body { line-height: 1.75; color: var(--text-on-dark-2); margin-bottom: 16px; max-width: 68ch; }
@@ -1588,7 +1588,7 @@
   .about-figure figcaption { font-size: .75rem; color: var(--text-on-dark-2); margin-top: 8px; text-align: center; }
   @media (max-width: 760px) {
     .about-intro { flex-direction: column; align-items: center; text-align: left; gap: 20px; }
-    .about-face { width: 112px; height: 112px; }
+    .about-face { width: 120px; }
     .story-grid, .about-beyond { grid-template-columns: 1fr; }
   }
 
