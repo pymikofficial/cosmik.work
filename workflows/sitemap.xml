@@ -6,4 +6,24 @@
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
+  <url>
+    <loc>https://workflows.cosmik.work/contact/</loc>
+    <lastmod>2026-10-26</lastmod>
+  </url>
+  <url>
+    <loc>https://workflows.cosmik.work/terms/</loc>
+    <lastmod>2026-10-26</lastmod>
+  </url>
+  <url>
+    <loc>https://workflows.cosmik.work/privacy/</loc>
+    <lastmod>2026-10-26</lastmod>
+  </url>
+  <url>
+    <loc>https://workflows.cosmik.work/refunds/</loc>
+    <lastmod>2026-10-26</lastmod>
+  </url>
+  <url>
+    <loc>https://workflows.cosmik.work/delivery/</loc>
+    <lastmod>2026-10-26</lastmod>
+  </url>
 </urlset>

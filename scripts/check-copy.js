@@ -13,7 +13,7 @@ const path = require('path');
 
 const ROOT = path.join(__dirname, '..');
 const FILES = [
-  'index.html', 'about.html', 'workflows/index.html', 'shipped.html', 'workflow-log.html', 'contact.html',
+  'index.html', 'about.html', 'workflows/index.html', 'workflows/contact/index.html', 'workflows/terms/index.html', 'workflows/privacy/index.html', 'workflows/refunds/index.html', 'workflows/delivery/index.html', 'shipped.html', 'workflow-log.html', 'contact.html',
   'privacy-virtual-background.html', '404.html', 'partials/nav.html', 'partials/footer.html',
   'data/tools.json', 'data/metrics.json', 'data/library.json', 'llms.txt', 'robots.txt', 'sitemap.xml',
 ];
@@ -48,7 +48,9 @@ for (const rel of FILES) {
     const hits = [];
     // LinkedIn handle is the one approved exception for "cosmikwork".
     const scrubbed = line.replace(/linkedin\.com\/in\/cosmikwork\/?/gi, '');
-    RETIRED.forEach((re) => re.test(scrubbed) && hits.push(`retired term ${re}`));
+    // The workflows storefront names the registered business, CosmikWork, on its legal pages.
+    const scrubbed2 = rel.startsWith('workflows/') ? scrubbed.replace(/CosmikWork/g, '') : scrubbed;
+    RETIRED.forEach((re) => re.test(scrubbed2) && hits.push(`retired term ${re}`));
     PUBLIC_CODE.forEach((re) => re.test(line) && hits.push(`public-code claim ${re}`));
     if (!STYLE_EXEMPT.has(rel)) {
       if (EM_DASH.test(line)) hits.push('em dash');

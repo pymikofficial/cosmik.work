@@ -141,3 +141,17 @@ footer a:hover { color: var(--text); }
   .close { padding: 60px 0 64px; }
 }
 @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } html { scroll-behavior: auto; } }
+
+/* legal pages */
+.legal { padding: 70px 0 90px; }
+.legal .wrap { max-width: 820px; }
+.legal h1 { font-size: clamp(2.2rem, 5vw, 3.4rem); }
+.updated { margin: 14px 0 34px; color: var(--text-2); font-size: .8rem; }
+.legal h2 { font-size: 1.35rem; margin: 34px 0 10px; }
+.legal p { color: var(--text-2); line-height: 1.75; margin-bottom: 12px; }
+.legal a { color: var(--accent); }
+.contact-list { margin-top: 26px; display: grid; gap: 16px; }
+.contact-list div { display: grid; grid-template-columns: 160px 1fr; gap: 16px; padding-bottom: 14px; border-bottom: 1px solid var(--line); }
+.contact-list dt { font-size: .76rem; letter-spacing: .1em; text-transform: uppercase; color: var(--text-2); padding-top: 3px; }
+.foot-links a { white-space: nowrap; }
+@media (max-width: 640px) { .contact-list div { grid-template-columns: 1fr; gap: 4px; } }
