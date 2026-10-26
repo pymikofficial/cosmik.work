@@ -29,8 +29,13 @@
         plan: btn.getAttribute('data-plan'),
         planText: btn.getAttribute('data-plan').replace(/&rsquo;/g, "'"),
         inr: btn.getAttribute('data-inr'),
-        usd: btn.getAttribute('data-usd')
+        usd: btn.getAttribute('data-usd'),
+        amt: btn.getAttribute('data-amt')
       };
+      var upiImg = dlg.querySelector('[data-slot-src="upi"]');
+      upiImg.src = '/img/qr-upi-' + current.amt + '.png';
+      var upiLink = dlg.querySelector('[data-slot-href="upi"]');
+      upiLink.href = 'upi://pay?pa=soumik2808@okhdfcbank&pn=Soumik%20Chatterjee&cu=INR&am=' + current.amt + '&tn=' + encodeURIComponent('CosmikWork ' + current.planText);
       slot('plan', current.plan);
       slot('inr', current.inr);
       slot('usd', current.usd);

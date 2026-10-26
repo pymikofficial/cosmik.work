@@ -176,3 +176,6 @@ footer a:hover { color: var(--text); }
 .pay-after b { color: var(--text); }
 .pay-after .btn { width: 100%; justify-content: center; }
 .pay-link { margin-top: 14px; width: 100%; justify-content: center; }
+.pay-upi { margin-top: 8px; font-size: .82rem; color: var(--text); user-select: all; }
+.pay-mobile { display: none; }
+@media (pointer: coarse) { .pay-mobile { display: inline-flex; } }

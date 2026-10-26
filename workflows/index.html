@@ -27,7 +27,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,500&family=Inter+Tight:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/css/w.css?v=7">
+<link rel="stylesheet" href="/css/w.css?v=8">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -162,7 +162,7 @@
             <li>Built and tested in your own tools</li>
             <li>A short guide so your team can run it</li>
           </ul>
-          <a class="btn btn-ghost" href="mailto:soumik2808@gmail.com?subject=One%20workflow" data-pay data-plan="Single workflow" data-inr="8,000" data-usd="95">Pay and start with one</a>
+          <a class="btn btn-ghost" href="mailto:soumik2808@gmail.com?subject=One%20workflow" data-pay data-plan="Single workflow" data-inr="8,000" data-amt="8000" data-usd="95">Pay and start with one</a>
         </article>
         <article class="plan feat">
           <p class="tag">Founder&rsquo;s plate</p>
@@ -173,7 +173,7 @@
             <li>Add more later at Rs 5,000 each</li>
             <li>Tested on your real work before handover</li>
           </ul>
-          <a class="btn btn-primary" href="mailto:soumik2808@gmail.com?subject=Founder%27s%20plate" data-pay data-plan="Founder&rsquo;s plate" data-inr="15,000" data-usd="180">Pay for the Founder&rsquo;s plate</a>
+          <a class="btn btn-primary" href="mailto:soumik2808@gmail.com?subject=Founder%27s%20plate" data-pay data-plan="Founder&rsquo;s plate" data-inr="15,000" data-amt="15000" data-usd="180">Pay for the Founder&rsquo;s plate</a>
         </article>
         <article class="plan">
           <p class="tag">Full plate</p>
@@ -184,7 +184,7 @@
             <li>One month of fixes included</li>
             <li>One short call to plan them together</li>
           </ul>
-          <a class="btn btn-ghost" href="mailto:soumik2808@gmail.com?subject=Full%20plate" data-pay data-plan="Full plate" data-inr="30,000" data-usd="360">Pay for the full plate</a>
+          <a class="btn btn-ghost" href="mailto:soumik2808@gmail.com?subject=Full%20plate" data-pay data-plan="Full plate" data-inr="30,000" data-amt="30000" data-usd="360">Pay for the full plate</a>
         </article>
       </div>
       <article class="custom">
@@ -259,8 +259,10 @@
   </select>
   <div class="pay-panel" data-panel="india" hidden>
     <p class="pay-amount">Rs <span data-slot="inr"></span></p>
-    <img src="/img/qr-india.png" alt="UPI QR code for paying CosmikWork" width="240" height="240" loading="lazy">
-    <p class="pay-note">Scan with any UPI app, such as GPay, PhonePe or Paytm, and pay the exact amount.</p>
+    <img data-slot-src="upi" src="" alt="UPI QR code for paying CosmikWork, amount filled in" width="240" height="240">
+    <p class="pay-note">Scan with any UPI app, such as GPay, PhonePe or Paytm. The amount is filled in for you.</p>
+    <p class="pay-upi mono">UPI ID soumik2808@okhdfcbank</p>
+    <a class="btn btn-ghost pay-link pay-mobile" data-slot-href="upi" href="#">Pay with a UPI app on this phone</a>
   </div>
   <div class="pay-panel" data-panel="intl" hidden>
     <p class="pay-amount">USD <span data-slot="usd"></span> <small>or the same in your currency</small></p>
@@ -275,6 +277,6 @@
 </dialog>
 
 <script src="/js/starfield.js"></script>
-<script src="/js/pay.js?v=1"></script>
+<script src="/js/pay.js?v=2"></script>
 </body>
 </html>
