@@ -89,6 +89,13 @@ h2 em { font-style: italic; color: var(--accent); }
 .plan .btn { margin-top: auto; justify-content: center; }
 .fine { margin-top: 24px; color: var(--text-2); font-size: .9rem; line-height: 1.7; max-width: 80ch; }
 
+.custom { margin-top: 18px; border: 1px dashed rgba(90, 169, 255, .45); border-radius: 22px; padding: 28px 30px; display: flex; align-items: center; justify-content: space-between; gap: 28px; background: var(--card); }
+.custom .tag { font-family: 'JetBrains Mono', monospace; font-size: .74rem; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
+.custom h3 { font-family: 'Fraunces', Georgia, serif; font-weight: 500; font-size: 1.5rem; letter-spacing: -.015em; margin-bottom: 8px; }
+.custom p { color: var(--text-2); line-height: 1.6; max-width: 70ch; }
+.custom .btn { flex-shrink: 0; }
+@media (max-width: 760px) { .custom { flex-direction: column; align-items: flex-start; padding: 24px 20px; } }
+
 /* how it works */
 .how { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; counter-reset: s; }
 .how div { counter-increment: s; border-top: 1px solid rgba(90, 169, 255, .4); padding-top: 18px; color: var(--text-2); line-height: 1.65; font-size: .97rem; }
