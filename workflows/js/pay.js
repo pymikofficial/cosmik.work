@@ -18,7 +18,7 @@
       var amount = where === 'india' ? 'Rs ' + current.inr : 'USD ' + current.usd;
       var subject = 'Paid ' + amount + ' for ' + current.planText;
       var body = 'Payment screenshot attached.%0A%0AWorkflows I picked:%0A%0ATools we use:%0A';
-      mail.href = 'mailto:soumik2808@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + body;
+      mail.href = 'mailto:soumik@cosmik.work?subject=' + encodeURIComponent(subject) + '&body=' + body;
     }
   }
 
