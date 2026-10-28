@@ -17,6 +17,9 @@
 /assets/docs/*
   X-Robots-Tag: noindex
 
+/assets/docs/soumik-chatterjee-cv.pdf
+  Cache-Control: no-cache, must-revalidate
+
 /data/*
   X-Robots-Tag: noindex
 
