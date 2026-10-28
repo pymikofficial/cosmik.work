@@ -7,7 +7,7 @@ Soumik Chatterjee is open to a full-time role in community support, AI workflows
 ## Results
 
 - 9 automated B2B pipelines, 2,314 contacts and $1.47M CAD of prospect pipeline in 90 days, with an estimated 20-30 founder hours saved each month (Toronto founder)
-- 30% less manual outreach across a 400+ person workforce in the US, UAE and India, with 90%+ client retention (CampK12)
+- 30% less manual outreach across a 400+ person workforce serving India, the US, UK, UAE and Australia, with 90%+ client retention (CampK12)
 - Python test automation frameworks for banking and healthcare clients, with post-deployment defects down 15% (Accenture)
 - 14 live AI tools shipped solo, including two Chrome Web Store extensions with 300+ users between them
 
