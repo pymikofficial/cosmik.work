@@ -1,27 +1,31 @@
 # Soumik Chatterjee
 
-> AI Specialist. I work in three lanes, community and member support, AI workflows that teams run without me, and part-time AI training.
+> AI Specialist in Kolkata. I help individuals and teams use AI for work, especially automations, and then ensure that nothing breaks in the future. Three kinds of work, community and member support, AI workflows, part-time AI training.
 
-Soumik Chatterjee is open to a full-time role in community support, AI workflows or AI training, and to scoped contract work. Based in Kolkata, India. Available to start immediately.
+Soumik Chatterjee is looking for a full-time role in community and member support, AI workflows or AI training, remote from Kolkata, India. Contract work on single workflows is also available. Can start immediately.
 
 ## Results
 
-- 9 automated B2B pipelines, 2,314 contacts and $1.47M CAD of prospect pipeline in 90 days, with an estimated 20-30 founder hours saved each month (Toronto founder)
-- 30% less manual outreach across a 400+ person workforce serving India, the US, UK, UAE and Australia, with 90%+ client retention (CampK12)
-- Python test automation frameworks for banking and healthcare clients, with post-deployment defects down 15% (Accenture)
-- 14 live AI tools shipped solo, including two Chrome Web Store extensions with 300+ users between them
+- 9 prospecting pipelines, 2,314 contacts and $1.47M CAD of prospect pipeline in 90 days for a Toronto founder (contract, Feb 2026 to present). The founder estimates 20 to 30 hours a month saved.
+- 400+ instructor community across India, the US, UK, UAE and Australia at CampK12 (2020 to 2023). Manual outreach down 30%, client retention above 90%.
+- Python test automation for Bank of America and UCI Hospital at Accenture (2015 to 2019). Post-deployment defects down 15%.
+- 31 hiring partners signed against a target of 25 at Navgurukul (Mar to Apr 2026), 2,093 companies contacted.
+- 12 AI tools and 2 Chrome extensions live, all free. Extensions have 300+ users.
+- 1,200+ students mentored since 2016. Teaching assistant on the Oxford Programme in Strategic Analysis and Decision-Making with AI via Simplilearn (Oct 2026 to Sep 2027).
 
 ## Pages
 
-- [Home](https://cosmik.work/): results, how I work, and what I add inside any role
-- [About](https://cosmik.work/about): why the site is called cosmik.work, the career path behind it, and how Soumik thinks about AI workflows with guardrails
-- [Shipped](https://cosmik.work/shipped): free AI workflow tools, from process mapping to SOP writing
+- [Home](https://cosmik.work/): what I do and three pieces of work
+- [About](https://cosmik.work/about): where I have worked, with dates
+- [Shipped](https://cosmik.work/shipped): the 14 live tools
 - [Workflow Log](https://cosmik.work/workflow-log): the five measures I use to judge a workflow, and a build log
-- [Contact](https://cosmik.work/contact): hire full-time, or hire on contract by picking AI workflows from the storefront
-- [Workflows](https://workflows.cosmik.work): the founder storefront, where each AI workflow is priced on its own
+- [Contact](https://cosmik.work/contact): book a 20 minute call or email
+- [Workflows](https://workflows.cosmik.work): single AI workflows for founders, priced one by one
 - [CV](https://cosmik.work/assets/docs/soumik-chatterjee-cv.pdf): one page PDF
 
 ## Contact
 
 - Email: soumik@cosmik.work
+- Book a call: https://calendly.com/soumik2808/intro-call-with-soumik
 - LinkedIn: https://www.linkedin.com/in/soumikaispecialist/
+- GitHub: https://github.com/pymikofficial

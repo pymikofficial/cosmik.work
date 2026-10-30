@@ -6,7 +6,7 @@
 <link rel="icon" type="image/svg+xml" href="/img/favicon.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon-180.png">
-<meta name="theme-color" content="#070B1A">
+<meta name="theme-color" content="#F5F1E8">
 <title>Workflow Log · How I judge a workflow | Soumik Chatterjee</title>
 <meta name="description" content="The five measures Soumik Chatterjee checks before and after every AI workflow build, when each one matters, how to move it, and a log of the tools shipped.">
 <meta name="author" content="Soumik Chatterjee">
@@ -18,7 +18,7 @@
 <meta property="og:title" content="Workflow Log · Soumik Chatterjee">
 <meta property="og:description" content="The five measures I use to judge a workflow, plus a running build log.">
 <meta property="og:url" content="https://cosmik.work/workflow-log">
-<meta property="og:image" content="https://cosmik.work/img/og-image-v3.jpg">
+<meta property="og:image" content="https://cosmik.work/img/og-image-v4.jpg">
 <meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -26,12 +26,12 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Workflow Log · Soumik Chatterjee">
 <meta name="twitter:description" content="The five measures I use to judge a workflow, plus a running build log.">
-<meta name="twitter:image" content="https://cosmik.work/img/og-image-v3.jpg">
+<meta name="twitter:image" content="https://cosmik.work/img/og-image-v4.jpg">
 <meta name="twitter:image:alt" content="Soumik Chatterjee, AI Specialist">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500;1,9..144,600&family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/css/style.css?v=20261026h">
+<link rel="stylesheet" href="/css/style.css?v=20261031a">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -49,7 +49,6 @@
 
 <a href="#main-content" class="skip-link">Skip to content</a>
 
-<canvas id="bgStars" aria-hidden="true"></canvas>
 
 <!-- NAV:START -->
 <nav id="nav" aria-label="Primary">
@@ -89,7 +88,7 @@
   <section class="section-tight page-top" aria-labelledby="log-title">
     <div class="container">
       <p class="section-eyebrow">Workflow Log</p>
-            <h1 class="section-title" id="log-title">How I judge a <em>workflow.</em></h1>
+            <h1 class="section-title" id="log-title">How I judge a workflow.</h1>
             <p class="section-sub">Five measures, and a log of what I shipped.</p>
       <nav class="log-jump mono" aria-label="On this page">
         <a href="#playbook">Measures</a>
@@ -112,7 +111,7 @@
             <div><dt>What it is</dt><dd>The hours of people time a task needs from preparation through review, correction and rework. A workflow is only a win if this number falls and stays down.</dd></div>
             <div><dt>When it matters</dt><dd>Any task repeated weekly or more often, where the manual baseline can be measured before the build starts.</dd></div>
             <div><dt>How I move it</dt><dd>Map the task, time the manual baseline, remove steps first, and only then add automation to what is left.</dd></div>
-            <div class="metric-used"><dt>In my work</dt><dd>A 30% cut in manual outreach at CampK12 across a 400+ person workforce, and an estimated 20-30 founder hours back every month from nine pipelines for a Toronto founder.</dd></div>
+            <div class="metric-used"><dt>In my work</dt><dd>A 30% cut in manual outreach at CampK12 across a 400+ person workforce. For the Toronto founder, 20 to 30 hours a month back, by his own estimate.</dd></div>
           </dl>
         </article>
         <article class="metric-card">
@@ -139,7 +138,7 @@
             <div><dt>What it is</dt><dd>The share of the intended users who run the workflow on their own without asking its builder for help. A workflow that depends on its creator is a liability.</dd></div>
             <div><dt>When it matters</dt><dd>At handoff, and again after the first month of real use.</dd></div>
             <div><dt>How I move it</dt><dd>Write a one page operating guide, train the team on their own tasks, and make the next step obvious at every point.</dd></div>
-            <div class="metric-used"><dt>In my work</dt><dd>Every workflow I ship follows this. The SOP Generator on the Shipped page exists to produce those guides quickly.</dd></div>
+            <div class="metric-used"><dt>In my work</dt><dd>This is the handoff I aim for on every build. The SOP Generator on the Shipped page exists so the one page guide takes minutes, not an afternoon.</dd></div>
           </dl>
         </article>
         <article class="metric-card">
@@ -148,7 +147,7 @@
             <div><dt>What it is</dt><dd>Model and tool spend per completed task, compared with the human effort it replaces.</dd></div>
             <div><dt>When it matters</dt><dd>When volume grows and small per run costs start to add up.</dd></div>
             <div><dt>How I move it</dt><dd>Use the smallest model that holds quality, cache repeated steps, and trim the input before it is sent.</dd></div>
-            <div class="metric-used"><dt>In my work</dt><dd>The tools on the Shipped page cap input size and strip contact details before any text reaches a model.</dd></div>
+            <div class="metric-used"><dt>In my work</dt><dd>The tools on the Shipped page cap input size, and the ones that handle people data strip contact details before any text reaches a model.</dd></div>
           </dl>
         </article>
 <!-- METRICS:END -->
@@ -264,7 +263,7 @@
           <time class="log-date mono" datetime="2026-07-04">4 Jul 2026</time>
           <div class="log-body">
             <h3 class="log-name"><a href="https://cosmik-contract-generator.netlify.app" target="_blank" rel="noopener">Contract Generator <span aria-hidden="true">&#8599;</span><span class="visually-hidden"> (opens in a new tab)</span></a></h3>
-            <p class="log-problem">Draft ready agreements in minutes instead of days of back and forth.</p>
+            <p class="log-problem">Agreements drafted in minutes instead of days of back and forth. Still needs a human read before anyone signs.</p>
             <p class="log-meta mono">Business</p>
           </div>
         </li>
@@ -294,11 +293,10 @@
 <!-- FOOTER:START -->
 <footer>
   <div><span class="fl">© 2026 Soumik Chatterjee</span> · AI Specialist</div>
-  <div><a href="mailto:soumik@cosmik.work">soumik@cosmik.work</a> · <a href="https://www.linkedin.com/in/soumikaispecialist/" target="_blank" rel="noopener">LinkedIn</a></div>
+  <div><a href="mailto:soumik@cosmik.work">soumik@cosmik.work</a> · <a href="https://www.linkedin.com/in/soumikaispecialist/" target="_blank" rel="noopener">LinkedIn</a> · <a href="https://github.com/pymikofficial" target="_blank" rel="noopener">GitHub</a></div>
 </footer>
 <!-- FOOTER:END -->
 
-<script src="/js/starfield.js?v=20261026h"></script>
 <script src="/js/nav.js?v=20261026h"></script>
 
 </body>

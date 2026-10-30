@@ -4,7 +4,7 @@
     "what": "The hours of people time a task needs from preparation through review, correction and rework. A workflow is only a win if this number falls and stays down.",
     "stage": "Any task repeated weekly or more often, where the manual baseline can be measured before the build starts.",
     "lever": "Map the task, time the manual baseline, remove steps first, and only then add automation to what is left.",
-    "whereUsed": "A 30% cut in manual outreach at CampK12 across a 400+ person workforce, and an estimated 20-30 founder hours back every month from nine pipelines for a Toronto founder."
+    "whereUsed": "A 30% cut in manual outreach at CampK12 across a 400+ person workforce. For the Toronto founder, 20 to 30 hours a month back, by his own estimate."
   },
   {
     "name": "Output accuracy",
@@ -25,13 +25,13 @@
     "what": "The share of the intended users who run the workflow on their own without asking its builder for help. A workflow that depends on its creator is a liability.",
     "stage": "At handoff, and again after the first month of real use.",
     "lever": "Write a one page operating guide, train the team on their own tasks, and make the next step obvious at every point.",
-    "whereUsed": "Every workflow I ship follows this. The SOP Generator on the Shipped page exists to produce those guides quickly."
+    "whereUsed": "This is the handoff I aim for on every build. The SOP Generator on the Shipped page exists so the one page guide takes minutes, not an afternoon."
   },
   {
     "name": "Cost per run",
     "what": "Model and tool spend per completed task, compared with the human effort it replaces.",
     "stage": "When volume grows and small per run costs start to add up.",
     "lever": "Use the smallest model that holds quality, cache repeated steps, and trim the input before it is sent.",
-    "whereUsed": "The tools on the Shipped page cap input size and strip contact details before any text reaches a model."
+    "whereUsed": "The tools on the Shipped page cap input size, and the ones that handle people data strip contact details before any text reaches a model."
   }
 ]
