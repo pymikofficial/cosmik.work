@@ -83,11 +83,10 @@ function renderToolCards() {
     const i = '        ';
     return `${review(t, i)}${i}<a class="tool-card-link${t.flagship ? ' is-flagship' : ''}" href="${esc(t.link)}" target="_blank" rel="noopener" aria-label="${esc(t.name)} (opens in a new tab)">
 ${i}  <article class="ship-card tool-card">
-${i}    <p class="ship-tag">${t.flagship ? 'Flagship' : 'Live tool'}${t.date ? ' · Shipped ' + esc(fmtDate(t.date)) : ''}</p>
+${i}    <p class="ship-tag">${t.date ? esc(fmtDate(t.date)) : 'Live'}${t.flagship ? ' · Flagship' : ''}</p>
 ${i}    <h2 class="ship-name">${esc(t.name)}</h2>
-${i}    <p class="tool-label mono">Work problem it solves</p>
 ${i}    <p class="ship-desc">${esc(t.problem)}</p>
-${i}    <p class="tool-meta mono"><span>Free to try</span><span class="tool-open">Open tool <span aria-hidden="true">&#8599;</span></span></p>
+${i}    <p class="tool-meta"><span>Free to try</span><span class="tool-open">Open <span aria-hidden="true">&#8599;</span></span></p>
 ${i}  </article>
 ${i}</a>`;
   }).join('\n');
@@ -126,12 +125,15 @@ ${i}</li>`;
   }).join('\n');
 }
 
-function renderLibrary() {
-  return [...LIBRARY].sort((a, b) => Number(!!b.users) - Number(!!a.users)).map((l) => {
+const isExtension = (l) => /chrome extension/i.test(l.tag || '');
+function renderLibraryItems(items) {
+  return items.map((l) => {
     const i = '        ';
-    return `${i}<li><a href="${esc(l.link)}" target="_blank" rel="noopener"><span class="lib-name">${esc(l.name)}</span><span class="lib-tag mono">${esc(l.tag)}${l.users ? ' · ' + esc(l.users) : ''}</span><span class="lib-desc">${esc(l.desc)}</span><span class="visually-hidden"> (opens in a new tab)</span></a></li>`;
+    return `${i}<li><a href="${esc(l.link)}" target="_blank" rel="noopener"><span class="lib-name">${esc(l.name)}</span><span class="lib-tag">${esc(l.tag)}${l.users ? ' · ' + esc(l.users) : ''}</span><span class="lib-desc">${esc(l.desc)}</span><span class="visually-hidden"> (opens in a new tab)</span></a></li>`;
   }).join('\n');
 }
+function renderLibrary() { return renderLibraryItems(LIBRARY.filter((l) => !isExtension(l))); }
+function renderExtensions() { return renderLibraryItems(LIBRARY.filter(isExtension)); }
 
 function renderToolsLd() {
   const ld = {
@@ -163,6 +165,7 @@ const SECTIONS = {
   BUILDLOG: renderBuildLog,
   TOOLSLD: renderToolsLd,
   LIBRARY: renderLibrary,
+  EXTENSIONS: renderExtensions,
 };
 
 // ---- stamping ----

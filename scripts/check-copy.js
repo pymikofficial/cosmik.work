@@ -23,7 +23,7 @@ const RETIRED = [
   /chief of staff/i, /executive assistant/i, /\btrainer\b/i, /cosmik\s*work/i,
   /\bcos\s*\/\s*mik\b/i, /\bcos\b\s*[:=]/i,
 ];
-const PUBLIC_CODE = [/code is public/i, /open[- ]source/i, /view (the )?source/i, /github\.com/i];
+const PUBLIC_CODE = [/code is public/i, /open[- ]source/i, /view (the )?source/i, /github\.com\/pymikofficial\/[A-Za-z0-9._-]+/i]; // profile link is fine, repo links are a public-code claim
 const CONTRACTION = /\b[A-Za-z]+['’](t|re|ve|ll|d|m)\b|\b(it|that|there|here|what|who|he|she|let)['’]s\b/i;
 const EM_DASH = /—|&mdash;|&#8212;|&#x2014;/i;
 
