@@ -30,6 +30,7 @@ const MAP_ATTRIB = '\n  <div class="fl-attrib">World map: Al MacDonald / Fritz L
 const PAGES = [
   { file: 'index.html', active: 'home' },
   { file: 'about.html', active: 'about' },
+  { file: 'said.html', active: '' },
   { file: 'shipped.html', active: 'shipped' },
   { file: 'workflow-log.html', active: 'log' },
   { file: 'contact.html', active: 'contact' },

@@ -19,6 +19,7 @@ Soumik Chatterjee is looking for a full-time role in community and member suppor
 - [About](https://cosmik.work/about): where I have worked, with dates
 - [Shipped](https://cosmik.work/shipped): the 14 live tools
 - [Workflow Log](https://cosmik.work/workflow-log): the five measures I use to judge a workflow, and a build log
+- [What people have written](https://cosmik.work/said): dated feedback from managers, clients and colleagues
 - [Contact](https://cosmik.work/contact): book a 20 minute call or email
 - [Workflows](https://workflows.cosmik.work): single AI workflows for founders, priced one by one
 - [CV](https://cosmik.work/assets/docs/soumik-chatterjee-cv.pdf): one page PDF

@@ -1792,3 +1792,8 @@ h2.section-title { margin-bottom: 28px; }
 .said-small p { font-size: 1rem; }
 .said-small { margin-top: 14px; }
 .hire-card .said { margin-top: 24px; }
+.said-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px; }
+@media (max-width: 860px) { .said-grid { grid-template-columns: 1fr; gap: 24px; } }
+.said-more { margin-top: 26px; }
+.said-intro { color: var(--text-on-dark-2); max-width: 62ch; margin: 0 0 18px; }
+.said-list { display: flex; flex-direction: column; gap: 22px; margin-bottom: 40px; }
