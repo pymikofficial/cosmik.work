@@ -1787,3 +1787,5 @@ h2.section-title { margin-bottom: 28px; }
 .log-name { font-family: 'Fraunces', Georgia, serif; font-weight: 400; font-size: 1.2rem; }
 /* original hero banner, restored 31 Oct 2026 at Soumik's request */
 .hero-banner { display: block; width: 100%; max-width: 760px; height: auto; margin: 0 0 32px; border-radius: 8px; border: 0; box-shadow: none; }
+.hero-why-line { color: var(--text-on-dark-2); font-size: .98rem; line-height: 1.55; max-width: 62ch; margin: -6px 0 26px; }
+.hero-why-line a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
