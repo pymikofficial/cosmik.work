@@ -18,7 +18,7 @@
 <meta property="og:title" content="Shipped · AI workflow tools by Soumik Chatterjee">
 <meta property="og:description" content="Free tools that map processes, write SOPs and remove manual work.">
 <meta property="og:url" content="https://cosmik.work/shipped">
-<meta property="og:image" content="https://cosmik.work/img/og-image-v5.jpg">
+<meta property="og:image" content="https://cosmik.work/img/og-image-v6.jpg">
 <meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -26,12 +26,11 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Shipped · AI workflow tools by Soumik Chatterjee">
 <meta name="twitter:description" content="Free tools that map processes, write SOPs and remove manual work.">
-<meta name="twitter:image" content="https://cosmik.work/img/og-image-v5.jpg">
+<meta name="twitter:image" content="https://cosmik.work/img/og-image-v6.jpg">
 <meta name="twitter:image:alt" content="Soumik Chatterjee, AI Specialist">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500;1,9..144,600&family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/css/style.css?v=20261031g">
+<link rel="preload" href="/fonts/fraunces-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/inter-tight-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/css/style.css?v=20261031i">
 <!-- TOOLSLD:START -->
 <script type="application/ld+json">
 {
@@ -168,8 +167,8 @@
   <div class="nav-links">
     <a href="/" class="" data-testid="nav-home">Home</a>
     <a href="/shipped" class="active" data-testid="nav-shipped">Shipped</a>
-    <a href="/workflow-log" class="" data-testid="nav-workflow-log">Workflow Log</a>
     <a href="/about" class="" data-testid="nav-about">About</a>
+    <a href="/assets/docs/soumik-chatterjee-cv.pdf?v=20261031b" target="_blank" rel="noopener" data-testid="nav-cv">CV</a>
   </div>
   <a href="/contact" class="nav-cta" data-testid="nav-cta"><span class="dot" aria-hidden="true"></span>Hire me</a>
   <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
@@ -184,8 +183,8 @@
   <nav class="mobile-menu-links" aria-label="Mobile">
     <a href="/" class="" data-testid="mnav-home">Home</a>
     <a href="/shipped" class="active" data-testid="mnav-shipped">Shipped</a>
-    <a href="/workflow-log" class="" data-testid="mnav-workflow-log">Workflow Log</a>
     <a href="/about" class="" data-testid="mnav-about">About</a>
+    <a href="/assets/docs/soumik-chatterjee-cv.pdf?v=20261031b" target="_blank" rel="noopener" data-testid="mnav-cv">CV</a>
     <a href="/contact" class="mobile-menu-cta" data-testid="mnav-cta">Hire me &#8594;</a>
   </nav>
 </div>
@@ -201,9 +200,19 @@
     <div class="container">
       <p class="section-eyebrow">Shipped</p>
       <h1 class="section-title" id="shipped-title">Things I built that are live.</h1>
-      <p class="section-sub">Twelve AI tools and two Chrome extensions. All free. Most took under two hours.</p>
+      <p class="section-sub">Two Chrome extensions and twelve AI tools, all live and free. Most of the tools took under two hours each. The build notes are in the <a class="text-link" href="/workflow-log">Workflow Log</a>.</p>
 
       <!-- Rendered from data/tools.json by scripts/build.js. Edit the JSON, not this block. -->
+      <h2 class="library-title" id="ext-title">Two Chrome extensions, 300+ people use them</h2>
+      <p class="section-sub">No AI in these. Built for my own video calls and screenshots, published on the Chrome Web Store, where the user counts are public.</p>
+      <ul class="library" aria-labelledby="ext-title">
+<!-- EXTENSIONS:START -->
+        <li><a href="https://chromewebstore.google.com/detail/jdlienijidakhdofpcinjdomgpbecgle" target="_blank" rel="noopener"><span class="lib-name">Blur Background</span><span class="lib-tag">Chrome extension · 270+ users</span><span class="lib-desc">Free background blur for video calls. No sign in, no watermark, and it runs fully in the browser.</span><span class="visually-hidden"> (opens in a new tab)</span></a></li>
+        <li><a href="https://chromewebstore.google.com/detail/fullshot-full-page-screen/gdejgnbdmnfpdalaaefhmbecnecdfkbf" target="_blank" rel="noopener"><span class="lib-name">Full Webpage Screenshot</span><span class="lib-tag">Chrome extension · 40+ users</span><span class="lib-desc">Captures a whole page beyond the fold with no network calls.</span><span class="visually-hidden"> (opens in a new tab)</span></a></li>
+<!-- EXTENSIONS:END -->
+      </ul>
+
+      <h2 class="library-title" id="tools-title">Twelve AI tools</h2>
       <div class="tool-grid">
 <!-- TOOLS:START -->
         <a class="tool-card-link is-flagship" href="https://process-mapper-839.netlify.app" target="_blank" rel="noopener" aria-label="Process Mapper (opens in a new tab)">
@@ -276,14 +285,6 @@
 <!-- LIBRARY:END -->
       </ul>
 
-      <h2 class="library-title" id="ext-title">Two Chrome extensions, no AI in them</h2>
-      <p class="section-sub">Built for my own video calls and screenshots. 300+ people use them.</p>
-      <ul class="library" aria-labelledby="ext-title">
-<!-- EXTENSIONS:START -->
-        <li><a href="https://chromewebstore.google.com/detail/jdlienijidakhdofpcinjdomgpbecgle" target="_blank" rel="noopener"><span class="lib-name">Blur Background</span><span class="lib-tag">Chrome extension · 270+ users</span><span class="lib-desc">Free background blur for video calls. No sign in, no watermark, and it runs fully in the browser.</span><span class="visually-hidden"> (opens in a new tab)</span></a></li>
-        <li><a href="https://chromewebstore.google.com/detail/fullshot-full-page-screen/gdejgnbdmnfpdalaaefhmbecnecdfkbf" target="_blank" rel="noopener"><span class="lib-name">Full Webpage Screenshot</span><span class="lib-tag">Chrome extension · 40+ users</span><span class="lib-desc">Captures a whole page beyond the fold with no network calls.</span><span class="visually-hidden"> (opens in a new tab)</span></a></li>
-<!-- EXTENSIONS:END -->
-      </ul>
     </div>
   </section>
 
@@ -305,7 +306,7 @@
 <!-- FOOTER:END -->
 
 <script src="/js/nav.js?v=20261026h"></script>
-<script src="/js/stars.js?v=20261031a" defer></script>
+<script src="/js/stars.js?v=20261031b" defer></script>
 
 </body>
 </html>
