@@ -1808,5 +1808,6 @@ h2.section-title { margin-bottom: 28px; }
 .principles p { color: var(--text-on-dark); line-height: 1.6; font-size: .98rem; max-width: 52ch; }
 @media (max-width: 760px) { .principles { grid-template-columns: 1fr; gap: 22px; } .connected { height: 220px; } }
 #bgConnected { position: fixed; inset: 0; z-index: 0; pointer-events: none; }
-main, nav#nav, footer, .page-header, .page-next, .mobile-menu { position: relative; z-index: 1; }
+main, nav#nav, footer, .page-header, .page-next { position: relative; z-index: 1; }
+.mobile-menu { z-index: 2; }
 .connected { background: var(--paper); }
