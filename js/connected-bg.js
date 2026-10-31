@@ -1,5 +1,6 @@
 /* Lite version of the connected canvas, behind every page. Faint ink dots, almost still, that join up near the cursor. Desktop only. */
 (function () {
+  if (window.__mercuryBg) return;
   if (window.matchMedia && (window.matchMedia('(prefers-reduced-motion: reduce)').matches || window.matchMedia('(pointer: coarse)').matches || window.matchMedia('(max-width: 860px)').matches)) return;
   var cv = document.createElement('canvas');
   cv.id = 'bgConnected'; cv.setAttribute('aria-hidden', 'true');
