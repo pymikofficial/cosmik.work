@@ -61,7 +61,7 @@ S.append(Paragraph(
 section('PROFESSIONAL EXPERIENCE')
 
 rolerow('AI Specialist, independent', 'Feb 2026 - Present')
-S.append(Paragraph('CosmikWork (my registered practice, closes the day I join a company full time) | Remote from Kolkata | Systems for early-stage founders', sub))
+S.append(Paragraph('CosmikWork (my registered practice, client work stops the day I join a company full time) | Remote from Kolkata | Founder systems', sub))
 
 rolerow('God Crew (Toronto), Chief of Staff to Founder, Growth Systems and Automation', 'Feb 2026 - Present', role2)
 S.append(Paragraph('24/7 biohazard and trauma scene cleanup company | Remote', sub2))
