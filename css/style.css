@@ -1811,3 +1811,4 @@ h2.section-title { margin-bottom: 28px; }
 main, nav#nav, footer, .page-header, .page-next { position: relative; z-index: 1; }
 .mobile-menu { z-index: 2; }
 .connected { background: var(--paper); }
+@media (max-width: 760px) { .page-top .section-eyebrow, .page-top #about-title { text-align: center; } }
