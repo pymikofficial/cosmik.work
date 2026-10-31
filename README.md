@@ -1,5 +1,7 @@
 # cosmik.work
 
+Personal site of Soumik Chatterjee, AI Specialist. Community and member support, AI workflows, part-time AI training.
+
 Static portfolio site. Netlify runs `npm run build` on every deploy and serves the repo root, and it auto-deploys every push to `main`. You do not need to build before committing: edit a page, a partial, or a data file, then push.
 
 ## Commands

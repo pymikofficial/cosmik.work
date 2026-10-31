@@ -1,3 +1,13 @@
+/* Fonts served from this site, no third party request */
+@font-face{font-family:'Fraunces';font-style:normal;font-weight:400;font-display:swap;src:url(/fonts/fraunces-latin-400-normal.woff2) format('woff2')}
+@font-face{font-family:'Fraunces';font-style:normal;font-weight:500;font-display:swap;src:url(/fonts/fraunces-latin-500-normal.woff2) format('woff2')}
+@font-face{font-family:'Fraunces';font-style:normal;font-weight:600;font-display:swap;src:url(/fonts/fraunces-latin-600-normal.woff2) format('woff2')}
+@font-face{font-family:'Inter Tight';font-style:normal;font-weight:400;font-display:swap;src:url(/fonts/inter-tight-latin-400-normal.woff2) format('woff2')}
+@font-face{font-family:'Inter Tight';font-style:normal;font-weight:500;font-display:swap;src:url(/fonts/inter-tight-latin-500-normal.woff2) format('woff2')}
+@font-face{font-family:'Inter Tight';font-style:normal;font-weight:600;font-display:swap;src:url(/fonts/inter-tight-latin-600-normal.woff2) format('woff2')}
+@font-face{font-family:'Inter Tight';font-style:normal;font-weight:700;font-display:swap;src:url(/fonts/inter-tight-latin-700-normal.woff2) format('woff2')}
+@font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:400;font-display:swap;src:url(/fonts/jetbrains-mono-latin-400-normal.woff2) format('woff2')}
+@font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:500;font-display:swap;src:url(/fonts/jetbrains-mono-latin-500-normal.woff2) format('woff2')}
   :root {
     /* Ink and starlight. Near black sky, cream type, one brick accent. */
     --ink: #0B0F1A;            /* page background */
@@ -1810,3 +1820,35 @@ main, nav#nav, footer, .page-header, .page-next { position: relative; z-index: 1
 @media (max-width: 760px) { .page-top .section-eyebrow, .page-top #about-title { text-align: center; } }
 .path-list p.path-client { margin-top: 8px; padding-left: 14px; border-left: 2px solid var(--line-dark); }
 .path-list p.path-client strong { font-weight: 500; color: var(--text-on-dark); }
+
+/* research pass, 31 Oct 2026 */
+.hero-proof-item { text-decoration: none; color: inherit; }
+a.hero-proof-item:hover .hero-proof-num { color: var(--accent); }
+.hero-proof-label { max-width: 26ch; line-height: 1.4; }
+.close-ways { max-width: 62ch; margin: 0 auto 26px; color: var(--text-on-dark-2); line-height: 1.6; font-size: .98rem; }
+#close { text-align: left; } .close-inner { margin-left: 0; } .close-ways { margin-left: 0; }
+.ways-list { margin: 14px 0 18px; }
+.ways-list div { display: grid; grid-template-columns: 84px 1fr; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--line-dark); font-size: .98rem; line-height: 1.55; }
+.ways-list dt { color: var(--text-on-dark-2); }
+.ways-list dd { color: var(--text-on-dark); }
+.hire-note { color: var(--text-on-dark-2); font-size: .95rem; margin-top: 4px; }
+/* reading measure on a dark page */
+.case p, .lane p, .path-list p, .principles p, .about-intro-text p, .said-intro, .section-sub, .ship-desc, .lib-desc, .hero-sub, .log-item p { max-width: 65ch; }
+.case p, .lane p, .path-list p, .principles p, .about-intro-text p, .hero-sub { font-size: 1.0625rem; line-height: 1.6; }
+@media (max-width: 640px) { .ways-list div { grid-template-columns: 1fr; gap: 2px; } }
+/* first screen: on a laptop the banner sits beside the words, so the proof and both buttons are visible without scrolling */
+#hero { padding-top: 48px; padding-bottom: 40px; }
+h1.hero-title { font-size: clamp(2rem, 3.4vw, 3rem); max-width: 22ch; }
+.hero-sub { margin-top: 14px; margin-bottom: 12px; }
+.hero-why-line { margin-bottom: 18px; }
+.hero-proof-strip { margin-bottom: 22px; }
+@media (min-width: 981px) {
+  .hero-inner { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr); column-gap: 56px; align-items: center; }
+  .hero-inner > * { grid-column: 1; }
+  .hero-banner { grid-column: 2; grid-row: 1 / span 6; max-width: 100%; margin: 0; align-self: center; }
+}
+@media (max-width: 980px) { .hero-banner { max-width: 620px; margin-bottom: 24px; } }
+.hero-proof-strip { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 20px; max-width: 640px; }
+.hero-proof-item { flex-direction: column; align-items: flex-start; gap: 4px; padding-right: 16px; }
+.hero-proof-label { font-size: .85rem; max-width: 20ch; }
+@media (max-width: 640px) { .hero-proof-strip { grid-template-columns: 1fr; gap: 12px; } .hero-proof-item { border-right: 0; padding: 0; } }

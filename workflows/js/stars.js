@@ -2,7 +2,7 @@
    now and then one flares, and on a desktop the cursor is a bow wave the stars ease around. */
 (function () {
   var m = window.matchMedia ? function (q) { return window.matchMedia(q).matches; } : function () { return false; };
-  var reduce = m('(prefers-reduced-motion: reduce)');
+  var reduce = m('(prefers-reduced-motion: reduce)') || m('(max-width: 767px)'); // still frame on phones, saves battery
   var pointerFine = m('(pointer: fine)');
   var cv = document.createElement('canvas');
   cv.id = 'sky'; cv.setAttribute('aria-hidden', 'true');
@@ -11,7 +11,7 @@
   if (!ctx) { cv.remove(); return; }
 
   var stars = [], W = 0, H = 0, dpr = 1, raf = 0, last = 0, running = false;
-  var pointer = null, REACH = 150, PUSH = 60;
+  var pointer = null, REACH = 140, PUSH = 40;
   // real stars are not all the same white
   var TINTS = [[255, 244, 230], [255, 251, 243], [243, 243, 255], [225, 234, 255], [255, 238, 216]];
 
@@ -37,7 +37,7 @@
         x: Math.random() * W, y: Math.random() * H, hx: 0, hy: 0, ox: 0, oy: 0,
         r: r, base: 0.18 + mag * 0.72,
         tint: TINTS[Math.floor(Math.random() * TINTS.length)],
-        period: 3000 + Math.random() * 7000, phase: Math.random() * Math.PI * 2, amp: 0.12 + Math.random() * 0.3,
+        period: 4000 + Math.random() * 8000, phase: Math.random() * Math.PI * 2, amp: 0.1 + Math.random() * 0.22,
         flare: 0, nextFlare: performance.now() + 4000 + Math.random() * 30000,
         dx: (Math.random() - .5) * 0.006, dy: (Math.random() - .5) * 0.006
       });
