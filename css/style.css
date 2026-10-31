@@ -1797,3 +1797,13 @@ h2.section-title { margin-bottom: 28px; }
 .said-more { margin-top: 26px; }
 .said-intro { color: var(--text-on-dark-2); max-width: 62ch; margin: 0 0 18px; }
 .said-list { display: flex; flex-direction: column; gap: 22px; margin-bottom: 40px; }
+/* principles and the connected canvas */
+.connected { position: relative; height: 300px; border-top: 1px solid var(--line-dark); border-bottom: 1px solid var(--line-dark); margin: 8px 0 36px; overflow: hidden; cursor: crosshair; }
+.connected canvas { position: absolute; inset: 0; display: block; }
+.connected-label { position: absolute; left: 0; bottom: 18px; margin: 0; font-family: 'Fraunces', Georgia, serif; font-size: 1.25rem; color: var(--text-on-dark); pointer-events: none; }
+.principles { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 48px; counter-reset: pr; }
+.principles li { counter-increment: pr; }
+.principles h3 { font-family: 'Fraunces', Georgia, serif; font-weight: 400; font-size: 1.3rem; margin-bottom: 8px; }
+.principles h3::before { content: counter(pr) ". "; color: var(--text-on-dark-2); }
+.principles p { color: var(--text-on-dark); line-height: 1.6; font-size: .98rem; max-width: 52ch; }
+@media (max-width: 760px) { .principles { grid-template-columns: 1fr; gap: 22px; } .connected { height: 220px; } }
