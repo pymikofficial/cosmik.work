@@ -1,18 +1,18 @@
   :root {
-    /* Direction A: paper, ink, brick. Light by choice, one accent. */
-    --ink: #F5F1E8;            /* page background (name kept so old rules still resolve) */
-    --ink-2: #EDE7DA;          /* slightly deeper paper for raised surfaces */
-    --paper: #F5F1E8;
-    --paper-2: #EDE7DA;
-    --text-on-dark: #1B1A17;   /* primary text */
-    --text-on-dark-2: #5E5A52; /* secondary text */
-    --text-on-light: #1B1A17;
-    --text-on-light-2: #5E5A52;
-    --accent: #B5452B;
-    --accent-bright: #9A3A24;
+    /* Ink and starlight. Near black sky, cream type, one brick accent. */
+    --ink: #0B0F1A;            /* page background */
+    --ink-2: #121829;          /* raised surfaces */
+    --paper: #0B0F1A;
+    --paper-2: #121829;
+    --text-on-dark: #F2EEE3;   /* primary text */
+    --text-on-dark-2: #A9ACB8; /* secondary text */
+    --text-on-light: #F2EEE3;
+    --text-on-light-2: #A9ACB8;
+    --accent: #D4603F;
+    --accent-bright: #E8785A;
     --glow: transparent;
-    --line-dark: rgba(27, 26, 23, .14);
-    --line-light: rgba(27, 26, 23, .14);
+    --line-dark: rgba(242, 238, 227, .14);
+    --line-light: rgba(242, 238, 227, .14);
     --ease: cubic-bezier(.16, 1, .3, 1);
     --nav-h: 52px;
   }
@@ -75,7 +75,7 @@
     left: 1rem;
     z-index: 1000;
     padding: .6rem 1rem;
-    background: var(--accent, #B5452B);
+    background: var(--accent);
     color: var(--ink);
     border-radius: 0 0 6px 6px;
     font: 600 .9rem/1 'Inter Tight', sans-serif;
@@ -108,7 +108,7 @@
     font-size: 13px;
     letter-spacing: -.01em;
     font-weight: 600;
-    color: #1B1A17;
+    color: var(--text-on-dark);
   }
 
   .logo span {
@@ -119,7 +119,7 @@
     display: flex;
     align-items: center;
     gap: clamp(20px, 3vw, 32px);
-    color: #5E5A52;
+    color: var(--text-on-dark-2);
   }
 
   .nav-links a {
@@ -128,13 +128,13 @@
   }
 
   .nav-links a:hover {
-    color: #1B1A17;
+    color: var(--text-on-dark);
   }
 
   /* Featured nav item ~ Shipped/Projects carries permanent emphasis,
      even when not the active page, since it's the site's proof-of-work page. */
   .nav-links a.nav-featured {
-    color: #1B1A17;
+    color: var(--text-on-dark);
     font-weight: 500;
     display: inline-flex;
     align-items: center;
@@ -142,7 +142,7 @@
   }
 
   .nav-links a.nav-featured:hover {
-    color: #1B1A17;
+    color: var(--text-on-dark);
   }
 
   .nav-cta {
@@ -194,7 +194,7 @@
   .nav-toggle-bar {
     width: 100%;
     height: 2px;
-    background: #1B1A17;
+    background: var(--text-on-dark);
     border-radius: 2px;
   }
 
@@ -244,8 +244,8 @@
     height: 40px;
     border-radius: 50%;
     background: transparent;
-    border: 1px solid rgba(27, 26, 23, .14);
-    color: #1B1A17;
+    border: 1px solid rgba(242, 238, 227, .14);
+    color: var(--text-on-dark);
     font-size: 16px;
     cursor: pointer;
     display: flex;
@@ -264,7 +264,7 @@
     font-family: 'Fraunces', serif;
     font-size: clamp(1.7rem, 7vw, 2.2rem);
     font-weight: 500;
-    color: #1B1A17;
+    color: var(--text-on-dark);
     text-decoration: none;
     display: inline-flex;
     align-items: center;
@@ -380,7 +380,7 @@
   }
 
   .hero-sub strong {
-    color: #1B1A17;
+    color: var(--text-on-dark);
     font-weight: 600;
   }
 
@@ -418,14 +418,14 @@
   }
 
   .btn-ghost {
-    border: 1px solid rgba(27, 26, 23, .22);
-    color: #1B1A17;
+    border: 1px solid rgba(242, 238, 227, .22);
+    color: var(--text-on-dark);
     background: transparent;
   }
 
   .btn-ghost:hover {
     background: transparent;
-    border-color: rgba(27, 26, 23, .35);
+    border-color: rgba(242, 238, 227, .35);
   }
 
   .hero-meta {
@@ -486,7 +486,7 @@
 
   .section-sub strong {
     font-weight: 600;
-    color: #1B1A17;
+    color: var(--text-on-dark);
   }
 
   .ship-card {
@@ -551,7 +551,7 @@
     font-size: 2rem;
     font-weight: 500;
     letter-spacing: -.02em;
-    color: #1B1A17;
+    color: var(--text-on-dark);
   }
 
   .ship-desc {
@@ -597,7 +597,7 @@
   .cta-links a {
     transition: color .25s ease;
     padding-bottom: 3px;
-    border-bottom: 1px solid rgba(27, 26, 23, .15);
+    border-bottom: 1px solid rgba(242, 238, 227, .15);
   }
 
   .cta-links a:hover {
@@ -619,7 +619,7 @@
   }
 
   footer .fl {
-    color: #1B1A17;
+    color: var(--text-on-dark);
     font-weight: 500;
   }
 
@@ -640,7 +640,7 @@
 
   /* ===== Multi-page additions ===== */
   .nav-links a.active {
-    color: #1B1A17;
+    color: var(--text-on-dark);
   }
 
   .nav-links a.active {
@@ -1577,7 +1577,7 @@
   .about-intro { display: flex; gap: 32px; align-items: flex-start; margin-top: 28px; max-width: 900px; }
   .about-face { width: 150px; height: auto; aspect-ratio: 1283 / 1226; border-radius: 14px; object-fit: cover; border: 2px solid rgba(181, 69, 43, .55); box-shadow: none; flex-shrink: 0; }
   .about-intro-text p { line-height: 1.7; color: var(--text-on-dark-2); margin-bottom: 14px; max-width: 68ch; }
-  .about-intro-text .about-lede { font-family: 'Fraunces', serif; font-size: clamp(1.2rem, 2.2vw, 1.5rem); line-height: 1.45; color: var(--text-on-dark, #fff); }
+  .about-intro-text .about-lede { font-family: 'Fraunces', serif; font-size: clamp(1.2rem, 2.2vw, 1.5rem); line-height: 1.45; color: var(--text-on-dark); }
   .about-body { line-height: 1.75; color: var(--text-on-dark-2); margin-bottom: 16px; max-width: 68ch; }
   .log-meta a { color: var(--accent-bright); }
   .story-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
@@ -1616,9 +1616,9 @@
 .origin-archive-link a:hover { border-bottom-color: var(--accent-bright); }
 
 /* Collapsible definitions on the Workflow Log */
-.defs-sum { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 8px 16px; cursor: pointer; list-style: none; padding: 14px 0; border-bottom: 1px solid var(--line, rgba(27, 26, 23, .12)); font-family: 'Fraunces', serif; font-size: clamp(1.25rem, 3.5vw, 1.7rem); }
+.defs-sum { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 8px 16px; cursor: pointer; list-style: none; padding: 14px 0; border-bottom: 1px solid var(--line-dark); font-family: 'Fraunces', serif; font-size: clamp(1.25rem, 3.5vw, 1.7rem); }
 .defs-sum::-webkit-details-marker { display: none; }
-.defs-sum .mono { font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; color: var(--accent-bright, #B5452B); }
+.defs-sum .mono { font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; color: var(--accent-bright); }
 .defs[open] .defs-sum .mono { visibility: hidden; }
 .defs .metric-grid { margin-top: 24px; }
 
@@ -1688,21 +1688,21 @@ h2.section-title, h1.section-title { font-size: clamp(1.7rem, 3.4vw, 2.6rem); li
 .btn { border-radius: 6px; box-shadow: none; }
 .btn-primary { background: var(--accent); color: #FFFFFF; }
 .btn-primary:hover { background: var(--accent-bright); color: #FFFFFF; transform: none; }
-.btn-ghost { border: 1px solid rgba(27, 26, 23, .3); color: var(--text-on-dark); }
+.btn-ghost { border: 1px solid rgba(242, 238, 227, .3); color: var(--text-on-dark); }
 .btn-ghost:hover { border-color: var(--text-on-dark); background: transparent; }
 .nav-cta { background: var(--text-on-dark); color: var(--paper); border-radius: 6px; box-shadow: none; }
-.nav-cta:hover { background: #000; color: var(--paper); }
+.nav-cta:hover { background: #FFFFFF; color: var(--paper); }
 .nav-cta .dot { background: var(--accent); box-shadow: none; }
 
 /* nav */
-nav#nav { background: rgba(245, 241, 232, .92); border-bottom: 1px solid var(--line-dark); }
+nav#nav { background: rgba(11, 15, 26, .92); border-bottom: 1px solid var(--line-dark); }
 .logo { color: var(--text-on-dark); }
 .logo span { color: var(--accent); }
 .nav-links a { color: var(--text-on-dark-2); }
 .nav-links a:hover, .nav-links a.active { color: var(--text-on-dark); }
 .nav-links a.active::after { background: var(--accent); }
 .nav-toggle-bar { background: var(--text-on-dark); }
-.mobile-menu { background: rgba(245, 241, 232, .98); }
+.mobile-menu { background: rgba(11, 15, 26, .98); }
 .mobile-menu-links a { color: var(--text-on-dark); }
 
 /* links, chips, images */
@@ -1798,19 +1798,15 @@ h2.section-title { margin-bottom: 28px; }
 .said-intro { color: var(--text-on-dark-2); max-width: 62ch; margin: 0 0 18px; }
 .said-list { display: flex; flex-direction: column; gap: 22px; margin-bottom: 40px; }
 /* principles and the connected canvas */
-.connected { position: relative; height: 300px; border-top: 1px solid var(--line-dark); border-bottom: 1px solid var(--line-dark); margin: 8px 0 36px; overflow: hidden; cursor: crosshair; }
-.connected canvas { position: absolute; inset: 0; display: block; }
-.connected-label { position: absolute; left: 0; bottom: 18px; margin: 0; font-family: 'Fraunces', Georgia, serif; font-size: 1.25rem; color: var(--text-on-dark); pointer-events: none; }
 .principles { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 48px; counter-reset: pr; }
 .principles li { counter-increment: pr; }
 .principles h3 { font-family: 'Fraunces', Georgia, serif; font-weight: 400; font-size: 1.3rem; margin-bottom: 8px; }
 .principles h3::before { content: counter(pr) ". "; color: var(--text-on-dark-2); }
 .principles p { color: var(--text-on-dark); line-height: 1.6; font-size: .98rem; max-width: 52ch; }
-@media (max-width: 760px) { .principles { grid-template-columns: 1fr; gap: 22px; } .connected { height: 220px; } }
-#bgConnected { position: fixed; inset: 0; z-index: 0; pointer-events: none; }
+@media (max-width: 760px) { .principles { grid-template-columns: 1fr; gap: 22px; } }
+#sky { position: fixed; inset: 0; z-index: 0; pointer-events: none; }
 main, nav#nav, footer, .page-header, .page-next { position: relative; z-index: 1; }
 .mobile-menu { z-index: 2; }
-.connected { background: var(--paper); }
 @media (max-width: 760px) { .page-top .section-eyebrow, .page-top #about-title { text-align: center; } }
 .path-list p.path-client { margin-top: 8px; padding-left: 14px; border-left: 2px solid var(--line-dark); }
 .path-list p.path-client strong { font-weight: 500; color: var(--text-on-dark); }
