@@ -1,7 +1,7 @@
-# workflows.cosmik.work is served from the /workflows folder of this site
-https://workflows.cosmik.work/*   /workflows/:splat   200!
-https://cosmik.work/workflows/*   https://workflows.cosmik.work/:splat   301!
-https://cosmik.work/workflows     https://workflows.cosmik.work/   301!
+# the old storefront subdomain and paths go to the contact page
+https://workflows.cosmik.work/*   https://cosmik.work/contact   301!
+/workflows/*   /contact   301!
+/workflows     /contact   301!
 
 # Retired cosmik.work paths
 /systems                     /         301
