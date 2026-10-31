@@ -1785,3 +1785,5 @@ h2.section-title { margin-bottom: 28px; }
 .log-item::before { display: none; }
 .log-item:last-child { border-bottom: 0; }
 .log-name { font-family: 'Fraunces', Georgia, serif; font-weight: 400; font-size: 1.2rem; }
+/* original hero banner, restored 31 Oct 2026 at Soumik's request */
+.hero-banner { display: block; width: 100%; max-width: 760px; height: auto; margin: 0 0 32px; border-radius: 8px; border: 0; box-shadow: none; }
