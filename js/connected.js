@@ -2,7 +2,7 @@
 (function () {
   var wrap = document.getElementById('connected');
   var cv = document.getElementById('connectedCanvas');
-  if (!wrap || !cv) return;
+  if (!wrap || !cv || window.__mercury) return;
   var ctx = cv.getContext('2d');
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var INK = '27, 26, 23', ACCENT = '181, 69, 43';
