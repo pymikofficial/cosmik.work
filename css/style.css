@@ -1852,3 +1852,12 @@ h1.hero-title { font-size: clamp(2rem, 3.4vw, 3rem); max-width: 22ch; }
 .hero-proof-item { flex-direction: column; align-items: flex-start; gap: 4px; padding-right: 16px; }
 .hero-proof-label { font-size: .85rem; max-width: 20ch; }
 @media (max-width: 640px) { .hero-proof-strip { grid-template-columns: 1fr; gap: 12px; } .hero-proof-item { border-right: 0; padding: 0; } }
+/* phones: number and words on one line, left aligned */
+@media (max-width: 640px) {
+  .hero-proof-strip { grid-template-columns: 1fr; gap: 14px; max-width: none; }
+  .hero-proof-item { display: grid; grid-template-columns: minmax(96px, auto) 1fr; column-gap: 14px; align-items: baseline; text-align: left; padding: 0; border: 0; }
+  .hero-proof-num { font-size: 1.35rem; }
+  .hero-proof-label { max-width: none; font-size: .9rem; line-height: 1.4; text-align: left; }
+  .btn-row { flex-direction: column; align-items: stretch; }
+  .btn-row .btn { justify-content: center; }
+}
