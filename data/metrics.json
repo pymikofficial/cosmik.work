@@ -25,7 +25,7 @@
     "what": "The share of the intended users who run the workflow on their own without asking its builder for help. A workflow that depends on its creator is a liability.",
     "stage": "At handoff, and again after the first month of real use.",
     "lever": "Write a one page operating guide, train the team on their own tasks, and make the next step obvious at every point.",
-    "whereUsed": "This is the handoff I aim for on every build. The SOP Generator on the Shipped page exists so the one page guide takes minutes, not an afternoon."
+    "whereUsed": "This is the handoff he aims for on every build. The SOP Generator on the Shipped page exists so the one page guide takes minutes, not an afternoon."
   },
   {
     "name": "Cost per run",

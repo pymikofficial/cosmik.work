@@ -101,8 +101,8 @@ ${i}  <h3 class="metric-name">${esc(m.name)}</h3>
 ${i}  <dl class="metric-dl">
 ${i}    <div><dt>What it is</dt><dd>${esc(m.what)}</dd></div>
 ${i}    <div><dt>When it matters</dt><dd>${esc(m.stage)}</dd></div>
-${i}    <div><dt>How I move it</dt><dd>${esc(m.lever)}</dd></div>
-${i}    <div class="metric-used"><dt>In my work</dt><dd>${esc(m.whereUsed)}</dd></div>
+${i}    <div><dt>How he moves it</dt><dd>${esc(m.lever)}</dd></div>
+${i}    <div class="metric-used"><dt>In his work</dt><dd>${esc(m.whereUsed)}</dd></div>
 ${i}  </dl>
 ${i}</article>`;
   }).join('\n');
