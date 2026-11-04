@@ -1,7 +1,9 @@
 /* Home page only.
    Tool chips: with a mouse the description shows on hover (CSS). On a touch
-   screen the first tap shows it and the second tap opens the tool. Chips on the
-   right half of the row open their description to the left so it stays on screen.
+   screen the first tap shows it and the second tap opens the tool. Escape hides
+   an open description on any device. A description that would run past the
+   edge of the row is anchored to the chip's right edge, or to the row's left
+   edge when neither side fits, so it stays on screen.
    Demo video: the featured figure appears only when its data-video is set. */
 (function () {
   var coarse = window.matchMedia ? window.matchMedia('(pointer: coarse)').matches : false;
@@ -12,10 +14,16 @@
 
     function align() {
       var r = box.getBoundingClientRect();
-      var mid = r.left + r.width / 2;
       wraps.forEach(function (w) {
+        var tip = w.querySelector('.tchip-tip');
+        if (!tip) return;
         var c = w.getBoundingClientRect();
-        w.classList.toggle('tip-right', c.left + c.width / 2 > mid);
+        var tw = tip.offsetWidth; // laid out even while hidden
+        w.classList.remove('tip-right');
+        tip.style.left = '';
+        if (c.left + tw <= r.right + 0.5) return;                       // fits from the chip's left edge
+        if (c.right - tw >= r.left - 0.5) { w.classList.add('tip-right'); return; } // fits ending at the chip's right edge
+        tip.style.left = (r.left - c.left) + 'px';                        // neither fits, hug the row's left edge
       });
     }
     align();
@@ -28,11 +36,27 @@
         if (w === except) return;
         w.classList.remove('is-open');
         var a = w.querySelector('.tchip');
-        if (a) a.setAttribute('aria-expanded', 'false');
+        if (a && a.hasAttribute('aria-expanded')) a.setAttribute('aria-expanded', 'false');
       });
-      var active = document.activeElement;
-      if (active && active.closest && active.closest('.tchip-wrap') && active.closest('.tchip-wrap') !== except) active.blur();
+      if (coarse) {
+        var active = document.activeElement;
+        if (active && active.closest && active.closest('.tchip-wrap') && active.closest('.tchip-wrap') !== except) active.blur();
+      }
     }
+
+    // Escape hides the description that hover or focus is showing, until the
+    // pointer leaves the chip or focus moves on.
+    document.addEventListener('keydown', function (e) {
+      if (e.key !== 'Escape') return;
+      closeAll();
+      wraps.forEach(function (w) {
+        if (w.contains(document.activeElement) || (w.matches && w.matches(':hover'))) w.classList.add('tip-off');
+      });
+    });
+    wraps.forEach(function (w) {
+      w.addEventListener('mouseleave', function () { w.classList.remove('tip-off'); });
+      w.addEventListener('focusout', function (e) { if (!w.contains(e.relatedTarget)) w.classList.remove('tip-off'); });
+    });
 
     if (coarse) {
       wraps.forEach(function (w) {
@@ -44,15 +68,15 @@
           if (w.classList.contains('is-open')) return; // second tap follows the link
           e.preventDefault();
           closeAll(w);
+          w.classList.remove('tip-off');
           w.classList.add('is-open');
           a.setAttribute('aria-expanded', 'true');
         });
-        if (tip) tip.addEventListener('click', function () { a.click(); });
+        if (tip) tip.addEventListener('click', function () { if (w.classList.contains('is-open')) a.click(); });
       });
       document.addEventListener('click', function (e) {
         if (!(e.target.closest && e.target.closest('.tchip-wrap'))) closeAll();
       });
-      document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeAll(); });
     }
   }
 

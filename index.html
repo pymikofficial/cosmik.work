@@ -30,7 +30,7 @@
 <meta name="twitter:image:alt" content="Soumik Chatterjee, AI Specialist">
 <link rel="preload" href="/fonts/fraunces-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/inter-tight-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/css/style.css?v=20261104a">
+<link rel="stylesheet" href="/css/style.css?v=20261104b">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -183,7 +183,8 @@
           </div>
           <!-- Demo video slot. Set data-video to a self-hosted MP4, for example /assets/video/triageops-demo.mp4,
                and optionally data-poster to a JPG. js/home.js shows the figure only when data-video is set.
-               A file on another host also needs that host added to media-src in _headers. -->
+               A file on another host also needs a media-src directive naming that host added to the
+               Content-Security-Policy in _headers (and img-src for a poster on another host). -->
           <figure class="case-video" data-video="" data-poster="" hidden>
             <video controls playsinline preload="metadata"></video>
             <figcaption>TriageOps demo video</figcaption>
@@ -241,18 +242,19 @@
               <dt class="tool-era-name">Engineering<span class="tool-era-when">Accenture, 2015 to 2019</span></dt>
               <dd class="tchip-row">
                 <span class="tchip-wrap">
-                  <a class="tchip" href="https://chromewebstore.google.com/detail/fullshot-full-page-screen/gdejgnbdmnfpdalaaefhmbecnecdfkbf" target="_blank" rel="noopener" aria-describedby="tip-full-webpage-screenshot">Full Webpage Screenshot<span class="tchip-tag">Used by about 320 people</span><span class="visually-hidden"> (opens in a new tab)</span></a>
+                  <a class="tchip" href="https://chromewebstore.google.com/detail/jdlienijidakhdofpcinjdomgpbecgle" target="_blank" rel="noopener" aria-describedby="tip-blur-background">Blur Background<span class="visually-hidden"> (opens in a new tab)</span></a>
+                  <span class="tchip-tip" id="tip-blur-background" role="tooltip">Chrome extension that blurs the background on any video call site, on device, with no sign in and no watermark.<span class="tchip-go" aria-hidden="true">Tap again to open &#8599;</span></span>
+                </span>
+                <span class="tchip-wrap">
+                  <a class="tchip" href="https://chromewebstore.google.com/detail/fullshot-full-page-screen/gdejgnbdmnfpdalaaefhmbecnecdfkbf" target="_blank" rel="noopener" aria-describedby="tip-full-webpage-screenshot">Full Webpage Screenshot<span class="visually-hidden"> (opens in a new tab)</span></a>
                   <span class="tchip-tip" id="tip-full-webpage-screenshot" role="tooltip">Chrome extension that captures a whole page beyond the fold in one pass at full resolution, with no network calls.<span class="tchip-go" aria-hidden="true">Tap again to open &#8599;</span></span>
                 </span>
+                <span class="tchip-note">Used by about 320 people</span>
               </dd>
             </div>
             <div class="tool-era">
               <dt class="tool-era-name">Recruitment and operations<span class="tool-era-when">CampK12, 2020 to 2023</span></dt>
               <dd class="tchip-row">
-                <span class="tchip-wrap">
-                  <a class="tchip" href="https://chromewebstore.google.com/detail/jdlienijidakhdofpcinjdomgpbecgle" target="_blank" rel="noopener" aria-describedby="tip-blur-background">Blur Background<span class="tchip-tag">Used by about 320 people</span><span class="visually-hidden"> (opens in a new tab)</span></a>
-                  <span class="tchip-tip" id="tip-blur-background" role="tooltip">Chrome extension that blurs the background on any video call site, on device, with no sign in and no watermark.<span class="tchip-go" aria-hidden="true">Tap again to open &#8599;</span></span>
-                </span>
                 <span class="tchip-wrap">
                   <a class="tchip" href="https://leave-broadcast-tool.netlify.app" target="_blank" rel="noopener" aria-describedby="tip-leave-broadcast-message-generator">Leave Broadcast Message Generator<span class="visually-hidden"> (opens in a new tab)</span></a>
                   <span class="tchip-tip" id="tip-leave-broadcast-message-generator" role="tooltip">Who is out, when, and what needs handing off goes in. One clean broadcast message comes out, ready for Slack, email or WhatsApp.<span class="tchip-go" aria-hidden="true">Tap again to open &#8599;</span></span>
@@ -412,7 +414,7 @@
 
 <script src="/js/nav.js?v=20261026h"></script>
 <script src="/js/stars.js?v=20261031b" defer></script>
-<script src="/js/home.js?v=20261104a" defer></script>
+<script src="/js/home.js?v=20261104b" defer></script>
 
 </body>
 </html>
