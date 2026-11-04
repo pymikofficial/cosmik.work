@@ -11,6 +11,9 @@
 //
 // Adding a tool = adding one entry to data/tools.json, then running this.
 // Adding a metric card = adding one entry to data/metrics.json.
+// The homepage groups every tool into an era chip row: set "era" (one of
+// ERAS below, missing means Process and SOPs) and "line" (one sentence for
+// the hover and tap description) on the entry. "homeTag" adds a small tag.
 // An entry with "review": true is emitted with a <!-- REVIEW --> marker.
 
 const fs = require('fs');
@@ -55,6 +58,22 @@ validate(METRICS, METRIC_FIELDS, 'data/metrics.json');
 validate(LIBRARY, ['name', 'tag', 'desc', 'link', 'date'], 'data/library.json');
 [...TOOLS, ...LIBRARY].forEach((t) => {
   if (t.date !== undefined && !/^\d{4}-\d{2}-\d{2}$/.test(t.date)) throw new Error(`data/tools.json: "${t.name}" date must be YYYY-MM-DD when present`);
+});
+
+// Eras for the homepage chip rows, in display order. A tool whose "era" is
+// missing lands in the last group, Process and SOPs.
+const ERAS = [
+  { name: 'Engineering', when: 'Accenture, 2015 to 2019' },
+  { name: 'Recruitment and operations', when: 'CampK12, 2020 to 2023' },
+  { name: 'Classrooms', when: 'Teach For India, 2024 to 2026' },
+  { name: "Founder's office", when: 'Since 2026' },
+  { name: 'Process and SOPs', when: 'Every role' },
+];
+const ERA_NAMES = ERAS.map((e) => e.name);
+const DEFAULT_ERA = ERA_NAMES[ERA_NAMES.length - 1];
+[...TOOLS, ...LIBRARY].forEach((t) => {
+  if (t.era !== undefined && !ERA_NAMES.includes(t.era)) throw new Error(`"${t.name}" era must be one of: ${ERA_NAMES.join(', ')}`);
+  if (t.line !== undefined && (typeof t.line !== 'string' || !t.line.trim())) throw new Error(`"${t.name}" line must be a non-empty string when present`);
 });
 
 // ---- helpers ----
@@ -160,8 +179,38 @@ function renderToolsLd() {
   return `<script type="application/ld+json">\n${JSON.stringify(ld, null, 2)}\n</script>`;
 }
 
+// Homepage: every tool as a chip under its era, newest first inside a group.
+// The chip links to the tool. The sibling span is the hover and tap
+// description, wired to the link with aria-describedby.
+function renderToolChips() {
+  const slug = (s) => String(s).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+  const all = [...TOOLS, ...LIBRARY].map((t, i) => ({ t, i }))
+    .sort((a, b) => (b.t.date || '').localeCompare(a.t.date || '') || a.i - b.i)
+    .map((x) => x.t);
+  const i = '            ';
+  return ERAS.map((era) => {
+    const items = all.filter((t) => (t.era || DEFAULT_ERA) === era.name);
+    if (!items.length) return '';
+    const chips = items.map((t) => {
+      const id = `tip-${slug(t.name)}`;
+      const tag = t.homeTag ? `<span class="tchip-tag">${esc(t.homeTag)}</span>` : '';
+      return `${i}    <span class="tchip-wrap">
+${i}      <a class="tchip" href="${esc(t.link)}" target="_blank" rel="noopener" aria-describedby="${id}">${esc(t.name)}${tag}<span class="visually-hidden"> (opens in a new tab)</span></a>
+${i}      <span class="tchip-tip" id="${id}" role="tooltip">${esc(t.line || t.desc || t.problem)}<span class="tchip-go" aria-hidden="true">Tap again to open &#8599;</span></span>
+${i}    </span>`;
+    }).join('\n');
+    return `${i}<div class="tool-era">
+${i}  <dt class="tool-era-name">${esc(era.name)}<span class="tool-era-when">${esc(era.when)}</span></dt>
+${i}  <dd class="tchip-row">
+${chips}
+${i}  </dd>
+${i}</div>`;
+  }).filter(Boolean).join('\n');
+}
+
 const SECTIONS = {
   TOOLS: renderToolCards,
+  TOOLCHIPS: renderToolChips,
   METRICS: renderMetricCards,
   BUILDLOG: renderBuildLog,
   TOOLSLD: renderToolsLd,

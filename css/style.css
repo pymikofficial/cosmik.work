@@ -1861,3 +1861,58 @@ h1.hero-title { font-size: clamp(2rem, 3.4vw, 3rem); max-width: 22ch; }
   .btn-row { flex-direction: column; align-items: stretch; }
   .btn-row .btn { justify-content: center; }
 }
+
+/* =====================================================================
+   Home: five highlights (4 Nov 2026). TriageOps featured at the top, the
+   three client cases unchanged, the 14 tools as chips grouped by the era
+   of work they replace. Same ink, cream and brick, same 1px rules, same
+   4px corners and chip surface as the rest of the page.
+   ===================================================================== */
+.case-list .case.case-featured { grid-template-columns: 1fr; border-top: 3px solid var(--accent); padding: 40px 0 44px; }
+.case-list .case.case-featured.has-video { grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); }
+.case-featured .case-main { grid-column: 1; min-width: 0; }
+.case-featured .case-video { grid-column: 2; grid-row: 1; align-self: start; margin: 0; }
+.case.case-featured h3 { font-size: clamp(1.8rem, 2.9vw, 2.35rem); line-height: 1.12; max-width: 24ch; margin-bottom: 16px; }
+.case .case-problem { font-size: clamp(1.1rem, 1.5vw, 1.2rem); line-height: 1.55; max-width: 60ch; }
+.case .case-what { max-width: 68ch; }
+.case-stats { margin: 18px 0 20px; gap: 8px; }
+.case-stats li { font-size: 13px; line-height: 1.4; padding: 7px 12px; }
+.case .case-stack { color: var(--text-on-dark-2); font-size: .95rem; line-height: 1.55; max-width: 68ch; margin-bottom: 22px; }
+.case-featured .btn-row { margin-top: 2px; }
+.case-video video { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; border: 1px solid var(--line-dark); border-radius: 4px; background: var(--ink-2); }
+.case-video figcaption { font-size: 13px; color: var(--text-on-dark-2); margin-top: 8px; }
+@media (max-width: 760px) {
+  .case-list .case.case-featured { padding: 32px 0 36px; }
+  .case-list .case.case-featured.has-video { grid-template-columns: 1fr; }
+  .case-featured .case-video { grid-column: 1; grid-row: auto; }
+}
+
+/* the 14 tools, chips by era */
+.case-list .case.case-tools { grid-template-columns: 1fr; }
+.case-tools .case-main { min-width: 0; }
+.tool-eras { margin: 10px 0 16px; }
+.tool-era { display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 10px 24px; padding: 16px 0; border-top: 1px solid var(--line-dark); }
+.tool-era:first-child { border-top: 0; padding-top: 6px; }
+.tool-era-name { font-size: .98rem; color: var(--text-on-dark); padding-top: 7px; }
+.tool-era-when { display: block; font-size: 13px; color: var(--text-on-dark-2); margin-top: 2px; }
+.tchip-row { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; }
+.tchip-wrap { position: relative; display: inline-block; }
+.tchip { display: inline-flex; align-items: center; gap: 8px; background: var(--paper-2); border: 1px solid var(--line-dark); border-radius: 4px; padding: 8px 12px; font-size: 13px; line-height: 1.3; color: var(--text-on-dark); transition: border-color .2s ease; }
+.tchip:hover, .tchip:focus-visible, .tchip-wrap.is-open .tchip { border-color: var(--accent); }
+.tchip-tag { color: var(--text-on-dark-2); font-size: 12px; }
+.tchip-tag::before { content: "\00b7\00a0"; }
+.tchip-tip { position: absolute; top: calc(100% + 8px); left: 0; z-index: 6; width: max-content; max-width: min(36ch, calc(100vw - 40px)); padding: 10px 12px; background: var(--ink-2); border: 1px solid var(--line-dark); border-radius: 4px; box-shadow: 0 10px 24px rgba(0, 0, 0, .4); font-size: 13px; line-height: 1.45; color: var(--text-on-dark); opacity: 0; visibility: hidden; pointer-events: none; transition: opacity .15s ease, visibility .15s ease; }
+.tchip-wrap.tip-right .tchip-tip { left: auto; right: 0; }
+.tchip-wrap:hover .tchip-tip, .tchip-wrap:focus-within .tchip-tip, .tchip-wrap.is-open .tchip-tip { opacity: 1; visibility: visible; }
+.tchip-wrap.is-open .tchip-tip { pointer-events: auto; cursor: pointer; }
+.tchip-go { display: none; }
+.case .case-tools-more { margin: 4px 0 0; }
+@media (pointer: coarse) {
+  .tchip-go { display: block; margin-top: 6px; color: var(--accent); }
+  .tchip-wrap:hover:not(.is-open):not(:focus-within) .tchip-tip { opacity: 0; visibility: hidden; }
+}
+@media (max-width: 640px) {
+  .tool-era { grid-template-columns: 1fr; gap: 8px; padding: 14px 0; }
+  .tool-era-name { padding-top: 0; }
+  .tchip { padding: 9px 12px; }
+}

@@ -13,3 +13,9 @@ Static portfolio site. Netlify runs `npm run build` on every deploy and serves t
 ## Adding a tool
 
 Add one entry to `data/tools.json` (`name`, `date` as YYYY-MM-DD, `problem`, `link`, `buildTime`, optional `flagship`), run `npm run check`, and push. Netlify renders it on the next deploy.
+
+The homepage shows every tool from `data/tools.json` and `data/library.json` as a chip under the era of work it replaces. Two more fields drive that: `era` (one of Engineering, Recruitment and operations, Classrooms, Founder's office, Process and SOPs, missing means Process and SOPs) and `line` (one sentence shown on hover, and on tap on a phone). An optional `homeTag` adds a small tag to the chip, used for the Chrome extensions.
+
+## TriageOps demo video
+
+The featured TriageOps block on the homepage has a hidden video slot. Set `data-video` on the `figure.case-video` element in `index.html` to a self-hosted MP4 (and `data-poster` to a JPG if you have one) and it appears. A file on another host also needs that host added to `media-src` in `_headers`.

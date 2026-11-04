@@ -30,7 +30,7 @@
 <meta name="twitter:image:alt" content="Soumik Chatterjee, AI Specialist">
 <link rel="preload" href="/fonts/fraunces-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/inter-tight-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/css/style.css?v=20261031j">
+<link rel="stylesheet" href="/css/style.css?v=20261104a">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -77,6 +77,17 @@
       "isPartOf": { "@id": "https://cosmik.work/#website" },
       "about": { "@id": "https://cosmik.work/#person" },
       "primaryImageOfPage": "https://cosmik.work/img/og-image-v7.jpg"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://cosmik.work/#triageops",
+      "name": "TriageOps",
+      "url": "https://triageops.vercel.app",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web",
+      "datePublished": "2026-11-04",
+      "description": "An AI service desk for IT MSPs. Claude triages each ticket, picks the priority, team and SLA, and drafts the client reply and the engineer checklist from the MSP runbooks.",
+      "creator": { "@id": "https://cosmik.work/#person" }
     }
   ]
 }
@@ -151,6 +162,34 @@
       <h2 class="section-title" id="work-title">Work you can check.</h2>
       <div class="case-list">
 
+        <article class="case case-featured" id="triageops">
+          <div class="case-main">
+            <p class="case-when">Solo build, 4 Nov 2026</p>
+            <h3>TriageOps, an AI service desk for IT MSPs</h3>
+            <p class="case-problem">An MSP service desk gets tickets from email, WhatsApp and client systems, and every one has to be read, prioritised and routed before anyone can help.</p>
+            <p class="case-what">Claude triages each ticket in 3 to 6 seconds, picks the priority, team and SLA, drafts the client reply and the engineer checklist from the MSP's own runbooks through RAG, and Python rules make sure ransomware is always P1 and trick messages go to a human.</p>
+            <ul class="stack-row case-stats" aria-label="Proof points">
+              <li>Live in under an hour with Claude Code.</li>
+              <li>8 real-world sample tickets triaged correctly.</li>
+              <li>189+ automated tests on every push.</li>
+              <li>Forged and replayed requests blocked.</li>
+            </ul>
+            <p class="case-stack">Built with Claude API, Claude Code, Python FastAPI, Supabase Postgres and pgvector in London, React, Vercel, MCP server, n8n, VPS kit with Nginx, SSL and a firewall.</p>
+            <div class="btn-row btn-row-left">
+              <a href="https://triageops.vercel.app" class="btn btn-primary" target="_blank" rel="noopener">Live demo <span aria-hidden="true">&#8599;</span></a>
+              <a href="https://triageops.vercel.app/build" class="btn btn-ghost" target="_blank" rel="noopener">How it was built</a>
+              <a href="https://github.com/pymikofficial/triageops" class="btn btn-ghost" target="_blank" rel="noopener">Code</a>
+            </div>
+          </div>
+          <!-- Demo video slot. Set data-video to a self-hosted MP4, for example /assets/video/triageops-demo.mp4,
+               and optionally data-poster to a JPG. js/home.js shows the figure only when data-video is set.
+               A file on another host also needs that host added to media-src in _headers. -->
+          <figure class="case-video" data-video="" data-poster="" hidden>
+            <video controls playsinline preload="metadata"></video>
+            <figcaption>TriageOps demo video</figcaption>
+          </figure>
+        </article>
+
         <article class="case">
           <div>
             <p class="case-when">Toronto founder, contract engagement, Feb 2026 to present</p>
@@ -188,6 +227,101 @@
             <p class="case-result">Post-deployment defects down 15%.</p>
           </div>
           <div class="case-aside"></div>
+        </article>
+
+        <article class="case case-tools" id="tools">
+          <div class="case-main">
+            <p class="case-when">Built solo, all free to try</p>
+            <h3>14 live tools, a decade of work turned into software</h3>
+            <p>Each tool comes from work Soumik once did by hand, across engineering at Accenture, recruitment and operations at CampK12, classrooms at Teach For India and founder's office work since 2026.</p>
+            <!-- Rendered from data/tools.json and data/library.json by scripts/build.js. Edit the JSON, not this block. -->
+            <dl class="tool-eras">
+<!-- TOOLCHIPS:START -->
+            <div class="tool-era">
+              <dt class="tool-era-name">Engineering<span class="tool-era-when">Accenture, 2015 to 2019</span></dt>
+              <dd class="tchip-row">
+                <span class="tchip-wrap">
+                  <a class="tchip" href="https://chromewebstore.google.com/detail/fullshot-full-page-screen/gdejgnbdmnfpdalaaefhmbecnecdfkbf" target="_blank" rel="noopener" aria-describedby="tip-full-webpage-screenshot">Full Webpage Screenshot<span class="tchip-tag">Used by about 320 people</span><span class="visually-hidden"> (opens in a new tab)</span></a>
+                  <span class="tchip-tip" id="tip-full-webpage-screenshot" role="tooltip">Chrome extension that captures a whole page beyond the fold in one pass at full resolution, with no network calls.<span class="tchip-go" aria-hidden="true">Tap again to open &#8599;</span></span>
+                </span>
+              </dd>
+            </div>
+            <div class="tool-era">
+              <dt class="tool-era-name">Recruitment and operations<span class="tool-era-when">CampK12, 2020 to 2023</span></dt>
+              <dd class="tchip-row">
+                <span class="tchip-wrap">
+                  <a class="tchip" href="https://chromewebstore.google.com/detail/jdlienijidakhdofpcinjdomgpbecgle" target="_blank" rel="noopener" aria-describedby="tip-blur-background">Blur Background<span class="tchip-tag">Used by about 320 people</span><span class="visually-hidden"> (opens in a new tab)</span></a>
+                  <span class="tchip-tip" id="tip-blur-background" role="tooltip">Chrome extension that blurs the background on any video call site, on device, with no sign in and no watermark.<span class="tchip-go" aria-hidden="true">Tap again to open &#8599;</span></span>
+                </span>
+                <span class="tchip-wrap">
+                  <a class="tchip" href="https://leave-broadcast-tool.netlify.app" target="_blank" rel="noopener" aria-describedby="tip-leave-broadcast-message-generator">Leave Broadcast Message Generator<span class="visually-hidden"> (opens in a new tab)</span></a>
+                  <span class="tchip-tip" id="tip-leave-broadcast-message-generator" role="tooltip">Who is out, when, and what needs handing off goes in. One clean broadcast message comes out, ready for Slack, email or WhatsApp.<span class="tchip-go" aria-hidden="true">Tap again to open &#8599;</span></span>
+                </span>
+                <span class="tchip-wrap">
+                  <a class="tchip" href="https://github-profile-summarizer.netlify.app" target="_blank" rel="noopener" aria-describedby="tip-github-profile-summarizer">GitHub Profile Summarizer<span class="visually-hidden"> (opens in a new tab)</span></a>
+                  <span class="tchip-tip" id="tip-github-profile-summarizer" role="tooltip">Paste a GitHub username and get a recruiter-readable summary of what that person has actually shipped, computed from the GitHub API.<span class="tchip-go" aria-hidden="true">Tap again to open &#8599;</span></span>
+                </span>
+                <span class="tchip-wrap">
+                  <a class="tchip" href="https://cosmik-contract-generator.netlify.app" target="_blank" rel="noopener" aria-describedby="tip-contract-generator">Contract Generator<span class="visually-hidden"> (opens in a new tab)</span></a>
+                  <span class="tchip-tip" id="tip-contract-generator" role="tooltip">Fill in a modular form for a joining letter or exit agreement and get a draft ready for a human read, exported to PDF.<span class="tchip-go" aria-hidden="true">Tap again to open &#8599;</span></span>
+                </span>
+              </dd>
+            </div>
+            <div class="tool-era">
+              <dt class="tool-era-name">Classrooms<span class="tool-era-when">Teach For India, 2024 to 2026</span></dt>
+              <dd class="tchip-row">
+                <span class="tchip-wrap">
+                  <a class="tchip" href="https://teacher-fundraising-tool.netlify.app" target="_blank" rel="noopener" aria-describedby="tip-teacher-fundraising-message-generator">Teacher Fundraising Message Generator<span class="visually-hidden"> (opens in a new tab)</span></a>
+                  <span class="tchip-tip" id="tip-teacher-fundraising-message-generator" role="tooltip">Describe what a classroom needs and get a donor ask ready to send, as an email or a short social post, using only what was said.<span class="tchip-go" aria-hidden="true">Tap again to open &#8599;</span></span>
+                </span>
+                <span class="tchip-wrap">
+                  <a class="tchip" href="https://cosmik-fieldnote.netlify.app" target="_blank" rel="noopener" aria-describedby="tip-fieldnote">Fieldnote<span class="visually-hidden"> (opens in a new tab)</span></a>
+                  <span class="tchip-tip" id="tip-fieldnote" role="tooltip">Speak or type a messy classroom observation and get a clean report with highlights, flags and next steps.<span class="tchip-go" aria-hidden="true">Tap again to open &#8599;</span></span>
+                </span>
+              </dd>
+            </div>
+            <div class="tool-era">
+              <dt class="tool-era-name">Founder's office<span class="tool-era-when">Since 2026</span></dt>
+              <dd class="tchip-row">
+                <span class="tchip-wrap">
+                  <a class="tchip" href="https://cold-outreach-personalizer.netlify.app" target="_blank" rel="noopener" aria-describedby="tip-cold-outreach-personalizer">Cold Outreach Personalizer<span class="visually-hidden"> (opens in a new tab)</span></a>
+                  <span class="tchip-tip" id="tip-cold-outreach-personalizer" role="tooltip">A prospect list and an offer go in. A three touch email sequence comes out for each prospect, each one labelled grounded or generic.<span class="tchip-go" aria-hidden="true">Tap again to open &#8599;</span></span>
+                </span>
+                <span class="tchip-wrap">
+                  <a class="tchip" href="https://investor-update-drafter.netlify.app" target="_blank" rel="noopener" aria-describedby="tip-investor-update-drafter">Investor Update Drafter<span class="visually-hidden"> (opens in a new tab)</span></a>
+                  <span class="tchip-tip" id="tip-investor-update-drafter" role="tooltip">Raw metrics and bullets go in. A clean investor update comes out, with growth, runway and headcount change computed in code, never by the model.<span class="tchip-go" aria-hidden="true">Tap again to open &#8599;</span></span>
+                </span>
+                <span class="tchip-wrap">
+                  <a class="tchip" href="https://meeting-minutes-extractor.netlify.app" target="_blank" rel="noopener" aria-describedby="tip-meeting-minutes-extractor">Meeting Minutes Extractor<span class="visually-hidden"> (opens in a new tab)</span></a>
+                  <span class="tchip-tip" id="tip-meeting-minutes-extractor" role="tooltip">A transcript or a spoken recap goes in. Decisions, action items with owners and deadlines, and open questions come out.<span class="tchip-go" aria-hidden="true">Tap again to open &#8599;</span></span>
+                </span>
+                <span class="tchip-wrap">
+                  <a class="tchip" href="https://executive-briefing-generator.netlify.app" target="_blank" rel="noopener" aria-describedby="tip-executive-briefing-generator">Executive Briefing Generator<span class="visually-hidden"> (opens in a new tab)</span></a>
+                  <span class="tchip-tip" id="tip-executive-briefing-generator" role="tooltip">A day of notes, emails and to-dos goes in. A one page brief comes out with the top priorities, the decisions to make, tasks to delegate and what can wait.<span class="tchip-go" aria-hidden="true">Tap again to open &#8599;</span></span>
+                </span>
+              </dd>
+            </div>
+            <div class="tool-era">
+              <dt class="tool-era-name">Process and SOPs<span class="tool-era-when">Every role</span></dt>
+              <dd class="tchip-row">
+                <span class="tchip-wrap">
+                  <a class="tchip" href="https://process-mapper-839.netlify.app" target="_blank" rel="noopener" aria-describedby="tip-process-mapper">Process Mapper<span class="visually-hidden"> (opens in a new tab)</span></a>
+                  <span class="tchip-tip" id="tip-process-mapper" role="tooltip">A discovery call transcript goes in. The process, stakeholders, unnamed gaps, follow-up questions and a draft workflow diagram come out.<span class="tchip-go" aria-hidden="true">Tap again to open &#8599;</span></span>
+                </span>
+                <span class="tchip-wrap">
+                  <a class="tchip" href="https://cosmik-sop-generator.netlify.app" target="_blank" rel="noopener" aria-describedby="tip-sop-generator">SOP Generator<span class="visually-hidden"> (opens in a new tab)</span></a>
+                  <span class="tchip-tip" id="tip-sop-generator" role="tooltip">Describe a process, typed or spoken, and get a numbered SOP with its purpose, ordered steps, tools and exceptions.<span class="tchip-go" aria-hidden="true">Tap again to open &#8599;</span></span>
+                </span>
+                <span class="tchip-wrap">
+                  <a class="tchip" href="https://automation-priority-sorter.netlify.app" target="_blank" rel="noopener" aria-describedby="tip-automation-priority-sorter">Automation Priority Sorter<span class="visually-hidden"> (opens in a new tab)</span></a>
+                  <span class="tchip-tip" id="tip-automation-priority-sorter" role="tooltip">Log a manual pain point. Claude scores it for automatability, priority and time saved, and it joins a shared, ranked backlog.<span class="tchip-go" aria-hidden="true">Tap again to open &#8599;</span></span>
+                </span>
+              </dd>
+            </div>
+<!-- TOOLCHIPS:END -->
+            </dl>
+            <p class="case-tools-more"><a class="text-link" href="/shipped">All 14 on the Shipped page</a></p>
+          </div>
         </article>
 
       </div>
@@ -278,6 +412,7 @@
 
 <script src="/js/nav.js?v=20261026h"></script>
 <script src="/js/stars.js?v=20261031b" defer></script>
+<script src="/js/home.js?v=20261104a" defer></script>
 
 </body>
 </html>
