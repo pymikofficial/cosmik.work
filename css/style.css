@@ -1899,7 +1899,8 @@ h1.hero-title { font-size: clamp(2rem, 3.4vw, 3rem); max-width: 22ch; }
 .tchip-wrap { position: relative; display: inline-block; }
 .tchip { display: inline-flex; align-items: center; gap: 8px; background: var(--paper-2); border: 1px solid var(--line-dark); border-radius: 4px; padding: 8px 12px; font-size: 13px; line-height: 1.3; color: var(--text-on-dark); transition: border-color .2s ease; }
 .tchip:hover, .tchip:focus-visible, .tchip-wrap.is-open .tchip { border-color: var(--accent); }
-.tchip-note { display: inline-flex; align-items: center; padding: 0 4px; font-size: 13px; color: var(--text-on-dark-2); }
+.tchip-tag { color: var(--text-on-dark-2); font-size: 12px; }
+.tchip-tag::before { content: "\00b7\00a0"; }
 .tchip-tip { position: absolute; top: calc(100% + 8px); left: 0; z-index: 6; width: max-content; max-width: min(36ch, calc(100vw - 40px)); padding: 10px 12px; background: var(--ink-2); border: 1px solid var(--line-dark); border-radius: 4px; box-shadow: 0 10px 24px rgba(0, 0, 0, .4); font-size: 13px; line-height: 1.45; color: var(--text-on-dark); opacity: 0; visibility: hidden; transition: opacity .15s ease, visibility .15s ease; }
 /* bridges the 8px gap so the pointer can travel from the chip onto the description */
 .tchip-tip::before { content: ""; position: absolute; left: 0; right: 0; top: -9px; height: 9px; }

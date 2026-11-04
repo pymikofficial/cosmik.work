@@ -11,7 +11,7 @@ Soumik Chatterjee is looking for a full-time role in community and member suppor
 - 400+ instructor community across India, the US, UK, UAE and Australia at CampK12 (2020 to 2023). Manual outreach down 30%, client retention above 90%.
 - Python test automation for Bank of America and UCI Hospital at Accenture (2015 to 2019). Post-deployment defects down 15%.
 - 31 hiring partners signed against a target of 25 at Navgurukul (Mar to Apr 2026), 2,093 companies contacted.
-- 12 AI tools and 2 Chrome extensions live, all free. Extensions have 300+ users.
+- 12 AI tools and 2 Chrome extensions live, all free. Blur Background has 300+ users and Full Webpage Screenshot 30+.
 - 1,200+ students mentored since 2016. Teaching assistant on the Oxford Programme in Strategic Analysis and Decision-Making with AI via Simplilearn (Oct 2026 to Sep 2027).
 
 ## Pages
