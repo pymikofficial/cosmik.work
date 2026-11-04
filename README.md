@@ -14,7 +14,7 @@ Static portfolio site. Netlify runs `npm run build` on every deploy and serves t
 
 Add one entry to `data/tools.json` (`name`, `date` as YYYY-MM-DD, `problem`, `link`, `buildTime`, optional `flagship`), run `npm run check`, and push. Netlify renders it on the next deploy.
 
-The homepage shows every tool from `data/tools.json` and `data/library.json` as a chip under the era of work it replaces. Two more fields drive that: `era` (one of Engineering, Recruitment and operations, Classrooms, Founder's office, Process and SOPs, missing means Process and SOPs) and `line` (one sentence shown on hover, and on tap on a phone). An optional `homeTag` is a short note written once after the chips in that era that share it, used for the combined user count of the two Chrome extensions.
+The homepage shows every tool from `data/tools.json` and `data/library.json` as a chip under the era of work it replaces. Two more fields drive that: `era` (one of Engineering, Recruitment and operations, Classrooms, Founder's office, Process and SOPs, missing means Process and SOPs) and `line` (one sentence shown on hover, and on tap on a phone). A library entry's `users` figure, the public Chrome Web Store count, is shown as a small tag on its chip and on the Shipped page and Workflow Log, so update it in one place.
 
 ## TriageOps demo video
 

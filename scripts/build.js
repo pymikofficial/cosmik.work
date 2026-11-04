@@ -13,9 +13,8 @@
 // Adding a metric card = adding one entry to data/metrics.json.
 // The homepage groups every tool into an era chip row: set "era" (one of
 // ERAS below, missing means Process and SOPs) and "line" (one sentence for
-// the hover and tap description) on the entry. "homeTag" is a note written
-// once after the chips in that era that share it, used for the combined
-// user count of the two Chrome extensions.
+// the hover and tap description) on the entry. A library entry's "users"
+// figure, the Chrome Web Store count, is shown as a small tag on its chip.
 // An entry with "review": true is emitted with a <!-- REVIEW --> marker.
 
 const fs = require('fs');
@@ -183,8 +182,8 @@ function renderToolsLd() {
 
 // Homepage: every tool as a chip under its era, newest first inside a group.
 // The chip links to the tool. The sibling span is the hover and tap
-// description, wired to the link with aria-describedby. Chips in a group that
-// share a homeTag sit together and the tag is written once after them.
+// description, wired to the link with aria-describedby. A "users" figure is
+// written inside the chip as a small tag.
 function renderToolChips() {
   const slug = (s) => String(s).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
   const all = [...TOOLS, ...LIBRARY].map((t, i) => ({ t, i }))
@@ -196,19 +195,13 @@ function renderToolChips() {
     if (!items.length) return '';
     const chip = (t) => {
       const id = `tip-${slug(t.name)}`;
+      const tag = t.users ? `<span class="tchip-tag">${esc(t.users)}</span>` : '';
       return `${i}    <span class="tchip-wrap">
-${i}      <a class="tchip" href="${esc(t.link)}" target="_blank" rel="noopener" aria-describedby="${id}">${esc(t.name)}<span class="visually-hidden"> (opens in a new tab)</span></a>
+${i}      <a class="tchip" href="${esc(t.link)}" target="_blank" rel="noopener" aria-describedby="${id}">${esc(t.name)}${tag}<span class="visually-hidden"> (opens in a new tab)</span></a>
 ${i}      <span class="tchip-tip" id="${id}" role="tooltip">${esc(t.line || t.desc || t.problem)}<span class="tchip-go" aria-hidden="true">Tap again to open &#8599;</span></span>
 ${i}    </span>`;
     };
-    const clusters = [];
-    items.forEach((t) => {
-      const key = t.homeTag || '';
-      let c = clusters.find((x) => x.key === key);
-      if (!c) { c = { key, items: [] }; clusters.push(c); }
-      c.items.push(t);
-    });
-    const chips = clusters.map((c) => c.items.map(chip).join('\n') + (c.key ? `\n${i}    <span class="tchip-note">${esc(c.key)}</span>` : '')).join('\n');
+    const chips = items.map(chip).join('\n');
     return `${i}<div class="tool-era">
 ${i}  <dt class="tool-era-name">${esc(era.name)}<span class="tool-era-when">${esc(era.when)}</span></dt>
 ${i}  <dd class="tchip-row">
