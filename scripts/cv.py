@@ -141,7 +141,7 @@ bullets(['<b>1,200+ learners</b> mentored across schools, colleges and professio
 section('SHIPPED AI TOOLS')
 S.append(Paragraph(
     '<b>14 live tools</b> built solo with the Claude API, including <b>Process Mapper</b>, <b>SOP Generator</b>, <b>Meeting Minutes Extractor</b> '
-    'and <b>Executive Briefing Generator</b>. Two Chrome extensions with <b>300+ users</b>. All at %s' % L('https://cosmik.work/shipped'), body))
+    'and <b>Executive Briefing Generator</b>. Two Chrome extensions with <b>330+ users</b>. All at %s' % L('https://cosmik.work/shipped'), body))
 
 section('SKILLS AND TOOLS')
 S.append(Paragraph('<b>Skills</b> member onboarding and support, process mapping, workflow design, automation, KPI dashboards, SOPs, CRM pipelines, outbound prospecting, AI training', body))
