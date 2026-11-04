@@ -6,6 +6,7 @@ Soumik Chatterjee is looking for a full-time role in community and member suppor
 
 ## Results
 
+- TriageOps, an AI service desk for IT MSPs, built solo with Claude Code and live in under an hour on 4 Nov 2026. Claude triages each ticket in 3 to 6 seconds and Python rules keep ransomware at P1. Live demo at https://triageops.vercel.app, build notes at https://triageops.vercel.app/build.
 - 9 prospecting pipelines, 2,314 contacts and $1.47M CAD of prospect pipeline in 90 days for a Toronto founder, a contract engagement (Feb 2026 to present). The founder estimates 20 to 30 hours a month saved.
 - 400+ instructor community across India, the US, UK, UAE and Australia at CampK12 (2020 to 2023). Manual outreach down 30%, client retention above 90%.
 - Python test automation for Bank of America and UCI Hospital at Accenture (2015 to 2019). Post-deployment defects down 15%.
@@ -15,7 +16,7 @@ Soumik Chatterjee is looking for a full-time role in community and member suppor
 
 ## Pages
 
-- [Home](https://cosmik.work/): what he does and three pieces of work
+- [Home](https://cosmik.work/): what he does, TriageOps, three pieces of client work and the 14 tools grouped by the work they replace
 - [About](https://cosmik.work/about): where he has worked, with dates
 - [Shipped](https://cosmik.work/shipped): the 14 live tools
 - [Workflow Log](https://cosmik.work/workflow-log): the five measures he uses to judge a workflow, and a build log

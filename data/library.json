@@ -3,51 +3,67 @@
     "name": "Blur Background",
     "tag": "Chrome extension",
     "users": "270+ users",
+    "homeTag": "Used by about 320 people",
     "date": "2026-07-17",
     "link": "https://chromewebstore.google.com/detail/jdlienijidakhdofpcinjdomgpbecgle",
-    "desc": "Free background blur for video calls. No sign in, no watermark, and it runs fully in the browser."
+    "desc": "Free background blur for video calls. No sign in, no watermark, and it runs fully in the browser.",
+    "line": "Chrome extension that blurs the background on any video call site, on device, with no sign in and no watermark.",
+    "era": "Engineering"
   },
   {
     "name": "Full Webpage Screenshot",
     "tag": "Chrome extension",
     "users": "40+ users",
+    "homeTag": "Used by about 320 people",
     "date": "2026-07-06",
     "link": "https://chromewebstore.google.com/detail/fullshot-full-page-screen/gdejgnbdmnfpdalaaefhmbecnecdfkbf",
-    "desc": "Captures a whole page beyond the fold with no network calls."
+    "desc": "Captures a whole page beyond the fold with no network calls.",
+    "line": "Chrome extension that captures a whole page beyond the fold in one pass at full resolution, with no network calls.",
+    "era": "Engineering"
   },
   {
     "name": "Teacher Fundraising Message Generator",
     "tag": "Education",
     "date": "2026-07-11",
     "link": "https://teacher-fundraising-tool.netlify.app",
-    "desc": "Describe what a classroom needs and get a polished donor ask, ready to send."
+    "desc": "Describe what a classroom needs and get a polished donor ask, ready to send.",
+    "line": "Describe what a classroom needs and get a donor ask ready to send, as an email or a short social post, using only what was said.",
+    "era": "Classrooms"
   },
   {
     "name": "Leave Broadcast Message Generator",
     "tag": "Everyday",
     "date": "2026-07-11",
     "link": "https://leave-broadcast-tool.netlify.app",
-    "desc": "Who is out, when, and what needs handing off, as one clean message."
+    "desc": "Who is out, when, and what needs handing off, as one clean message.",
+    "line": "Who is out, when, and what needs handing off goes in. One clean broadcast message comes out, ready for Slack, email or WhatsApp.",
+    "era": "Recruitment and operations"
   },
   {
     "name": "GitHub Profile Summarizer",
     "tag": "Business",
     "date": "2026-07-08",
     "link": "https://github-profile-summarizer.netlify.app",
-    "desc": "Paste a GitHub username and get a summary of what that person has shipped."
+    "desc": "Paste a GitHub username and get a summary of what that person has shipped.",
+    "line": "Paste a GitHub username and get a recruiter-readable summary of what that person has actually shipped, computed from the GitHub API.",
+    "era": "Recruitment and operations"
   },
   {
     "name": "Fieldnote",
     "tag": "Education",
     "date": "2026-07-05",
     "link": "https://cosmik-fieldnote.netlify.app",
-    "desc": "A spoken classroom observation becomes a clean structured report with highlights and flags."
+    "desc": "A spoken classroom observation becomes a clean structured report with highlights and flags.",
+    "line": "Speak or type a messy classroom observation and get a clean report with highlights, flags and next steps.",
+    "era": "Classrooms"
   },
   {
     "name": "Contract Generator",
     "tag": "Business",
     "date": "2026-07-04",
     "link": "https://cosmik-contract-generator.netlify.app",
-    "desc": "Agreements drafted in minutes instead of days of back and forth. Still needs a human read before anyone signs."
+    "desc": "Agreements drafted in minutes instead of days of back and forth. Still needs a human read before anyone signs.",
+    "line": "Fill in a modular form for a joining letter or exit agreement and get a draft ready for a human read, exported to PDF.",
+    "era": "Recruitment and operations"
   }
 ]

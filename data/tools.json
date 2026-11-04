@@ -2,6 +2,8 @@
   {
     "name": "Process Mapper",
     "problem": "Discovery calls are long and unstructured. A pasted call transcript goes in, a structured process map comes out with the steps, stakeholders, unstated gaps, follow-up questions and a draft diagram.",
+    "line": "A discovery call transcript goes in. The process, stakeholders, unnamed gaps, follow-up questions and a draft workflow diagram come out.",
+    "era": "Process and SOPs",
     "link": "https://process-mapper-839.netlify.app",
     "flagship": true,
     "date": "2026-07-17"
@@ -9,18 +11,24 @@
   {
     "name": "SOP Generator",
     "problem": "Workflows fail when nobody knows how they run. A rough description of a process, typed or spoken, goes in and a numbered standard operating procedure comes out with the purpose, ordered steps, tools and exceptions. Contact details are stripped before the text reaches the model.",
+    "line": "Describe a process, typed or spoken, and get a numbered SOP with its purpose, ordered steps, tools and exceptions.",
+    "era": "Process and SOPs",
     "link": "https://cosmik-sop-generator.netlify.app",
     "date": "2026-07-07"
   },
   {
     "name": "Meeting Minutes Extractor",
     "problem": "Decisions and owners get lost after a call. A transcript or a spoken recap goes in, structured minutes come out with decisions made, action items with owners and deadlines, and open questions. Nothing is stored beyond the generated minutes.",
+    "line": "A transcript or a spoken recap goes in. Decisions, action items with owners and deadlines, and open questions come out.",
+    "era": "Founder's office",
     "link": "https://meeting-minutes-extractor.netlify.app",
     "date": "2026-07-05"
   },
   {
     "name": "Executive Briefing Generator",
     "problem": "Founders have notes, emails and to-dos in five places. Raw fragments go in and a one page brief comes out with the top three priorities, the decisions only the founder can make, tasks to delegate and items that can wait.",
+    "line": "A day of notes, emails and to-dos goes in. A one page brief comes out with the top priorities, the decisions to make, tasks to delegate and what can wait.",
+    "era": "Founder's office",
     "link": "https://executive-briefing-generator.netlify.app",
     "date": "2026-07-05"
   },
@@ -28,6 +36,8 @@
     "name": "Cold Outreach Personalizer",
     "date": "2026-07-07",
     "problem": "Outbound stalls when every prospect gets the same email. A batch of prospects goes in, a tailored 3-touch sequence comes out for each one, so reply rates are not capped by how long personalization takes.",
+    "line": "A prospect list and an offer go in. A three touch email sequence comes out for each prospect, each one labelled grounded or generic.",
+    "era": "Founder's office",
     "link": "https://cold-outreach-personalizer.netlify.app",
     "buildTime": "1h 40m"
   },
@@ -35,6 +45,8 @@
     "name": "Investor Update Drafter",
     "date": "2026-07-07",
     "problem": "Founders skip investor updates when the numbers are scattered, and investors lose the thread. Raw metrics and bullets go in, a clean update comes out with a numeric sanity check built in.",
+    "line": "Raw metrics and bullets go in. A clean investor update comes out, with growth, runway and headcount change computed in code, never by the model.",
+    "era": "Founder's office",
     "link": "https://investor-update-drafter.netlify.app",
     "buildTime": "14m"
   },
@@ -42,6 +54,8 @@
     "name": "Automation Priority Sorter",
     "date": "2026-07-03",
     "problem": "Teams automate whatever is loudest, not whatever frees the most time. Submit a manual pain point, it gets scored in real time and ranked in a shared backlog.",
+    "line": "Log a manual pain point. Claude scores it for automatability, priority and time saved, and it joins a shared, ranked backlog.",
+    "era": "Process and SOPs",
     "link": "https://automation-priority-sorter.netlify.app",
     "buildTime": "about 1h"
   }
