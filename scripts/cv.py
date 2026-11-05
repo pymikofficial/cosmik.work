@@ -120,7 +120,7 @@ bullets([
     '3 years</b>, including saving a dissatisfied US customer\'s year-long subscription with a bilingual English-Spanish instructor.',
 ])
 
-rolerow('Senior Software Engineering Analyst', 'Apr 2015 to Apr 2019')
+rolerow('Senior Software Engineering Analyst', 'Apr 2015 to Mar 2019')
 S.append(Paragraph('Accenture | Chennai and Hyderabad', sub))
 bullets([
     'Built <b>Python automation frameworks</b> for clients including UCI Hospital and Bank of America, <b>reducing post-deployment '

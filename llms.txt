@@ -11,7 +11,7 @@ Soumik Chatterjee is looking for a full-time role in community and member suppor
 - TriageOps, an AI service desk for IT managed service providers, built solo with Claude Code and live in under an hour on 4 Nov 2026. Claude reads each ticket in under six seconds, fixed rules keep ransomware at the top, and 896 automated tests run on every push. Live demo at https://triageops.vercel.app.
 - 9 prospecting pipelines built within 90 days for a Toronto founder (Feb 2026 to present), feeding one dashboard that tracks 2,314 prospects across 924 companies and $1.47M CAD of pipeline. The founder estimates 20 to 30 hours a month saved.
 - Recruitment and Operations Manager at CampK12 (2020 to 2023), with a 400+ instructor workforce matched to client accounts in India, the US, UK, UAE and Australia. Manual outreach down 30%, client retention above 90%.
-- Python automation frameworks for Bank of America and UCI Hospital at Accenture (2015 to 2019). Post-deployment defects down 15%.
+- Python automation frameworks for Bank of America and UCI Hospital at Accenture (Apr 2015 to Mar 2019). Post-deployment defects down 15%.
 - 31 hiring partners signed against a target of 25 at Navgurukul Foundation (Mar to Apr 2026), 2,093 companies contacted.
 - 14 live tools, 12 AI tools and 2 Chrome extensions, all free. Blur Background has 300+ users and Full Webpage Screenshot 30+.
 - 1,200+ students mentored since 2016. Teaching Assistant on the Oxford Programmes in AI via Simplilearn, including Strategic Analysis and Decision-Making with AI (Oct 2026 to present, part time).
