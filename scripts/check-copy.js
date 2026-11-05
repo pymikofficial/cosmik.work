@@ -13,8 +13,11 @@
 // Quotes from other people inside <blockquote> keep their own wording and are
 // skipped for person, spelling, colon and semicolon checks.
 // The privacy page body is a copy of the published extension policy, so only
-// its head is checked for style. The only phone number allowed anywhere is
-// +91 84202 70119, and only inside scripts/cv.py. The site may carry none.
+// its head is checked for style.
+// Phone numbers. The only number allowed is +91 84202 70119, and only in the
+// homepage Contact section and in scripts/cv.py. Link targets (href) are
+// checked too, so a tel: or wa.me link elsewhere fails. Retired numbers are
+// blocked in every tracked text file, wherever they appear.
 
 const fs = require('fs');
 const path = require('path');
@@ -27,8 +30,15 @@ const FILES = [
   'README.md', 'scripts/cv.py',
 ];
 const POLICY_BODY_EXEMPT = new Set(['privacy-virtual-background.html']);
-// Files that may carry a phone number, and the one number each may carry.
-const PHONE_ALLOWED = new Map([['scripts/cv.py', '8420270119']]);
+// Where a phone number may appear, and the one number allowed there. With a
+// section pattern, only the lines inside the first match of it are allowed.
+const PHONE_NUMBER = '8420270119';
+const PHONE_ALLOWED = new Map([
+  ['scripts/cv.py', { number: PHONE_NUMBER }],
+  ['index.html', { number: PHONE_NUMBER, section: /<section id="contact"[\s\S]*?<\/section>/ }],
+]);
+// Retired numbers, blocked in every tracked text file. This file is skipped.
+const PHONE_BLOCKED = ['8240238610'];
 
 const RETIRED = [/chief of staff/i, /executive assistant/i, /cosmik[\s_-]*work\b/i, /\bcos\s*\/\s*mik\b/i, /\bcos\b\s*[:=]/i];
 const EM_DASH = /—|&mdash;|&#8212;|&#x2014;/i;
@@ -42,17 +52,30 @@ const US_SPELLING = /\b\w*(organiz|optimiz|prioritiz|standardiz|personaliz|summa
 // Product names and URLs that keep their published spelling.
 // schema.org type names are a fixed vocabulary, so JSON-LD "@type" values are skipped too.
 const SPELLING_OK = /Cold Outreach Personalizer|GitHub Profile Summarizer|cold-outreach-personalizer|github-profile-summarizer|"@type": "[A-Za-z]+"/g;
-const PHONE = /(?:\+\d{1,3}[\s-]?)?(?:\d[\s-]?){9,}\d|wa\.me\/|\btel:/gi;
+const PHONE = /(?:wa\.me\/|\btel:)?(?:\+\d{1,3}[\s-]?)?(?:\d[\s-]?){9,}\d|wa\.me\/|\btel:/gi;
 
-// Phone-like matches in a line, minus the one number the file may carry.
-function phoneHits(text, rel) {
-  const allowed = PHONE_ALLOWED.get(rel);
+// The 0-based line range a file may carry its allowed number on, or null.
+function allowedLines(raw, rel) {
+  const rule = PHONE_ALLOWED.get(rel);
+  if (!rule) return null;
+  if (!rule.section) return { number: rule.number, from: 0, to: Infinity };
+  const m = raw.match(rule.section);
+  if (!m) return null;
+  const from = raw.slice(0, m.index).split('\n').length - 1;
+  return { number: rule.number, from, to: from + m[0].split('\n').length - 1 };
+}
+
+// Phone-like matches in a line, minus the allowed number where it is allowed.
+function phoneHits(text, i, allowed) {
   return (text.match(PHONE) || []).filter((m) => {
-    if (!allowed) return true;
+    if (!allowed || i < allowed.from || i > allowed.to) return true;
     const digits = m.replace(/\D/g, '');
-    return digits !== allowed && digits !== '91' + allowed;
+    return digits !== allowed.number && digits !== '91' + allowed.number;
   });
 }
+
+// A retired number with any spacing, dashes, dots or brackets between digits.
+const blockedRe = (n) => new RegExp(n.split('').join('[\\s().-]*'));
 
 const decode = (s) => s
   .replace(/&nbsp;/g, ' ').replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>')
@@ -72,8 +95,10 @@ function htmlLines(src, file) {
     const quoted = line.includes('\u0001');
     const attrs = [];
     line.replace(/\b(content|alt|aria-label|title|placeholder)="([^"]*)"/gi, (_, a, v) => { attrs.push(v); return ''; });
+    const links = [];
+    line.replace(/\bhref="([^"]*)"/gi, (_, v) => { links.push(v); return ''; });
     const text = line.replace(/\u0001/g, '').replace(/<[^>]+>/g, ' ');
-    return { text: decode([text, ...attrs].join(' ')), quoted };
+    return { text: decode([text, ...attrs].join(' ')), quoted, links: decode(links.join(' ')) };
   });
 }
 
@@ -100,15 +125,16 @@ for (const rel of FILES) {
   if (!fs.existsSync(full)) continue;
   const raw = fs.readFileSync(full, 'utf8');
   const lines = rel.endsWith('.html') ? htmlLines(raw, rel) : rel.endsWith('.py') ? pyLines(raw) : textLines(raw, rel);
+  const allowed = allowedLines(raw, rel);
   const isData = rel.endsWith('.json') || rel.endsWith('.xml') || rel === 'robots.txt';
-  lines.forEach(({ text, quoted }, i) => {
-    if (!text.trim()) return;
+  lines.forEach(({ text, quoted, links = '' }, i) => {
+    if (!text.trim() && !links.trim()) return;
     const hits = [];
     RETIRED.forEach((re) => re.test(text) && hits.push(`retired term ${re}`));
     if (EM_DASH.test(text)) hits.push('em dash');
     const c = text.match(CONTRACTION);
     if (c) hits.push(`contraction "${c[0]}"`);
-    phoneHits(text, rel).forEach((m) => hits.push(`phone or WhatsApp number "${m.trim()}"`));
+    phoneHits(`${text} ${links}`, i, allowed).forEach((m) => hits.push(`phone or WhatsApp number "${m.trim()}"`));
     if (!quoted && !isData) {
       // README and the CV source are about code, so dashes in code spans are fine there.
       const prose = text.replace(/`[^`]*`/g, ' ').replace(/https?:\/\/\S+/g, ' ');
@@ -133,6 +159,31 @@ for (const rel of FILES) {
     for (const h of hits) {
       problems++;
       console.log(`${rel}:${i + 1}  ${h}\n    ${text.trim().slice(0, 140)}`);
+    }
+  });
+}
+
+// Retired numbers, in every tracked text file, raw.
+const { execFileSync } = require('child_process');
+let tracked = [];
+try {
+  tracked = execFileSync('git', ['ls-files', '-z'], { cwd: ROOT, encoding: 'utf8' }).split('\0').filter(Boolean);
+} catch (e) {
+  tracked = FILES;
+}
+const SELF = path.relative(ROOT, __filename);
+for (const rel of tracked) {
+  if (rel === SELF) continue;
+  const full = path.join(ROOT, rel);
+  if (!fs.existsSync(full) || !fs.statSync(full).isFile()) continue;
+  const buf = fs.readFileSync(full);
+  if (buf.includes(0)) continue; // binary
+  buf.toString('utf8').split('\n').forEach((line, i) => {
+    for (const n of PHONE_BLOCKED) {
+      if (blockedRe(n).test(line)) {
+        problems++;
+        console.log(`${rel}:${i + 1}  retired phone number\n    ${line.trim().slice(0, 140)}`);
+      }
     }
   });
 }
