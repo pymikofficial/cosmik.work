@@ -185,6 +185,55 @@ function renderToolsLd() {
   return `<script type="application/ld+json">\n${JSON.stringify(ld, null, 2)}\n</script>`;
 }
 
+// Every page carries the same Person and TriageOps graph, so name searches
+// and job searches see one consistent entity wherever they land. sameAs takes
+// the Chrome Web Store listings from data/library.json.
+function renderPersonLd() {
+  const ld = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'Person',
+        '@id': `${SITE}/#person`,
+        name: 'Soumik Chatterjee',
+        url: `${SITE}/`,
+        image: `${SITE}/img/soumik-portrait.jpg`,
+        jobTitle: 'AI Specialist',
+        description: 'AI Specialist working remotely from Kolkata. Claude workflows, AI automation, community and member support, and part-time AI training. Ex-Accenture, CampK12, Teach For India.',
+        email: ['mailto:soumik@cosmik.work', 'mailto:soumik2808@gmail.com'],
+        address: {
+          '@type': 'PostalAddress',
+          addressLocality: 'Kolkata',
+          addressRegion: 'West Bengal',
+          addressCountry: 'IN',
+        },
+        homeLocation: { '@type': 'Place', name: 'Kolkata, West Bengal, India' },
+        alumniOf: ['Accenture', 'CampK12', 'Teach For India'].map((name) => ({ '@type': 'Organization', name })),
+        knowsAbout: ['Claude', 'Claude Code', 'AI agents', 'AI workflow automation', 'Community support', 'AI training'],
+        sameAs: [
+          'https://www.linkedin.com/in/soumikaispecialist/',
+          'https://github.com/pymikofficial',
+          ...LIBRARY.filter(isExtension).map((l) => l.link),
+        ],
+      },
+      {
+        '@type': 'SoftwareApplication',
+        '@id': `${SITE}/#triageops`,
+        name: 'TriageOps',
+        url: 'https://triageops.vercel.app',
+        applicationCategory: 'BusinessApplication',
+        operatingSystem: 'Web',
+        datePublished: '2026-11-04',
+        description: 'An AI service desk for IT managed service providers. Claude triages each ticket, sets its priority and team, and drafts the reply from the provider\'s own runbooks.',
+        offers: { '@type': 'Offer', price: '0', priceCurrency: 'GBP' },
+        author: { '@id': `${SITE}/#person` },
+        creator: { '@id': `${SITE}/#person` },
+      },
+    ],
+  };
+  return `<script type="application/ld+json">\n${JSON.stringify(ld, null, 2)}\n</script>`;
+}
+
 // Homepage: every tool as a chip under its era, newest first inside a group.
 // The chip links to the tool. The sibling span is the hover and tap
 // description, wired to the link with aria-describedby. A "users" figure is
@@ -222,6 +271,7 @@ const SECTIONS = {
   METRICS: renderMetricCards,
   BUILDLOG: renderBuildLog,
   TOOLSLD: renderToolsLd,
+  PERSONLD: renderPersonLd,
   LIBRARY: renderLibrary,
   EXTENSIONS: renderExtensions,
 };
@@ -269,6 +319,7 @@ for (const page of PAGES) {
   const nav = fill(NAV_PARTIAL, navTokens(page.active)).trim();
   const footer = fill(FOOTER_PARTIAL, { MAP_ATTRIB: page.mapAttrib ? MAP_ATTRIB : '' }).trim();
 
+  if (!before.includes('<!-- PERSONLD:START -->')) throw new Error(`${page.file} is missing the <!-- PERSONLD:START/END --> markers`);
   let html = replaceBetween(before, '<!-- NAV:START -->', '<!-- NAV:END -->', nav);
   html = replaceBetween(html, '<!-- FOOTER:START -->', '<!-- FOOTER:END -->', footer);
 
