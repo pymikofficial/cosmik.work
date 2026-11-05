@@ -32,12 +32,14 @@ const LIBRARY = JSON.parse(read('data/library.json'));
 const MAP_ATTRIB = '\n  <div class="fl-attrib">World map: Al MacDonald / Fritz Lekschas, <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener">CC BY-SA 3.0</a></div>';
 
 const PAGES = [
+  // The homepage is one long page and the nav jumps between its sections.
+  // On the other pages the nav links back to those sections, and "active"
+  // names the homepage section the page belongs to.
   { file: 'index.html', active: 'home' },
   { file: 'about.html', active: 'about' },
-  { file: 'said.html', active: '' },
-  { file: 'shipped.html', active: 'shipped' },
-  { file: 'workflow-log.html', active: 'log' },
-  { file: 'contact.html', active: 'contact' },
+  { file: 'said.html', active: 'said' },
+  { file: 'shipped.html', active: 'tools' },
+  { file: 'workflow-log.html', active: 'work' },
   { file: 'privacy-virtual-background.html', active: 'privacy' },
   { file: '404.html', active: 'none' },
 ];
@@ -225,12 +227,19 @@ const SECTIONS = {
 };
 
 // ---- stamping ----
+// On the homepage the links are plain #section jumps and js/nav.js marks the
+// section in view. Elsewhere they point at /#section.
 function navTokens(active) {
+  const home = active === 'home';
+  const cls = (name) => (active === name ? 'active' : '');
   return {
-    HOME_CLASS: active === 'home' ? 'active' : '',
-    ABOUT_CLASS: active === 'about' ? 'active' : '',
-    SHIPPED_CLASS: active === 'shipped' ? 'active' : '',
-    LOG_CLASS: active === 'log' ? 'active' : '',
+    BASE: home ? '' : '/',
+    HOME_HREF: home ? '#hero' : '/',
+    WORK_CLASS: cls('work'),
+    TOOLS_CLASS: cls('tools'),
+    ABOUT_CLASS: cls('about'),
+    SAID_CLASS: cls('said'),
+    CONTACT_CLASS: cls('contact'),
   };
 }
 

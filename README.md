@@ -4,6 +4,10 @@ Personal site of Soumik Chatterjee, AI Specialist. End-to-end Claude workflows f
 
 Static portfolio site. Netlify runs `npm run build` on every deploy, which runs the copy check first, and serves the repo root. Every push to `main` deploys. Building before committing is not needed. Edit a page, a partial or a data file, then push. Repo files that are not part of the site, such as `scripts/`, `data/`, `partials/`, this README and `package.json`, return 404 on the live site through rules at the top of `_redirects`.
 
+## Homepage
+
+The homepage is one page read top to bottom, in this order. Hero, Selected work (TriageOps first), the 14 tools, a short About, two quotes, then Contact with the Calendly button. The nav links jump to those sections (`#work`, `#tools`, `#about`, `#said`, `#contact`) and `js/nav.js` marks the one in view. Each section ends with a Read more link to its full page, the Workflow Log, Shipped, About and /said. The old /contact page now lives in the Contact section, and `_redirects` sends /contact, /contact.html and the retired workflows paths to `/#contact`. The privacy page keeps its address, the Chrome Web Store links to it.
+
 ## Commands
 
 - `npm run build`: stamps `partials/` into every page and renders `data/*.json` into Shipped and Workflow Log. Netlify runs this on deploy. Run it locally only to preview changes.
@@ -18,7 +22,7 @@ The homepage shows every tool from `data/tools.json` and `data/library.json` as 
 
 ## CV
 
-`scripts/cv.py` builds `assets/docs/soumik-chatterjee-cv.pdf` with ReportLab (`python3 scripts/cv.py`). After a rebuild, bump the `?v=` key on every CV link (`partials/nav.html` and the CV buttons on Home, About and Contact) so browsers fetch the new file.
+`scripts/cv.py` builds `assets/docs/soumik-chatterjee-cv.pdf` with ReportLab (`python3 scripts/cv.py`). After a rebuild, bump the `?v=` key on every CV link (`partials/nav.html` and the CV buttons on Home and About) so browsers fetch the new file.
 
 ## TriageOps demo video
 

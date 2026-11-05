@@ -20,12 +20,12 @@ Soumik Chatterjee is looking for a full-time role in community and member suppor
 
 ## Pages
 
-- [Home](https://cosmik.work/): what he does, TriageOps, three pieces of client work and the 14 tools grouped by the work they replace
+- [Home](https://cosmik.work/): one page with TriageOps and three pieces of client work, the 14 tools grouped by the work they replace, a short About, two quotes and contact details
 - [About](https://cosmik.work/about): where he has worked, with dates
 - [Shipped](https://cosmik.work/shipped): the 14 live tools
 - [Workflow Log](https://cosmik.work/workflow-log): the five measures he uses to judge a workflow, and a build log
 - [What people have written](https://cosmik.work/said): dated feedback from managers, clients and colleagues
-- [Contact](https://cosmik.work/contact): book a 20-minute call or email
+- [Contact](https://cosmik.work/#contact): book a 20-minute call or email
 - [CV](https://cosmik.work/assets/docs/soumik-chatterjee-cv.pdf): one-page PDF
 
 ## Contact

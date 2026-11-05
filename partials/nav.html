@@ -1,12 +1,14 @@
 <nav id="nav" aria-label="Primary">
-  <a href="/" class="logo" data-testid="nav-logo" aria-label="Soumik Chatterjee home">soumik<span>chatterjee</span></a>
+  <a href="{{HOME_HREF}}" class="logo" data-testid="nav-logo" aria-label="Soumik Chatterjee home">soumik<span>chatterjee</span></a>
   <div class="nav-links">
-    <a href="/" class="{{HOME_CLASS}}" data-testid="nav-home">Home</a>
-    <a href="/shipped" class="{{SHIPPED_CLASS}}" data-testid="nav-shipped">Shipped</a>
-    <a href="/about" class="{{ABOUT_CLASS}}" data-testid="nav-about">About</a>
+    <a href="{{BASE}}#work" class="{{WORK_CLASS}}" data-section="work" data-testid="nav-work">Work</a>
+    <a href="{{BASE}}#tools" class="{{TOOLS_CLASS}}" data-section="tools" data-testid="nav-tools">Tools</a>
+    <a href="{{BASE}}#about" class="{{ABOUT_CLASS}}" data-section="about" data-testid="nav-about">About</a>
+    <a href="{{BASE}}#said" class="{{SAID_CLASS}}" data-section="said" data-testid="nav-said">Testimonials</a>
+    <a href="{{BASE}}#contact" class="{{CONTACT_CLASS}}" data-section="contact" data-testid="nav-contact">Contact</a>
     <a href="/assets/docs/soumik-chatterjee-cv.pdf?v=20261105a" target="_blank" rel="noopener" data-testid="nav-cv">CV<span class="visually-hidden"> (opens in a new tab)</span></a>
   </div>
-  <a href="/contact" class="nav-cta" data-testid="nav-cta"><span class="dot" aria-hidden="true"></span>Talk to Soumik</a>
+  <a href="{{BASE}}#contact" class="nav-cta" data-testid="nav-cta"><span class="dot" aria-hidden="true"></span>Talk to Soumik</a>
   <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
     <span class="nav-toggle-bar" aria-hidden="true"></span>
     <span class="nav-toggle-bar" aria-hidden="true"></span>
@@ -17,10 +19,11 @@
 <div class="mobile-menu" id="mobileMenu" aria-hidden="true" inert>
   <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">&#10005;</button>
   <nav class="mobile-menu-links" aria-label="Mobile">
-    <a href="/" class="{{HOME_CLASS}}" data-testid="mnav-home">Home</a>
-    <a href="/shipped" class="{{SHIPPED_CLASS}}" data-testid="mnav-shipped">Shipped</a>
-    <a href="/about" class="{{ABOUT_CLASS}}" data-testid="mnav-about">About</a>
+    <a href="{{BASE}}#work" class="{{WORK_CLASS}}" data-section="work" data-testid="mnav-work">Work</a>
+    <a href="{{BASE}}#tools" class="{{TOOLS_CLASS}}" data-section="tools" data-testid="mnav-tools">Tools</a>
+    <a href="{{BASE}}#about" class="{{ABOUT_CLASS}}" data-section="about" data-testid="mnav-about">About</a>
+    <a href="{{BASE}}#said" class="{{SAID_CLASS}}" data-section="said" data-testid="mnav-said">Testimonials</a>
     <a href="/assets/docs/soumik-chatterjee-cv.pdf?v=20261105a" target="_blank" rel="noopener" data-testid="mnav-cv">CV<span class="visually-hidden"> (opens in a new tab)</span></a>
-    <a href="/contact" class="mobile-menu-cta" data-testid="mnav-cta">Talk to Soumik &#8594;</a>
+    <a href="{{BASE}}#contact" class="mobile-menu-cta" data-section="contact" data-testid="mnav-cta">Talk to Soumik &#8594;</a>
   </nav>
 </div>

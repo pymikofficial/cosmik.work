@@ -21,7 +21,7 @@ const path = require('path');
 
 const ROOT = path.join(__dirname, '..');
 const FILES = [
-  'index.html', 'about.html', 'said.html', 'shipped.html', 'workflow-log.html', 'contact.html',
+  'index.html', 'about.html', 'said.html', 'shipped.html', 'workflow-log.html',
   'privacy-virtual-background.html', '404.html', 'partials/nav.html', 'partials/footer.html',
   'data/tools.json', 'data/metrics.json', 'data/library.json', 'llms.txt', 'robots.txt', 'sitemap.xml',
   'README.md', 'scripts/cv.py',
