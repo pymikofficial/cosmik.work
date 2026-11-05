@@ -1624,7 +1624,6 @@ html { scroll-padding-top: var(--nav-h); }
 .bip-table td { color: var(--text-on-dark); }
 .bip-num { width: 44px; color: var(--text-on-dark-2) !important; font-variant-numeric: tabular-nums; }
 .bip-date { white-space: nowrap; width: 104px; }
-.bip-table td:last-child { width: 120px; }
 .bip-pill { display: inline-block; font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: 999px; border: 1px solid var(--line-dark); color: var(--text-on-dark-2); white-space: nowrap; }
 .bip-pill-now { background: var(--accent); border-color: var(--accent); color: #fff; }
 .bip-pill-next { border-color: var(--accent); color: var(--accent); }
@@ -1645,8 +1644,18 @@ html { scroll-padding-top: var(--nav-h); }
   .bip-table td, .bip-table tbody th { display: block; padding: 0; border: 0; width: auto !important; }
   .bip-num { grid-column: 1; grid-row: 1; }
   .bip-table tbody th { grid-column: 2; grid-row: 1; }
-  .bip-table td:last-child { grid-column: 3; grid-row: 1; }
   .bip-table td:nth-child(3) { grid-column: 2 / 4; grid-row: 2; color: var(--text-on-dark-2); }
   .bip-date { grid-column: 2 / 4; grid-row: 3; font-size: 13px; color: var(--text-on-dark-2); }
   .bip-date::before { content: "Ready by "; }
+}
+.bip-table td:nth-child(5) { width: 120px; }
+.bip-table td:last-child { width: 130px; }
+.bip-posts-cell .bip-soon { display: block; font-size: 13px; font-weight: 600; color: var(--text-on-dark); }
+.bip-posts-cell .bip-range { display: block; font-size: 12px; color: var(--text-on-dark-2); margin-top: 2px; }
+.bip-posts-cell a { display: inline-block; min-width: 30px; text-align: center; font-size: 12px; font-weight: 600; padding: 3px 6px; margin: 0 4px 4px 0; border: 1px solid var(--accent); border-radius: 4px; color: var(--accent); text-decoration: none; }
+.bip-posts-cell a:hover { background: var(--accent); color: #fff; }
+@media (max-width: 640px) {
+  .bip-table td:nth-child(5) { grid-column: 3; grid-row: 1; width: auto; }
+  .bip-table td.bip-posts-cell { grid-column: 2 / 4; grid-row: 4; display: flex; gap: 8px; align-items: baseline; }
+  .bip-posts-cell .bip-range { margin-top: 0; }
 }
