@@ -1587,3 +1587,13 @@ html { scroll-padding-top: var(--nav-h); }
 #contact .hire-grid { margin-top: 32px; text-align: left; }
 /* The contact block lines up with the sections above it. */
 #contact .close-inner { margin-left: auto; margin-right: auto; }
+/* Homepage sections sit closer, so the page reads as one flow. The old
+   full-screen #contact rule above belonged to an earlier layout. */
+#contact { min-height: 0; display: block; }
+#work.section-tight, #tools.section-tight, #about.section-tight, #said.section-tight, #contact.section-tight { padding-top: clamp(32px, 4vw, 44px); padding-bottom: clamp(32px, 4vw, 44px); }
+#contact.section-tight { padding-bottom: 72px; }
+#hero { padding-bottom: clamp(32px, 4vw, 44px); }
+/* The last row ends the panel, with no empty bordered row under it. */
+#ways { border-bottom: 0; padding-bottom: 0; }
+#ways .ways-list { margin-bottom: 0; }
+#ways .ways-list div:last-child { border-bottom: 0; }

@@ -140,7 +140,7 @@ bullets(['<b>1,200+ learners</b> mentored across schools, colleges and professio
 
 section('SHIPPED AI TOOLS')
 S.append(Paragraph(
-    '<b>TriageOps</b>, an AI service desk for IT managed service providers, live in under an hour on 4 Nov 2026 with 189 automated tests. '
+    '<b>TriageOps</b>, an AI service desk for IT managed service providers, live in under an hour on 4 Nov 2026 with 896 automated tests on every push. '
     '<b>14 live tools</b> built solo, 12 of them with the Claude API, including <b>Process Mapper</b>, <b>SOP Generator</b>, '
     '<b>Meeting Minutes Extractor</b> and <b>Executive Briefing Generator</b>, plus two Chrome extensions with <b>330+ users</b>. All at %s'
     % L('https://cosmik.work/shipped'), body))

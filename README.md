@@ -6,7 +6,7 @@ Static portfolio site. Netlify runs `npm run build` on every deploy, which runs 
 
 ## Homepage
 
-The homepage is one page read top to bottom, in this order. Hero, Selected work (TriageOps first), the 14 tools, a short About, two quotes, then Contact with the Calendly button. The nav links jump to those sections (`#work`, `#tools`, `#about`, `#said`, `#contact`) and `js/nav.js` marks the one in view. Each section ends with a Read more link to its full page, the Workflow Log, Shipped, About and /said. The old /contact page now lives in the Contact section, and `_redirects` sends /contact, /contact.html and the retired workflows paths to `/#contact`. The privacy page keeps its address, the Chrome Web Store links to it.
+The homepage is one page read top to bottom, in this order. Hero, Selected work (TriageOps first), the 14 tools, a short About, two quotes, then Contact with the Calendly button. The nav links jump to those sections (`#work`, `#tools`, `#about`, `#said`, `#contact`) and `js/nav.js` marks the one in view. Each section ends with a link to its full page, the Workflow Log, Shipped, About and /said. The old /contact page now lives in the Contact section, and `_redirects` sends /contact, /contact.html and the retired workflows paths to `/#contact`. The privacy page keeps its address, the Chrome Web Store links to it.
 
 ## Commands
 
