@@ -14,6 +14,17 @@
   var pointer = null, REACH = 140, PUSH = 40;
   // real stars are not all the same white
   var TINTS = [[255, 244, 230], [255, 251, 243], [243, 243, 255], [225, 234, 255], [255, 238, 216]];
+  // One pre-drawn halo per tint, stamped with drawImage, so no gradient is built per star per frame.
+  var HALO = 64;
+  var halos = TINTS.map(function (t) {
+    var c = document.createElement('canvas'); c.width = c.height = HALO;
+    var g2 = c.getContext('2d'); if (!g2) return null;
+    var g = g2.createRadialGradient(HALO / 2, HALO / 2, 0, HALO / 2, HALO / 2, HALO / 2);
+    g.addColorStop(0, 'rgba(' + t[0] + ',' + t[1] + ',' + t[2] + ',1)');
+    g.addColorStop(1, 'rgba(' + t[0] + ',' + t[1] + ',' + t[2] + ',0)');
+    g2.fillStyle = g; g2.fillRect(0, 0, HALO, HALO);
+    return c;
+  });
 
   function size() {
     dpr = Math.min(window.devicePixelRatio || 1, 2);
@@ -33,10 +44,11 @@
       // most stars faint and small, a few bright, like a real sky
       var mag = Math.pow(u, 2.6);
       var r = 0.35 + mag * 1.5 + (u > 0.985 ? 0.9 : 0);
+      var ti = Math.floor(Math.random() * TINTS.length);
       stars.push({
         x: Math.random() * W, y: Math.random() * H, hx: 0, hy: 0, ox: 0, oy: 0,
         r: r, base: 0.18 + mag * 0.72,
-        tint: TINTS[Math.floor(Math.random() * TINTS.length)],
+        ti: ti, tint: TINTS[ti],
         period: 4000 + Math.random() * 8000, phase: Math.random() * Math.PI * 2, amp: 0.1 + Math.random() * 0.22,
         flare: 0, nextFlare: performance.now() + 4000 + Math.random() * 30000,
         dx: (Math.random() - .5) * 0.006, dy: (Math.random() - .5) * 0.006
@@ -55,10 +67,8 @@
       var x = s.x + s.ox, y = s.y + s.oy, t = s.tint;
       if (r > 1.3 || s.flare > 0.1) {
         // halo for the brighter ones
-        var g = ctx.createRadialGradient(x, y, 0, x, y, r * 4);
-        g.addColorStop(0, 'rgba(' + t[0] + ',' + t[1] + ',' + t[2] + ',' + (a * 0.35).toFixed(3) + ')');
-        g.addColorStop(1, 'rgba(' + t[0] + ',' + t[1] + ',' + t[2] + ',0)');
-        ctx.fillStyle = g; ctx.beginPath(); ctx.arc(x, y, r * 4, 0, Math.PI * 2); ctx.fill();
+        var h = halos[s.ti];
+        if (h) { ctx.globalAlpha = a * 0.35; ctx.drawImage(h, x - r * 4, y - r * 4, r * 8, r * 8); ctx.globalAlpha = 1; }
       }
       ctx.fillStyle = 'rgba(' + t[0] + ',' + t[1] + ',' + t[2] + ',' + a.toFixed(3) + ')';
       ctx.beginPath(); ctx.arc(x, y, r, 0, Math.PI * 2); ctx.fill();
@@ -84,9 +94,10 @@
     }
   }
   function loop(ts) {
+    raf = requestAnimationFrame(loop);
+    if (ts - last < 32) return; // about 30 fps is plenty for a slow drift and halves the CPU cost
     var dt = Math.min(50, ts - last || 16.67); last = ts;
     step(ts, dt); draw(ts);
-    raf = requestAnimationFrame(loop);
   }
   function start() { if (!running && !reduce) { running = true; last = performance.now(); raf = requestAnimationFrame(loop); } }
   function stop() { running = false; cancelAnimationFrame(raf); raf = 0; }

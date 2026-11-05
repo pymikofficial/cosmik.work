@@ -5,27 +5,27 @@
     "users": "300+ users",
     "date": "2026-07-17",
     "link": "https://chromewebstore.google.com/detail/jdlienijidakhdofpcinjdomgpbecgle",
-    "desc": "Free background blur for video calls. No sign in, no watermark, and it runs fully in the browser.",
-    "line": "Chrome extension that blurs the background on any video call site, on device, with no sign in and no watermark.",
-    "era": "Engineering"
+    "desc": "Free background blur for video calls. No sign-in, no watermark, and it runs fully in the browser.",
+    "line": "Blurs the background on any video call site, on the device, with no sign-in and no watermark.",
+    "era": "Chrome extensions"
   },
   {
     "name": "Full Webpage Screenshot",
     "tag": "Chrome extension",
     "users": "30+ users",
     "date": "2026-07-06",
-    "link": "https://chromewebstore.google.com/detail/fullshot-full-page-screen/gdejgnbdmnfpdalaaefhmbecnecdfkbf",
+    "link": "https://chromewebstore.google.com/detail/full-webpage-screenshot/gdejgnbdmnfpdalaaefhmbecnecdfkbf",
     "desc": "Captures a whole page beyond the fold with no network calls.",
-    "line": "Chrome extension that captures a whole page beyond the fold in one pass at full resolution, with no network calls.",
-    "era": "Engineering"
+    "line": "Captures a whole page beyond the fold in one pass at full resolution, with no network calls.",
+    "era": "Chrome extensions"
   },
   {
     "name": "Teacher Fundraising Message Generator",
     "tag": "Education",
     "date": "2026-07-11",
     "link": "https://teacher-fundraising-tool.netlify.app",
-    "desc": "Describe what a classroom needs and get a polished donor ask, ready to send.",
-    "line": "Describe what a classroom needs and get a donor ask ready to send, as an email or a short social post, using only what was said.",
+    "desc": "Turns a short note on what a classroom needs into a donor request ready to send.",
+    "line": "Turns a short note on what a classroom needs into a donor request, as an email or a short social post, using only what was said.",
     "era": "Classrooms"
   },
   {
@@ -33,8 +33,8 @@
     "tag": "Everyday",
     "date": "2026-07-11",
     "link": "https://leave-broadcast-tool.netlify.app",
-    "desc": "Who is out, when, and what needs handing off, as one clean message.",
-    "line": "Who is out, when, and what needs handing off goes in. One clean broadcast message comes out, ready for Slack, email or WhatsApp.",
+    "desc": "Turns who is out, when and what needs handing off into one clean message.",
+    "line": "Turns who is out, when and what needs handing off into one broadcast message for Slack, email or WhatsApp.",
     "era": "Recruitment and operations"
   },
   {
@@ -42,8 +42,8 @@
     "tag": "Business",
     "date": "2026-07-08",
     "link": "https://github-profile-summarizer.netlify.app",
-    "desc": "Paste a GitHub username and get a summary of what that person has shipped.",
-    "line": "Paste a GitHub username and get a recruiter-readable summary of what that person has actually shipped, computed from the GitHub API.",
+    "desc": "Summarises what a GitHub user has shipped, from the username alone.",
+    "line": "Summarises what a GitHub user has shipped from the username alone, using the GitHub API.",
     "era": "Recruitment and operations"
   },
   {
@@ -51,8 +51,8 @@
     "tag": "Education",
     "date": "2026-07-05",
     "link": "https://cosmik-fieldnote.netlify.app",
-    "desc": "A spoken classroom observation becomes a clean structured report with highlights and flags.",
-    "line": "Speak or type a messy classroom observation and get a clean report with highlights, flags and next steps.",
+    "desc": "Turns a spoken or typed classroom observation into a structured report with highlights and flags.",
+    "line": "Turns a spoken or typed classroom observation into a report with highlights, flags and next steps.",
     "era": "Classrooms"
   },
   {
@@ -60,8 +60,8 @@
     "tag": "Business",
     "date": "2026-07-04",
     "link": "https://cosmik-contract-generator.netlify.app",
-    "desc": "Agreements drafted in minutes instead of days of back and forth. Still needs a human read before anyone signs.",
-    "line": "Fill in a modular form for a joining letter or exit agreement and get a draft ready for a human read, exported to PDF.",
+    "desc": "Drafts a joining letter or exit agreement from a short form. It still needs a human read before anyone signs.",
+    "line": "Drafts a joining letter or exit agreement from a modular form, exported to PDF and ready for a human read.",
     "era": "Recruitment and operations"
   }
 ]

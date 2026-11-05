@@ -6,7 +6,7 @@
    edge when neither side fits, so it stays on screen.
    Demo video: the featured figure appears only when its data-video is set. */
 (function () {
-  var coarse = window.matchMedia ? window.matchMedia('(pointer: coarse)').matches : false;
+  var coarse = window.matchMedia ? window.matchMedia('(any-pointer: coarse)').matches : false;
   var wraps = Array.prototype.slice.call(document.querySelectorAll('.tchip-wrap'));
 
   if (wraps.length) {
