@@ -286,6 +286,7 @@ function navTokens(active) {
     BASE: home ? '' : '/',
     HOME_HREF: home ? '#hero' : '/',
     WORK_CLASS: cls('work'),
+    BIP_CLASS: cls('build-in-public'),
     TOOLS_CLASS: cls('tools'),
     ABOUT_CLASS: cls('about'),
     SAID_CLASS: cls('said'),

@@ -20,7 +20,7 @@ Soumik Chatterjee is looking for a full-time role in community and member suppor
 
 ## Pages
 
-- [Home](https://cosmik.work/): one page with TriageOps and three pieces of client work, the 14 tools grouped by the work they replace, a short About, two quotes and contact details
+- [Home](https://cosmik.work/): one page with TriageOps and three pieces of client work, the Build in public section (Project 01 is the Claude Architect Log, 6 Nov to 12 Dec 2026, four Claude builds and 30 posts while preparing for the Claude Certified Architect, Foundations exam), the 14 tools grouped by the work they replace, a short About, two quotes and contact details
 - [About](https://cosmik.work/about): where he has worked, with dates
 - [Shipped](https://cosmik.work/shipped): the 14 live tools
 - [Workflow Log](https://cosmik.work/workflow-log): the five measures he uses to judge a workflow, and a build log
