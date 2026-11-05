@@ -30,7 +30,7 @@
 <meta name="twitter:image:alt" content="Soumik Chatterjee, AI Specialist">
 <link rel="preload" href="/fonts/fraunces-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/inter-tight-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/css/style.css?v=20261105c">
+<link rel="stylesheet" href="/css/style.css?v=20261105e">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -288,38 +288,66 @@
       <p class="section-sub">Soumik takes one skill at a time and learns it by building in the open. Each project gets real builds, a public log and the numbers, good or bad. When one project ends, the next one starts here.</p>
 
       <article class="bip-project" id="claude-architect-log">
-        <p class="case-when">Project 01, 6 Nov to 12 Dec 2026</p>
-        <h3 class="bip-name">Claude Architect Log</h3>
-        <p>He is preparing for the Claude Certified Architect, Foundations exam by turning its 30 task statements into four working builds and one short LinkedIn post per task statement.</p>
-        <div class="bip-progress" role="img" aria-label="0 of 30 posts published">
-          <div class="bip-bar" aria-hidden="true"><span style="width:0%"></span></div>
-          <p class="bip-count"><strong>0 of 30</strong> posts published. Post 00 goes out on 6 Nov.</p>
+        <div class="bip-head">
+          <div>
+            <p class="bip-kicker">Project 01</p>
+            <h3 class="bip-name">Claude Architect Log</h3>
+            <p class="bip-lede">Soumik is preparing for the Claude Certified Architect, Foundations exam in public. Each of its 30 task statements becomes part of a working build and one short LinkedIn post.</p>
+          </div>
+          <dl class="bip-facts">
+            <div><dt>Runs</dt><dd>6 Nov to 12 Dec 2026</dd></div>
+            <div><dt>Builds</dt><dd>4</dd></div>
+            <div><dt>Posts</dt><dd>30</dd></div>
+          </dl>
         </div>
-        <ol class="bip-builds">
-          <li>
-            <p class="bip-when">Build 1, ready 6 Nov</p>
-            <div><h4>Claude Code team workflow kit</h4><p>Project rules, rules that load per folder, skills, MCP setup and plan mode tested on three task sizes.</p></div>
-            <p class="bip-status bip-now">In progress</p>
-          </li>
-          <li>
-            <p class="bip-when">Build 2, ready 18 Nov</p>
-            <div><h4>Cohort-support agent for an EdTech team</h4><p>Four MCP tools, clear error messages, a hook that blocks risky actions and a handoff to a person when it should not answer.</p></div>
-            <p class="bip-status">Up next</p>
-          </li>
-          <li>
-            <p class="bip-when">Build 3, ready 27 Nov</p>
-            <div><h4>Structured data extraction pipeline</h4><p>Output checked against a schema, retries on bad fields, batch runs and low-confidence fields sent for human review.</p></div>
-            <p class="bip-status">Planned</p>
-          </li>
-          <li>
-            <p class="bip-when">Build 4, ready 5 Dec</p>
-            <div><h4>Multi-agent research pipeline</h4><p>A coordinator with parallel subagents, a source kept with every claim and partial results when one step fails.</p></div>
-            <p class="bip-status">Planned</p>
-          </li>
-        </ol>
-        <p class="bip-note">Screenshots and code links are added here as each build ships. Independent study notes. Not affiliated with Anthropic.</p>
-        <div class="btn-row btn-row-left">
+
+        <div class="bip-progress">
+          <div class="bip-progress-top"><span>Posts published</span><strong>0 of 30</strong></div>
+          <div class="bip-bar" role="progressbar" aria-label="Posts published" aria-valuemin="0" aria-valuemax="30" aria-valuenow="0"><span style="width:0%"></span></div>
+          <p class="bip-count">Post 00 goes out on Fri 6 Nov.</p>
+        </div>
+
+        <div class="bip-table-wrap">
+          <table class="bip-table">
+            <thead>
+              <tr><th scope="col">#</th><th scope="col">Build</th><th scope="col">What it shows</th><th scope="col">Ready by</th><th scope="col">Status</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="bip-num">1</td>
+                <th scope="row">Claude Code team workflow kit</th>
+                <td>Project rules, rules that load per folder, skills, MCP setup and plan mode tested on three task sizes</td>
+                <td class="bip-date">6 Nov</td>
+                <td><span class="bip-pill bip-pill-now">In progress</span></td>
+              </tr>
+              <tr>
+                <td class="bip-num">2</td>
+                <th scope="row">Cohort-support agent for an EdTech team</th>
+                <td>Four MCP tools, clear error messages, a hook that blocks risky actions and a handoff to a person</td>
+                <td class="bip-date">18 Nov</td>
+                <td><span class="bip-pill bip-pill-next">Up next</span></td>
+              </tr>
+              <tr>
+                <td class="bip-num">3</td>
+                <th scope="row">Structured data extraction pipeline</th>
+                <td>Output checked against a schema, retries on bad fields, batch runs and human review for low-confidence fields</td>
+                <td class="bip-date">27 Nov</td>
+                <td><span class="bip-pill">Planned</span></td>
+              </tr>
+              <tr>
+                <td class="bip-num">4</td>
+                <th scope="row">Multi-agent research pipeline</th>
+                <td>A coordinator with parallel subagents, a source kept with every claim and partial results when a step fails</td>
+                <td class="bip-date">5 Dec</td>
+                <td><span class="bip-pill">Planned</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="bip-foot">
           <a href="https://www.linkedin.com/in/soumikaispecialist/" class="btn btn-primary" target="_blank" rel="noopener">Follow the series on LinkedIn <span aria-hidden="true">&#8599;</span><span class="visually-hidden"> (opens in a new tab)</span></a>
+          <p class="bip-note">Screenshots and code links are added as each build ships. Independent study notes, not affiliated with Anthropic.</p>
         </div>
       </article>
     </div>
