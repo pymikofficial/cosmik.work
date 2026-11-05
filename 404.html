@@ -11,7 +11,7 @@
 <meta name="robots" content="noindex">
 <link rel="preload" href="/fonts/fraunces-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/inter-tight-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/css/style.css?v=20261105a">
+<link rel="stylesheet" href="/css/style.css?v=20261105b">
 </head>
 <body>
 
@@ -22,12 +22,14 @@
 <nav id="nav" aria-label="Primary">
   <a href="/" class="logo" data-testid="nav-logo" aria-label="Soumik Chatterjee home">soumik<span>chatterjee</span></a>
   <div class="nav-links">
-    <a href="/" class="" data-testid="nav-home">Home</a>
-    <a href="/shipped" class="" data-testid="nav-shipped">Shipped</a>
-    <a href="/about" class="" data-testid="nav-about">About</a>
+    <a href="/#work" class="" data-section="work" data-testid="nav-work">Work</a>
+    <a href="/#tools" class="" data-section="tools" data-testid="nav-tools">Tools</a>
+    <a href="/#about" class="" data-section="about" data-testid="nav-about">About</a>
+    <a href="/#said" class="" data-section="said" data-testid="nav-said">Testimonials</a>
+    <a href="/#contact" class="" data-section="contact" data-testid="nav-contact">Contact</a>
     <a href="/assets/docs/soumik-chatterjee-cv.pdf?v=20261105a" target="_blank" rel="noopener" data-testid="nav-cv">CV<span class="visually-hidden"> (opens in a new tab)</span></a>
   </div>
-  <a href="/contact" class="nav-cta" data-testid="nav-cta"><span class="dot" aria-hidden="true"></span>Talk to Soumik</a>
+  <a href="/#contact" class="nav-cta" data-testid="nav-cta"><span class="dot" aria-hidden="true"></span>Talk to Soumik</a>
   <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
     <span class="nav-toggle-bar" aria-hidden="true"></span>
     <span class="nav-toggle-bar" aria-hidden="true"></span>
@@ -38,11 +40,12 @@
 <div class="mobile-menu" id="mobileMenu" aria-hidden="true" inert>
   <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">&#10005;</button>
   <nav class="mobile-menu-links" aria-label="Mobile">
-    <a href="/" class="" data-testid="mnav-home">Home</a>
-    <a href="/shipped" class="" data-testid="mnav-shipped">Shipped</a>
-    <a href="/about" class="" data-testid="mnav-about">About</a>
+    <a href="/#work" class="" data-section="work" data-testid="mnav-work">Work</a>
+    <a href="/#tools" class="" data-section="tools" data-testid="mnav-tools">Tools</a>
+    <a href="/#about" class="" data-section="about" data-testid="mnav-about">About</a>
+    <a href="/#said" class="" data-section="said" data-testid="mnav-said">Testimonials</a>
     <a href="/assets/docs/soumik-chatterjee-cv.pdf?v=20261105a" target="_blank" rel="noopener" data-testid="mnav-cv">CV<span class="visually-hidden"> (opens in a new tab)</span></a>
-    <a href="/contact" class="mobile-menu-cta" data-testid="mnav-cta">Talk to Soumik &#8594;</a>
+    <a href="/#contact" class="mobile-menu-cta" data-section="contact" data-testid="mnav-cta">Talk to Soumik &#8594;</a>
   </nav>
 </div>
 <!-- NAV:END -->
@@ -56,7 +59,7 @@
       <div class="btn-row">
         <a href="/" class="btn btn-primary">Go home <span aria-hidden="true">&#8594;</span></a>
         <a href="/shipped" class="btn btn-ghost">See what he built</a>
-        <a href="/contact" class="btn btn-ghost">Talk to Soumik</a>
+        <a href="/#contact" class="btn btn-ghost">Talk to Soumik</a>
       </div>
     </div>
   </section>
@@ -69,7 +72,7 @@
 </footer>
 <!-- FOOTER:END -->
 
-<script src="/js/nav.js?v=20261026h"></script>
+<script src="/js/nav.js?v=20261105a"></script>
 <script src="/js/stars.js?v=20261105a" defer></script>
 
 </body>

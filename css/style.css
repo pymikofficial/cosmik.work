@@ -1574,3 +1574,16 @@ nav#nav { position: sticky; top: 0; z-index: 2; }
 .policy-date { font-size: 13px; color: var(--text-on-dark-2); margin-top: 8px; }
 /* The closing line sits flush left under its left-aligned heading. */
 #close .close-sub { text-align: left; margin-left: 0; }
+
+/* ===== One-page home, Nov 2026. Layout only, colours and type unchanged. ===== */
+/* Jump links land below the sticky nav. */
+html { scroll-padding-top: var(--nav-h); }
+.lane h4 { font-family: 'Fraunces', Georgia, serif; font-weight: 400; font-size: 1.35rem; margin-bottom: 10px; }
+.section-more { margin-top: 26px; }
+#tools .section-eyebrow { margin-bottom: 14px; }
+#tools .tool-eras { margin-top: 28px; }
+#about .library-title { margin: 48px 0 20px; }
+#about h3.section-eyebrow { margin: 44px 0 14px; }
+#contact .hire-grid { margin-top: 32px; text-align: left; }
+/* The contact block lines up with the sections above it. */
+#contact .close-inner { margin-left: auto; margin-right: auto; }

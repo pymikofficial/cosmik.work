@@ -16,12 +16,15 @@
 /said.html          /said          301!
 /shipped.html       /shipped       301!
 /workflow-log.html  /workflow-log  301!
-/contact.html       /contact       301!
 
-# the old storefront subdomain and paths go to the contact page
-https://workflows.cosmik.work/*   https://cosmik.work/contact   301!
-/workflows/*   /contact   301!
-/workflows     /contact   301!
+# The contact page moved into the homepage, as its last section.
+/contact.html       /#contact      301!
+/contact            /#contact      301!
+
+# the old storefront subdomain and paths go to the contact section
+https://workflows.cosmik.work/*   https://cosmik.work/#contact   301!
+/workflows/*   /#contact   301!
+/workflows     /#contact   301!
 
 # Retired cosmik.work paths
 /systems                     /         301
@@ -36,5 +39,4 @@ https://workflows.cosmik.work/*   https://cosmik.work/contact   301!
 /shipped      /shipped.html      200
 /workflow-log /workflow-log.html 200
 /growth-log   /workflow-log   301
-/contact      /contact.html      200
 /said         /said.html         200
