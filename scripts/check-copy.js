@@ -13,8 +13,8 @@
 // Quotes from other people inside <blockquote> keep their own wording and are
 // skipped for person, spelling, colon and semicolon checks.
 // The privacy page body is a copy of the published extension policy, so only
-// its head is checked for style. The CV may carry the work phone number, the
-// site may not.
+// its head is checked for style. The only phone number allowed anywhere is
+// +91 84202 70119, and only inside scripts/cv.py. The site may carry none.
 
 const fs = require('fs');
 const path = require('path');
@@ -27,7 +27,8 @@ const FILES = [
   'README.md', 'scripts/cv.py',
 ];
 const POLICY_BODY_EXEMPT = new Set(['privacy-virtual-background.html']);
-const PHONE_ALLOWED = new Set(['scripts/cv.py']);
+// Files that may carry a phone number, and the one number each may carry.
+const PHONE_ALLOWED = new Map([['scripts/cv.py', '8420270119']]);
 
 const RETIRED = [/chief of staff/i, /executive assistant/i, /cosmik[\s_-]*work\b/i, /\bcos\s*\/\s*mik\b/i, /\bcos\b\s*[:=]/i];
 const EM_DASH = /—|&mdash;|&#8212;|&#x2014;/i;
@@ -41,7 +42,17 @@ const US_SPELLING = /\b\w*(organiz|optimiz|prioritiz|standardiz|personaliz|summa
 // Product names and URLs that keep their published spelling.
 // schema.org type names are a fixed vocabulary, so JSON-LD "@type" values are skipped too.
 const SPELLING_OK = /Cold Outreach Personalizer|GitHub Profile Summarizer|cold-outreach-personalizer|github-profile-summarizer|"@type": "[A-Za-z]+"/g;
-const PHONE = /(?:\+\d{1,3}[\s-]?)?(?:\d[\s-]?){9,}\d|wa\.me\/|\btel:/i;
+const PHONE = /(?:\+\d{1,3}[\s-]?)?(?:\d[\s-]?){9,}\d|wa\.me\/|\btel:/gi;
+
+// Phone-like matches in a line, minus the one number the file may carry.
+function phoneHits(text, rel) {
+  const allowed = PHONE_ALLOWED.get(rel);
+  return (text.match(PHONE) || []).filter((m) => {
+    if (!allowed) return true;
+    const digits = m.replace(/\D/g, '');
+    return digits !== allowed && digits !== '91' + allowed;
+  });
+}
 
 const decode = (s) => s
   .replace(/&nbsp;/g, ' ').replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>')
@@ -97,7 +108,7 @@ for (const rel of FILES) {
     if (EM_DASH.test(text)) hits.push('em dash');
     const c = text.match(CONTRACTION);
     if (c) hits.push(`contraction "${c[0]}"`);
-    if (!PHONE_ALLOWED.has(rel) && PHONE.test(text)) hits.push('phone or WhatsApp number');
+    phoneHits(text, rel).forEach((m) => hits.push(`phone or WhatsApp number "${m.trim()}"`));
     if (!quoted && !isData) {
       // README and the CV source are about code, so dashes in code spans are fine there.
       const prose = text.replace(/`[^`]*`/g, ' ').replace(/https?:\/\/\S+/g, ' ');

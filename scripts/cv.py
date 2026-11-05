@@ -48,7 +48,7 @@ L = lambda u, t=None: '<link href="%s" color="#1A5FD0">%s</link>' % (u, t or u)
 
 S.append(Paragraph('SOUMIK CHATTERJEE', name))
 S.append(Paragraph('AI Specialist | End-to-end Claude Workflows for Business Teams | Community and Member Support | Part-time AI Trainer, Simplilearn Oxford Programmes | Ex-Accenture, CampK12, Teach For India', headline))
-S.append(Paragraph('Kolkata, India | soumik2808@gmail.com | +91 82402 38610 | %s | %s | %s' % (
+S.append(Paragraph('Kolkata, India | soumik2808@gmail.com | +91 84202 70119 | %s | %s | %s' % (
     L('https://cosmik.work'), L('https://www.linkedin.com/in/soumikaispecialist'), L('https://github.com/pymikofficial')), contact))
 
 section('SUMMARY')
