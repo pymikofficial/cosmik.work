@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,14 +7,14 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon-180.png">
 <meta name="theme-color" content="#0B0F1A">
-<title>Workflow Log · How Soumik judges a workflow | Soumik Chatterjee</title>
-<meta name="description" content="The five measures Soumik Chatterjee checks before and after every AI workflow build, when each one matters, how to move it, and a log of the tools shipped.">
+<title>Workflow Log · How Soumik Chatterjee judges a workflow</title>
+<meta name="description" content="The five measures Soumik Chatterjee checks before and after every AI workflow build, when each one matters, how he moves it, and a log of the tools shipped.">
 <meta name="author" content="Soumik Chatterjee">
 <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
 <link rel="canonical" href="https://cosmik.work/workflow-log">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Soumik Chatterjee">
-<meta property="og:locale" content="en_US">
+<meta property="og:locale" content="en_GB">
 <meta property="og:title" content="Workflow Log · Soumik Chatterjee">
 <meta property="og:description" content="The five measures Soumik uses to judge a workflow, plus a running build log.">
 <meta property="og:url" content="https://cosmik.work/workflow-log">
@@ -30,7 +30,7 @@
 <meta name="twitter:image:alt" content="Soumik Chatterjee, AI Specialist">
 <link rel="preload" href="/fonts/fraunces-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/inter-tight-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/css/style.css?v=20261104c">
+<link rel="stylesheet" href="/css/style.css?v=20261105a">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -56,7 +56,7 @@
     <a href="/" class="" data-testid="nav-home">Home</a>
     <a href="/shipped" class="" data-testid="nav-shipped">Shipped</a>
     <a href="/about" class="" data-testid="nav-about">About</a>
-    <a href="/assets/docs/soumik-chatterjee-cv.pdf?v=20261104a" target="_blank" rel="noopener" data-testid="nav-cv">CV</a>
+    <a href="/assets/docs/soumik-chatterjee-cv.pdf?v=20261105a" target="_blank" rel="noopener" data-testid="nav-cv">CV<span class="visually-hidden"> (opens in a new tab)</span></a>
   </div>
   <a href="/contact" class="nav-cta" data-testid="nav-cta"><span class="dot" aria-hidden="true"></span>Talk to Soumik</a>
   <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
@@ -72,7 +72,7 @@
     <a href="/" class="" data-testid="mnav-home">Home</a>
     <a href="/shipped" class="" data-testid="mnav-shipped">Shipped</a>
     <a href="/about" class="" data-testid="mnav-about">About</a>
-    <a href="/assets/docs/soumik-chatterjee-cv.pdf?v=20261104a" target="_blank" rel="noopener" data-testid="mnav-cv">CV</a>
+    <a href="/assets/docs/soumik-chatterjee-cv.pdf?v=20261105a" target="_blank" rel="noopener" data-testid="mnav-cv">CV<span class="visually-hidden"> (opens in a new tab)</span></a>
     <a href="/contact" class="mobile-menu-cta" data-testid="mnav-cta">Talk to Soumik &#8594;</a>
   </nav>
 </div>
@@ -87,7 +87,7 @@
   <section class="section-tight page-top" aria-labelledby="log-title">
     <div class="container">
       <p class="section-eyebrow">Workflow Log</p>
-            <h1 class="section-title" id="log-title">How Soumik judges a workflow.</h1>
+            <h1 class="section-title" id="log-title">How Soumik judges a workflow</h1>
             <p class="section-sub">Five measures, and a log of what he shipped.</p>
       <nav class="log-jump mono" aria-label="On this page">
         <a href="#playbook">Measures</a>
@@ -99,53 +99,54 @@
   <section id="playbook" class="section-tight" aria-labelledby="playbook-title">
     <div class="container">
       <p class="section-eyebrow">Measures</p>
+      <h2 class="visually-hidden">Measures</h2>
       <details class="defs">
-        <summary class="defs-sum"><span id="playbook-title">What it is, when it matters, how he moves it.</span> <span class="mono">Show definitions</span></summary>
+        <summary class="defs-sum"><span id="playbook-title">What it is, when it matters, how he moves it</span> <span class="mono">Show definitions</span></summary>
       <!-- Rendered from data/metrics.json by scripts/build.js. Edit the JSON, not this block. -->
       <div class="metric-grid">
 <!-- METRICS:START -->
         <article class="metric-card">
           <h3 class="metric-name">Human effort per task</h3>
           <dl class="metric-dl">
-            <div><dt>What it is</dt><dd>The hours of people time a task needs from preparation through review, correction and rework. A workflow is only a win if this number falls and stays down.</dd></div>
+            <div><dt>What it is</dt><dd>The hours of people time a task needs from preparation through review, correction and rework.</dd></div>
             <div><dt>When it matters</dt><dd>Any task repeated weekly or more often, where the manual baseline can be measured before the build starts.</dd></div>
-            <div><dt>How he moves it</dt><dd>Map the task, time the manual baseline, remove steps first, and only then add automation to what is left.</dd></div>
-            <div class="metric-used"><dt>In his work</dt><dd>A 30% cut in manual outreach at CampK12 across a 400+ person workforce. For the Toronto founder, 20 to 30 hours a month back, by his own estimate.</dd></div>
+            <div><dt>How he moves it</dt><dd>He maps the task, times the manual baseline, removes steps first and only then automates what is left.</dd></div>
+            <div class="metric-used"><dt>In his work</dt><dd>A 30% cut in manual outreach effort at CampK12 for a 400+ instructor workforce. For the Toronto founder, 20 to 30 hours a month of manual number-checking saved.</dd></div>
           </dl>
         </article>
         <article class="metric-card">
           <h3 class="metric-name">Output accuracy</h3>
           <dl class="metric-dl">
-            <div><dt>What it is</dt><dd>The share of outputs that are correct and usable on real inputs without a person fixing them. Speed means nothing if quality slips.</dd></div>
+            <div><dt>What it is</dt><dd>The share of outputs that are correct and usable on real inputs without a person fixing them.</dd></div>
             <div><dt>When it matters</dt><dd>Before a workflow touches customers, money or data that people rely on.</dd></div>
-            <div><dt>How he moves it</dt><dd>Test with real inputs and edge cases, add validation checks, and keep human review before any consequential action.</dd></div>
+            <div><dt>How he moves it</dt><dd>He tests with real inputs and edge cases, adds validation checks and keeps human review before any consequential action.</dd></div>
             <div class="metric-used"><dt>In his work</dt><dd>Python automation frameworks at Accenture for banking and healthcare clients cut post-deployment defects by 15%.</dd></div>
           </dl>
         </article>
         <article class="metric-card">
           <h3 class="metric-name">Turnaround time</h3>
           <dl class="metric-dl">
-            <div><dt>What it is</dt><dd>The elapsed time from request to finished output, measured separately from effort. A fast workflow with a long queue is still slow.</dd></div>
+            <div><dt>What it is</dt><dd>The elapsed time from request to finished output, measured separately from effort.</dd></div>
             <div><dt>When it matters</dt><dd>When people wait on the result, such as outreach, reporting, screening or onboarding.</dd></div>
-            <div><dt>How he moves it</dt><dd>Run steps in parallel and remove handoffs that only pass work along.</dd></div>
-            <div class="metric-used"><dt>In his work</dt><dd>Nine parallel B2B pipelines produced 2,314 contacts and $1.47M CAD of prospect pipeline in 90 days.</dd></div>
+            <div><dt>How he moves it</dt><dd>He runs steps in parallel and removes handoffs that only pass work along.</dd></div>
+            <div class="metric-used"><dt>In his work</dt><dd>Nine parallel B2B pipelines, built within 90 days, feed one dashboard tracking 2,314 prospects and $1.47M CAD of pipeline.</dd></div>
           </dl>
         </article>
         <article class="metric-card">
           <h3 class="metric-name">Adoption without help</h3>
           <dl class="metric-dl">
-            <div><dt>What it is</dt><dd>The share of the intended users who run the workflow on their own without asking its builder for help. A workflow that depends on its creator is a liability.</dd></div>
+            <div><dt>What it is</dt><dd>The share of the intended users who run the workflow on their own without asking its builder for help.</dd></div>
             <div><dt>When it matters</dt><dd>At handoff, and again after the first month of real use.</dd></div>
-            <div><dt>How he moves it</dt><dd>Write a one page operating guide, train the team on their own tasks, and make the next step obvious at every point.</dd></div>
-            <div class="metric-used"><dt>In his work</dt><dd>This is the handoff he aims for on every build. The SOP Generator on the Shipped page exists so the one page guide takes minutes, not an afternoon.</dd></div>
+            <div><dt>How he moves it</dt><dd>He writes a one-page operating guide, trains the team on their own tasks and makes the next step obvious at every point.</dd></div>
+            <div class="metric-used"><dt>In his work</dt><dd>For the Toronto founder he wrote 9 SOPs so every workflow runs without depending on one person.</dd></div>
           </dl>
         </article>
         <article class="metric-card">
           <h3 class="metric-name">Cost per run</h3>
           <dl class="metric-dl">
             <div><dt>What it is</dt><dd>Model and tool spend per completed task, compared with the human effort it replaces.</dd></div>
-            <div><dt>When it matters</dt><dd>When volume grows and small per run costs start to add up.</dd></div>
-            <div><dt>How he moves it</dt><dd>Use the smallest model that holds quality, cache repeated steps, and trim the input before it is sent.</dd></div>
+            <div><dt>When it matters</dt><dd>When volume grows and small per-run costs start to add up.</dd></div>
+            <div><dt>How he moves it</dt><dd>He uses the smallest model that holds quality, caches repeated steps and trims the input before it is sent.</dd></div>
             <div class="metric-used"><dt>In his work</dt><dd>The tools on the Shipped page cap input size, and the ones that handle people data strip contact details before any text reaches a model.</dd></div>
           </dl>
         </article>
@@ -158,7 +159,7 @@
   <section id="build-log" class="section-tight" aria-labelledby="buildlog-title">
     <div class="container">
       <p class="section-eyebrow">Build log</p>
-      <h2 class="sub-title" id="buildlog-title">Fourteen tools, newest first.</h2>
+      <h2 class="sub-title" id="buildlog-title">Fourteen tools, newest first</h2>
       <!-- Rendered from data/tools.json and data/library.json by scripts/build.js, sorted newest first. -->
       <ol class="log-list">
 <!-- BUILDLOG:START -->
@@ -166,112 +167,112 @@
           <time class="log-date mono" datetime="2026-07-17">17 Jul 2026</time>
           <div class="log-body">
             <h3 class="log-name"><a href="https://process-mapper-839.netlify.app" target="_blank" rel="noopener">Process Mapper <span aria-hidden="true">&#8599;</span><span class="visually-hidden"> (opens in a new tab)</span></a></h3>
-            <p class="log-problem">Discovery calls are long and unstructured. A pasted call transcript goes in, a structured process map comes out with the steps, stakeholders, unstated gaps, follow-up questions and a draft diagram.</p>
-            <p class="log-meta mono">Free to try</p>
+            <p class="log-problem">Turns a discovery call transcript into a process map with steps, stakeholders, gaps, follow-up questions and a draft diagram.</p>
+            <p class="log-meta mono">Process and SOPs</p>
           </div>
         </li>
         <li class="log-item">
           <time class="log-date mono" datetime="2026-07-17">17 Jul 2026</time>
           <div class="log-body">
             <h3 class="log-name"><a href="https://chromewebstore.google.com/detail/jdlienijidakhdofpcinjdomgpbecgle" target="_blank" rel="noopener">Blur Background <span aria-hidden="true">&#8599;</span><span class="visually-hidden"> (opens in a new tab)</span></a></h3>
-            <p class="log-problem">Free background blur for video calls. No sign in, no watermark, and it runs fully in the browser.</p>
-            <p class="log-meta mono">Chrome extension · 300+ users</p>
+            <p class="log-problem">Blurs the background on any video call site, on the device, with no sign-in and no watermark.</p>
+            <p class="log-meta mono">Chrome extensions · 300+ users</p>
           </div>
         </li>
         <li class="log-item">
           <time class="log-date mono" datetime="2026-07-11">11 Jul 2026</time>
           <div class="log-body">
             <h3 class="log-name"><a href="https://teacher-fundraising-tool.netlify.app" target="_blank" rel="noopener">Teacher Fundraising Message Generator <span aria-hidden="true">&#8599;</span><span class="visually-hidden"> (opens in a new tab)</span></a></h3>
-            <p class="log-problem">Describe what a classroom needs and get a polished donor ask, ready to send.</p>
-            <p class="log-meta mono">Education</p>
+            <p class="log-problem">Turns a short note on what a classroom needs into a donor request, as an email or a short social post, using only what was said.</p>
+            <p class="log-meta mono">Classrooms</p>
           </div>
         </li>
         <li class="log-item">
           <time class="log-date mono" datetime="2026-07-11">11 Jul 2026</time>
           <div class="log-body">
             <h3 class="log-name"><a href="https://leave-broadcast-tool.netlify.app" target="_blank" rel="noopener">Leave Broadcast Message Generator <span aria-hidden="true">&#8599;</span><span class="visually-hidden"> (opens in a new tab)</span></a></h3>
-            <p class="log-problem">Who is out, when, and what needs handing off, as one clean message.</p>
-            <p class="log-meta mono">Everyday</p>
+            <p class="log-problem">Turns who is out, when and what needs handing off into one broadcast message for Slack, email or WhatsApp.</p>
+            <p class="log-meta mono">Recruitment and operations</p>
           </div>
         </li>
         <li class="log-item">
           <time class="log-date mono" datetime="2026-07-08">8 Jul 2026</time>
           <div class="log-body">
             <h3 class="log-name"><a href="https://github-profile-summarizer.netlify.app" target="_blank" rel="noopener">GitHub Profile Summarizer <span aria-hidden="true">&#8599;</span><span class="visually-hidden"> (opens in a new tab)</span></a></h3>
-            <p class="log-problem">Paste a GitHub username and get a summary of what that person has shipped.</p>
-            <p class="log-meta mono">Business</p>
+            <p class="log-problem">Summarises what a GitHub user has shipped from the username alone, using the GitHub API.</p>
+            <p class="log-meta mono">Recruitment and operations</p>
           </div>
         </li>
         <li class="log-item">
           <time class="log-date mono" datetime="2026-07-07">7 Jul 2026</time>
           <div class="log-body">
             <h3 class="log-name"><a href="https://cosmik-sop-generator.netlify.app" target="_blank" rel="noopener">SOP Generator <span aria-hidden="true">&#8599;</span><span class="visually-hidden"> (opens in a new tab)</span></a></h3>
-            <p class="log-problem">Workflows fail when nobody knows how they run. A rough description of a process, typed or spoken, goes in and a numbered standard operating procedure comes out with the purpose, ordered steps, tools and exceptions. Contact details are stripped before the text reaches the model.</p>
-            <p class="log-meta mono">Free to try</p>
+            <p class="log-problem">Turns a rough process description, typed or spoken, into a numbered SOP with purpose, steps, tools and exceptions.</p>
+            <p class="log-meta mono">Process and SOPs</p>
           </div>
         </li>
         <li class="log-item">
           <time class="log-date mono" datetime="2026-07-07">7 Jul 2026</time>
           <div class="log-body">
             <h3 class="log-name"><a href="https://cold-outreach-personalizer.netlify.app" target="_blank" rel="noopener">Cold Outreach Personalizer <span aria-hidden="true">&#8599;</span><span class="visually-hidden"> (opens in a new tab)</span></a></h3>
-            <p class="log-problem">Outbound stalls when every prospect gets the same email. A batch of prospects goes in, a tailored 3-touch sequence comes out for each one, so reply rates are not capped by how long personalization takes.</p>
-            <p class="log-meta mono">Built in 1h 40m</p>
+            <p class="log-problem">Writes a tailored three-email sequence for each prospect in a batch, each one labelled grounded or generic.</p>
+            <p class="log-meta mono">Startup and EdTech clients</p>
           </div>
         </li>
         <li class="log-item">
           <time class="log-date mono" datetime="2026-07-07">7 Jul 2026</time>
           <div class="log-body">
             <h3 class="log-name"><a href="https://investor-update-drafter.netlify.app" target="_blank" rel="noopener">Investor Update Drafter <span aria-hidden="true">&#8599;</span><span class="visually-hidden"> (opens in a new tab)</span></a></h3>
-            <p class="log-problem">Founders skip investor updates when the numbers are scattered, and investors lose the thread. Raw metrics and bullets go in, a clean update comes out with a numeric sanity check built in.</p>
-            <p class="log-meta mono">Built in 14m</p>
+            <p class="log-problem">Turns raw metrics and bullets into an investor update, with growth, runway and headcount change computed in code.</p>
+            <p class="log-meta mono">Startup and EdTech clients</p>
           </div>
         </li>
         <li class="log-item">
           <time class="log-date mono" datetime="2026-07-06">6 Jul 2026</time>
           <div class="log-body">
-            <h3 class="log-name"><a href="https://chromewebstore.google.com/detail/fullshot-full-page-screen/gdejgnbdmnfpdalaaefhmbecnecdfkbf" target="_blank" rel="noopener">Full Webpage Screenshot <span aria-hidden="true">&#8599;</span><span class="visually-hidden"> (opens in a new tab)</span></a></h3>
-            <p class="log-problem">Captures a whole page beyond the fold with no network calls.</p>
-            <p class="log-meta mono">Chrome extension · 30+ users</p>
+            <h3 class="log-name"><a href="https://chromewebstore.google.com/detail/full-webpage-screenshot/gdejgnbdmnfpdalaaefhmbecnecdfkbf" target="_blank" rel="noopener">Full Webpage Screenshot <span aria-hidden="true">&#8599;</span><span class="visually-hidden"> (opens in a new tab)</span></a></h3>
+            <p class="log-problem">Captures a whole page beyond the fold in one pass at full resolution, with no network calls.</p>
+            <p class="log-meta mono">Chrome extensions · 30+ users</p>
           </div>
         </li>
         <li class="log-item">
           <time class="log-date mono" datetime="2026-07-05">5 Jul 2026</time>
           <div class="log-body">
             <h3 class="log-name"><a href="https://meeting-minutes-extractor.netlify.app" target="_blank" rel="noopener">Meeting Minutes Extractor <span aria-hidden="true">&#8599;</span><span class="visually-hidden"> (opens in a new tab)</span></a></h3>
-            <p class="log-problem">Decisions and owners get lost after a call. A transcript or a spoken recap goes in, structured minutes come out with decisions made, action items with owners and deadlines, and open questions. Nothing is stored beyond the generated minutes.</p>
-            <p class="log-meta mono">Free to try</p>
+            <p class="log-problem">Turns a transcript or spoken recap into minutes with decisions, owners, deadlines and open questions.</p>
+            <p class="log-meta mono">Startup and EdTech clients</p>
           </div>
         </li>
         <li class="log-item">
           <time class="log-date mono" datetime="2026-07-05">5 Jul 2026</time>
           <div class="log-body">
             <h3 class="log-name"><a href="https://executive-briefing-generator.netlify.app" target="_blank" rel="noopener">Executive Briefing Generator <span aria-hidden="true">&#8599;</span><span class="visually-hidden"> (opens in a new tab)</span></a></h3>
-            <p class="log-problem">Founders have notes, emails and to-dos in five places. Raw fragments go in and a one page brief comes out with the top three priorities, the decisions only the founder can make, tasks to delegate and items that can wait.</p>
-            <p class="log-meta mono">Free to try</p>
+            <p class="log-problem">Turns a day of notes, emails and to-dos into a one-page brief with priorities, decisions, tasks to delegate and what can wait.</p>
+            <p class="log-meta mono">Startup and EdTech clients</p>
           </div>
         </li>
         <li class="log-item">
           <time class="log-date mono" datetime="2026-07-05">5 Jul 2026</time>
           <div class="log-body">
             <h3 class="log-name"><a href="https://cosmik-fieldnote.netlify.app" target="_blank" rel="noopener">Fieldnote <span aria-hidden="true">&#8599;</span><span class="visually-hidden"> (opens in a new tab)</span></a></h3>
-            <p class="log-problem">A spoken classroom observation becomes a clean structured report with highlights and flags.</p>
-            <p class="log-meta mono">Education</p>
+            <p class="log-problem">Turns a spoken or typed classroom observation into a report with highlights, flags and next steps.</p>
+            <p class="log-meta mono">Classrooms</p>
           </div>
         </li>
         <li class="log-item">
           <time class="log-date mono" datetime="2026-07-04">4 Jul 2026</time>
           <div class="log-body">
             <h3 class="log-name"><a href="https://cosmik-contract-generator.netlify.app" target="_blank" rel="noopener">Contract Generator <span aria-hidden="true">&#8599;</span><span class="visually-hidden"> (opens in a new tab)</span></a></h3>
-            <p class="log-problem">Agreements drafted in minutes instead of days of back and forth. Still needs a human read before anyone signs.</p>
-            <p class="log-meta mono">Business</p>
+            <p class="log-problem">Drafts a joining letter or exit agreement from a modular form, exported to PDF and ready for a human read.</p>
+            <p class="log-meta mono">Recruitment and operations</p>
           </div>
         </li>
         <li class="log-item">
           <time class="log-date mono" datetime="2026-07-03">3 Jul 2026</time>
           <div class="log-body">
             <h3 class="log-name"><a href="https://automation-priority-sorter.netlify.app" target="_blank" rel="noopener">Automation Priority Sorter <span aria-hidden="true">&#8599;</span><span class="visually-hidden"> (opens in a new tab)</span></a></h3>
-            <p class="log-problem">Teams automate whatever is loudest, not whatever frees the most time. Submit a manual pain point, it gets scored in real time and ranked in a shared backlog.</p>
-            <p class="log-meta mono">Built in about 1h</p>
+            <p class="log-problem">Scores each logged manual pain point for automatability, priority and time saved, and ranks it in a shared backlog.</p>
+            <p class="log-meta mono">Process and SOPs</p>
           </div>
         </li>
 <!-- BUILDLOG:END -->
@@ -292,12 +293,12 @@
 <!-- FOOTER:START -->
 <footer>
   <div><span class="fl">© 2026 Soumik Chatterjee</span> · AI Specialist</div>
-  <div><a href="mailto:soumik@cosmik.work">soumik@cosmik.work</a> · <a href="mailto:soumik2808@gmail.com">soumik2808@gmail.com</a> · <a href="https://www.linkedin.com/in/soumikaispecialist/" target="_blank" rel="noopener">LinkedIn</a> · <a href="https://github.com/pymikofficial" target="_blank" rel="noopener">GitHub</a></div>
+  <div><a href="mailto:soumik@cosmik.work">soumik@cosmik.work</a> · <a href="mailto:soumik2808@gmail.com">soumik2808@gmail.com</a> · <a href="https://www.linkedin.com/in/soumikaispecialist/" target="_blank" rel="noopener">LinkedIn<span class="visually-hidden"> (opens in a new tab)</span></a> · <a href="https://github.com/pymikofficial" target="_blank" rel="noopener">GitHub<span class="visually-hidden"> (opens in a new tab)</span></a></div>
 </footer>
 <!-- FOOTER:END -->
 
 <script src="/js/nav.js?v=20261026h"></script>
-<script src="/js/stars.js?v=20261031b" defer></script>
+<script src="/js/stars.js?v=20261105a" defer></script>
 
 </body>
 </html>

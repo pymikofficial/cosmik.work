@@ -64,10 +64,10 @@ validate(LIBRARY, ['name', 'tag', 'desc', 'link', 'date'], 'data/library.json');
 // Eras for the homepage chip rows, in display order. A tool whose "era" is
 // missing lands in the last group, Process and SOPs.
 const ERAS = [
-  { name: 'Engineering', when: 'Accenture, 2015 to 2019' },
   { name: 'Recruitment and operations', when: 'CampK12, 2020 to 2023' },
   { name: 'Classrooms', when: 'Teach For India, 2024 to 2026' },
-  { name: "Founder's office", when: 'Since 2026' },
+  { name: 'Startup and EdTech clients', when: 'AI Specialist, since Feb 2026' },
+  { name: 'Chrome extensions', when: 'For his own video calls, 2026' },
   { name: 'Process and SOPs', when: 'Every role' },
 ];
 const ERA_NAMES = ERAS.map((e) => e.name);
@@ -102,12 +102,12 @@ const toolsForGrid = [...toolsByDate].sort((a, b) => Number(!!b.flagship) - Numb
 function renderToolCards() {
   return toolsForGrid.map((t) => {
     const i = '        ';
-    return `${review(t, i)}${i}<a class="tool-card-link${t.flagship ? ' is-flagship' : ''}" href="${esc(t.link)}" target="_blank" rel="noopener" aria-label="${esc(t.name)} (opens in a new tab)">
+    return `${review(t, i)}${i}<a class="tool-card-link${t.flagship ? ' is-flagship' : ''}" href="${esc(t.link)}" target="_blank" rel="noopener">
 ${i}  <article class="ship-card tool-card">
 ${i}    <p class="ship-tag">${t.date ? esc(fmtDate(t.date)) : 'Live'}${t.flagship ? ' · Flagship' : ''}</p>
-${i}    <h2 class="ship-name">${esc(t.name)}</h2>
+${i}    <h3 class="ship-name">${esc(t.name)}</h3>
 ${i}    <p class="ship-desc">${esc(t.problem)}</p>
-${i}    <p class="tool-meta"><span>Free to try</span><span class="tool-open">Open <span aria-hidden="true">&#8599;</span></span></p>
+${i}    <p class="tool-meta"><span>Free to try</span><span class="tool-open">Open <span aria-hidden="true">&#8599;</span><span class="visually-hidden"> (opens in a new tab)</span></span></p>
 ${i}  </article>
 ${i}</a>`;
   }).join('\n');
@@ -130,8 +130,9 @@ ${i}</article>`;
 
 function renderBuildLog() {
   const entries = [
-    ...TOOLS.map((t) => ({ name: t.name, link: t.link, date: t.date, text: t.problem, meta: t.buildTime ? 'Built in ' + t.buildTime : 'Free to try' })),
-    ...LIBRARY.map((l) => ({ name: l.name, link: l.link, date: l.date, text: l.desc, meta: l.users ? l.tag + ' · ' + l.users : l.tag })),
+    // One short line per tool and one kind of meta per row, the era of work it comes from.
+    ...TOOLS.map((t) => ({ name: t.name, link: t.link, date: t.date, text: t.line || t.problem, meta: t.era || DEFAULT_ERA })),
+    ...LIBRARY.map((l) => ({ name: l.name, link: l.link, date: l.date, text: l.line || l.desc, meta: (l.era || DEFAULT_ERA) + (l.users ? ' · ' + l.users : '') })),
   ].sort((a, b) => (b.date || '').localeCompare(a.date || ''));
   return entries.map((t) => {
     const i = '        ';
@@ -161,18 +162,20 @@ function renderToolsLd() {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
     '@id': `${SITE}/shipped#tools`,
-    name: 'Workflow tools built by Soumik Chatterjee',
-    itemListElement: toolsForGrid.map((t, idx) => ({
+    name: 'Tools built by Soumik Chatterjee',
+    // All 14: the AI tools, then the library tools and the two Chrome extensions.
+    itemListElement: [...toolsForGrid, ...LIBRARY.filter((l) => !isExtension(l)), ...LIBRARY.filter(isExtension)].map((t, idx) => ({
       '@type': 'ListItem',
       position: idx + 1,
       item: {
         '@type': 'SoftwareApplication',
         name: t.name,
         url: t.link,
-        applicationCategory: 'BusinessApplication',
-        operatingSystem: 'Web',
+        applicationCategory: isExtension(t) ? 'BrowserApplication' : 'BusinessApplication',
+        operatingSystem: isExtension(t) ? 'Chrome' : 'Web',
         ...(t.date ? { datePublished: t.date } : {}),
-        description: t.problem,
+        description: t.problem || t.desc,
+        offers: { '@type': 'Offer', price: '0', priceCurrency: 'GBP' },
         creator: { '@id': `${SITE}/#person` },
       },
     })),

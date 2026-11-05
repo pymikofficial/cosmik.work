@@ -2,7 +2,7 @@
   "name": "cosmik-work",
   "private": true,
   "scripts": {
-    "build": "node scripts/build.js",
+    "build": "node scripts/check-copy.js && node scripts/build.js",
     "check": "node scripts/check-copy.js",
     "serve": "node scripts/serve.js"
   }

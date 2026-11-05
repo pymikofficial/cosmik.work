@@ -22,6 +22,8 @@ const TYPES = {
   '.png': 'image/png',
   '.jpg': 'image/jpeg',
   '.webp': 'image/webp',
+  '.ico': 'image/x-icon',
+  '.woff2': 'font/woff2',
   '.pdf': 'application/pdf',
   '.txt': 'text/plain; charset=utf-8',
   '.xml': 'application/xml; charset=utf-8',
@@ -33,8 +35,18 @@ const rules = fs.readFileSync(path.join(ROOT, '_redirects'), 'utf8')
   .filter((l) => l && !l.startsWith('#'))
   .map((l) => {
     const [from, to, status] = l.split(/\s+/);
-    return { from, to, status: Number(status) || 301 };
-  });
+    return { from, to, status: parseInt(status, 10) || 301 };
+  })
+  // Host-qualified rules (the old storefront subdomain) never match locally.
+  .filter((r) => r.from.startsWith('/'));
+
+// Netlify matching, first rule wins: exact paths, and "/dir/*" as a prefix.
+function matchRule(urlPath) {
+  return rules.find((r) => (r.from.endsWith('/*')
+    ? urlPath === r.from.slice(0, -2) || urlPath.startsWith(r.from.slice(0, -1))
+    : r.from === urlPath));
+}
+const NOT_FOUND = path.join(ROOT, '404.html');
 
 function send(res, status, file) {
   res.writeHead(status, { 'Content-Type': TYPES[path.extname(file)] || 'application/octet-stream' });
@@ -44,7 +56,12 @@ function send(res, status, file) {
 http.createServer((req, res) => {
   let urlPath = decodeURIComponent(new URL(req.url, 'http://localhost').pathname);
 
-  const rule = rules.find((r) => r.from === urlPath);
+  const rule = matchRule(urlPath);
+  if (rule && rule.status === 404) {
+    send(res, 404, NOT_FOUND);
+    console.log(`404 ${urlPath} (rule)`);
+    return;
+  }
   if (rule && rule.status >= 300 && rule.status < 400) {
     res.writeHead(rule.status, { Location: rule.to });
     res.end();
@@ -65,8 +82,7 @@ http.createServer((req, res) => {
   if (fs.existsSync(file) && fs.statSync(file).isFile()) {
     send(res, 200, file);
   } else {
-    res.writeHead(404, { 'Content-Type': 'text/plain; charset=utf-8' });
-    res.end('404 Not Found');
+    send(res, 404, NOT_FOUND);
     console.log(`404 ${urlPath}`);
   }
 }).listen(PORT, () => {

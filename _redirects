@@ -1,3 +1,23 @@
+# Repo files that are not part of the site. Listed first so they win.
+/scripts/*        /404.html  404!
+/partials/*       /404.html  404!
+/data/*           /404.html  404!
+/README.md        /404.html  404!
+/package.json     /404.html  404!
+/LICENSE          /404.html  404!
+/netlify.toml     /404.html  404!
+/.gitattributes   /404.html  404!
+/.gitignore       /404.html  404!
+
+# One URL per page. The .html copies go to the extensionless canonical URL.
+# privacy-virtual-background.html stays as it is, the Chrome Web Store links to it.
+/index.html         /              301!
+/about.html         /about         301!
+/said.html          /said          301!
+/shipped.html       /shipped       301!
+/workflow-log.html  /workflow-log  301!
+/contact.html       /contact       301!
+
 # the old storefront subdomain and paths go to the contact page
 https://workflows.cosmik.work/*   https://cosmik.work/contact   301!
 /workflows/*   /contact   301!

@@ -52,10 +52,6 @@
     font-family: 'JetBrains Mono', monospace;
   }
 
-  .serif {
-    font-family: 'Fraunces', serif;
-  }
-
   a {
     color: inherit;
     text-decoration: none;
@@ -143,17 +139,6 @@
 
   /* Featured nav item ~ Shipped/Projects carries permanent emphasis,
      even when not the active page, since it's the site's proof-of-work page. */
-  .nav-links a.nav-featured {
-    color: var(--text-on-dark);
-    font-weight: 500;
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-  }
-
-  .nav-links a.nav-featured:hover {
-    color: var(--text-on-dark);
-  }
 
   .nav-cta {
     color: var(--ink);
@@ -313,55 +298,12 @@
     overflow: hidden;
   }
 
-  .glow-orb {
-    position: absolute;
-    border-radius: 50%;
-    filter: blur(120px);
-    pointer-events: none;
-  }
-
-  .glow-1 {
-    width: 600px;
-    height: 600px;
-    background: var(--glow);
-    top: -200px;
-    right: -150px;
-    opacity: .35;
-  }
-
-
   .hero-inner {
     position: relative;
     z-index: 2;
     width: 100%;
     max-width: 1100px;
     margin: 0 auto;
-  }
-
-  .eyebrow {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11.5px;
-    letter-spacing: .14em;
-    color: var(--accent-bright);
-    text-transform: uppercase;
-    margin-bottom: 28px;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 8px 14px;
-    border: 1px solid rgba(181, 69, 43, .28);
-    border-radius: 100px;
-    background: rgba(181, 69, 43, .06);
-  }
-
-  .eyebrow::before {
-    content: "";
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: var(--accent-bright);
-    box-shadow: none;
-    flex-shrink: 0;
   }
 
   h1.hero-title {
@@ -441,7 +383,7 @@
   .hero-meta {
     margin-top: 38px;
     font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
+    font-size: 12px;
     letter-spacing: .12em;
     color: var(--text-on-dark-2);
     text-transform: uppercase;
@@ -462,7 +404,7 @@
 
   .section-eyebrow {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 11.5px;
+    font-size: 12px;
     letter-spacing: .14em;
     text-transform: uppercase;
     color: var(--accent-bright);
@@ -530,26 +472,9 @@
     border-color: rgba(181, 69, 43, .4);
   }
 
-  .ship-card-link {
-    display: flex;
-    text-decoration: none;
-    color: inherit;
-    flex: 0 1 calc((100% - 32px) / 3);
-  }
-
-  .ship-card-link .ship-card {
-    cursor: pointer;
-  }
-
-  .ship-card-link:hover .ship-card,
-  .ship-card-link:focus-visible .ship-card {
-    border-color: rgba(181, 69, 43, .6);
-    background: transparent;
-  }
-
   .ship-tag {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 10.5px;
+    font-size: 12px;
     letter-spacing: .12em;
     text-transform: uppercase;
     color: var(--accent-bright);
@@ -594,27 +519,6 @@
     color: var(--accent-bright);
   }
 
-  .cta-links {
-    margin-top: 44px;
-    display: flex;
-    gap: 28px;
-    flex-wrap: wrap;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 12.5px;
-    color: var(--text-on-dark-2);
-  }
-
-  .cta-links a {
-    transition: color .25s ease;
-    padding-bottom: 3px;
-    border-bottom: 1px solid rgba(242, 238, 227, .15);
-  }
-
-  .cta-links a:hover {
-    color: var(--accent-bright);
-    border-color: var(--accent-bright);
-  }
-
   footer {
     padding: 36px clamp(20px, 5vw, 44px) 48px;
     display: flex;
@@ -623,7 +527,7 @@
     flex-wrap: wrap;
     gap: 12px;
     font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
+    font-size: 12px;
     color: var(--text-on-dark-2);
     border-top: 1px solid var(--line-dark);
   }
@@ -667,7 +571,6 @@
     background: var(--accent-bright);
   }
 
-
   /* Page header ~ subpages (replaces the hero on non-home pages) */
   .page-header {
     padding: calc(var(--nav-h) + 64px) clamp(20px, 5vw, 44px) 20px;
@@ -677,7 +580,7 @@
 
   .breadcrumb {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 11.5px;
+    font-size: 12px;
     letter-spacing: .1em;
     text-transform: uppercase;
     display: inline-flex;
@@ -709,7 +612,7 @@
 
   .page-next .pn-label {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
+    font-size: 12px;
     letter-spacing: .12em;
     text-transform: uppercase;
     color: var(--accent-bright);
@@ -742,14 +645,6 @@
   }
 
   /* ===== GLOBAL STARFIELD ~ fixed behind every page, uniform site-wide ===== */
-  #bgStars {
-    position: fixed;
-    inset: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: -1;
-    pointer-events: none;
-  }
 
   /* =====================================================================
      cosmik.work additions
@@ -861,7 +756,7 @@
 
   .hero-proof-label {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 10.5px;
+    font-size: 12px;
     letter-spacing: .08em;
     text-transform: uppercase;
     color: var(--text-on-dark-2);
@@ -900,69 +795,8 @@
   }
 
   /* ---------- Home: proof blocks ---------- */
-  .proof-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 20px;
-  }
-
-  .proof-block {
-    border: 1px solid var(--line-dark);
-    border-radius: 20px;
-    padding: 32px 28px;
-    background: transparent;
-  }
-
-  .proof-num {
-    font-family: 'Fraunces', serif;
-    font-size: clamp(2.4rem, 4.6vw, 3.6rem);
-    font-weight: 500;
-    letter-spacing: -.03em;
-    line-height: 1;
-    color: var(--accent-bright);
-  }
-
-  .proof-num span {
-    font-size: .45em;
-    letter-spacing: 0;
-    margin-left: 2px;
-  }
-
-  .proof-label {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11.5px;
-    letter-spacing: .12em;
-    text-transform: uppercase;
-    color: var(--text-on-dark);
-    margin: 16px 0 10px;
-  }
-
-  .proof-desc {
-    color: var(--text-on-dark-2);
-    line-height: 1.55;
-    font-size: .98rem;
-  }
-
-  @media(max-width:880px) {
-    .proof-grid {
-      grid-template-columns: 1fr;
-    }
-  }
 
   /* ---------- Home: levers flowing into Growth ---------- */
-  .lever-flow {
-    margin-top: 48px;
-    display: grid;
-    grid-template-columns: minmax(0, 1.1fr) minmax(80px, .6fr) auto;
-    align-items: stretch;
-  }
-
-  .lever-list {
-    list-style: none;
-    display: grid;
-    grid-template-rows: repeat(3, 1fr);
-    gap: 16px;
-  }
 
   .lever {
     border: 1px solid rgba(181, 69, 43, .22);
@@ -972,135 +806,6 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-  }
-
-  .lever-tag {
-    font-size: 10.5px;
-    letter-spacing: .12em;
-    text-transform: uppercase;
-    color: var(--text-on-dark-2);
-  }
-
-  .lever-num {
-    font-family: 'Fraunces', serif;
-    font-size: clamp(1.6rem, 2.6vw, 2.1rem);
-    font-weight: 500;
-    letter-spacing: -.02em;
-    margin: 6px 0 2px;
-  }
-
-  .lever-desc {
-    color: var(--text-on-dark-2);
-    font-size: .92rem;
-  }
-
-  .lever-wires {
-    width: 100%;
-    height: 100%;
-    display: block;
-  }
-
-  .lever-wires-down {
-    display: none;
-  }
-
-  .wire {
-    fill: none;
-    stroke: rgba(181, 69, 43, .25);
-    stroke-width: 1.5;
-  }
-
-  .wire-flow {
-    fill: none;
-    stroke: var(--accent);
-    stroke-width: 2;
-    stroke-linecap: round;
-    stroke-dasharray: 6 18;
-    animation: wire-flow 1.6s linear infinite;
-  }
-
-  @keyframes wire-flow {
-    to {
-      stroke-dashoffset: -24;
-    }
-  }
-
-  .growth-node {
-    position: relative;
-    align-self: center;
-    width: clamp(170px, 18vw, 230px);
-    aspect-ratio: 1;
-    display: grid;
-    place-items: center;
-  }
-
-  .growth-ring {
-    position: absolute;
-    inset: 0;
-    border-radius: 50%;
-    border: 1px solid rgba(181, 69, 43, .35);
-    animation: growth-pulse 3s var(--ease) infinite;
-  }
-
-  .growth-core {
-    position: relative;
-    width: 78%;
-    aspect-ratio: 1;
-    border-radius: 50%;
-    display: grid;
-    place-items: center;
-    background: transparent;
-    border: 1.5px solid var(--accent);
-    box-shadow: none;
-  }
-
-  .growth-word {
-    font-family: 'Fraunces', serif;
-    font-style: italic;
-    font-weight: 600;
-    font-size: clamp(1.6rem, 2.6vw, 2.2rem);
-    color: var(--text-on-dark);
-  }
-
-  @keyframes growth-pulse {
-    0% {
-      transform: scale(.86);
-      opacity: .9;
-    }
-
-    100% {
-      transform: scale(1.12);
-      opacity: 0;
-    }
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .wire-flow,
-    .growth-ring {
-      animation: none;
-    }
-  }
-
-  @media(max-width:760px) {
-    .lever-flow {
-      grid-template-columns: 1fr;
-      justify-items: stretch;
-    }
-
-    .lever-wires {
-      display: none;
-    }
-
-    .lever-wires-down {
-      display: block;
-      width: 120px;
-      height: 80px;
-      margin: 8px auto;
-    }
-
-    .growth-node {
-      justify-self: center;
-    }
   }
 
   .close-inner {
@@ -1144,15 +849,6 @@
   .tool-card-link.is-flagship .ship-desc {
     max-width: 62ch;
     font-size: 1.05rem;
-  }
-
-  .tool-label {
-    font-size: 10.5px;
-    letter-spacing: .12em;
-    text-transform: uppercase;
-    color: var(--text-on-dark-2);
-    margin-top: 4px;
-    margin-bottom: -6px;
   }
 
   .tool-meta {
@@ -1224,7 +920,7 @@
 
   .metric-dl dt {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 10.5px;
+    font-size: 12px;
     letter-spacing: .12em;
     text-transform: uppercase;
     color: var(--text-on-dark-2);
@@ -1339,7 +1035,7 @@
   }
 
   .hire-tag {
-    font-size: 10.5px;
+    font-size: 12px;
     letter-spacing: .12em;
     text-transform: uppercase;
     color: var(--accent-bright);
@@ -1392,12 +1088,6 @@
     font-weight: 600;
   }
 
-  .hire-comp {
-    font-size: .95rem;
-    color: var(--text-on-dark);
-    font-weight: 500;
-  }
-
   .contact-channels {
     margin-top: 40px;
     display: flex;
@@ -1423,7 +1113,7 @@
   }
 
   .channel-list dt {
-    font-size: 10.5px;
+    font-size: 12px;
     letter-spacing: .12em;
     text-transform: uppercase;
     color: var(--text-on-dark-2);
@@ -1435,36 +1125,6 @@
   }
 
   .channel-list dd a:hover {
-    color: var(--accent-bright);
-  }
-
-  .cal-placeholder {
-    margin-top: 40px;
-    border: 1.5px dashed rgba(181, 69, 43, .45);
-    border-radius: 16px;
-    padding: 48px 24px;
-    text-align: center;
-    background: rgba(181, 69, 43, .03);
-  }
-
-  .cal-placeholder-tag {
-    font-size: 10.5px;
-    letter-spacing: .14em;
-    text-transform: uppercase;
-    color: var(--accent-bright);
-  }
-
-  .cal-placeholder-title {
-    font-family: 'Fraunces', serif;
-    font-size: 1.6rem;
-    margin: 10px 0 8px;
-  }
-
-  .cal-placeholder-sub {
-    color: var(--text-on-dark-2);
-  }
-
-  .cal-placeholder-sub a {
     color: var(--accent-bright);
   }
 
@@ -1483,25 +1143,6 @@
   }
 
   /* ---------- AI workflow positioning additions ---------- */
-  .proof-grid-4 {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
-
-  .proof-grid-4 .proof-num {
-    font-size: clamp(1.8rem, 3vw, 2.4rem);
-  }
-
-  @media(max-width:1080px) {
-    .proof-grid-4 {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-  }
-
-  @media(max-width:640px) {
-    .proof-grid-4 {
-      grid-template-columns: 1fr;
-    }
-  }
 
   .stack-row {
     list-style: none;
@@ -1530,17 +1171,7 @@
   }
 
   /* ===== Hero headshot and extra tools library ===== */
-  .hero-face {
-    display: block;
-    width: 88px;
-    height: 88px;
-    border-radius: 50%;
-    object-fit: cover;
-    object-position: 50% 30%;
-    margin: 0 auto 18px;
-    border: 2px solid rgba(181, 69, 43, .55);
-    box-shadow: none;
-  }
+
   .library-title {
     font-family: 'Fraunces', Georgia, serif;
     font-weight: 400;
@@ -1567,23 +1198,20 @@
   }
   .library a:hover { border-color: rgba(181, 69, 43, .5); transform: translateY(-2px); }
   .lib-name { display: block; font-size: 17px; font-weight: 600; color: var(--text-on-dark); }
-  .lib-tag { display: block; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--accent-bright); margin: 4px 0 8px; }
+  .lib-tag { display: block; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--accent-bright); margin: 4px 0 8px; }
   .lib-desc { display: block; font-size: 14.5px; line-height: 1.5; color: var(--text-on-dark-2); }
   @media (max-width: 720px) { .library { grid-template-columns: 1fr; } }
 
   /* ===== Audit fixes ===== */
   .section-sub + .metric-grid,
-  .section-sub + .proof-grid,
   .section-sub + .tool-grid,
   .section-sub + .library { margin-top: 36px; }
   .close-sub { margin: 14px auto 28px; text-align: center; }
   .nf-main { min-height: calc(100vh - 220px); display: flex; align-items: center; }
-  .hero-proof-label { font-size: 11.5px; }
+  .hero-proof-label { font-size: 12px; }
   @media (max-width: 640px) { .hero-proof-label { font-size: 9.5px; } }
 
   /* ---------- About ---------- */
-  .hero-why { color: var(--accent-bright); text-decoration: underline; text-decoration-color: rgba(181, 69, 43, .45); text-underline-offset: 3px; }
-  .hero-why:hover { text-decoration-color: var(--accent-bright); }
   .about-intro { display: flex; gap: 32px; align-items: flex-start; margin-top: 28px; max-width: 900px; }
   .about-face { width: 150px; height: auto; aspect-ratio: 1283 / 1226; border-radius: 14px; object-fit: cover; border: 2px solid rgba(181, 69, 43, .55); box-shadow: none; flex-shrink: 0; }
   .about-intro-text p { line-height: 1.7; color: var(--text-on-dark-2); margin-bottom: 14px; max-width: 68ch; }
@@ -1591,7 +1219,7 @@
   .about-body { line-height: 1.75; color: var(--text-on-dark-2); margin-bottom: 16px; max-width: 68ch; }
   .log-meta a { color: var(--accent-bright); }
   .story-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
-  .story-num { font-size: .78rem; color: var(--accent-bright); margin-bottom: 10px; }
+
   .story-title { font-family: 'Fraunces', serif; font-size: 1.35rem; font-weight: 500; letter-spacing: -.015em; margin-bottom: 10px; }
   .story-text { line-height: 1.65; color: var(--text-on-dark-2); font-size: .97rem; }
   .about-beyond { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: 40px; align-items: center; }
@@ -1608,7 +1236,7 @@
 
   /* ---------- Touch: bigger hit areas, readable labels ---------- */
   @media (pointer: coarse) {
-    .breadcrumb a, footer a, .pn-back, .log-jump a, .text-link, .channel-list a, .log-meta a, .hero-why {
+    .breadcrumb a, footer a, .pn-back, .log-jump a, .text-link, .channel-list a, .log-meta a {
       padding-top: 6px;
       padding-bottom: 6px;
     }
@@ -1617,8 +1245,8 @@
     .log-jump a { display: inline-block; }
   }
   @media (max-width: 640px) {
-    .metric-dl dt, .ship-tag, .tool-label, .hire-tag, .channel-list dt { font-size: 11px; }
-    .hero-proof-label { font-size: 10.5px; }
+    .metric-dl dt, .ship-tag, .hire-tag, .channel-list dt { font-size: 12px; }
+    .hero-proof-label { font-size: 12px; }
   }
 
 .origin-archive-link { margin-top: 22px; font-size: .92rem; }
@@ -1628,7 +1256,7 @@
 /* Collapsible definitions on the Workflow Log */
 .defs-sum { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 8px 16px; cursor: pointer; list-style: none; padding: 14px 0; border-bottom: 1px solid var(--line-dark); font-family: 'Fraunces', serif; font-size: clamp(1.25rem, 3.5vw, 1.7rem); }
 .defs-sum::-webkit-details-marker { display: none; }
-.defs-sum .mono { font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; color: var(--accent-bright); }
+.defs-sum .mono { font-size: .78rem; letter-spacing: .08em; text-transform: uppercase; color: var(--accent-bright); }
 .defs[open] .defs-sum .mono { visibility: hidden; }
 .defs .metric-grid { margin-top: 24px; }
 
@@ -1637,7 +1265,6 @@
    no starfield, no cards, no italic accent words, no tracked mono labels.
    Kept as an override block so older rules above still resolve.
    ===================================================================== */
-#bgStars, .glow-orb, .growth-node, .lever-wires, .lever-wires-down { display: none !important; }
 
 body { background: var(--paper); color: var(--text-on-dark); }
 
@@ -1656,18 +1283,17 @@ h1.hero-title { font-size: clamp(2.1rem, 4.6vw, 3.9rem); line-height: 1.08; max-
 h2.section-title, h1.section-title { font-size: clamp(1.7rem, 3.4vw, 2.6rem); line-height: 1.15; }
 .cta-title { font-size: clamp(1.8rem, 3.8vw, 2.9rem); }
 
-.section-eyebrow, .eyebrow, .metric-dl dt, .metric-used dt, .hero-proof-label, .ship-tag, .tool-label, .hire-tag,
-.channel-list dt, .log-date, .log-meta, .breadcrumb, .page-next .pn-label, .story-num, .about-figure figcaption,
-.cal-placeholder-tag, .lib-tag, .tool-meta, .defs-sum .mono {
+.section-eyebrow, .metric-dl dt, .metric-used dt, .hero-proof-label, .ship-tag, .hire-tag,
+.channel-list dt, .log-date, .log-meta, .breadcrumb, .page-next .pn-label, .about-figure figcaption, .lib-tag, .tool-meta, .defs-sum .mono {
   font-family: 'Inter Tight', -apple-system, BlinkMacSystemFont, sans-serif;
   text-transform: none;
   letter-spacing: 0;
 }
-.section-eyebrow, .eyebrow { font-size: 14px; color: var(--text-on-dark-2); font-weight: 500; margin-bottom: 18px; }
+.section-eyebrow { font-size: 14px; color: var(--text-on-dark-2); font-weight: 500; margin-bottom: 18px; }
 .metric-dl dt, .metric-used dt, .channel-list dt { font-size: 13px; color: var(--text-on-dark-2); font-weight: 500; }
 .hero-proof-label { font-size: 13px; color: var(--text-on-dark-2); }
 .hero-proof-num { font-family: 'Inter Tight', sans-serif; font-weight: 600; color: var(--text-on-dark); }
-.log-date, .ship-tag, .tool-label, .hire-tag { font-size: 13px; color: var(--text-on-dark-2); }
+.log-date, .ship-tag, .hire-tag { font-size: 13px; color: var(--text-on-dark-2); }
 
 /* hero */
 #hero { text-align: left; }
@@ -1676,11 +1302,11 @@ h2.section-title, h1.section-title { font-size: clamp(1.7rem, 3.4vw, 2.6rem); li
 .hero-sub strong { color: var(--text-on-dark); }
 .hero-proof-strip { justify-content: flex-start; }
 .btn-row { justify-content: flex-start; }
-.hero-portrait { display: block; width: 128px; height: 128px; object-fit: cover; border-radius: 6px; margin: 0 0 28px; border: 0; }
+
 .hero-banner { display: none; }
 
 /* cards become plain blocks with a rule underneath */
-.metric-card, .ship-card, .tool-card, .hire-card, .proof-block, .story-grid > *, .cal-placeholder, .log-item {
+.metric-card, .ship-card, .tool-card, .hire-card, .story-grid > *, .log-item {
   border: 0;
   border-radius: 0;
   background: transparent;
@@ -1690,7 +1316,7 @@ h2.section-title, h1.section-title { font-size: clamp(1.7rem, 3.4vw, 2.6rem); li
   border-bottom: 1px solid var(--line-dark);
 }
 .ship-card::before, .ship-card::after, .metric-card::before, .hire-card::before, .tool-card::before { display: none !important; }
-.ship-card-link:hover .ship-card, .tool-card-link:hover .tool-card { transform: none; border-bottom-color: var(--accent); }
+.tool-card-link:hover .tool-card { transform: none; border-bottom-color: var(--accent); }
 .hire-primary { border: 0; border-top: 3px solid var(--accent); padding-top: 24px; }
 .hire-secondary { border-top: 1px solid var(--line-dark); padding-top: 24px; }
 
@@ -1718,7 +1344,7 @@ nav#nav { background: rgba(11, 15, 26, .92); border-bottom: 1px solid var(--line
 /* links, chips, images */
 .text-link, .hero-sub a, .log-meta a, .channel-list dd a, .origin-archive-link a { color: var(--accent); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
 .stack-row li, .stack-row span { background: var(--paper-2); border: 1px solid var(--line-dark); color: var(--text-on-dark); border-radius: 4px; font-family: 'Inter Tight', sans-serif; letter-spacing: 0; text-transform: none; }
-.about-face, .contact-headshot, .hero-face { border: 0; border-radius: 6px; box-shadow: none; }
+.about-face, .contact-headshot { border: 0; border-radius: 6px; box-shadow: none; }
 .about-figure img { border: 1px solid var(--line-dark); border-radius: 4px; }
 footer { border-top: 1px solid var(--line-dark); color: var(--text-on-dark-2); }
 footer a { color: var(--text-on-dark-2); }
@@ -1758,12 +1384,12 @@ footer a:hover { color: var(--text-on-dark); }
 .path-list .path-when { font-size: 13px; color: var(--text-on-dark-2); padding-top: 4px; }
 .path-list h3 { font-family: 'Fraunces', Georgia, serif; font-weight: 400; font-size: 1.25rem; margin-bottom: 6px; }
 .path-list p { color: var(--text-on-dark); line-height: 1.6; font-size: .98rem; }
-.path-list p.path-note { color: var(--text-on-dark-2); font-size: .92rem; margin-top: 6px; }
+
 @media (max-width: 640px) { .path-list li { grid-template-columns: 1fr; gap: 6px; } }
 
 @media (max-width: 640px) {
   h1.hero-title { font-size: 2rem; }
-  .hero-portrait { width: 104px; height: 104px; }
+
 }
 #hero { min-height: 0; padding: 72px clamp(20px, 5vw, 44px) 56px; align-items: stretch; }
 .hero-inner { max-width: 1240px; margin: 0 auto; }
@@ -1797,8 +1423,6 @@ h2.section-title { margin-bottom: 28px; }
 .log-name { font-family: 'Fraunces', Georgia, serif; font-weight: 400; font-size: 1.2rem; }
 /* original hero banner, restored 31 Oct 2026 at Soumik's request */
 .hero-banner { display: block; width: 100%; max-width: 760px; height: auto; margin: 0 0 32px; border-radius: 8px; border: 0; box-shadow: none; }
-.hero-why-line { color: var(--text-on-dark-2); font-size: .98rem; line-height: 1.55; max-width: 62ch; margin: -6px 0 26px; }
-.hero-why-line a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
 .said-small p { font-size: 1rem; }
 .said-small { margin-top: 14px; }
 .hire-card .said { margin-top: 24px; }
@@ -1825,13 +1449,13 @@ main, nav#nav, footer, .page-header, .page-next { position: relative; z-index: 1
 .hero-proof-item { text-decoration: none; color: inherit; }
 a.hero-proof-item:hover .hero-proof-num { color: var(--accent); }
 .hero-proof-label { max-width: 26ch; line-height: 1.4; }
-.close-ways { max-width: 62ch; margin: 0 auto 26px; color: var(--text-on-dark-2); line-height: 1.6; font-size: .98rem; }
-#close { text-align: left; } .close-inner { margin-left: 0; } .close-ways { margin-left: 0; }
+
+#close { text-align: left; } .close-inner { margin-left: 0; }
 .ways-list { margin: 14px 0 18px; }
 .ways-list div { display: grid; grid-template-columns: 84px 1fr; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--line-dark); font-size: .98rem; line-height: 1.55; }
 .ways-list dt { color: var(--text-on-dark-2); }
 .ways-list dd { color: var(--text-on-dark); }
-.hire-note { color: var(--text-on-dark-2); font-size: .95rem; margin-top: 4px; }
+
 /* reading measure on a dark page */
 .case p, .lane p, .path-list p, .principles p, .about-intro-text p, .said-intro, .section-sub, .ship-desc, .lib-desc, .hero-sub, .log-item p { max-width: 65ch; }
 .case p, .lane p, .path-list p, .principles p, .about-intro-text p, .hero-sub { font-size: 1.0625rem; line-height: 1.6; }
@@ -1840,7 +1464,6 @@ a.hero-proof-item:hover .hero-proof-num { color: var(--accent); }
 #hero { padding-top: 48px; padding-bottom: 40px; }
 h1.hero-title { font-size: clamp(2rem, 3.4vw, 3rem); max-width: 22ch; }
 .hero-sub { margin-top: 14px; margin-bottom: 12px; }
-.hero-why-line { margin-bottom: 18px; }
 .hero-proof-strip { margin-bottom: 22px; }
 @media (min-width: 981px) {
   .hero-inner { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr); column-gap: 56px; align-items: center; }
@@ -1923,3 +1546,31 @@ h1.hero-title { font-size: clamp(2rem, 3.4vw, 3rem); max-width: 22ch; }
   .tool-era-name { padding-top: 0; }
   .tchip { padding: 9px 12px; }
 }
+
+/* ===== Audit fixes, Nov 2026. The look stays the same: contrast, reach, motion and alignment only. ===== */
+/* Primary button fill a shade darker so white text passes WCAG AA (4.7:1, hover 5.5:1). */
+.btn-primary { background: #C2502F; color: #FFFFFF; }
+.btn-primary:hover { background: #B5452B; color: #FFFFFF; transform: none; }
+/* The nav stays in reach on long pages. The open mobile menu still covers it. */
+nav#nav { position: sticky; top: 0; z-index: 2; }
+.mobile-menu { z-index: 3; }
+/* Build log rows stack on phones. */
+@media (max-width: 640px) { .log-item { grid-template-columns: 1fr; gap: 6px; } }
+/* Reserve the bookshelf box before the lazy image loads. */
+.about-figure { width: 100%; }
+/* No smooth scrolling for people who ask for less motion. */
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+/* Bigger tap areas on the header controls, nothing drawn changes. */
+.nav-toggle, .mobile-menu-close { position: relative; }
+.nav-toggle::after, .mobile-menu-close::after { content: ""; position: absolute; inset: -6px; }
+@media (max-width: 820px) { .nav-cta { position: relative; } .nav-cta::after { content: ""; position: absolute; inset: -8px -4px; } }
+@media (pointer: coarse) { footer a { padding-top: 9px; padding-bottom: 9px; } }
+/* Proof strip lines up with the text above it, and phone rows lose the stray dividers. */
+.hero-proof-strip { margin-left: 0; align-items: start; }
+@media (max-width: 640px) { .hero-proof-item:not(:last-child) { border-right: 0; } }
+/* Privacy policy page in the site type. */
+.policy h2 { font-family: 'Fraunces', Georgia, serif; font-weight: 400; font-size: 1.3rem; margin: 32px 0 8px; }
+.policy p { line-height: 1.6; margin-bottom: 14px; color: var(--text-on-dark-2); max-width: 65ch; }
+.policy-date { font-size: 13px; color: var(--text-on-dark-2); margin-top: 8px; }
+/* The closing line sits flush left under its left-aligned heading. */
+#close .close-sub { text-align: left; margin-left: 0; }

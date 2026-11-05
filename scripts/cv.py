@@ -1,4 +1,4 @@
-"""Builds assets/docs/soumik-chatterjee-cv.pdf. Run: python3 scripts/cv.py"""
+"""Builds assets/docs/soumik-chatterjee-cv.pdf. Run it with python3 scripts/cv.py"""
 from reportlab.lib.pagesizes import A4
 from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Table, TableStyle, HRFlowable
 from reportlab.lib.styles import ParagraphStyle
@@ -10,15 +10,15 @@ OUT = os.path.join(os.path.dirname(__file__), '..', 'assets', 'docs', 'soumik-ch
 BLUE = colors.HexColor('#1A5FD0')
 INK = colors.black
 
-doc = SimpleDocTemplate(OUT, pagesize=A4, leftMargin=34, rightMargin=34, topMargin=18, bottomMargin=12,
+doc = SimpleDocTemplate(OUT, pagesize=A4, leftMargin=34, rightMargin=34, topMargin=14, bottomMargin=8,
                         title='Soumik Chatterjee CV', author='Soumik Chatterjee')
 W = A4[0] - 68
 
 name = ParagraphStyle('name', fontName='Helvetica-Bold', fontSize=19, leading=21, textColor=INK)
-headline = ParagraphStyle('headline', fontName='Helvetica-Bold', fontSize=11, leading=14, textColor=BLUE)
+headline = ParagraphStyle('headline', fontName='Helvetica-Bold', fontSize=10.2, leading=12.6, textColor=BLUE)
 contact = ParagraphStyle('contact', fontName='Helvetica', fontSize=8.1, leading=11, textColor=INK)
-sec = ParagraphStyle('sec', fontName='Helvetica-Bold', fontSize=10, leading=12, textColor=BLUE, spaceBefore=3.5, spaceAfter=1)
-body = ParagraphStyle('body', fontName='Helvetica', fontSize=7.9, leading=9.5, textColor=INK)
+sec = ParagraphStyle('sec', fontName='Helvetica-Bold', fontSize=10, leading=12, textColor=BLUE, spaceBefore=2.5, spaceAfter=1)
+body = ParagraphStyle('body', fontName='Helvetica', fontSize=7.9, leading=9.2, textColor=INK)
 bul = ParagraphStyle('bul', parent=body, leftIndent=10, bulletIndent=1, spaceAfter=0)
 bul2 = ParagraphStyle('bul2', parent=bul, leftIndent=18, bulletIndent=9)
 role = ParagraphStyle('role', fontName='Helvetica-Bold', fontSize=8.6, leading=10.8, textColor=INK)
@@ -31,7 +31,7 @@ S = []
 
 def section(t):
     S.append(Paragraph(t, sec))
-    S.append(HRFlowable(width='100%', thickness=0.6, color=INK, spaceAfter=3))
+    S.append(HRFlowable(width='100%', thickness=0.6, color=INK, spaceAfter=2))
 
 def rolerow(title, when, style=role):
     t = Table([[Paragraph(title, style), Paragraph(when, date)]], colWidths=[W * 0.76, W * 0.24])
@@ -47,24 +47,24 @@ def bullets(items, style=bul):
 L = lambda u, t=None: '<link href="%s" color="#1A5FD0">%s</link>' % (u, t or u)
 
 S.append(Paragraph('SOUMIK CHATTERJEE', name))
-S.append(Paragraph('AI Specialist | End-to-end Claude Workflows for Business Teams | Community and Member Support | Part-time AI Trainer, Simplilearn Oxford Programmes', headline))
-S.append(Paragraph('Kolkata, India | soumik2808@gmail.com | +91 84202 70119 | %s | %s | %s' % (
+S.append(Paragraph('AI Specialist | End-to-end Claude Workflows for Business Teams | Community and Member Support | Part-time AI Trainer, Simplilearn Oxford Programmes | Ex-Accenture, CampK12, Teach For India', headline))
+S.append(Paragraph('Kolkata, India | soumik2808@gmail.com | +91 82402 38610 | %s | %s | %s' % (
     L('https://cosmik.work'), L('https://www.linkedin.com/in/soumikaispecialist'), L('https://github.com/pymikofficial')), contact))
 
 section('SUMMARY')
 S.append(Paragraph(
-    'AI specialist with 9+ years across software engineering, client operations, education and founder support, working in three lanes, '
-    'community and member support, Claude workflows, and part-time AI training. For God Crew I built <b>9 pipeline systems and one founder dashboard</b> that save the '
-    'founder <b>20 to 30 hours a month</b> and track a <b>$1.47M CAD pipeline</b>. At CampK12 I held <b>90%+ client retention</b> for 3 years, '
-    'and I have mentored <b>1,200+ students</b> across schools, colleges and professional programmes.', body))
+    'AI Specialist with 9+ years across software engineering, client operations, education and founder support, working directly with founders and CXOs '
+    'in three lanes, community and member support, Claude workflows and part-time AI training. Built <b>9 pipeline systems and one founder dashboard</b> for God Crew '
+    'that save the founder <b>20 to 30 hours a month</b> and track a <b>$1.47M CAD pipeline</b>. Held <b>90%+ client retention</b> at CampK12 for 3 years, '
+    'and mentored <b>1,200+ students</b> across schools, colleges and professional programmes.', body))
 
 section('PROFESSIONAL EXPERIENCE')
 
-rolerow('AI Specialist', 'Feb 2026 - Present')
-S.append(Paragraph('Startup and EdTech Clients (contract engagements) | Remote from Kolkata | Contract work is closed the day a full-time role is joined, '
+rolerow('AI Specialist', 'Feb 2026 to present')
+S.append(Paragraph('Startup and EdTech Clients (Contract engagements) | Remote from Kolkata | Contract work is closed the day a full-time role is joined, '
                    'weekend AI teaching is retained and declared up front', sub))
 
-rolerow('God Crew (Toronto), Growth Systems and Automation', 'Feb 2026 - Present', role2)
+rolerow('God Crew (Toronto), Growth Systems and Automation', 'Feb 2026 to present', role2)
 S.append(Paragraph('24/7 biohazard and trauma scene cleanup company | Remote', sub2))
 bullets([
     'Built the growth engine from scratch. <b>9 pipeline systems feeding one live sales dashboard</b> tracking <b>2,314 prospects across 924 companies '
@@ -75,7 +75,7 @@ bullets([
     'Wrote <b>9 SOPs</b> so every workflow runs without depending on one person, and built the landing pages with Claude Code.',
 ], bul2)
 
-rolerow('Navgurukul Foundation, Placement Outreach Manager', 'Mar 2026 - Apr 2026', role2)
+rolerow('Navgurukul Foundation, Placement Outreach Manager', 'Mar 2026 to Apr 2026', role2)
 S.append(Paragraph('Nonprofit for underserved learners | Remote | 45-day placement drive, reporting to leadership', sub2))
 bullets([
     'Contacted <b>2,093 companies with 4,200 open roles</b>, shortlisted 65 and signed <b>31 hiring partners against a target of 25 (124%)</b>.',
@@ -87,10 +87,10 @@ rolerow('Vokido (UK), Growth Consultant, Founders\' Office', 'Sep 2026', role2)
 S.append(Paragraph('AI spoken-English app for kids | Remote | One-month fixed-term agreement, driving India expansion', sub2))
 bullets([
     'Designed the pan-India partner centre model (<b>30% recurring commission</b>, attribution codes, monthly payouts), a <b>1,000-centre</b> outreach plan, '
-    'the B2C and B2B2C playbook for centres serving kids aged 5 to 14, and a referral program aimed at <b>10x paid users</b> by December 2026.',
+    'the B2C and B2B2C playbook for centres serving kids aged 5 to 14, and a referral programme aimed at <b>10x paid users</b> by December 2026.',
 ], bul2)
 
-rolerow('Simplilearn, Teaching Assistant, Oxford Programmes in AI', 'Oct 2026 - Present, part-time', role2)
+rolerow('Simplilearn, Teaching Assistant, Oxford Programmes in AI', 'Oct 2026 to present, part time', role2)
 S.append(Paragraph('One-year contract | Remote | Includes Strategic Analysis and Decision-Making with AI', sub2))
 bullets([
     'Runs cohort inductions, discussion forums and feedback on every project. Won through a cold LinkedIn pitch for a Bangalore-only opening, turned remote.',
@@ -102,16 +102,16 @@ bullets([
     'Resource guide shared with every learner.',
 ], bul2)
 
-rolerow('Fellow Leader, Math and Computer (Grades 5-12)', 'Apr 2024 - Mar 2026')
+rolerow('Fellow Leader, Maths and Computer (Grades 5 to 12)', 'Apr 2024 to Mar 2026')
 S.append(Paragraph('Teach For India (education nonprofit) | Kolkata | KECT Academy, St. Patrick\'s Day School (Dhapa)', sub))
 bullets([
-    'Introduced an AI-assisted lesson prep workflow that <b>cut teacher prep time by 40%</b> across Math and Computer studies.',
+    'Introduced an AI-assisted lesson prep workflow that <b>cut teacher prep time by 40%</b> across Maths and Computer studies.',
     'Ran a repeatable assess, track and intervene cycle for <b>500+ students</b> in two schools (80 taught daily), lifting average class '
     'assessment scores by <b>20%</b>.',
     'Engaged <b>300+ parents and staff</b> through structured progress updates and managed CSR partner Axis Max Life Insurance.',
 ])
 
-rolerow('Client Relations and College Talent Manager', 'Mar 2020 - Apr 2023')
+rolerow('Recruitment and Operations Manager', 'Mar 2020 to Apr 2023')
 S.append(Paragraph('CampK12 (US-based online coding and AI education startup) | India / US / UK / UAE / Australia (Remote)', sub))
 bullets([
     'Automated instructor outreach, <b>cutting manual outreach effort by 30%</b>, and standardised the recruit, onboard and match process '
@@ -120,7 +120,7 @@ bullets([
     '3 years</b>, including saving a dissatisfied US customer\'s year-long subscription with a bilingual English-Spanish instructor.',
 ])
 
-rolerow('Senior Software Engineering Analyst', 'Apr 2015 - Apr 2019')
+rolerow('Senior Software Engineering Analyst', 'Apr 2015 to Apr 2019')
 S.append(Paragraph('Accenture | Chennai and Hyderabad', sub))
 bullets([
     'Built <b>Python automation frameworks</b> for clients including UCI Hospital and Bank of America, <b>reducing post-deployment '
@@ -130,18 +130,20 @@ bullets([
 
 section('COMMUNITY AND TRAINING')
 
-rolerow('Community Contributor', 'Oct 2026 - Present')
+rolerow('Community Contributor', 'Oct 2026 to present')
 S.append(Paragraph('AI Automation Society (Skool community) | Remote | Volunteer', sub))
 bullets(['Helped <b>17 members</b> and logged <b>17 onboarding gaps</b> with a suggested fix for each, shared with the AIS team.'])
 
-rolerow('Part-time AI Trainer and Mentor', '2016 - Present')
+rolerow('Part-time AI Trainer and Mentor', '2016 to present')
 bullets(['<b>1,200+ learners</b> mentored across schools, colleges and professional programmes, including <b>500+ college students</b> in Computer Science and AI/ML. '
          'Current Simplilearn Oxford and Masters\' Union work is listed above.'])
 
 section('SHIPPED AI TOOLS')
 S.append(Paragraph(
-    '<b>14 live tools</b> built solo with the Claude API, including <b>Process Mapper</b>, <b>SOP Generator</b>, <b>Meeting Minutes Extractor</b> '
-    'and <b>Executive Briefing Generator</b>. Two Chrome extensions with <b>330+ users</b>. All at %s' % L('https://cosmik.work/shipped'), body))
+    '<b>TriageOps</b>, an AI service desk for IT managed service providers, live in under an hour on 4 Nov 2026 with 189 automated tests. '
+    '<b>14 live tools</b> built solo, 12 of them with the Claude API, including <b>Process Mapper</b>, <b>SOP Generator</b>, '
+    '<b>Meeting Minutes Extractor</b> and <b>Executive Briefing Generator</b>, plus two Chrome extensions with <b>330+ users</b>. All at %s'
+    % L('https://cosmik.work/shipped'), body))
 
 section('SKILLS AND TOOLS')
 S.append(Paragraph('<b>Skills</b> member onboarding and support, process mapping, workflow design, automation, KPI dashboards, SOPs, CRM pipelines, outbound prospecting, AI training', body))
@@ -150,7 +152,8 @@ S.append(Paragraph('<b>Tools</b> Claude, Claude Code, Claude API, MCP, n8n, Make
 
 
 section('EDUCATION')
-S.append(Paragraph('B.Tech, Computer Science, CIEM (WBUT), 2014 | PG Certificate, Data Science and Engineering, Great Lakes Institute, 2020', body))
+S.append(Paragraph('B.Tech, Computer Science, CIEM (WBUT), 2014 | PG Certificate, Data Science and Engineering, Great Lakes Institute, 2020 | '
+    'Claude Certified Architect, Foundations (in progress)', body))
 
 doc.build(S)
 print('wrote', os.path.abspath(OUT))

@@ -1,18 +1,22 @@
 # Soumik Chatterjee
 
-> AI Specialist in Kolkata. Soumik helps individuals and teams use AI for work, especially automations, and makes sure nothing breaks later. Three kinds of work, community and member support, Claude workflows, part-time AI training.
+> AI Specialist in Kolkata. Soumik helps individuals and teams use AI for work, especially automations, and makes sure nothing breaks later. He works in community and member support, Claude workflows and part-time AI training.
 
-Soumik Chatterjee is looking for a full-time role in community and member support, Claude workflows or AI training, remote from Kolkata, India. Can start immediately.
+AI Specialist, Startup and EdTech Clients (Contract engagements), Feb 2026 to present. Clients include God Crew (Toronto), Navgurukul Foundation, Vokido (UK), Simplilearn and Masters' Union. Ex-Accenture, CampK12, Teach For India.
+
+Soumik Chatterjee is looking for a full-time role in community and member support, Claude workflows or AI training, working remotely from Kolkata, India. He can start immediately.
 
 ## Results
 
-- TriageOps, an AI service desk for IT MSPs, built solo with Claude Code and live in under an hour on 4 Nov 2026. Claude triages each ticket in 3 to 6 seconds and Python rules keep ransomware at P1. Live demo at https://triageops.vercel.app, build notes at https://triageops.vercel.app/build.
-- 9 prospecting pipelines, 2,314 contacts and $1.47M CAD of prospect pipeline in 90 days for a Toronto founder, a contract engagement (Feb 2026 to present). The founder estimates 20 to 30 hours a month saved.
-- 400+ instructor community across India, the US, UK, UAE and Australia at CampK12 (2020 to 2023). Manual outreach down 30%, client retention above 90%.
-- Python test automation for Bank of America and UCI Hospital at Accenture (2015 to 2019). Post-deployment defects down 15%.
-- 31 hiring partners signed against a target of 25 at Navgurukul (Mar to Apr 2026), 2,093 companies contacted.
-- 12 AI tools and 2 Chrome extensions live, all free. Blur Background has 300+ users and Full Webpage Screenshot 30+.
-- 1,200+ students mentored since 2016. Teaching assistant on the Oxford Programme in Strategic Analysis and Decision-Making with AI via Simplilearn (Oct 2026 to Sep 2027).
+- TriageOps, an AI service desk for IT managed service providers, built solo with Claude Code and live in under an hour on 4 Nov 2026. Claude reads each ticket in under six seconds, and fixed rules keep ransomware at the top. Live demo at https://triageops.vercel.app.
+- 9 prospecting pipelines built within 90 days for a Toronto founder (Feb 2026 to present), feeding one dashboard that tracks 2,314 prospects across 924 companies and $1.47M CAD of pipeline. The founder estimates 20 to 30 hours a month saved.
+- Recruitment and Operations Manager at CampK12 (2020 to 2023), with a 400+ instructor workforce matched to client accounts in India, the US, UK, UAE and Australia. Manual outreach down 30%, client retention above 90%.
+- Python automation frameworks for Bank of America and UCI Hospital at Accenture (2015 to 2019). Post-deployment defects down 15%.
+- 31 hiring partners signed against a target of 25 at Navgurukul Foundation (Mar to Apr 2026), 2,093 companies contacted.
+- 14 live tools, 12 AI tools and 2 Chrome extensions, all free. Blur Background has 300+ users and Full Webpage Screenshot 30+.
+- 1,200+ students mentored since 2016. Teaching Assistant on the Oxford Programmes in AI via Simplilearn, including Strategic Analysis and Decision-Making with AI (Oct 2026 to present, part time).
+- Volunteer Community Contributor in the AI Automation Society on Skool since Oct 2026.
+- B.Tech in Computer Science, CIEM (WBUT), 2014. PG Certificate in Data Science and Engineering, Great Lakes Institute, 2020. Claude Certified Architect, Foundations, in progress.
 
 ## Pages
 
@@ -21,8 +25,8 @@ Soumik Chatterjee is looking for a full-time role in community and member suppor
 - [Shipped](https://cosmik.work/shipped): the 14 live tools
 - [Workflow Log](https://cosmik.work/workflow-log): the five measures he uses to judge a workflow, and a build log
 - [What people have written](https://cosmik.work/said): dated feedback from managers, clients and colleagues
-- [Contact](https://cosmik.work/contact): book a 20 minute call or email
-- [CV](https://cosmik.work/assets/docs/soumik-chatterjee-cv.pdf): one page PDF
+- [Contact](https://cosmik.work/contact): book a 20-minute call or email
+- [CV](https://cosmik.work/assets/docs/soumik-chatterjee-cv.pdf): one-page PDF
 
 ## Contact
 
