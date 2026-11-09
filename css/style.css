@@ -1659,3 +1659,33 @@ html { scroll-padding-top: var(--nav-h); }
   .bip-table td.bip-posts-cell { grid-column: 2 / 4; grid-row: 4; display: flex; gap: 8px; align-items: baseline; }
   .bip-posts-cell .bip-range { margin-top: 0; }
 }
+
+/* Build in public, exam map */
+.bip-map { margin: 8px 0 28px; }
+.bip-sub { font-family: 'Fraunces', Georgia, serif; font-weight: 500; font-size: 1.3rem; margin: 0 0 8px; color: var(--text-on-dark); }
+.bip-map-lede { max-width: 72ch; font-size: .98rem; line-height: 1.6; color: var(--text-on-dark-2); margin-bottom: 16px; }
+.bip-map-table tbody th { width: 30%; font-size: 1rem; }
+.bip-map-table td:nth-child(5), .bip-map-table td:last-child { width: auto; }
+.bip-weight { white-space: nowrap; width: 80px; font-variant-numeric: tabular-nums; }
+.bip-postnums { white-space: nowrap; font-variant-numeric: tabular-nums; color: var(--text-on-dark-2) !important; width: 190px; }
+.bip-schedule { margin-top: 14px; border: 1px solid var(--line-dark); border-radius: 6px; padding: 0 16px; }
+.bip-schedule summary { cursor: pointer; padding: 14px 0; font-weight: 600; color: var(--text-on-dark); list-style: none; }
+.bip-schedule summary::-webkit-details-marker { display: none; }
+.bip-schedule summary::before { content: "+"; display: inline-block; width: 18px; color: var(--accent); font-weight: 700; }
+.bip-schedule[open] summary::before { content: "\2013"; }
+.bip-schedule .bip-count { margin: 0 0 10px; }
+.bip-list { list-style: none; margin: 0 0 14px; padding: 0; }
+.bip-list li { display: grid; grid-template-columns: 34px 96px 70px 1fr 64px; gap: 12px; padding: 9px 0; border-top: 1px solid var(--line-dark); font-size: .92rem; line-height: 1.45; color: var(--text-on-dark); }
+.bip-li-num { color: var(--accent); font-weight: 600; font-variant-numeric: tabular-nums; }
+.bip-li-date, .bip-li-task, .bip-li-build { color: var(--text-on-dark-2); white-space: nowrap; font-variant-numeric: tabular-nums; }
+@media (max-width: 640px) {
+  .bip-map-table tr { grid-template-columns: 1fr auto; }
+  .bip-map-table tbody th { grid-column: 1; grid-row: 1; }
+  .bip-map-table .bip-weight { grid-column: 2; grid-row: 1; width: auto; }
+  .bip-map-table td:nth-child(3) { grid-column: 1 / 3; grid-row: 2; }
+  .bip-map-table .bip-postnums { grid-column: 1 / 3; grid-row: 3; white-space: normal; width: auto; font-size: 13px; }
+  .bip-map-table .bip-postnums::before { content: "Posts "; }
+  .bip-list li { grid-template-columns: 34px 1fr; }
+  .bip-li-desc { grid-column: 1 / 3; }
+  .bip-li-build { display: none; }
+}
