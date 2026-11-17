@@ -47,24 +47,24 @@ def bullets(items, style=bul):
 L = lambda u, t=None: '<link href="%s" color="#1A5FD0">%s</link>' % (u, t or u)
 
 S.append(Paragraph('SOUMIK CHATTERJEE', name))
-S.append(Paragraph('AI Specialist | End-to-end Claude Workflows for Business Teams | Community and Member Support | Part-time AI Trainer, Simplilearn Oxford Programmes | Ex-Accenture, CampK12, Teach For India', headline))
+S.append(Paragraph('AI Specialist | Claude Automations That Take Business Teams From 0 to 1 and Beyond | Claude Code, MCP and Agents | Ex-Accenture, CampK12, Teach For India', headline))
 S.append(Paragraph('Kolkata, India | soumik2808@gmail.com | +91 84202 70119 | %s | %s | %s' % (
     L('https://cosmik.work'), L('https://www.linkedin.com/in/soumikaispecialist'), L('https://github.com/pymikofficial')), contact))
 
 section('SUMMARY')
 S.append(Paragraph(
     'AI Specialist with 9+ years across software engineering, client operations, education and founder support, working directly with founders and CXOs '
-    'in three lanes, community and member support, Claude workflows and part-time AI training. Built <b>9 pipeline systems and one founder dashboard</b> for God Crew '
-    'that save the founder <b>20 to 30 hours a month</b> and track a <b>$1.47M CAD pipeline</b>. Held <b>90%+ client retention</b> at CampK12 for 3 years, '
+    'to build Claude automations that take a business function from 0 to 1 and beyond. Built <b>9 pipeline systems and one founder dashboard</b> for God Crew '
+    'that saved the founder <b>20 to 30 hours a month</b> and tracked a <b>$1.47M CAD pipeline</b>. Shipped <b>TriageOps</b>, an AI service desk with '
+    '<b>896 automated tests</b>, and <b>14 live tools</b>, 12 of them on the Claude API. Held <b>90%+ client retention</b> at CampK12 for 3 years, '
     'and mentored <b>1,200+ students</b> across schools, colleges and professional programmes.', body))
 
 section('PROFESSIONAL EXPERIENCE')
 
 rolerow('AI Specialist', 'Feb 2026 to present')
-S.append(Paragraph('Startup and EdTech Clients (Contract engagements) | Remote from Kolkata | Contract work is closed the day a full-time role is joined, '
-                   'weekend AI teaching is retained and declared up front', sub))
+S.append(Paragraph('Startup and EdTech Clients (Contract engagements) | Remote from Kolkata | Contract work is closed the day a full-time role is joined', sub))
 
-rolerow('God Crew (Toronto), Growth Systems and Automation', 'Feb 2026 to present', role2)
+rolerow('God Crew (Toronto), Growth Systems and Automation', 'Feb 2026 to May 2026', role2)
 S.append(Paragraph('24/7 biohazard and trauma scene cleanup company | Remote', sub2))
 bullets([
     'Built the growth engine from scratch. <b>9 pipeline systems feeding one live sales dashboard</b> tracking <b>2,314 prospects across 924 companies '
@@ -111,6 +111,13 @@ bullets([
     'Engaged <b>300+ parents and staff</b> through structured progress updates and managed CSR partner Axis Max Life Insurance.',
 ])
 
+rolerow('Freelance Recruiter and Computer Science Mentor', 'Apr 2023 to Apr 2024')
+S.append(Paragraph('Freelance | Kolkata and remote', sub))
+bullets([
+    'Recruited for Australian clients as a freelance recruiter, and mentored college students in Computer Science and AI/ML, '
+    'part of <b>500+ college students</b> mentored since 2016.',
+])
+
 rolerow('Recruitment and Operations Manager', 'Mar 2020 to Apr 2023')
 S.append(Paragraph('CampK12 (US-based online coding and AI education startup) | India / US / UK / UAE / Australia (Remote)', sub))
 bullets([
@@ -128,16 +135,6 @@ bullets([
     'Bridged US, UAE and European clients with engineering teams, and onboarded clients directly in the final 1.5 years.',
 ])
 
-section('COMMUNITY AND TRAINING')
-
-rolerow('Community Contributor', 'Oct 2026 to present')
-S.append(Paragraph('AI Automation Society (Skool community) | Remote | Volunteer', sub))
-bullets(['Helped <b>17 members</b> and logged <b>17 onboarding gaps</b> with a suggested fix for each, shared with the AIS team.'])
-
-rolerow('Part-time AI Trainer and Mentor', '2016 to present')
-bullets(['<b>1,200+ learners</b> mentored across schools, colleges and professional programmes, including <b>500+ college students</b> in Computer Science and AI/ML. '
-         'Current Simplilearn Oxford and Masters\' Union work is listed above.'])
-
 section('SHIPPED AI TOOLS')
 S.append(Paragraph(
     '<b>TriageOps</b>, an AI service desk for IT managed service providers, live in under an hour on 4 Nov 2026 with 896 automated tests on every push. '
@@ -146,13 +143,14 @@ S.append(Paragraph(
     % L('https://cosmik.work/shipped'), body))
 
 section('SKILLS AND TOOLS')
-S.append(Paragraph('<b>Skills</b> member onboarding and support, process mapping, workflow design, automation, KPI dashboards, SOPs, CRM pipelines, outbound prospecting, AI training', body))
+S.append(Paragraph('<b>Skills</b> Claude automation, agent and workflow design, MCP tool integration, context management, automated testing, process mapping, KPI dashboards, SOPs, '
+    'CRM pipelines, outbound prospecting, team handover and training', body))
 
-S.append(Paragraph('<b>Tools</b> Claude, Claude Code, Claude API, MCP, n8n, Make.com, Python, Apollo.io, Clay, GoHighLevel, Skool, Google Workspace, Slack, GitHub, Netlify', body))
+S.append(Paragraph('<b>Tools</b> Claude, Claude Code, Claude API, MCP, n8n, Make.com, Python, SQL, Supabase, Apollo.io, Clay, GoHighLevel, HubSpot, Google Workspace, Slack, GitHub, Netlify', body))
 
 
 section('EDUCATION')
-S.append(Paragraph('B.Tech, Computer Science, CIEM (WBUT), 2014 | PG Certificate, Data Science and Engineering, Great Lakes Institute, 2020 | '
+S.append(Paragraph('B.Tech, Computer Science, CIEM (WBUT), 2014 | PG Certificate, Data Science and Engineering, Great Lakes Institute, Apr 2019 to Mar 2020 | '
     'Claude Certified Architect, Foundations (in progress)', body))
 
 doc.build(S)

@@ -134,7 +134,8 @@ for (const rel of FILES) {
     if (EM_DASH.test(text)) hits.push('em dash');
     const c = text.match(CONTRACTION);
     if (c) hits.push(`contraction "${c[0]}"`);
-    phoneHits(`${text} ${links}`, i, allowed).forEach((m) => hits.push(`phone or WhatsApp number "${m.trim()}"`));
+    // LinkedIn post links carry a long activity id, which is not a phone number.
+    phoneHits(`${text} ${links}`.replace(/urn:li:activity:\d+/g, ' '), i, allowed).forEach((m) => hits.push(`phone or WhatsApp number "${m.trim()}"`));
     if (!quoted && !isData) {
       // README and the CV source are about code, so dashes in code spans are fine there.
       const prose = text.replace(/`[^`]*`/g, ' ').replace(/https?:\/\/\S+/g, ' ');

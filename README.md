@@ -1,6 +1,6 @@
 # cosmik.work
 
-Personal site of Soumik Chatterjee, AI Specialist. End-to-end Claude workflows for business teams, community and member support, part-time AI training. Ex-Accenture, CampK12, Teach For India.
+Personal site of Soumik Chatterjee, AI Specialist. Claude automations that take business teams from 0 to 1 and beyond. Ex-Accenture, CampK12, Teach For India.
 
 Static portfolio site. Netlify runs `npm run build` on every deploy, which runs the copy check first, and serves the repo root. Every push to `main` deploys. Building before committing is not needed. Edit a page, a partial or a data file, then push. Repo files that are not part of the site, such as `scripts/`, `data/`, `partials/`, this README and `package.json`, return 404 on the live site through rules at the top of `_redirects`.
 
