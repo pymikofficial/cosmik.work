@@ -66,7 +66,7 @@ rolerow('AI Specialist, Growth Systems and Automation', 'Feb 2026 to present')
 S.append(Paragraph('God Crew (Toronto, 24/7 biohazard and trauma scene cleanup company) | Remote from Kolkata | Full time', sub))
 bullets([
     'Built the growth engine from scratch. <b>9 pipeline systems feeding one live sales dashboard</b> tracking <b>2,314 prospects across 924 companies '
-    'and $1,471,100 CAD</b>, saving the founder <b>20 to 30 hours a month</b> of manual number-checking, built within 90 days.',
+    'and $1,471,100 CAD</b>, saving the founder <b>20 to 30 hours a month</b> of manual number-checking, built within 90 days. Dashboard proof at %s' % L('https://bit.ly/GodCrew_pipelines_Soumik'),
     'Kept the pipelines booking <b>60+ qualified calls a month</b>, with <b>MRR up roughly 30%</b>.',
     'Proposed an ElevenLabs and Vapi voice AI setup in place of a <b>60 to 80 person</b> sales hiring plan, onboarded the top 12 of <b>100+ influencer leads</b> '
     'as affiliates, and ran a direct mail campaign to <b>1,579 GTA households</b>.',
