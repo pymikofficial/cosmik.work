@@ -20,7 +20,7 @@
     "name": "Meeting Minutes Extractor",
     "problem": "Decisions and owners get lost after a call. The extractor turns a transcript or spoken recap into minutes with the decisions, action items with owners and deadlines, and open questions. Nothing is stored beyond the minutes.",
     "line": "Turns a transcript or spoken recap into minutes with decisions, owners, deadlines and open questions.",
-    "era": "Startup and EdTech clients",
+    "era": "Growth systems",
     "link": "https://meeting-minutes-extractor.netlify.app",
     "date": "2026-07-05"
   },
@@ -28,7 +28,7 @@
     "name": "Executive Briefing Generator",
     "problem": "Founders keep notes, emails and to-dos in five places. The generator turns those fragments into a one-page brief with the top three priorities, the decisions only the founder can make, tasks to delegate and items that can wait.",
     "line": "Turns a day of notes, emails and to-dos into a one-page brief with priorities, decisions, tasks to delegate and what can wait.",
-    "era": "Startup and EdTech clients",
+    "era": "Growth systems",
     "link": "https://executive-briefing-generator.netlify.app",
     "date": "2026-07-05"
   },
@@ -37,7 +37,7 @@
     "date": "2026-07-07",
     "problem": "Outbound stalls when every prospect gets the same email. The tool writes a tailored three-email sequence for each prospect in a batch and labels each one grounded or generic.",
     "line": "Writes a tailored three-email sequence for each prospect in a batch, each one labelled grounded or generic.",
-    "era": "Startup and EdTech clients",
+    "era": "Growth systems",
     "link": "https://cold-outreach-personalizer.netlify.app"
   },
   {
@@ -45,7 +45,7 @@
     "date": "2026-07-07",
     "problem": "Founders skip investor updates when the numbers are scattered. The drafter turns raw metrics and bullets into a clean update, with growth, runway and headcount change computed in code, never by the model.",
     "line": "Turns raw metrics and bullets into an investor update, with growth, runway and headcount change computed in code.",
-    "era": "Startup and EdTech clients",
+    "era": "Growth systems",
     "link": "https://investor-update-drafter.netlify.app"
   },
   {

@@ -57,50 +57,21 @@ S.append(Paragraph(
     'to build Claude automations that take a business function from 0 to 1 and beyond. Built <b>9 pipeline systems and one founder dashboard</b> for God Crew '
     'that saved the founder <b>20 to 30 hours a month</b> and tracked a <b>$1.47M CAD pipeline</b>. Shipped <b>TriageOps</b>, an AI service desk with '
     '<b>896 automated tests</b>, and <b>14 live tools</b>, 12 of them on the Claude API. Held <b>90%+ client retention</b> at CampK12 for 3 years, '
-    'and mentored <b>1,200+ students</b> across schools, colleges and professional programmes.', body))
+    'and mentored <b>1,200+ students</b> across schools, colleges and professional programmes. Preparing for <b>Claude Certified Architect, Foundations</b> '
+    'in public through the Claude Architect Log on LinkedIn, one build-backed write-up per exam task.', body))
 
 section('PROFESSIONAL EXPERIENCE')
 
-rolerow('AI Specialist', 'Feb 2026 to present')
-S.append(Paragraph('Startup and EdTech Clients (Contract engagements) | Remote from Kolkata | Contract work is closed the day a full-time role is joined', sub))
-
-rolerow('God Crew (Toronto), Growth Systems and Automation', 'Feb 2026 to May 2026', role2)
-S.append(Paragraph('24/7 biohazard and trauma scene cleanup company | Remote', sub2))
+rolerow('AI Specialist, Growth Systems and Automation', 'Feb 2026 to present')
+S.append(Paragraph('God Crew (Toronto, 24/7 biohazard and trauma scene cleanup company) | Remote from Kolkata | Full time', sub))
 bullets([
     'Built the growth engine from scratch. <b>9 pipeline systems feeding one live sales dashboard</b> tracking <b>2,314 prospects across 924 companies '
-    'and $1,471,100 CAD</b>, saving the founder <b>20 to 30 hours a month</b> of manual number-checking, built within 90 days.',
-    'Kept the pipelines booking <b>60+ qualified calls a month</b>, with <b>MRR up roughly 30%</b> during the engagement.',
+    'and $1,471,100 CAD</b>, saving the founder <b>20 to 30 hours a month</b> of manual number-checking, built within 90 days. Dashboard proof at %s' % L('https://bit.ly/GodCrew_pipelines_Soumik'),
+    'Kept the pipelines booking <b>60+ qualified calls a month</b>, with <b>MRR up roughly 30%</b>.',
     'Proposed an ElevenLabs and Vapi voice AI setup in place of a <b>60 to 80 person</b> sales hiring plan, onboarded the top 12 of <b>100+ influencer leads</b> '
     'as affiliates, and ran a direct mail campaign to <b>1,579 GTA households</b>.',
     'Wrote <b>9 SOPs</b> so every workflow runs without depending on one person, and built the landing pages with Claude Code.',
-], bul2)
-
-rolerow('Navgurukul Foundation, Placement Outreach Manager', 'Mar 2026 to Apr 2026', role2)
-S.append(Paragraph('Nonprofit for underserved learners | Remote | 45-day placement drive, reporting to leadership', sub2))
-bullets([
-    'Contacted <b>2,093 companies with 4,200 open roles</b>, shortlisted 65 and signed <b>31 hiring partners against a target of 25 (124%)</b>.',
-    'Led 3 interns across LinkedIn, Apna and Indeed with daily output tracking and quality gates, built the leadership dashboards and weekly '
-    'metrics reports, and drove a <b>73.9% JD approval rate</b>.',
-], bul2)
-
-rolerow('Vokido (UK), Growth Consultant, Founders\' Office', 'Sep 2026', role2)
-S.append(Paragraph('AI spoken-English app for kids | Remote | One-month fixed-term agreement, driving India expansion', sub2))
-bullets([
-    'Designed the pan-India partner centre model (<b>30% recurring commission</b>, attribution codes, monthly payouts), a <b>1,000-centre</b> outreach plan, '
-    'the B2C and B2B2C playbook for centres serving kids aged 5 to 14, and a referral programme aimed at <b>10x paid users</b> by December 2026.',
-], bul2)
-
-rolerow('Simplilearn, Teaching Assistant, Oxford Programmes in AI', 'Oct 2026 to present, part time', role2)
-S.append(Paragraph('One-year contract | Remote | Includes Strategic Analysis and Decision-Making with AI', sub2))
-bullets([
-    'Runs cohort inductions, discussion forums and feedback on every project. Won through a cold LinkedIn pitch for a Bangalore-only opening, turned remote.',
-], bul2)
-
-rolerow('Masters\' Union, Guest Trainer', '8 Oct 2026', role2)
-bullets([
-    'Delivered the paid live webinar "From Chatbots to AI Operators", building a Make.com automation and a full Claude Code app live from scratch. '
-    'Resource guide shared with every learner.',
-], bul2)
+])
 
 rolerow('Fellow Leader, Maths and Computer (Grades 5 to 12)', 'Apr 2024 to Mar 2026')
 S.append(Paragraph('Teach For India (education nonprofit) | Kolkata | KECT Academy, St. Patrick\'s Day School (Dhapa)', sub))
@@ -132,15 +103,30 @@ S.append(Paragraph('Accenture | Chennai and Hyderabad', sub))
 bullets([
     'Built <b>Python automation frameworks</b> for clients including UCI Hospital and Bank of America, <b>reducing post-deployment '
     'defects by 15%</b>.',
+    'Built web applications and REST APIs in Python (Django, Flask) and SQL for UCI Hospital, handling sensitive healthcare data.',
     'Bridged US, UAE and European clients with engineering teams, and onboarded clients directly in the final 1.5 years.',
 ])
 
-section('SHIPPED AI TOOLS')
+section('CLAUDE BUILDS')
 S.append(Paragraph(
     '<b>TriageOps</b>, an AI service desk for IT managed service providers, live in under an hour on 4 Nov 2026 with 896 automated tests on every push. '
+    '<b>Claude Code team kit</b>, Build 1 of 4 mapped to the Claude Certified Architect, Foundations exam guide, covering CLAUDE.md layers, path-scoped rules, '
+    'skills, MCP setup, plan mode and session handling, public at %s. '
     '<b>14 live tools</b> built solo, 12 of them with the Claude API, including <b>Process Mapper</b>, <b>SOP Generator</b>, '
     '<b>Meeting Minutes Extractor</b> and <b>Executive Briefing Generator</b>, plus two Chrome extensions with <b>330+ users</b>. All at %s'
-    % L('https://cosmik.work/shipped'), body))
+    % (L('https://github.com/pymikofficial/claude-code-team-kit', 'github.com/pymikofficial/claude-code-team-kit'), L('https://cosmik.work/shipped')), body))
+
+section('SHORT FIXED-TERM AND PART-TIME ENGAGEMENTS')
+bullets([
+    '<b>Navgurukul Foundation</b>, Placement Outreach Manager, Mar to Apr 2026, a 45-day fixed-term placement drive. Contacted <b>2,093 companies</b>, '
+    'signed <b>31 hiring partners against a target of 25 (124%)</b>, led 3 interns and drove a <b>73.9% JD approval rate</b>.',
+    '<b>Vokido (UK)</b>, Growth Consultant, Founders\' Office, Sep 2026, a one-month fixed-term agreement. Designed the pan-India partner centre model '
+    '(<b>30% recurring commission</b>) and a <b>1,000-centre</b> outreach plan.',
+    '<b>Simplilearn</b>, Teaching Assistant, Oxford Programmes in AI, part time from Oct 2026 on a one-year agreement, a few hours a week. '
+    'Won through a cold LinkedIn pitch for a Bangalore-only opening, turned remote.',
+    '<b>Masters\' Union</b>, Guest Trainer, 8 Oct 2026. Delivered the paid live webinar "From Chatbots to AI Operators", building a Make.com automation '
+    'and a full Claude Code app live from scratch.',
+])
 
 section('SKILLS AND TOOLS')
 S.append(Paragraph('<b>Skills</b> Claude automation, agent and workflow design, MCP tool integration, context management, automated testing, process mapping, KPI dashboards, SOPs, '
@@ -151,7 +137,7 @@ S.append(Paragraph('<b>Tools</b> Claude, Claude Code, Claude API, MCP, n8n, Make
 
 section('EDUCATION')
 S.append(Paragraph('B.Tech, Computer Science, CIEM (WBUT), 2014 | PG Certificate, Data Science and Engineering, Great Lakes Institute, Apr 2019 to Mar 2020 | '
-    'Claude Certified Architect, Foundations (in progress)', body))
+    'Preparing for Claude Certified Architect, Foundations', body))
 
 doc.build(S)
 print('wrote', os.path.abspath(OUT))

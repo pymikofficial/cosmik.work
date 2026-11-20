@@ -18,7 +18,7 @@ The homepage is one page read top to bottom, in this order. Hero, Selected work 
 
 Add one entry to `data/tools.json` (`name`, `date` as YYYY-MM-DD, `problem`, `line`, `link`, `era`, optional `flagship`), run `npm run check`, and push. Netlify renders it on the next deploy.
 
-The homepage shows every tool from `data/tools.json` and `data/library.json` as a chip under the era of work it replaces. Two more fields drive that: `era` (one of Recruitment and operations, Classrooms, Startup and EdTech clients, Chrome extensions, Process and SOPs, missing means Process and SOPs) and `line` (one sentence shown on hover, on tap on a phone, and in the Workflow Log build log). A library entry's `users` figure, the public Chrome Web Store count, is shown as a small tag on its chip and on the Shipped page and Workflow Log, so update it in one place.
+The homepage shows every tool from `data/tools.json` and `data/library.json` as a chip under the era of work it replaces. Two more fields drive that: `era` (one of Recruitment and operations, Classrooms, Growth systems, Chrome extensions, Process and SOPs, missing means Process and SOPs) and `line` (one sentence shown on hover, on tap on a phone, and in the Workflow Log build log). A library entry's `users` figure, the public Chrome Web Store count, is shown as a small tag on its chip and on the Shipped page and Workflow Log, so update it in one place.
 
 ## CV
 
