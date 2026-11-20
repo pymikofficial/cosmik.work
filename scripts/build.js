@@ -68,7 +68,7 @@ validate(LIBRARY, ['name', 'tag', 'desc', 'link', 'date'], 'data/library.json');
 const ERAS = [
   { name: 'Recruitment and operations', when: 'CampK12, 2020 to 2023' },
   { name: 'Classrooms', when: 'Teach For India, 2024 to 2026' },
-  { name: 'Startup and EdTech clients', when: 'AI Specialist, since Feb 2026' },
+  { name: 'Growth systems', when: 'God Crew, since Feb 2026' },
   { name: 'Chrome extensions', when: 'For his own video calls, 2026' },
   { name: 'Process and SOPs', when: 'Every role' },
 ];
@@ -199,7 +199,8 @@ function renderPersonLd() {
         url: `${SITE}/`,
         image: `${SITE}/img/soumik-portrait.jpg`,
         jobTitle: 'AI Specialist',
-        description: 'AI Specialist working remotely from Kolkata. Claude workflows, AI automation, community and member support, and part-time AI training. Ex-Accenture, CampK12, Teach For India.',
+        description: 'AI Specialist working remotely from Kolkata. Claude automations that take business teams from 0 to 1 and beyond. At God Crew since Feb 2026. Ex-Accenture, CampK12, Teach For India.',
+        worksFor: { '@type': 'Organization', name: 'God Crew' },
         email: ['mailto:soumik@cosmik.work', 'mailto:soumik2808@gmail.com'],
         address: {
           '@type': 'PostalAddress',
@@ -209,7 +210,7 @@ function renderPersonLd() {
         },
         homeLocation: { '@type': 'Place', name: 'Kolkata, West Bengal, India' },
         alumniOf: ['Accenture', 'CampK12', 'Teach For India'].map((name) => ({ '@type': 'Organization', name })),
-        knowsAbout: ['Claude', 'Claude Code', 'AI agents', 'AI workflow automation', 'Community support', 'AI training'],
+        knowsAbout: ['Claude', 'Claude Code', 'Claude API', 'Model Context Protocol', 'AI agents', 'AI workflow automation'],
         sameAs: [
           'https://www.linkedin.com/in/soumikaispecialist/',
           'https://github.com/pymikofficial',

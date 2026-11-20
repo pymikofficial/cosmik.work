@@ -4,7 +4,7 @@
     "what": "The hours of people time a task needs from preparation through review, correction and rework.",
     "stage": "Any task repeated weekly or more often, where the manual baseline can be measured before the build starts.",
     "lever": "He maps the task, times the manual baseline, removes steps first and only then automates what is left.",
-    "whereUsed": "A 30% cut in manual outreach effort at CampK12 for a 400+ instructor workforce. For the Toronto founder, 20 to 30 hours a month of manual number-checking saved."
+    "whereUsed": "A 30% cut in manual outreach effort at CampK12 for a 400+ instructor workforce. At God Crew, 20 to 30 hours a month of the founder's manual number-checking saved."
   },
   {
     "name": "Output accuracy",
@@ -25,7 +25,7 @@
     "what": "The share of the intended users who run the workflow on their own without asking its builder for help.",
     "stage": "At handoff, and again after the first month of real use.",
     "lever": "He writes a one-page operating guide, trains the team on their own tasks and makes the next step obvious at every point.",
-    "whereUsed": "For the Toronto founder he wrote 9 SOPs so every workflow runs without depending on one person."
+    "whereUsed": "At God Crew he wrote 9 SOPs so every workflow runs without depending on one person."
   },
   {
     "name": "Cost per run",
