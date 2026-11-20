@@ -40,6 +40,7 @@ const PAGES = [
   { file: 'said.html', active: 'said' },
   { file: 'shipped.html', active: 'tools' },
   { file: 'workflow-log.html', active: 'work' },
+  { file: 'god-crew.html', active: 'work' },
   { file: 'privacy-virtual-background.html', active: 'privacy' },
   { file: '404.html', active: 'none' },
 ];

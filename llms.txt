@@ -22,6 +22,7 @@ Soumik Chatterjee is looking for a full-time role building Claude automations fo
 - [Home](https://cosmik.work/): one page with TriageOps and his work at God Crew, CampK12 and Accenture, the Build in public section (Project 01 is the Claude Architect Log, 7 Nov to 14 Dec 2026, four Claude builds and 30 posts while preparing for the Claude Certified Architect, Foundations exam), the 14 tools grouped by the work they replace, a short About, two quotes and contact details
 - [About](https://cosmik.work/about): where he has worked, with dates
 - [Shipped](https://cosmik.work/shipped): the 14 live tools
+- [God Crew case study](https://cosmik.work/god-crew): nine prospecting pipelines and one live sales dashboard at God Crew, Toronto, with the numbers
 - [Workflow Log](https://cosmik.work/workflow-log): the five measures he uses to judge a workflow, and a build log
 - [What people have written](https://cosmik.work/said): dated feedback from managers, clients and colleagues
 - [Contact](https://cosmik.work/#contact): book a 20-minute call or email
